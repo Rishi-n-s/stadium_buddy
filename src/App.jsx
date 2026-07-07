@@ -375,6 +375,7 @@ export default function App() {
         )}
         {currentView === "wayfinding" && (
           <Wayfinding
+            currentUser={currentUser}
             language={language}
             setLanguage={setLanguage}
             congestedZones={congestedZones}

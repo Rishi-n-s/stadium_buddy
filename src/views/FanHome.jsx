@@ -9,7 +9,7 @@ export default function FanHome({
   onNavigateToWayfinding,
   zones,
   selectedStadium
-}) {
+} = {}) {
 
   const dir = getDir(language);
   const [homeScore, setHomeScore] = useState(2);

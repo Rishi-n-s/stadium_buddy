@@ -77,9 +77,25 @@ export const queryCopilot = (query) => {
     answer = "Concession stands are operating at **OPTIMAL** speed. Lines at Titan Snacks (Gate 5) have wait times of about 3 minutes. Regular items are fully in stock.";
     citations.push("Concessions Log #C-12");
   } 
+  else if (q.includes("hello") || q.includes("hi") || q.includes("hey")) {
+    answer = "Hello there! I am your StadiumIQ Decision Support Copilot. I can help you monitor live telemetry, staff deployment, and active incidents across the stadium. How can I assist you today?";
+  }
+  else if (q.includes("who are you") || q.includes("what are you") || q.includes("your name")) {
+    answer = "I'm the StadiumIQ Decision Support Copilot, an AI designed to help stadium operations teams manage crowds, security, and infrastructure using real-time data and RAG (Retrieval-Augmented Generation) technology.";
+  }
+  else if (q.includes("how are you")) {
+    answer = "I'm functioning perfectly! All systems and telemetry feeds are nominal. Ready to assist with stadium operations.";
+  }
+  else if (q.includes("joke") || q.includes("funny")) {
+    answer = "Why did the stadium get hot after the game? Because all the fans left! ...I'll stick to analyzing crowd telemetry.";
+  }
+  else if (q.includes("bathroom") || q.includes("toilet") || q.includes("restroom")) {
+    answer = "The nearest restrooms depend on your zone. The North Concourse and East Concourse restrooms are currently operating normally with no reported queues or maintenance issues.";
+    citations.push("Incident #I-804"); // Just referencing a general operational log
+  }
   else {
     // Default fallback simulating an intelligent RAG response
-    answer = "No matching direct logs found for your query. Based on stadium-wide telemetry, all gates (except Gate 4) are operating normally. Attendance is 74,203 (92% capacity). Please let me know if you need specific check-ins on staff counts or incident logs.";
+    answer = `I couldn't find specific operational records matching "${query}". Based on stadium-wide telemetry, all gates (except Gate 4) are operating normally. Attendance tracking is active. Please let me know if you need specific check-ins on staff counts, incident logs, or network status.`;
     citations.push("Turnstile Feed #T-02", "Mesh Status #M-88");
   }
 

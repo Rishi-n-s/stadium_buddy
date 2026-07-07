@@ -4,12 +4,14 @@ import { getAdvisories } from "../services/crowdEngine";
 import Map from "../components/ui/Map";
 
 
-export default function OrganizerDashboard({
-  zones,
-  onExecuteAdvisoryAction,
-  onSimulateSpill,
-  selectedStadium
-}) {
+export default function OrganizerDashboard(props) {
+  const {
+    zones,
+    onExecuteAdvisoryAction,
+    onSimulateSpill,
+    selectedStadium
+  } = props || {};
+
   const [copilotInput, setCopilotInput] = useState("");
   const [copilotMessages, setCopilotMessages] = useState([
     {
@@ -24,25 +26,29 @@ export default function OrganizerDashboard({
   ]);
   
   const baseCapacity = selectedStadium ? selectedStadium.capacity : 80000;
-  const [totalAttendees, setTotalAttendees] = useState(() => 
-    selectedStadium ? Math.round(selectedStadium.capacity * 0.925) : 74203
-  );
+  const [liveUsers, setLiveUsers] = useState(new Map());
+  const [totalAttendees, setTotalAttendees] = useState(0);
   const [showRagInfo, setShowRagInfo] = useState(false);
 
-  // Dynamic attendee count simulator
+  // Subscribe to real-time live GPS users
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTotalAttendees(a => {
-        const delta = Math.floor(Math.random() * 9 - 4);
-        const next = a + delta;
-        // Keep within 85% to 99% of base capacity
-        if (next > baseCapacity * 0.99) return a - 2;
-        if (next < baseCapacity * 0.85) return a + 2;
-        return next;
+    let unsubscribe = null;
+    import("../services/locationBroadcast").then(module => {
+      unsubscribe = module.subscribeToUsers((usersMap) => {
+        setLiveUsers(usersMap);
+        setTotalAttendees(usersMap.size);
       });
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [baseCapacity]);
+    });
+    return () => {
+      if (unsubscribe) unsubscribe();
+    };
+  }, []);
+
+  // Compute "True Data" for zones based on live users.
+  // In a full production system with bounding boxes, we would map each user's lat/lng to a specific zone polygon.
+  // Here we dynamically distribute the real users across the zones.
+  const liveZoneNorth = Math.floor(totalAttendees * 0.4);
+  const liveZoneEast = totalAttendees - liveZoneNorth;
 
   const activeAdvisories = getAdvisories(zones);
 
@@ -152,10 +158,10 @@ export default function OrganizerDashboard({
               <div>
                 <p className="font-mono text-[10px] text-on-surface-variant uppercase">CURRENT OCCUPANCY</p>
                 <p className="text-4xl font-black text-primary-light">
-                  {((zones.north_gate.current / zones.north_gate.capacity) * 100).toFixed(1)}%
+                  {((liveZoneNorth / zones.north_gate.capacity) * 100).toFixed(1)}%
                 </p>
                 <p className="text-xs text-on-surface-variant font-mono mt-1">
-                  ({zones.north_gate.current.toLocaleString()} / {zones.north_gate.capacity.toLocaleString()})
+                  ({liveZoneNorth.toLocaleString()} / {zones.north_gate.capacity.toLocaleString()})
                 </p>
               </div>
               
@@ -189,7 +195,7 @@ export default function OrganizerDashboard({
               </div>
               <div className="flex justify-between items-center border-b border-outline-variant/30 pb-2 text-sm">
                 <span className="text-on-surface-variant">Current Occupancy</span>
-                <span className="font-mono font-bold">{zones.east_stand.current.toLocaleString()}</span>
+                <span className="font-mono font-bold">{liveZoneEast.toLocaleString()}</span>
               </div>
               <div className="flex justify-between items-center text-sm">
                 <span className="text-on-surface-variant">Trend</span>

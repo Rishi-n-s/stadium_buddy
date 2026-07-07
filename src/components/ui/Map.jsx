@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { startTracking, stopTracking, GPS_STATUS } from "../../services/locationService";
-import { connect, disconnect, sendLocation, BROADCAST_STATUS, hasLocationConsent } from "../../services/locationBroadcast";
+import { connect, disconnect, sendLocation, BROADCAST_STATUS, hasLocationConsent, subscribeToUsers, subscribeToStatus } from "../../services/locationBroadcast";
 
 // Popular stadiums geocoding dictionary
 const POPULAR_STADIUMS_COORDS = {
@@ -118,7 +118,7 @@ function interpolateCoords(from, to, t) {
 // Role colors for broadcast user markers
 const ROLE_COLORS = { fan: "#1a73e8", staff: "#f9ab00", organizer: "#ea4335" };
 
-export default function Map({
+export default function StadiumMap({
   selectedStadium,
   darkMode = true,
   isIndoor = false,
@@ -129,7 +129,7 @@ export default function Map({
   onNodeSelect = null,
   directions = [],
   currentUser = null,
-}) {
+} = {}) {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const [coords, setCoords] = useState(null);
@@ -139,7 +139,7 @@ export default function Map({
   const [is3D, setIs3D] = useState(false);
 
   // GPS navigation state
-  const [gpsMode, setGpsMode] = useState("simulated"); // "simulated" or "real"
+  const [gpsMode, setGpsMode] = useState("real"); // "simulated" or "real"
   const [gpsStatus, setGpsStatus] = useState(null);
   const [userCoords, setUserCoords] = useState(null);
   const [realTimeDistance, setRealTimeDistance] = useState(null);
@@ -226,12 +226,12 @@ export default function Map({
               item.display_name.toLowerCase().includes("arena")
             );
             const match = bestMatch || data[0];
-            return [parseFloat(match.lon), parseFloat(match.lat)];
+            return new Promise(resolve => setTimeout(() => resolve([parseFloat(match.lon), parseFloat(match.lat)]), 1000));
           }
-          return tryGeocode(queryList.slice(1));
+          return new Promise(resolve => setTimeout(() => resolve(tryGeocode(queryList.slice(1))), 1000));
         })
         .catch(() => {
-          return tryGeocode(queryList.slice(1));
+          return new Promise(resolve => setTimeout(() => resolve(tryGeocode(queryList.slice(1))), 1000));
         });
     };
 
@@ -581,7 +581,8 @@ export default function Map({
           setGpsStatus(err.status);
           // Don't show alerts — show status in UI instead
           if (err.status === GPS_STATUS.PERMISSION_DENIED) {
-            setGpsMode("simulated");
+            // Keep in real mode but warn user
+            console.warn("GPS Permission denied. Tracking unavailable.");
           }
         }
       );
@@ -705,15 +706,21 @@ export default function Map({
   // ─── 5. WebSocket broadcast connection ───────────────────────────────────
   useEffect(() => {
     if (!hasLocationConsent() || !currentUser) return;
+    
+    const unsubscribeUsers = subscribeToUsers(setLiveUsers);
+    const unsubscribeStatus = subscribeToStatus(setBroadcastStatus);
+    
     connect({
       userId: currentUser.email,
       role: currentUser.role,
       name: currentUser.name,
       stadiumId,
-      onUsers: setLiveUsers,
-      onStatus: setBroadcastStatus,
     });
-    return () => disconnect();
+    
+    return () => {
+      unsubscribeUsers();
+      unsubscribeStatus();
+    };
   }, [currentUser, stadiumId]);
 
   // 5. Indoor Markers rendering
@@ -906,13 +913,7 @@ export default function Map({
                   : "SIMULATED NAVIGATION"}
               </span>
             </div>
-            <button 
-              onClick={() => setGpsMode(prev => prev === "real" ? "simulated" : "real")}
-              className="text-[9px] bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary/50 text-primary-light px-2.5 py-0.5 rounded font-mono font-extrabold uppercase transition-all"
-            >
-              {gpsMode === "real" ? "Simulate" : "Use Real GPS"}
-            </button>
-          </div>
+            </div>
 
           {/* Broadcast status */}
           {broadcastStatus !== BROADCAST_STATUS.DISCONNECTED && (

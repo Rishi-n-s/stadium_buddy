@@ -37,8 +37,8 @@ let userId = null;
 let userRole = null;
 let userName = null;
 let stadiumId = null;
-let onUsersUpdate = null;
-let onConnectionChange = null;
+const userSubscribers = new Set();
+const statusSubscribers = new Set();
 let lastSentPos = null;
 let lastSentTime = 0;
 let isManuallyDisconnected = false;
@@ -76,6 +76,16 @@ export function revokeLocationConsent() {
  * @param {Function} opts.onUsers    - called with Map<userId, userLocation> on updates
  * @param {Function} opts.onStatus   - called with BROADCAST_STATUS on connection changes
  */
+export function subscribeToUsers(callback) {
+  userSubscribers.add(callback);
+  return () => userSubscribers.delete(callback);
+}
+
+export function subscribeToStatus(callback) {
+  statusSubscribers.add(callback);
+  return () => statusSubscribers.delete(callback);
+}
+
 export function connect({ userId: uid, role, name, stadiumId: sid, onUsers, onStatus }) {
   if (!hasLocationConsent()) {
     onStatus?.(BROADCAST_STATUS.NO_CONSENT);
@@ -86,8 +96,8 @@ export function connect({ userId: uid, role, name, stadiumId: sid, onUsers, onSt
   userRole = role;
   userName = name;
   stadiumId = sid;
-  onUsersUpdate = onUsers;
-  onConnectionChange = onStatus;
+  if (onUsers) userSubscribers.add(onUsers);
+  if (onStatus) statusSubscribers.add(onStatus);
   isManuallyDisconnected = false;
 
   openSocket();
@@ -96,7 +106,7 @@ export function connect({ userId: uid, role, name, stadiumId: sid, onUsers, onSt
 function openSocket() {
   if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) return;
 
-  onConnectionChange?.(BROADCAST_STATUS.CONNECTING);
+  statusSubscribers.forEach(cb => cb(BROADCAST_STATUS.CONNECTING));
 
   try {
     ws = new WebSocket(WS_URL);
@@ -108,7 +118,7 @@ function openSocket() {
 
   ws.onopen = () => {
     reconnectDelay = 1000; // reset backoff on success
-    onConnectionChange?.(BROADCAST_STATUS.CONNECTED);
+    statusSubscribers.forEach(cb => cb(BROADCAST_STATUS.CONNECTED));
 
     // Register with server
     send({ type: "join", userId, role: userRole, name: userName, stadiumId });
@@ -117,10 +127,10 @@ function openSocket() {
   ws.onmessage = (event) => {
     try {
       const msg = JSON.parse(event.data);
-      if (msg.type === "users_update" && onUsersUpdate) {
+      if (msg.type === "users_update") {
         // Convert array to Map<userId, data>
         const usersMap = new Map(msg.users.map((u) => [u.userId, u]));
-        onUsersUpdate(usersMap);
+        userSubscribers.forEach(cb => cb(usersMap));
       }
     } catch (e) {
       console.warn("[LocationBroadcast] Failed to parse message:", e);
@@ -132,7 +142,7 @@ function openSocket() {
   };
 
   ws.onclose = () => {
-    onConnectionChange?.(BROADCAST_STATUS.DISCONNECTED);
+    statusSubscribers.forEach(cb => cb(BROADCAST_STATUS.DISCONNECTED));
     if (!isManuallyDisconnected) {
       scheduleReconnect();
     }
@@ -196,7 +206,7 @@ export function disconnect() {
     ws.close();
     ws = null;
   }
-  onConnectionChange?.(BROADCAST_STATUS.DISCONNECTED);
+  statusSubscribers.forEach(cb => cb(BROADCAST_STATUS.DISCONNECTED));
 }
 
 export function getBroadcastStatus() {

@@ -17,13 +17,15 @@ const MAP_COORDS = {
   medical_bay: { x: 25, y: 62 }
 };
 
-export default function Wayfinding({
-  language,
-  setLanguage,
-  congestedZones = [],
-  onSimulateCongestion,
-  selectedStadium
-}) {
+export default function Wayfinding(props) {
+  const {
+    currentUser,
+    language,
+    setLanguage,
+    congestedZones = [],
+    onSimulateCongestion,
+    selectedStadium
+  } = props || {};
   const dir = getDir(language);
   const [startNode, setStartNode] = useState("section_102");
   const [endNode, setEndNode] = useState("gate_4");
@@ -271,6 +273,7 @@ export default function Wayfinding({
           {mapMode === "indoor" ? (
             <div className="absolute inset-0 z-0 bg-surface-container-lowest">
               <Map 
+                currentUser={currentUser}
                 isIndoor={true}
                 selectedStadium={selectedStadium}
                 startNode={startNode}
@@ -316,6 +319,7 @@ export default function Wayfinding({
           ) : (
             <div className="absolute inset-0 z-0 bg-surface-container-lowest">
               <Map 
+                currentUser={currentUser}
                 selectedStadium={selectedStadium} 
                 darkMode={true} 
                 startNode={startNode}

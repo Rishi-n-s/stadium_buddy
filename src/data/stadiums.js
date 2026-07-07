@@ -1,4 +1,764 @@
 export const STADIUMS = [
+{
+  "s.no": "c-1",
+  "confederation": "BCCI",
+  "stadium": "Vivekananda Yuba Bharati Krirangan (VYBK)",
+  "city": "Kolkata",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-2",
+  "confederation": "BCCI",
+  "stadium": "Eden Gardens",
+  "city": "Kolkata",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-3",
+  "confederation": "BCCI",
+  "stadium": "Rajiv Gandhi International Cricket Stadium, Uppal",
+  "city": "Hyderabad",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-4",
+  "confederation": "BCCI",
+  "stadium": "Kaloor International Stadium",
+  "city": "Kochi",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-5",
+  "confederation": "BCCI",
+  "stadium": "Greenfield International Stadium / The Sports Hub",
+  "city": "Thiruvananthapuram",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-6",
+  "confederation": "BCCI",
+  "stadium": "Dr DY Patil Sports Academy",
+  "city": "Mumbai",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-7",
+  "confederation": "BCCI",
+  "stadium": "EMS Corporation Stadium",
+  "city": "Kozhikode",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-8",
+  "confederation": "BCCI",
+  "stadium": "Sardar Vallabhbhai Patel Stadium",
+  "city": "Ahmedabad",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-9",
+  "confederation": "BCCI",
+  "stadium": "Shaheed Veer Narayan Singh International Cricket Stadium",
+  "city": "Raipur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-10",
+  "confederation": "BCCI",
+  "stadium": "Barabati Stadium",
+  "city": "Cuttack",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-11",
+  "confederation": "BCCI",
+  "stadium": "Vidarbha Cricket Association Stadium",
+  "city": "Nagpur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-12",
+  "confederation": "BCCI",
+  "stadium": "Feroz Shah Kotla Ground",
+  "city": "New Delhi",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-13",
+  "confederation": "BCCI",
+  "stadium": "Dr. Bhupen Hazarika Cricket Stadium (Barsapara Stadium)",
+  "city": "Guwahati",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-14",
+  "confederation": "BCCI",
+  "stadium": "Kalinga Institute of Industrial Technology Stadium",
+  "city": "Bhubaneswar",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-15",
+  "confederation": "BCCI",
+  "stadium": "JSCA International Stadium Complex",
+  "city": "Ranchi",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-16",
+  "confederation": "BCCI",
+  "stadium": "M. Chinnaswamy Stadium",
+  "city": "Bengaluru",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-17",
+  "confederation": "BCCI",
+  "stadium": "M. A.  Chidambaram Stadium (Chepauk Stadium)",
+  "city": "Chennai",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-18",
+  "confederation": "BCCI",
+  "stadium": "Maharashtra Cricket Association Stadium",
+  "city": "Pune",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-19",
+  "confederation": "BCCI",
+  "stadium": "CB Patel International Cricket Stadium",
+  "city": "Surat",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-20",
+  "confederation": "BCCI",
+  "stadium": "Birsa Munda Athletics Stadium",
+  "city": "Ranchi",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-21",
+  "confederation": "BCCI",
+  "stadium": "JRD Tata Sports Complex Stadium",
+  "city": "Jamshedpur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-22",
+  "confederation": "BCCI",
+  "stadium": "Wankhede Stadium",
+  "city": "Mumbai",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-23",
+  "confederation": "BCCI",
+  "stadium": "Green Park Stadium",
+  "city": "Kanpur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-24",
+  "confederation": "BCCI",
+  "stadium": "Saurashtra Cricket Association Stadium (Khandheri Cricket Stadium)",
+  "city": "Rajkot",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-25",
+  "confederation": "BCCI",
+  "stadium": "GMC Balayogi Athletic Stadium",
+  "city": "Hyderabad",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-26",
+  "confederation": "BCCI",
+  "stadium": "Kanchenjunga Stadium",
+  "city": "Siliguri",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-27",
+  "confederation": "BCCI",
+  "stadium": "Khuman Lampak Main Stadium",
+  "city": "Imphal",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-28",
+  "confederation": "BCCI",
+  "stadium": "Maharaja Bir Bikram College Stadium",
+  "city": "Agartala",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-29",
+  "confederation": "BCCI",
+  "stadium": "Barkatullah Khan Stadium",
+  "city": "Jodhpur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-30",
+  "confederation": "BCCI",
+  "stadium": "Dadaji Kondadev Stadium (SR Bhosle Krida Sankul Stadium)",
+  "city": "Thane",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-31",
+  "confederation": "BCCI",
+  "stadium": "Holkar Cricket Stadium",
+  "city": "Indore",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-32",
+  "confederation": "BCCI",
+  "stadium": "Rajnandgaon International Hockey Stadium",
+  "city": "Rajnandgaon",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-33",
+  "confederation": "BCCI",
+  "stadium": "War Heroes Stadium",
+  "city": "Sangrur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-34",
+  "confederation": "BCCI",
+  "stadium": "Bhaichung Bhutia Football Stadium",
+  "city": "Namchi",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-35",
+  "confederation": "BCCI",
+  "stadium": "Lal Bahadur Shastri Corporation Stadium",
+  "city": "Kollam",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-36",
+  "confederation": "BCCI",
+  "stadium": "Bakshi Stadium",
+  "city": "Srinagar",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-37",
+  "confederation": "BCCI",
+  "stadium": "Dr. Y. S. Rajasekhara Reddy ACA–VDCA Stadium",
+  "city": "Vishakhapatnam",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-38",
+  "confederation": "BCCI",
+  "stadium": "IS Bindra Stadium",
+  "city": "Mohali",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-39",
+  "confederation": "BCCI",
+  "stadium": "HPCA Stadium",
+  "city": "Dharmashala",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-40",
+  "confederation": "BCCI",
+  "stadium": "Lal Bahadur Shastri Stadium",
+  "city": "Hyderabad",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-41",
+  "confederation": "BCCI",
+  "stadium": "Moin-Ul-Haq Stadium",
+  "city": "Patna",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-42",
+  "confederation": "BCCI",
+  "stadium": "Mahavir Stadium",
+  "city": "Hisar",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-43",
+  "confederation": "BCCI",
+  "stadium": "KD Singh Babu Stadium",
+  "city": "Lucknow",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-44",
+  "confederation": "BCCI",
+  "stadium": "Chandrasekharan Nair Stadium",
+  "city": "Thiruvananthapuram",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-45",
+  "confederation": "BCCI",
+  "stadium": "Sree Kanteerava Stadium",
+  "city": "Bengaluru",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-46",
+  "confederation": "BCCI",
+  "stadium": "Sawai Mansingh Stadium",
+  "city": "Jaipur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-47",
+  "confederation": "BCCI",
+  "stadium": "Satindra Mohan Dev Stadium",
+  "city": "Silchar",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-48",
+  "confederation": "BCCI",
+  "stadium": "The Arena by TransStadia",
+  "city": "Ahmedabad",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-49",
+  "confederation": "BCCI",
+  "stadium": "Major Dhyan Chand National Stadium",
+  "city": "New Delhi",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-50",
+  "confederation": "BCCI",
+  "stadium": "Dr. Ambedkar Stadium New",
+  "city": "Delhi",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-51",
+  "confederation": "BCCI",
+  "stadium": "Tatya Tope Nagar Stadium",
+  "city": "Bhopal",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-52",
+  "confederation": "BCCI",
+  "stadium": "Dr. Akhilesh Das Gupta Stadium",
+  "city": "Lucknow",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-53",
+  "confederation": "BCCI",
+  "stadium": "Veer Surendra Sai Stadium",
+  "city": "Sambalpur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-54",
+  "confederation": "BCCI",
+  "stadium": "Patliputra Sports Complex",
+  "city": "Patna",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-55",
+  "confederation": "BCCI",
+  "stadium": "Fatorda Stadium",
+  "city": "Margao",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-56",
+  "confederation": "BCCI",
+  "stadium": "Captain Roop Singh Stadium",
+  "city": "Gwalior",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-57",
+  "confederation": "BCCI",
+  "stadium": "Moti Bagh Stadium",
+  "city": "Vadodara",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-58",
+  "confederation": "BCCI",
+  "stadium": "Biju Patnaik Hockey Stadium",
+  "city": "Rourkela",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-59",
+  "confederation": "BCCI",
+  "stadium": "Madhavrao Scindia Cricket Ground",
+  "city": "Rajkot",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-60",
+  "confederation": "BCCI",
+  "stadium": "Ravi Shankar Shukla Stadium",
+  "city": "Jabalpur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-61",
+  "confederation": "BCCI",
+  "stadium": "YS Raja Reddy Cricket Stadium",
+  "city": "Kadapa",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-62",
+  "confederation": "BCCI",
+  "stadium": "Netaji Subhash Chandra Bose Indoor Stadium",
+  "city": "Kolkata",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-63",
+  "confederation": "BCCI",
+  "stadium": "Tau Devi Lal Stadium",
+  "city": "Gurugram",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-64",
+  "confederation": "BCCI",
+  "stadium": "Sher-i-Kashmir Stadium",
+  "city": "Srinagar",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-65",
+  "confederation": "BCCI",
+  "stadium": "Bhausaheb Bandodkar Ground / Campal Grounds",
+  "city": "Panaji",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-66",
+  "confederation": "BCCI",
+  "stadium": "Aishbagh Stadium",
+  "city": "Bhopal",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-67",
+  "confederation": "BCCI",
+  "stadium": "Sovima Cricket Stadium",
+  "city": "Dimapur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-68",
+  "confederation": "BCCI",
+  "stadium": "MGR Race Course Stadium",
+  "city": "Madurai",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-69",
+  "confederation": "BCCI",
+  "stadium": "Chaudhary Bansi Lal Cricket Stadium",
+  "city": "Rohtak",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-70",
+  "confederation": "BCCI",
+  "stadium": "Dhruve Pandove Stadium",
+  "city": "Patiala",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-71",
+  "confederation": "BCCI",
+  "stadium": "Dr. S. P. Mukherjee Swimming Stadium",
+  "city": " New Delhi",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-72",
+  "confederation": "BCCI",
+  "stadium": "Mayor Radhakrishnan Stadium",
+  "city": "Chennai",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-73",
+  "confederation": "BCCI",
+  "stadium": "Shaheed Bhagat Singh Stadium or Nehru Park",
+  "city": "Ferozpur",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-74",
+  "confederation": "BCCI",
+  "stadium": "Punjab Cricket Association Stadium",
+  "city": "Mohali",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-75",
+  "confederation": "BCCI",
+  "stadium": "Subrata Roy Sahara Stadium",
+  "city": "Pune",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
+{
+  "s.no": "c-76",
+  "confederation": "BCCI",
+  "stadium": "Brabourne Stadium",
+  "city": "Mumbai",
+  "hometeams": "Cricket Team",
+  "capacity": 40000,
+  "country": "India",
+  "ioc": "IND"
+},
   {
     "s.no": "1",
     "confederation": "UEFA",
