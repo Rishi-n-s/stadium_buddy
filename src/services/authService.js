@@ -50,6 +50,11 @@ export const registerUser = async (name, email, password, role = "fan", avatar =
     });
 
     if (error) return { success: false, message: error.message };
+
+    // Supabase returns an empty identities array if the user already exists (to prevent enumeration)
+    if (data?.user?.identities && data.user.identities.length === 0) {
+      return { success: false, message: "This email is already registered. Please log in instead." };
+    }
     
     // Supabase will automatically send the confirmation email here if enabled in dashboard
     return { 
