@@ -5,7 +5,8 @@ import { getAdvisories } from "../services/crowdEngine";
 export default function OrganizerDashboard({
   zones,
   onExecuteAdvisoryAction,
-  onSimulateSpill
+  onSimulateSpill,
+  selectedStadium
 }) {
   const [copilotInput, setCopilotInput] = useState("");
   const [copilotMessages, setCopilotMessages] = useState([
@@ -19,16 +20,27 @@ export default function OrganizerDashboard({
       citations: ["Record #123", "Log #A-42"]
     }
   ]);
-  const [totalAttendees, setTotalAttendees] = useState(74203);
+  
+  const baseCapacity = selectedStadium ? selectedStadium.capacity : 80000;
+  const [totalAttendees, setTotalAttendees] = useState(() => 
+    selectedStadium ? Math.round(selectedStadium.capacity * 0.925) : 74203
+  );
   const [showRagInfo, setShowRagInfo] = useState(false);
 
   // Dynamic attendee count simulator
   useEffect(() => {
     const interval = setInterval(() => {
-      setTotalAttendees(a => a + Math.floor(Math.random() * 9 - 4));
+      setTotalAttendees(a => {
+        const delta = Math.floor(Math.random() * 9 - 4);
+        const next = a + delta;
+        // Keep within 85% to 99% of base capacity
+        if (next > baseCapacity * 0.99) return a - 2;
+        if (next < baseCapacity * 0.85) return a + 2;
+        return next;
+      });
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [baseCapacity]);
 
   const activeAdvisories = getAdvisories(zones);
 
@@ -52,10 +64,10 @@ export default function OrganizerDashboard({
   };
 
   const handleGenerateReport = () => {
-    alert("Post-Event Shift Handover Summary exported! (Generated via StadiumIQ AI Reporter). Check download folder.");
+    alert(`Post-Event Shift Handover Summary for ${selectedStadium ? selectedStadium.stadium : "StadiumIQ Arena"} exported! (Generated via StadiumIQ AI Reporter). Check download folder.`);
   };
 
-  const capacityPct = ((totalAttendees / 80000) * 100).toFixed(0);
+  const capacityPct = ((totalAttendees / baseCapacity) * 100).toFixed(0);
 
   return (
     <div className="w-full max-w-[1440px] mx-auto p-4 md:p-8">
@@ -70,8 +82,12 @@ export default function OrganizerDashboard({
             />
           </div>
           <div>
-            <h1 className="text-xl font-extrabold text-primary-light">StadiumIQ</h1>
-            <p className="text-[10px] text-on-surface-variant font-mono uppercase">Control Room Operator</p>
+            <h1 className="text-xl font-extrabold text-primary-light">
+              StadiumIQ — {selectedStadium ? selectedStadium.ioc : "OPS"}
+            </h1>
+            <p className="text-[10px] text-on-surface-variant font-mono uppercase">
+              {selectedStadium ? selectedStadium.stadium : "Control Room Operator"}
+            </p>
           </div>
         </div>
 
@@ -84,8 +100,11 @@ export default function OrganizerDashboard({
       {/* Operations Dashboard Overview Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
         <div>
-          <h2 className="text-xl font-bold text-on-surface mb-2">Live Operations Overview</h2>
+          <h2 className="text-xl font-bold text-on-surface mb-2">
+            {selectedStadium ? `${selectedStadium.stadium} Command` : "Live Operations Overview"}
+          </h2>
           <div className="flex gap-4">
+
             <span className="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-lg border border-outline-variant">
               <span className="w-2.5 h-2.5 rounded-full bg-secondary"></span>
               <span className="font-mono text-xs font-bold text-on-surface">{totalAttendees.toLocaleString()} ATTENDEES</span>

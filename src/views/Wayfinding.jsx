@@ -19,7 +19,8 @@ export default function Wayfinding({
   language,
   setLanguage,
   congestedZones = [],
-  onSimulateCongestion
+  onSimulateCongestion,
+  selectedStadium
 }) {
   const dir = getDir(language);
   const [startNode, setStartNode] = useState("section_102");
@@ -137,7 +138,9 @@ export default function Wayfinding({
           </div>
           <div>
             <h1 className="text-xl font-extrabold text-primary-light">StadiumIQ</h1>
-            <p className="text-[10px] text-on-surface-variant font-mono uppercase">AI Wayfinding</p>
+            <p className="text-[10px] text-on-surface-variant font-mono uppercase">
+              {selectedStadium ? selectedStadium.stadium : "AI Wayfinding"}
+            </p>
           </div>
         </div>
 

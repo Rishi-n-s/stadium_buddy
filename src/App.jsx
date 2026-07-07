@@ -3,7 +3,10 @@ import FanHome from "./views/FanHome";
 import Wayfinding from "./views/Wayfinding";
 import OrganizerDashboard from "./views/OrganizerDashboard";
 import StaffAlerts from "./views/StaffAlerts";
+import IntroAnimation from "./views/IntroAnimation";
+import LandingPage from "./views/LandingPage";
 import { INITIAL_ZONES, updateOccupancy } from "./services/crowdEngine";
+
 
 const INITIAL_ALERTS = [
   {
@@ -40,10 +43,35 @@ export default function App() {
   const [language, setLanguage] = useState("en");
   const [darkMode, setDarkMode] = useState(true);
   
+  // Navigation flow state (Intro -> Landing -> Dashboard)
+  const [isIntroActive, setIsIntroActive] = useState(true);
+  const [selectedStadium, setSelectedStadium] = useState(null);
+
   // Simulated operational states
   const [zones, setZones] = useState(INITIAL_ZONES);
   const [alerts, setAlerts] = useState(INITIAL_ALERTS);
   const [congestedZones, setCongestedZones] = useState(["gate_4"]); // Start with gate_4 blocked due to the starting critical spill alert
+
+  const handleDeployStadium = (stadium) => {
+    setSelectedStadium(stadium);
+    // Dynamically scale zones based on the selected stadium's capacity
+    const totalBaseCap = 65500; // sum of initial capacities (15000+12500+8000+10000+20000)
+    const ratio = stadium.capacity / totalBaseCap;
+    
+    setZones(prev => {
+      const updated = {};
+      Object.keys(INITIAL_ZONES).forEach(key => {
+        const zone = INITIAL_ZONES[key];
+        updated[key] = {
+          ...zone,
+          capacity: Math.round(zone.capacity * ratio),
+          current: Math.round(zone.current * ratio)
+        };
+      });
+      return updated;
+    });
+  };
+
 
   // Dark Mode class toggler
   useEffect(() => {
@@ -149,21 +177,39 @@ export default function App() {
     alert("Simulation: All active incident logs cleared and network status reset.");
   };
 
+  if (isIntroActive) {
+    return <IntroAnimation onFinish={() => setIsIntroActive(false)} />;
+  }
+
+  if (!selectedStadium) {
+    return <LandingPage onDeploy={handleDeployStadium} />;
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-surface text-on-surface pb-28">
       {/* PERSISTENT DEVELOPER ROLE & SIMULATION CONTROL PANEL */}
       <div className="bg-surface-container-highest border-b border-primary/20 p-3 z-[100] sticky top-0 shadow-md">
         <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
           
-          <div className="text-xs font-mono text-primary font-bold uppercase tracking-wider">
-            StadiumIQ Simulator Control Panel
+          <div className="flex items-center gap-2">
+            <div className="text-xs font-mono text-primary font-bold uppercase tracking-wider">
+              StadiumIQ Simulator Panel
+            </div>
+            <span className="text-xs text-on-surface-variant font-mono">•</span>
+            <div className="text-xs text-secondary font-mono font-bold truncate max-w-[200px] md:max-w-sm">
+              ACTIVE: {selectedStadium.stadium.toUpperCase()}
+            </div>
           </div>
  
           {/* Simulator options */}
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-[10px] font-mono text-on-surface-variant font-bold uppercase tracking-wider">
-              Simulation controls:
-            </span>
+            <button
+              onClick={() => setSelectedStadium(null)}
+              className="bg-surface-container-low hover:bg-surface-container text-primary-light border border-primary/30 text-[10px] font-mono font-bold px-2.5 py-1.5 rounded transition-all"
+            >
+              🏟️ SWITCH STADIUM
+            </button>
+            <span className="text-[10px] font-mono text-on-surface-variant/50">|</span>
             <button
               onClick={triggerGate4Spill}
               className="bg-error-container hover:brightness-110 text-on-error-container border border-error/20 text-[10px] font-mono font-bold px-2.5 py-1.5 rounded transition-all"
@@ -196,6 +242,7 @@ export default function App() {
             setDarkMode={setDarkMode}
             zones={zones}
             onNavigateToWayfinding={() => setCurrentView("wayfinding")}
+            selectedStadium={selectedStadium}
           />
         )}
         {currentView === "wayfinding" && (
@@ -204,6 +251,7 @@ export default function App() {
             setLanguage={setLanguage}
             congestedZones={congestedZones}
             onSimulateCongestion={triggerGate4Spill}
+            selectedStadium={selectedStadium}
           />
         )}
         {currentView === "organizer" && (
@@ -211,6 +259,7 @@ export default function App() {
             zones={zones}
             onExecuteAdvisoryAction={handleExecuteAdvisoryAction}
             onSimulateSpill={triggerGate4Spill}
+            selectedStadium={selectedStadium}
           />
         )}
         {currentView === "staff" && (
@@ -218,6 +267,7 @@ export default function App() {
             alerts={alerts}
             onResolveAlert={handleResolveAlert}
             onDispatchAlert={handleDispatchAlert}
+            selectedStadium={selectedStadium}
           />
         )}
       </main>

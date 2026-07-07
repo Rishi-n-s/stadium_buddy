@@ -7,8 +7,10 @@ export default function FanHome({
   darkMode,
   setDarkMode,
   onNavigateToWayfinding,
-  zones
+  zones,
+  selectedStadium
 }) {
+
   const dir = getDir(language);
   const [homeScore, setHomeScore] = useState(2);
   const [awayScore, setAwayScore] = useState(1);
@@ -112,27 +114,34 @@ export default function FanHome({
             <span className="font-mono text-xs text-primary-light uppercase tracking-wider">CHAMPIONS LEAGUE</span>
           </div>
           <div className="flex justify-between items-center px-4">
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 text-center max-w-[120px]">
               <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center border border-white/10 text-on-surface">
                 <span className="material-symbols-outlined text-3xl">shield</span>
               </div>
-              <span className="font-mono text-xs font-bold text-on-surface">TITANS FC</span>
+              <span className="font-mono text-xs font-bold text-on-surface truncate w-full">
+                {selectedStadium && selectedStadium.hometeams ? selectedStadium.hometeams.split(',')[0].trim().toUpperCase() : "TITANS FC"}
+              </span>
             </div>
             
             <div className="flex flex-col items-center">
               <div className="text-4xl font-extrabold text-on-surface tracking-wider tabular-nums">
                 {homeScore} - {awayScore}
               </div>
-              <span className="text-[10px] font-mono text-outline uppercase mt-1">STADIUMIQ ARENA</span>
+              <span className="text-[10px] font-mono text-outline uppercase mt-1 text-center max-w-[140px] truncate">
+                {selectedStadium ? selectedStadium.stadium.toUpperCase() : "STADIUMIQ ARENA"}
+              </span>
             </div>
 
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 text-center max-w-[120px]">
               <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center border border-white/10 text-on-surface">
                 <span className="material-symbols-outlined text-3xl">rocket_launch</span>
               </div>
-              <span className="font-mono text-xs font-bold text-on-surface">APEX UTD</span>
+              <span className="font-mono text-xs font-bold text-on-surface truncate w-full">
+                {selectedStadium && selectedStadium.hometeams && selectedStadium.hometeams.split(',')[1] ? selectedStadium.hometeams.split(',')[1].trim().toUpperCase() : "APEX UTD"}
+              </span>
             </div>
           </div>
+
         </div>
       </div>
 
