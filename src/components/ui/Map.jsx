@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { startTracking, stopTracking, GPS_STATUS } from "../../services/locationService";
+import { connect, disconnect, sendLocation, BROADCAST_STATUS, hasLocationConsent } from "../../services/locationBroadcast";
 
 // Popular stadiums geocoding dictionary
 const POPULAR_STADIUMS_COORDS = {
@@ -58,6 +60,64 @@ function formatETA(meters, speedMetersPerSecond) {
   return `${minutes} min`;
 }
 
+// Fetch real route from Mapbox Directions API
+async function fetchMapboxRoute(fromLng, fromLat, toLng, toLat) {
+  const token = import.meta.env.VITE_MAPBOX_TOKEN;
+  if (!token) {
+    console.warn("[Map] VITE_MAPBOX_TOKEN not set. Falling back to OSRM.");
+    return fetchOSRMRoute(fromLng, fromLat, toLng, toLat);
+  }
+  try {
+    const url = `https://api.mapbox.com/directions/v5/mapbox/walking/${fromLng},${fromLat};${toLng},${toLat}?geometries=geojson&steps=true&overview=full&access_token=${token}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    if (data.routes && data.routes[0]) {
+      const route = data.routes[0];
+      return {
+        coordinates: route.geometry.coordinates,
+        steps: route.legs[0].steps.map(s => s.maneuver.instruction),
+        distanceM: route.distance,
+        durationS: route.duration,
+      };
+    }
+  } catch (e) {
+    console.error("[Map] Mapbox Directions error:", e);
+  }
+  return fetchOSRMRoute(fromLng, fromLat, toLng, toLat);
+}
+
+// OSRM fallback routing
+async function fetchOSRMRoute(fromLng, fromLat, toLng, toLat) {
+  try {
+    const url = `https://router.project-osrm.org/route/v1/driving/${fromLng},${fromLat};${toLng},${toLat}?overview=full&geometries=geojson&steps=true`;
+    const res = await fetch(url);
+    const data = await res.json();
+    if (data.routes && data.routes[0]) {
+      const route = data.routes[0];
+      return {
+        coordinates: route.geometry.coordinates,
+        steps: route.legs[0]?.steps?.map(s => s.maneuver.instruction) || ["Head towards destination"],
+        distanceM: route.distance,
+        durationS: route.duration,
+      };
+    }
+  } catch (e) {
+    console.error("[Map] OSRM error:", e);
+  }
+  return null;
+}
+
+// Smooth interpolation between two [lon, lat] positions
+function interpolateCoords(from, to, t) {
+  return [
+    from[0] + (to[0] - from[0]) * t,
+    from[1] + (to[1] - from[1]) * t,
+  ];
+}
+
+// Role colors for broadcast user markers
+const ROLE_COLORS = { fan: "#1a73e8", staff: "#f9ab00", organizer: "#ea4335" };
+
 export default function Map({
   selectedStadium,
   darkMode = true,
@@ -67,7 +127,8 @@ export default function Map({
   path = null,
   congestedZones = [],
   onNodeSelect = null,
-  directions = []
+  directions = [],
+  currentUser = null,
 }) {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
@@ -79,15 +140,28 @@ export default function Map({
 
   // GPS navigation state
   const [gpsMode, setGpsMode] = useState("simulated"); // "simulated" or "real"
+  const [gpsStatus, setGpsStatus] = useState(null);
   const [userCoords, setUserCoords] = useState(null);
   const [realTimeDistance, setRealTimeDistance] = useState(null);
+  const [mapboxDuration, setMapboxDuration] = useState(null); // real ETA from Mapbox
   
   const [directionsList, setDirectionsList] = useState([]);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
 
+  // Broadcast state
+  const [broadcastStatus, setBroadcastStatus] = useState(BROADCAST_STATUS.DISCONNECTED);
+  const [liveUsers, setLiveUsers] = useState(new Map());
+
   const userMarkerRef = useRef(null);
   const userCoordsRef = useRef(null);
   const indoorMarkersRef = useRef([]);
+  const liveUserMarkersRef = useRef(new Map()); // userId -> maplibre Marker
+  const routeCoordsRef = useRef([]);            // full route coordinate array
+  const currentRouteIndexRef = useRef(0);       // current position in route
+  const rerouteTimerRef = useRef(null);         // debounce re-route calls
+  const animFrameRef = useRef(null);            // requestAnimationFrame handle
+  const prevPosRef = useRef(null);             // for smooth interpolation
+  const targetPosRef = useRef(null);           // target position to interpolate towards
   
   const watchIdRef = useRef(null);
   const simIntervalRef = useRef(null);
@@ -95,6 +169,7 @@ export default function Map({
   const stadiumName = selectedStadium?.stadium || "Wembley Stadium";
   const city = selectedStadium?.city || "London";
   const country = selectedStadium?.country || "England";
+  const stadiumId = selectedStadium?.stadium?.toLowerCase().replace(/\s+/g, "_") || "default_stadium";
 
   // 1. Resolve coordinates for the selected stadium
   useEffect(() => {
@@ -322,6 +397,18 @@ export default function Map({
         .addTo(map);
 
       userMarkerRef.current = userMarker;
+      // Add live users source (empty initially, filled by broadcast)
+      map.addSource("live-users", {
+        type: "geojson",
+        data: { type: "FeatureCollection", features: [] }
+      });
+
+      // User GPS accuracy circle source
+      map.addSource("user-accuracy", {
+        type: "geojson",
+        data: { type: "FeatureCollection", features: [] }
+      });
+
       setMapLoaded(true);
     });
 
@@ -333,122 +420,214 @@ export default function Map({
     };
   }, [coords, mapType, isIndoor]);
 
-  // 3. Navigation loop (handles Simulated / Real GPS coordinate updates)
+  // ─── Smooth marker interpolation via requestAnimationFrame ───────────────
+  const animateMarkerTo = useCallback((targetPos) => {
+    if (!userMarkerRef.current) return;
+    cancelAnimationFrame(animFrameRef.current);
+
+    const startPos = prevPosRef.current || targetPos;
+    prevPosRef.current = startPos;
+    targetPosRef.current = targetPos;
+
+    const startTime = performance.now();
+    const DURATION = 800; // ms to interpolate across
+
+    const frame = (now) => {
+      const elapsed = now - startTime;
+      const t = Math.min(elapsed / DURATION, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - t, 3);
+      const pos = interpolateCoords(startPos, targetPos, eased);
+      userMarkerRef.current?.setLngLat(pos);
+      if (t < 1) {
+        animFrameRef.current = requestAnimationFrame(frame);
+      } else {
+        prevPosRef.current = targetPos;
+      }
+    };
+    animFrameRef.current = requestAnimationFrame(frame);
+  }, []);
+
+  // ─── Re-routing: detect deviation and fetch new route ────────────────────
+  const checkAndReroute = useCallback(async (userPos) => {
+    if (isIndoor || !coords || routeCoordsRef.current.length === 0) return;
+
+    // Find closest point on current route
+    let minDist = Infinity;
+    routeCoordsRef.current.forEach((pt) => {
+      const d = getHaversineDistance(userPos[0], userPos[1], pt[0], pt[1]);
+      if (d < minDist) minDist = d;
+    });
+
+    // If deviated more than 25m, re-route
+    if (minDist > 25) {
+      clearTimeout(rerouteTimerRef.current);
+      rerouteTimerRef.current = setTimeout(async () => {
+        console.log("[Map] Deviation detected. Re-routing...");
+        const route = await fetchMapboxRoute(userPos[0], userPos[1], coords[0], coords[1]);
+        if (!route || !mapRef.current) return;
+
+        routeCoordsRef.current = route.coordinates;
+        setDirectionsList(route.steps);
+        setActiveStepIndex(0);
+        if (route.durationS) setMapboxDuration(route.durationS);
+
+        const src = mapRef.current.getSource("route");
+        if (src) {
+          src.setData({ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: route.coordinates } });
+        }
+      }, 2000); // debounce 2s to avoid thrashing
+    }
+  }, [coords, isIndoor]);
+
+  // ─── Update live broadcast user markers ──────────────────────────────────
+  useEffect(() => {
+    if (!mapRef.current || !mapLoaded) return;
+    const map = mapRef.current;
+
+    liveUsers.forEach((user, uid) => {
+      if (!user.lat || !user.lng) return;
+      const pos = [user.lng, user.lat];
+
+      if (liveUserMarkersRef.current.has(uid)) {
+        // Animate existing marker to new position
+        const existing = liveUserMarkersRef.current.get(uid);
+        existing.marker.setLngLat(pos);
+        // Update tooltip
+        existing.popup?.setHTML(buildUserPopup(user));
+      } else {
+        // Create new marker for this user
+        const el = document.createElement("div");
+        const color = ROLE_COLORS[user.role] || "#888";
+        el.innerHTML = `
+          <div class="flex items-center justify-center relative">
+            <div class="absolute w-7 h-7 rounded-full opacity-40 animate-ping" style="background:${color}"></div>
+            <div class="w-4 h-4 rounded-full border-2 border-white shadow-lg" style="background:${color}"></div>
+          </div>
+        `;
+        const popup = new maplibregl.Popup({ offset: 15, closeButton: false })
+          .setHTML(buildUserPopup(user));
+        const marker = new maplibregl.Marker({ element: el })
+          .setLngLat(pos)
+          .setPopup(popup)
+          .addTo(map);
+        liveUserMarkersRef.current.set(uid, { marker, popup });
+      }
+    });
+
+    // Remove markers for users no longer in the room
+    liveUserMarkersRef.current.forEach((val, uid) => {
+      if (!liveUsers.has(uid)) {
+        val.marker.remove();
+        liveUserMarkersRef.current.delete(uid);
+      }
+    });
+  }, [liveUsers, mapLoaded]);
+
+  function buildUserPopup(user) {
+    return `<div class="p-1.5 font-sans text-xs text-gray-800">
+      <p class="font-bold">${user.name || "Unknown"}</p>
+      <p class="text-[10px] text-gray-500 uppercase">${user.role || "fan"}</p>
+      ${user.speed ? `<p class="text-[10px] text-gray-400 mt-0.5">${(user.speed * 3.6).toFixed(1)} km/h</p>` : ""}
+    </div>`;
+  }
+
+  // ─── 3. Navigation loop (Real GPS via locationService / Simulated) ────────
   useEffect(() => {
     if (!mapRef.current || !mapLoaded || !coords) return;
     const map = mapRef.current;
 
     // Reset previous loops/watches
-    if (simIntervalRef.current) {
-      clearInterval(simIntervalRef.current);
-      simIntervalRef.current = null;
-    }
-    if (watchIdRef.current !== null) {
-      navigator.geolocation.clearWatch(watchIdRef.current);
-      watchIdRef.current = null;
-    }
+    if (simIntervalRef.current) { clearInterval(simIntervalRef.current); simIntervalRef.current = null; }
+    stopTracking();
+    cancelAnimationFrame(animFrameRef.current);
+    prevPosRef.current = null;
+    routeCoordsRef.current = [];
 
     if (gpsMode === "real") {
-      // --- REAL GPS WATCHING MODE ---
-      if (navigator.geolocation) {
-        watchIdRef.current = navigator.geolocation.watchPosition(
-          (position) => {
-            const { longitude, latitude } = position.coords;
-            const newPos = [longitude, latitude];
-            setUserCoords(newPos);
-            userCoordsRef.current = newPos;
+      // ── REAL GPS via locationService ──
+      startTracking(
+        async (pos) => {
+          const newPos = [pos.lng, pos.lat];
+          setGpsStatus(GPS_STATUS.ACTIVE);
+          setUserCoords(newPos);
+          userCoordsRef.current = newPos;
 
-            if (userMarkerRef.current) {
-              userMarkerRef.current.setLngLat(newPos);
-            }
+          // Smooth animation instead of jumping
+          animateMarkerTo(newPos);
 
-            // Update path line dynamically
-            const sourceName = isIndoor ? "indoor-route" : "route";
-            const routeSource = map.getSource(sourceName);
-            
-            let destPos = coords;
-            if (isIndoor && endNode) {
-              const node = INDOOR_NODE_OFFSETS[endNode];
-              if (node) {
-                destPos = [coords[0] + node.lon, coords[1] + node.lat];
-              }
-            }
+          // Send to broadcast server
+          sendLocation(pos);
 
-            if (routeSource) {
-              routeSource.setData({
-                type: "Feature",
-                properties: {},
-                geometry: {
-                  type: "LineString",
-                  coordinates: [newPos, destPos]
-                }
-              });
-            }
-          },
-          (err) => {
-            console.error("watchPosition error:", err);
-            alert("Unable to fetch GPS. Reverting to simulation.");
+          // Update route line (remaining path)
+          const sourceName = isIndoor ? "indoor-route" : "route";
+          const src = map.getSource(sourceName);
+          let destPos = coords;
+          if (isIndoor && endNode) {
+            const node = INDOOR_NODE_OFFSETS[endNode];
+            if (node) destPos = [coords[0] + node.lon, coords[1] + node.lat];
+          }
+          if (src) {
+            src.setData({ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: [newPos, destPos] } });
+          }
+
+          // Check if we need to re-route (outdoor only)
+          if (!isIndoor) {
+            await checkAndReroute(newPos);
+          }
+        },
+        (err) => {
+          console.error("[Map] GPS Error:", err);
+          setGpsStatus(err.status);
+          // Don't show alerts — show status in UI instead
+          if (err.status === GPS_STATUS.PERMISSION_DENIED) {
             setGpsMode("simulated");
-          },
-          { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
-        );
-      } else {
-        alert("Geolocation not supported. Reverting to simulation.");
-        setGpsMode("simulated");
+          }
+        }
+      );
+
+      // Fetch initial real Mapbox route
+      if (!isIndoor) {
+        navigator.geolocation.getCurrentPosition(async (pos) => {
+          const from = [pos.coords.longitude, pos.coords.latitude];
+          const route = await fetchMapboxRoute(from[0], from[1], coords[0], coords[1]);
+          if (!route || !mapRef.current) return;
+          routeCoordsRef.current = route.coordinates;
+          setDirectionsList(route.steps);
+          setMapboxDuration(route.durationS);
+          const src = mapRef.current.getSource("route");
+          if (src) src.setData({ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: route.coordinates } });
+        }, () => {}, { enableHighAccuracy: true, timeout: 8000 });
       }
+
     } else {
-      // --- SIMULATED GPS MODE ---
+      // ── SIMULATED GPS MODE ──
+      setGpsStatus(null);
       if (isIndoor) {
         if (path && path.length > 0) {
           const pathCoordinates = path
-            .map(key => {
-              const node = INDOOR_NODE_OFFSETS[key];
-              return node ? [coords[0] + node.lon, coords[1] + node.lat] : null;
-            })
+            .map(key => { const node = INDOOR_NODE_OFFSETS[key]; return node ? [coords[0] + node.lon, coords[1] + node.lat] : null; })
             .filter(c => c !== null);
 
           if (pathCoordinates.length > 0) {
             let index = 0;
             setUserCoords(pathCoordinates[0]);
             userCoordsRef.current = pathCoordinates[0];
-            if (userMarkerRef.current) {
-              userMarkerRef.current.setLngLat(pathCoordinates[0]);
-            }
+            animateMarkerTo(pathCoordinates[0]);
 
-            // Update static path line
             const source = map.getSource("indoor-route");
-            if (source) {
-              source.setData({
-                type: "Feature",
-                properties: {},
-                geometry: {
-                  type: "LineString",
-                  coordinates: pathCoordinates
-                }
-              });
-            }
+            if (source) source.setData({ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: pathCoordinates } });
 
             const interval = setInterval(() => {
-              if (index >= pathCoordinates.length) {
-                index = 0;
-              }
+              if (index >= pathCoordinates.length) index = 0;
               const currentPos = pathCoordinates[index];
               setUserCoords(currentPos);
               userCoordsRef.current = currentPos;
-              if (userMarkerRef.current) {
-                userMarkerRef.current.setLngLat(currentPos);
-              }
-
+              animateMarkerTo(currentPos);
               const progress = index / pathCoordinates.length;
-              const step = Math.min(
-                Math.floor(progress * directions.length),
-                directions.length - 1
-              );
-              setActiveStepIndex(step >= 0 ? step : 0);
-
+              setActiveStepIndex(Math.min(Math.floor(progress * directions.length), directions.length - 1));
               index++;
             }, 1800);
-
             simIntervalRef.current = interval;
           }
         }
@@ -456,138 +635,86 @@ export default function Map({
         const userStart = [coords[0] - 0.008, coords[1] - 0.008];
         setUserCoords(userStart);
         userCoordsRef.current = userStart;
-        if (userMarkerRef.current) {
-          userMarkerRef.current.setLngLat(userStart);
-        }
+        animateMarkerTo(userStart);
 
-        const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${userStart[0]},${userStart[1]};${coords[0]},${coords[1]}?overview=full&geometries=geojson&steps=true`;
-        
-        fetch(osrmUrl)
-          .then(res => res.json())
-          .then(data => {
-            let routeCoords = [userStart, coords];
-            let steps = ["Head towards stadium", "Arrive at destination"];
+        fetchMapboxRoute(userStart[0], userStart[1], coords[0], coords[1]).then(route => {
+          let routeCoords = [userStart, coords];
+          let steps = ["Head towards stadium", "Arrive at destination"];
 
-            if (data.routes && data.routes[0]) {
-              routeCoords = data.routes[0].geometry.coordinates;
-              if (data.routes[0].legs && data.routes[0].legs[0].steps) {
-                steps = data.routes[0].legs[0].steps.map(s => s.maneuver.instruction);
-              }
-            }
+          if (route) {
+            routeCoords = route.coordinates;
+            steps = route.steps;
+            if (route.durationS) setMapboxDuration(route.durationS);
+          }
 
-            setDirectionsList(steps);
+          routeCoordsRef.current = routeCoords;
+          setDirectionsList(steps);
 
-            const source = map.getSource("route");
-            if (source) {
-              source.setData({
-                type: "Feature",
-                properties: {},
-                geometry: {
-                  type: "LineString",
-                  coordinates: routeCoords
-                }
-              });
-            }
+          const src = map.getSource("route");
+          if (src) src.setData({ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: routeCoords } });
 
-            let index = 0;
-            const interval = setInterval(() => {
-              if (index >= routeCoords.length) {
-                index = 0;
-              }
-              const currentPos = routeCoords[index];
-              setUserCoords(currentPos);
-              userCoordsRef.current = currentPos;
-              if (userMarkerRef.current) {
-                userMarkerRef.current.setLngLat(currentPos);
-              }
-
-              const progress = index / routeCoords.length;
-              const step = Math.min(
-                Math.floor(progress * steps.length),
-                steps.length - 1
-              );
-              setActiveStepIndex(step);
-
-              const src = map.getSource("route");
-              if (src) {
-                src.setData({
-                  type: "Feature",
-                  properties: {},
-                  geometry: {
-                    type: "LineString",
-                    coordinates: routeCoords.slice(index)
-                  }
-                });
-              }
-
-              index++;
-            }, 350);
-
-            simIntervalRef.current = interval;
-          })
-          .catch(err => {
-            console.error("OSRM failed, fallback straight line:", err);
-            let fraction = 0;
-            const interval = setInterval(() => {
-              fraction += 0.02;
-              if (fraction > 1.0) fraction = 0;
-              const currentPos = [
-                userStart[0] + (coords[0] - userStart[0]) * fraction,
-                userStart[1] + (coords[1] - userStart[1]) * fraction
-              ];
-              setUserCoords(currentPos);
-              userCoordsRef.current = currentPos;
-              if (userMarkerRef.current) {
-                userMarkerRef.current.setLngLat(currentPos);
-              }
-
-              const src = map.getSource("route");
-              if (src) {
-                src.setData({
-                  type: "Feature",
-                  properties: {},
-                  geometry: {
-                    type: "LineString",
-                    coordinates: [currentPos, coords]
-                  }
-                });
-              }
-            }, 500);
-
-            simIntervalRef.current = interval;
-          });
+          let index = 0;
+          const interval = setInterval(() => {
+            if (index >= routeCoords.length) index = 0;
+            const currentPos = routeCoords[index];
+            setUserCoords(currentPos);
+            userCoordsRef.current = currentPos;
+            animateMarkerTo(currentPos);
+            const progress = index / routeCoords.length;
+            setActiveStepIndex(Math.min(Math.floor(progress * steps.length), steps.length - 1));
+            const src = map.getSource("route");
+            if (src) src.setData({ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: routeCoords.slice(index) } });
+            index++;
+          }, 350);
+          simIntervalRef.current = interval;
+        }).catch(() => {
+          let fraction = 0;
+          const interval = setInterval(() => {
+            fraction += 0.02;
+            if (fraction > 1.0) fraction = 0;
+            const p = [userStart[0] + (coords[0] - userStart[0]) * fraction, userStart[1] + (coords[1] - userStart[1]) * fraction];
+            setUserCoords(p); userCoordsRef.current = p; animateMarkerTo(p);
+            const src = map.getSource("route");
+            if (src) src.setData({ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: [p, coords] } });
+          }, 500);
+          simIntervalRef.current = interval;
+        });
       }
     }
 
     return () => {
-      if (simIntervalRef.current) {
-        clearInterval(simIntervalRef.current);
-      }
-      if (watchIdRef.current !== null) {
-        navigator.geolocation.clearWatch(watchIdRef.current);
-      }
+      if (simIntervalRef.current) clearInterval(simIntervalRef.current);
+      stopTracking();
+      cancelAnimationFrame(animFrameRef.current);
+      clearTimeout(rerouteTimerRef.current);
     };
   }, [mapLoaded, gpsMode, coords, isIndoor, path, directions]);
 
-  // 4. Calculate Distance and ETA
+  // ─── 4. Distance & ETA (Mapbox real duration takes priority) ─────────────
   useEffect(() => {
     if (!coords || !userCoords) return;
-
     let destCoords = coords;
     if (isIndoor && endNode) {
       const node = INDOOR_NODE_OFFSETS[endNode];
-      if (node) {
-        destCoords = [coords[0] + node.lon, coords[1] + node.lat];
-      }
+      if (node) destCoords = [coords[0] + node.lon, coords[1] + node.lat];
     }
-
-    const dist = getHaversineDistance(
-      userCoords[0], userCoords[1],
-      destCoords[0], destCoords[1]
-    );
-
+    const dist = getHaversineDistance(userCoords[0], userCoords[1], destCoords[0], destCoords[1]);
     setRealTimeDistance(dist);
   }, [userCoords, coords, isIndoor, endNode]);
+
+  // ─── 5. WebSocket broadcast connection ───────────────────────────────────
+  useEffect(() => {
+    if (!hasLocationConsent() || !currentUser) return;
+    connect({
+      userId: currentUser.email,
+      role: currentUser.role,
+      name: currentUser.name,
+      stadiumId,
+      onUsers: setLiveUsers,
+      onStatus: setBroadcastStatus,
+    });
+    return () => disconnect();
+  }, [currentUser, stadiumId]);
 
   // 5. Indoor Markers rendering
   useEffect(() => {
@@ -694,9 +821,9 @@ export default function Map({
       {/* Map DOM target */}
       <div ref={mapContainerRef} className="w-full h-full absolute inset-0" />
       
-      {/* Google Maps Style Panel */}
+      {/* Google Maps Style Panel - desktop/tablet only */}
       {!isIndoor && (
-        <div className="absolute top-16 left-4 z-20 flex flex-wrap gap-1.5 max-w-[calc(100%-32px)]">
+        <div className="hidden md:flex absolute top-16 left-4 z-20 flex-wrap gap-1.5 max-w-[calc(100%-32px)]">
           <div className="flex bg-white border border-gray-300 rounded-md overflow-hidden shadow-md font-sans text-xs text-gray-800">
             <button
               onClick={() => {
@@ -759,14 +886,24 @@ export default function Map({
         </div>
       )}
 
-      {/* Floating Navigation HUD Card */}
+      {/* Floating Navigation HUD Card - desktop/tablet only */}
       {mapLoaded && (
-        <div className="absolute bottom-4 left-4 right-4 md:left-auto md:right-4 z-20 bg-surface-container-high/95 backdrop-blur-md border border-outline-variant/60 p-4 rounded-xl shadow-2xl w-auto md:w-[290px] text-on-surface flex flex-col gap-2.5">
+        <div className="hidden md:flex absolute bottom-4 right-4 z-20 bg-surface-container-high/95 backdrop-blur-md border border-outline-variant/60 p-4 rounded-xl shadow-2xl w-[290px] text-on-surface flex-col gap-2.5">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <span className={`w-2 h-2 rounded-full ${gpsMode === "real" ? "bg-secondary shadow-[0_0_8px_#4ae176]" : "bg-primary shadow-[0_0_8px_#b7c4ff] animate-pulse"}`} />
+              <span className={`w-2 h-2 rounded-full ${
+                gpsMode === "real" && gpsStatus === GPS_STATUS.ACTIVE
+                  ? "bg-secondary shadow-[0_0_8px_#4ae176]"
+                  : gpsMode === "real" && gpsStatus === GPS_STATUS.PERMISSION_DENIED
+                  ? "bg-error animate-pulse"
+                  : "bg-primary shadow-[0_0_8px_#b7c4ff] animate-pulse"
+              }`} />
               <span className="text-[9px] font-mono font-extrabold uppercase tracking-wider text-on-surface-variant">
-                {gpsMode === "real" ? "REAL-TIME GPS" : "SIMULATED NAVIGATION"}
+                {gpsMode === "real" && gpsStatus === GPS_STATUS.PERMISSION_DENIED
+                  ? "GPS DENIED"
+                  : gpsMode === "real"
+                  ? "REAL-TIME GPS"
+                  : "SIMULATED NAVIGATION"}
               </span>
             </div>
             <button 
@@ -776,6 +913,20 @@ export default function Map({
               {gpsMode === "real" ? "Simulate" : "Use Real GPS"}
             </button>
           </div>
+
+          {/* Broadcast status */}
+          {broadcastStatus !== BROADCAST_STATUS.DISCONNECTED && (
+            <div className={`flex items-center gap-1.5 text-[8px] font-mono uppercase ${
+              broadcastStatus === BROADCAST_STATUS.CONNECTED ? "text-secondary" : "text-outline"
+            }`}>
+              <span className={`w-1.5 h-1.5 rounded-full ${
+                broadcastStatus === BROADCAST_STATUS.CONNECTED ? "bg-secondary" : "bg-outline animate-pulse"
+              }`} />
+              {broadcastStatus === BROADCAST_STATUS.CONNECTED
+                ? `Live • ${liveUsers.size} user${liveUsers.size !== 1 ? "s" : ""} in venue`
+                : "Reconnecting..."}
+            </div>
+          )}
 
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/35 flex items-center justify-center flex-shrink-0">
@@ -801,7 +952,11 @@ export default function Map({
             <div>
               <span className="text-[8px] text-on-surface-variant font-mono uppercase block leading-none mb-1">ETA</span>
               <span className="text-sm font-bold font-mono text-secondary">
-                {realTimeDistance !== null ? formatETA(realTimeDistance, isIndoor ? 1.4 : 13.8) : "..."}
+                {mapboxDuration
+                  ? `${Math.round(mapboxDuration / 60)} min`
+                  : realTimeDistance !== null
+                  ? formatETA(realTimeDistance, isIndoor ? 1.4 : 13.8)
+                  : "..."}
               </span>
             </div>
           </div>

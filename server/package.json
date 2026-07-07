@@ -1,0 +1,13 @@
+{
+  "name": "stadiamiq-location-server",
+  "version": "1.0.0",
+  "description": "StadiumIQ real-time location broadcast server",
+  "main": "locationServer.js",
+  "scripts": {
+    "start": "node locationServer.js",
+    "dev": "node --watch locationServer.js"
+  },
+  "dependencies": {
+    "ws": "^8.21.0"
+  }
+}

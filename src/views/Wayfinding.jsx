@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { findShortestPath, generateDirections, VENUE_NODES } from "../services/navigationEngine";
 import { translate, getDir } from "../services/translationEngine";
 import Map from "../components/ui/Map";
-
-
+import LocationConsentModal from "../components/ui/LocationConsentModal";
+import { hasLocationConsent } from "../services/locationBroadcast";
 // Map relative coordinates to percentage values for SVG overlay
 const MAP_COORDS = {
   gate_4: { x: 20, y: 78 },
@@ -28,6 +28,7 @@ export default function Wayfinding({
   const [startNode, setStartNode] = useState("section_102");
   const [endNode, setEndNode] = useState("gate_4");
   const [mapMode, setMapMode] = useState("indoor"); // "indoor" or "outdoor"
+  const [showConsent, setShowConsent] = useState(!hasLocationConsent());
   const [chatInput, setChatInput] = useState("");
   const [chatMessages, setChatMessages] = useState([
     {
@@ -180,12 +181,70 @@ export default function Wayfinding({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                {/* Map View (Bento Large) */}
-        <div className="lg:col-span-8 rounded-xl overflow-hidden glass-panel h-[400px] md:h-[600px] relative group border border-outline-variant bg-surface-container-low flex flex-col justify-end">
+      {/* === MOBILE: Controls stacked above/below map === */}
+      {/* Indoor/Outdoor Mode Switcher — always above map */}
+      <div className="flex gap-1.5 bg-surface-container/95 border border-outline-variant/60 p-1.5 rounded-lg backdrop-blur-md shadow-md mb-2 lg:hidden">
+          <button
+            onClick={() => setMapMode("indoor")}
+            className={`flex-1 px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all ${
+              mapMode === "indoor"
+                ? "bg-primary-container text-white shadow-sm"
+                : "text-on-surface-variant hover:text-white"
+            }`}
+          >
+            🏢 Indoor Map
+          </button>
+          <button
+            onClick={() => setMapMode("outdoor")}
+            className={`flex-1 px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all flex items-center justify-center gap-1 ${
+              mapMode === "outdoor"
+                ? "bg-secondary-container text-white shadow-sm"
+                : "text-on-surface-variant hover:text-white"
+            }`}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+            🌐 Outdoor GPS
+          </button>
+        </div>
+
+        {/* Route selector (mobile) — above map, compact */}
+        {mapMode === "indoor" && (
+          <div className="lg:hidden bg-white/95 backdrop-blur-md px-3 py-2 rounded-xl border border-gray-300 shadow-md text-gray-800 mb-2 flex items-center gap-3 flex-wrap">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#1a73e8] flex-shrink-0" />
+              <span className="text-[9px] text-gray-500 font-mono">FROM:</span>
+              <select
+                value={startNode}
+                onChange={(e) => setStartNode(e.target.value)}
+                className="bg-transparent border-none p-0 focus:ring-0 text-[10px] font-bold text-gray-800 cursor-pointer focus:outline-none"
+              >
+                {Object.keys(VENUE_NODES).map(key => (
+                  <option key={key} value={key} className="bg-white">{VENUE_NODES[key].name}</option>
+                ))}
+              </select>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#ea4335] flex-shrink-0" />
+              <span className="text-[9px] text-gray-500 font-mono">TO:</span>
+              <select
+                value={endNode}
+                onChange={(e) => setEndNode(e.target.value)}
+                className="bg-transparent border-none p-0 focus:ring-0 text-[10px] font-bold text-gray-800 cursor-pointer focus:outline-none"
+              >
+                {Object.keys(VENUE_NODES).map(key => (
+                  <option key={key} value={key} className="bg-white">{VENUE_NODES[key].name}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        )}
+
+        {/* Map container — clean, no internal overlays on mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div className="lg:col-span-8 rounded-xl overflow-hidden glass-panel h-[350px] sm:h-[420px] md:h-[520px] lg:h-[600px] relative group border border-outline-variant bg-surface-container-low">
           
-          {/* Map mode switcher overlay */}
-          <div className="absolute top-4 left-4 z-30 flex gap-1.5 bg-surface-container/95 border border-outline-variant/60 p-1.5 rounded-lg backdrop-blur-md shadow-lg pointer-events-auto">
+          {/* Indoor/Outdoor switcher — desktop only, inside map */}
+          <div className="hidden lg:flex absolute top-4 left-4 z-30 gap-1.5 bg-surface-container/95 border border-outline-variant/60 p-1.5 rounded-lg backdrop-blur-md shadow-lg pointer-events-auto">
             <button
               onClick={() => setMapMode("indoor")}
               className={`px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all ${
@@ -222,8 +281,8 @@ export default function Wayfinding({
                 directions={directions}
               />
               
-              {/* Quick Route Switcher (Top-left on mobile, bottom-left on desktop) */}
-              <div className="absolute top-16 left-4 md:top-auto md:bottom-4 z-10 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-xl border border-gray-300 w-[calc(100%-32px)] max-w-xs shadow-lg text-gray-800">
+              {/* Route Switcher — desktop only, inside map */}
+              <div className="hidden lg:block absolute bottom-4 left-4 z-10 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-gray-300 max-w-xs shadow-lg text-gray-800">
                 <div className="flex flex-col gap-1.5 text-xs">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#1a73e8]" />
@@ -382,6 +441,13 @@ export default function Wayfinding({
 
         </div>
       </div>
+      
+      {showConsent && (
+        <LocationConsentModal 
+          onConsent={() => setShowConsent(false)}
+          onDecline={() => setShowConsent(false)} 
+        />
+      )}
     </div>
   );
 }
