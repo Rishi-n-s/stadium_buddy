@@ -4,6 +4,73 @@ import styled from "styled-components";
 
 const AVATARS = ["🤖", "⚽", "🏃‍♂️", "👮‍♂️", "🍿", "🎟️", "🏟️", "🍔"];
 
+// Blocklist of known disposable / fake email domains
+const BLOCKED_EMAIL_DOMAINS = new Set([
+  "mailinator.com", "guerrillamail.com", "guerrillamail.net", "guerrillamail.org",
+  "guerrillamail.biz", "guerrillamail.de", "guerrillamail.info",
+  "sharklasers.com", "guerrillamailblock.com", "grr.la", "guerrillamail.com",
+  "spam4.me", "yopmail.com", "yopmail.fr", "cool.fr.nf", "jetable.fr.nf",
+  "nospam.ze.tc", "nomail.xl.cx", "mega.zik.dj", "speed.1s.fr",
+  "courriel.fr.nf", "moncourrier.fr.nf", "monemail.fr.nf", "monmail.fr.nf",
+  "trashmail.at", "trashmail.com", "trashmail.io", "trashmail.me", "trashmail.net",
+  "throwam.com", "throwam.net", "dispostable.com", "spamgourmet.com",
+  "spamgourmet.net", "spamgourmet.org", "10minutemail.com", "10minutemail.net",
+  "10minutemail.org", "10minutemail.de", "10minutemail.ru", "10minutemail.co.uk",
+  "tempmail.com", "tempmail.net", "tempmail.org", "temp-mail.org", "temp-mail.ru",
+  "fakeinbox.com", "fakeinbox.net", "fakemail.fr", "getonemail.com",
+  "maildrop.cc", "mailnull.com", "mailnull.net", "mailnesia.com",
+  "discard.email", "discardmail.com", "discardmail.de",
+  "getnada.com", "nada.email", "nadamail.com",
+  "mohmal.com", "mohmal.im", "mohmal.tech",
+  "throwam.com", "spamhereplease.com", "spamherelots.com",
+  "binkmail.com", "bobmail.info", "chammy.info", "devnullmail.com",
+  "letthemeatspam.com", "mailinspector.com", "mailme.gq", "mrvix.com",
+  "notmailinator.com", "nowmymail.com", "ownmail.net", "pecinan.com",
+  "pecinan.net", "pecinan.org", "proxymail.eu", "randomail.net",
+  "rklips.com", "rmqkr.net", "safetymail.info", "sandelf.de",
+  "sharedmailbox.org", "skeefmail.com", "sl-informa.com", "spaml.de",
+  "spaml.com", "speed.1s.fr", "spoofmail.de", "tempalias.com",
+  "tempe-mail.com", "temporaryemail.net", "temporaryforwarding.com",
+  "thanksnospam.info", "throwam.com", "tittbit.in", "tmailinator.com",
+  "trbvm.com", "uggsrock.com", "veryrealemail.com", "wetrainbayarea.com",
+  "weg-werf-email.de", "wegwerf-email-adresse.de", "wegwerfadresse.de",
+  "wegwerfemail.de", "willhackforfood.biz", "wkzbxist.gq",
+  "xagloo.co", "xagloo.com", "xemaps.com", "xents.com", "xmaily.com",
+  "yomail.info", "yopmail.pp.ua", "yopmail.com",
+  "zippymail.info", "zoemail.net", "zoemail.org",
+  "example.com", "test.com", "fake.com", "invalid.com", "noemail.com",
+  "noreply.com", "nobody.com", "noone.com", "nobody.net",
+]);
+
+// Validate email format and domain
+const validateEmail = (email) => {
+  // RFC 5322 simplified format check
+  const formatRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+  if (!formatRegex.test(email)) {
+    return "Please enter a valid email address.";
+  }
+
+  // Check for obviously sequential/dummy patterns like test@test.com, a@b.co
+  const [localPart, domain] = email.toLowerCase().split("@");
+
+  if (BLOCKED_EMAIL_DOMAINS.has(domain)) {
+    return "Disposable or temporary email addresses are not allowed. Please use a real email.";
+  }
+
+  // Catch suspiciously short local parts (e.g. "a@b.com")
+  if (localPart.length < 3) {
+    return "Please use a complete email address.";
+  }
+
+  // Flag obvious test/fake patterns in local part
+  const fakeLocalPatterns = /^(test|fake|noreply|no-reply|admin|null|undefined|anonymous|nobody|noone|mailinator|trash|spam|discard|temp|dummy|user123|user1|user\d+|asdf|qwerty|abcd|1234|xxx)$/i;
+  if (fakeLocalPatterns.test(localPart)) {
+    return "Please use your real email address to register.";
+  }
+
+  return null; // valid
+};
+
 export default function AuthPortal({ onLoginSuccess }) {
   const [isRegisterMode, setIsRegisterMode] = useState(false);
   
@@ -48,6 +115,13 @@ export default function AuthPortal({ onLoginSuccess }) {
       return;
     }
 
+    // Validate email before anything else
+    const emailError = validateEmail(email);
+    if (emailError) {
+      setError(emailError);
+      return;
+    }
+
     if (password.length < 6) {
       setError("Password must be at least 6 characters");
       return;
@@ -63,6 +137,7 @@ export default function AuthPortal({ onLoginSuccess }) {
       setError(res.message);
     }
   };
+
 
   // Login as demo user helper
   const handleQuickLogin = async (demoEmail) => {
