@@ -696,7 +696,7 @@ export default function Map({
       
       {/* Google Maps Style Panel */}
       {!isIndoor && (
-        <div className="absolute top-16 left-4 z-20 flex gap-2">
+        <div className="absolute top-16 left-4 z-20 flex flex-wrap gap-1.5 max-w-[calc(100%-32px)]">
           <div className="flex bg-white border border-gray-300 rounded-md overflow-hidden shadow-md font-sans text-xs text-gray-800">
             <button
               onClick={() => {
@@ -753,7 +753,7 @@ export default function Map({
 
       {/* Indoor Mode HUD label */}
       {isIndoor && (
-        <div className="absolute top-16 left-4 z-20 bg-white/95 border border-gray-300 rounded-md px-3 py-1.5 shadow-md font-sans text-xs text-gray-800 flex items-center gap-2 pointer-events-none">
+        <div className="hidden sm:flex absolute top-16 left-4 z-20 bg-white/95 border border-gray-300 rounded-md px-3 py-1.5 shadow-md font-sans text-xs text-gray-800 items-center gap-2 pointer-events-none">
           <span className="material-symbols-outlined text-green-600 text-xs animate-pulse">satellite_alt</span>
           <span className="font-bold text-[10px] tracking-wide uppercase">Google Satellite Indoor Overlay</span>
         </div>
@@ -761,7 +761,7 @@ export default function Map({
 
       {/* Floating Navigation HUD Card */}
       {mapLoaded && (
-        <div className="absolute bottom-4 right-4 z-20 bg-surface-container-high/95 backdrop-blur-md border border-outline-variant/60 p-4 rounded-xl shadow-2xl w-[290px] text-on-surface flex flex-col gap-2.5">
+        <div className="absolute bottom-4 left-4 right-4 md:left-auto md:right-4 z-20 bg-surface-container-high/95 backdrop-blur-md border border-outline-variant/60 p-4 rounded-xl shadow-2xl w-auto md:w-[290px] text-on-surface flex flex-col gap-2.5">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
               <span className={`w-2 h-2 rounded-full ${gpsMode === "real" ? "bg-secondary shadow-[0_0_8px_#4ae176]" : "bg-primary shadow-[0_0_8px_#b7c4ff] animate-pulse"}`} />
@@ -819,7 +819,7 @@ export default function Map({
       )}
 
       {/* HUD overlay style indicator */}
-      <div className="absolute bottom-4 left-4 z-10 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-300 font-mono text-[9px] text-gray-800 flex items-center gap-2 pointer-events-none shadow-md">
+      <div className="hidden md:flex absolute bottom-4 left-4 z-10 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-300 font-mono text-[9px] text-gray-800 items-center gap-2 pointer-events-none shadow-md">
         <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
         <span>GOOGLE MAPS: {userCoords ? `${userCoords[1].toFixed(4)}°N, ${userCoords[0].toFixed(4)}°E` : (coords ? `${coords[1].toFixed(4)}°N, ${coords[0].toFixed(4)}°E` : "INIT")}</span>
       </div>

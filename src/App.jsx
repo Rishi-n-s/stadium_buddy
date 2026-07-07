@@ -212,87 +212,30 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-surface text-on-surface">
       {/* UNIFIED PREMIUM TOP NAVIGATION HEADER */}
       <header className="bg-surface-container-high/95 backdrop-blur-md border-b border-outline-variant/30 sticky top-0 z-[100] shadow-md">
-        <div className="max-w-[1440px] mx-auto px-4 py-2.5 flex items-center justify-between gap-4">
-          {/* Logo & Selected Stadium */}
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 cursor-default">
-              <span className="material-symbols-outlined text-primary text-xl font-extrabold" style={{ fontVariationSettings: "'FILL' 1" }}>sports_stadium</span>
-              <span className="text-sm font-extrabold tracking-wider bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">STADIAMIQ</span>
+        <div className="max-w-[1440px] mx-auto px-4 py-2.5 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4">
+          {/* Logo & Selected Stadium (And mobile profile badge) */}
+          <div className="flex items-center justify-between w-full md:w-auto gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-1.5 cursor-default">
+                <span className="material-symbols-outlined text-primary text-xl font-extrabold" style={{ fontVariationSettings: "'FILL' 1" }}>sports_stadium</span>
+                <span className="text-sm font-extrabold tracking-wider bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">STADIAMIQ</span>
+              </div>
+              <span className="text-outline/20">|</span>
+              <button 
+                onClick={() => setSelectedStadium(null)}
+                title="Click to Switch Stadium"
+                className="flex items-center gap-1.5 text-[10px] sm:text-xs text-on-surface-variant hover:text-white font-mono bg-surface-container-highest hover:bg-surface-container-low px-2.5 py-1 rounded-full border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer shadow-sm group"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary group-hover:bg-primary-light animate-pulse" />
+                <span className="truncate max-w-[80px] sm:max-w-none">{selectedStadium.stadium.toUpperCase()}</span>
+                <span className="material-symbols-outlined text-[12px] opacity-60 group-hover:opacity-100 transition-opacity">swap_horiz</span>
+              </button>
             </div>
-            <span className="text-outline/20">|</span>
-            <button 
-              onClick={() => setSelectedStadium(null)}
-              title="Click to Switch Stadium"
-              className="flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-white font-mono bg-surface-container-highest hover:bg-surface-container-low px-2.5 py-1 rounded-full border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer shadow-sm group"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-secondary group-hover:bg-primary-light animate-pulse" />
-              <span>{selectedStadium.stadium.toUpperCase()}</span>
-              <span className="material-symbols-outlined text-[12px] opacity-60 group-hover:opacity-100 transition-opacity">swap_horiz</span>
-            </button>
-          </div>
 
-          {/* Center Navigation Tabs (Moved from bottom) */}
-          <nav className="flex items-center bg-surface-container-lowest/80 border border-outline-variant/50 p-1 rounded-full shadow-sm">
-            <button 
-              onClick={() => setCurrentView("fan")} 
-              className={`px-3 py-1.5 rounded-full text-xs font-bold font-mono transition-all flex items-center gap-1.5 ${
-                currentView === "fan" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
-              }`}
-            >
-              <span className="material-symbols-outlined text-[16px]">home</span>
-              <span className="hidden md:inline">Home</span>
-            </button>
-            <button 
-              onClick={() => setCurrentView("staff")} 
-              className={`px-3 py-1.5 rounded-full text-xs font-bold font-mono transition-all flex items-center gap-1.5 ${
-                currentView === "staff" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
-              }`}
-            >
-              <span className="material-symbols-outlined text-[16px]">notifications</span>
-              <span className="hidden md:inline">Staff Alerts</span>
-            </button>
-            <button 
-              onClick={() => setCurrentView("wayfinding")} 
-              className={`px-3 py-1.5 rounded-full text-xs font-bold font-mono transition-all flex items-center gap-1.5 ${
-                currentView === "wayfinding" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
-              }`}
-            >
-              <span className="material-symbols-outlined text-[16px]">explore</span>
-              <span className="hidden md:inline">Wayfinding</span>
-            </button>
-            <button 
-              onClick={() => setCurrentView("organizer")} 
-              className={`px-3 py-1.5 rounded-full text-xs font-bold font-mono transition-all flex items-center gap-1.5 ${
-                currentView === "organizer" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
-              }`}
-            >
-              <span className="material-symbols-outlined text-[16px]">dashboard</span>
-              <span className="hidden md:inline">Dashboard</span>
-            </button>
-          </nav>
-
-          {/* Right Action: Simulation & User Profile Badge */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setShowSimulator(!showSimulator)}
-              className={`px-3 py-1.5 rounded-full text-xs font-bold font-mono border transition-all flex items-center gap-1.5 ${
-                showSimulator 
-                  ? "bg-[#1a73e8] border-[#1a73e8] text-white shadow-md" 
-                  : "bg-surface-container hover:bg-surface-container-high border-outline-variant text-on-surface-variant"
-              }`}
-            >
-              <span className="material-symbols-outlined text-[16px]">build</span>
-              <span className="hidden md:inline">Simulation</span>
-            </button>
-
-            {/* User Profile Badge & Logout */}
+            {/* Mobile Profile & Logout */}
             {currentUser && (
-              <div className="flex items-center gap-2 bg-surface-container-highest px-3 py-1 rounded-full border border-outline-variant/30 shadow-inner">
+              <div className="flex md:hidden items-center gap-2 bg-surface-container-highest px-2.5 py-1 rounded-full border border-outline-variant/30 shadow-inner">
                 <span className="text-sm select-none">{currentUser.avatar}</span>
-                <div className="flex flex-col text-left hidden sm:flex leading-none">
-                  <span className="text-[10px] font-bold text-white max-w-[80px] truncate">{currentUser.name}</span>
-                  <span className="text-[8px] font-mono text-outline-variant uppercase">{currentUser.role}</span>
-                </div>
                 <button 
                   onClick={handleLogout}
                   title="Log Out"
@@ -303,6 +246,79 @@ export default function App() {
               </div>
             )}
           </div>
+
+          {/* Bottom Row on Mobile / Nav + Simulation actions */}
+          <div className="flex items-center justify-between md:justify-center w-full md:w-auto gap-3 md:gap-4 border-t border-outline-variant/20 pt-2.5 md:pt-0 md:border-none">
+            {/* Center Navigation Tabs */}
+            <nav className="flex items-center bg-surface-container-lowest/80 border border-outline-variant/50 p-0.5 sm:p-1 rounded-full shadow-sm">
+              <button 
+                onClick={() => setCurrentView("fan")} 
+                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
+                  currentView === "fan" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
+                }`}
+              >
+                <span className="material-symbols-outlined text-[15px] sm:text-[16px]">home</span>
+                <span className="hidden md:inline">Home</span>
+              </button>
+              <button 
+                onClick={() => setCurrentView("staff")} 
+                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
+                  currentView === "staff" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
+                }`}
+              >
+                <span className="material-symbols-outlined text-[15px] sm:text-[16px]">notifications</span>
+                <span className="hidden md:inline">Staff Alerts</span>
+              </button>
+              <button 
+                onClick={() => setCurrentView("wayfinding")} 
+                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
+                  currentView === "wayfinding" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
+                }`}
+              >
+                <span className="material-symbols-outlined text-[15px] sm:text-[16px]">explore</span>
+                <span className="hidden md:inline">Wayfinding</span>
+              </button>
+              <button 
+                onClick={() => setCurrentView("organizer")} 
+                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
+                  currentView === "organizer" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
+                }`}
+              >
+                <span className="material-symbols-outlined text-[15px] sm:text-[16px]">dashboard</span>
+                <span className="hidden md:inline">Dashboard</span>
+              </button>
+            </nav>
+
+            <button
+              onClick={() => setShowSimulator(!showSimulator)}
+              className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono border transition-all flex items-center gap-1 sm:gap-1.5 ${
+                showSimulator 
+                  ? "bg-[#1a73e8] border-[#1a73e8] text-white shadow-md" 
+                  : "bg-surface-container hover:bg-surface-container-high border-outline-variant text-on-surface-variant"
+              }`}
+            >
+              <span className="material-symbols-outlined text-[15px] sm:text-[16px]">build</span>
+              <span className="hidden md:inline">Simulation</span>
+            </button>
+          </div>
+
+          {/* Desktop User Profile Badge & Logout */}
+          {currentUser && (
+            <div className="hidden md:flex items-center gap-2 bg-surface-container-highest px-3 py-1 rounded-full border border-outline-variant/30 shadow-inner">
+              <span className="text-sm select-none">{currentUser.avatar}</span>
+              <div className="flex flex-col text-left leading-none">
+                <span className="text-[10px] font-bold text-white max-w-[80px] truncate">{currentUser.name}</span>
+                <span className="text-[8px] font-mono text-outline-variant uppercase">{currentUser.role}</span>
+              </div>
+              <button 
+                onClick={handleLogout}
+                title="Log Out"
+                className="material-symbols-outlined text-[16px] text-outline hover:text-error ml-1 transition-colors cursor-pointer"
+              >
+                logout
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Simulation Sub-drawer */}

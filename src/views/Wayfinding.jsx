@@ -222,8 +222,8 @@ export default function Wayfinding({
                 directions={directions}
               />
               
-              {/* Quick Route Switcher (Bottom of Map) */}
-              <div className="absolute bottom-4 left-4 z-10 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-gray-300 max-w-xs shadow-lg text-gray-800">
+              {/* Quick Route Switcher (Top-left on mobile, bottom-left on desktop) */}
+              <div className="absolute top-16 left-4 md:top-auto md:bottom-4 z-10 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-xl border border-gray-300 w-[calc(100%-32px)] max-w-xs shadow-lg text-gray-800">
                 <div className="flex flex-col gap-1.5 text-xs">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#1a73e8]" />

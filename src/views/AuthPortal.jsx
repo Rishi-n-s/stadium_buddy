@@ -82,7 +82,7 @@ export default function AuthPortal({ onLoginSuccess }) {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-secondary/20 blur-[120px] animate-pulse pointer-events-none" />
 
       {/* Main glass container */}
-      <div className="w-full max-w-md bg-surface-container-high/65 backdrop-blur-xl border border-outline-variant/30 p-8 rounded-2xl shadow-2xl relative z-10">
+      <div className="w-full max-w-md bg-surface-container-high/65 backdrop-blur-xl border border-outline-variant/30 px-4 py-8 sm:p-8 rounded-2xl shadow-2xl relative z-10">
         
         {/* Logo and Brand */}
         <div className="flex flex-col items-center mb-6">
@@ -187,7 +187,7 @@ export default function AuthPortal({ onLoginSuccess }) {
                   />
                   
                   {/* Role & Avatar dropdowns */}
-                  <div className="flex gap-2 w-[250px] justify-between">
+                  <div className="flex gap-2 w-[240px] max-w-full justify-between">
                     <select 
                       className="flip-card__select"
                       value={role}
@@ -375,7 +375,8 @@ const StyledWrapper = styled.div`
   /* card */ 
 
   .flip-card__inner {
-    width: 300px;
+    width: 290px;
+    max-width: 100%;
     height: 480px;
     position: relative;
     background-color: transparent;
@@ -426,7 +427,8 @@ const StyledWrapper = styled.div`
   }
 
   .flip-card__input {
-    width: 250px;
+    width: 240px;
+    max-width: 100%;
     height: 40px;
     border-radius: 5px;
     border: 2px solid var(--main-color);
@@ -449,7 +451,8 @@ const StyledWrapper = styled.div`
   }
 
   .flip-card__select {
-    width: 121px;
+    width: 116px;
+    max-width: calc(50% - 4px);
     height: 40px;
     border-radius: 5px;
     border: 2px solid var(--main-color);
@@ -474,7 +477,8 @@ const StyledWrapper = styled.div`
 
   .flip-card__btn {
     margin: 15px 0 10px 0;
-    width: 120px;
+    width: 116px;
+    max-width: 100%;
     height: 40px;
     border-radius: 5px;
     border: 2px solid var(--main-color);
