@@ -219,6 +219,7 @@ export default function Wayfinding({
                 path={path}
                 congestedZones={congestedZones}
                 onNodeSelect={setEndNode}
+                directions={directions}
               />
               
               {/* Quick Route Switcher (Bottom of Map) */}
@@ -255,7 +256,15 @@ export default function Wayfinding({
             </div>
           ) : (
             <div className="absolute inset-0 z-0 bg-surface-container-lowest">
-              <Map selectedStadium={selectedStadium} darkMode={true} />
+              <Map 
+                selectedStadium={selectedStadium} 
+                darkMode={true} 
+                startNode={startNode}
+                endNode={endNode}
+                path={path}
+                congestedZones={congestedZones}
+                directions={directions}
+              />
             </div>
           )}
         </div>

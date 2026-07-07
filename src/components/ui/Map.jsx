@@ -29,6 +29,35 @@ const INDOOR_NODE_OFFSETS = {
   medical_bay: { lon: -0.0010, lat: -0.0004, name: "Medical Bay" }
 };
 
+// Calculate Haversine distance in meters
+function getHaversineDistance(lon1, lat1, lon2, lat2) {
+  const R = 6371000; // Radius of the Earth in meters
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = 
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+    Math.sin(dLon/2) * Math.sin(dLon/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function formatDistance(meters) {
+  if (meters < 1000) {
+    return `${Math.round(meters)} m`;
+  }
+  return `${(meters / 1000).toFixed(2)} km`;
+}
+
+function formatETA(meters, speedMetersPerSecond) {
+  const seconds = meters / speedMetersPerSecond;
+  const minutes = Math.round(seconds / 60);
+  if (minutes < 1) {
+    return "Under 1 min";
+  }
+  return `${minutes} min`;
+}
+
 export default function Map({
   selectedStadium,
   darkMode = true,
@@ -37,23 +66,31 @@ export default function Map({
   endNode = null,
   path = null,
   congestedZones = [],
-  onNodeSelect = null
+  onNodeSelect = null,
+  directions = []
 }) {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const [coords, setCoords] = useState(null);
   const [loading, setLoading] = useState(true);
   const [mapLoaded, setMapLoaded] = useState(false);
-  const [mapType, setMapType] = useState(isIndoor ? "satellite" : "roadmap"); // default to satellite for indoor view
+  const [mapType, setMapType] = useState(isIndoor ? "satellite" : "roadmap");
   const [is3D, setIs3D] = useState(false);
+
+  // GPS navigation state
+  const [gpsMode, setGpsMode] = useState("simulated"); // "simulated" or "real"
+  const [userCoords, setUserCoords] = useState(null);
+  const [realTimeDistance, setRealTimeDistance] = useState(null);
   
-  // Real-Time GPS Routing & Navigation HUD states
-  const [directions, setDirections] = useState([]);
+  const [directionsList, setDirectionsList] = useState([]);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
 
   const userMarkerRef = useRef(null);
   const userCoordsRef = useRef(null);
   const indoorMarkersRef = useRef([]);
+  
+  const watchIdRef = useRef(null);
+  const simIntervalRef = useRef(null);
 
   const stadiumName = selectedStadium?.stadium || "Wembley Stadium";
   const city = selectedStadium?.city || "London";
@@ -64,7 +101,7 @@ export default function Map({
     let active = true;
     setLoading(true);
     setMapLoaded(false);
-    setDirections([]);
+    setDirectionsList([]);
     setActiveStepIndex(0);
 
     const lookupName = stadiumName.toLowerCase().trim();
@@ -105,7 +142,6 @@ export default function Map({
         .then(res => res.json())
         .then(data => {
           if (data && data.length > 0) {
-            // Find a result that is tagged as stadium/sports/building
             const bestMatch = data.find(item => 
               item.class === "leisure" || 
               item.type === "stadium" || 
@@ -150,15 +186,14 @@ export default function Map({
     setMapType(isIndoor ? "satellite" : "roadmap");
   }, [isIndoor]);
 
-  // 2. Initialize and configure map instance (Only runs when coords, mapType, or mode changes)
+  // 2. Initialize and configure map instance (Runs when coords, mapType, or mode changes)
   useEffect(() => {
     if (!coords || !mapContainerRef.current) return;
 
     setMapLoaded(false);
 
-    // Map Google Maps Tile layer based on selected type
     let layerType = "m";
-    if (mapType === "satellite" || isIndoor) layerType = "y"; // always satellite in indoor mode
+    if (mapType === "satellite" || isIndoor) layerType = "y";
     else if (mapType === "terrain") layerType = "p";
 
     const googleMapsStyle = {
@@ -186,26 +221,22 @@ export default function Map({
       ]
     };
 
-    // Initialize MapLibre Map
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
       style: googleMapsStyle,
       center: coords,
-      zoom: isIndoor ? 17.5 : (is3D ? 16 : 15), // Zoom in super close for indoor view
-      minZoom: 3, // Prevent zooming out to repeating global layouts
-      maxZoom: 20, // Prevent zooming in past raster limits
+      zoom: isIndoor ? 17.5 : (is3D ? 16 : 15),
+      minZoom: 3,
+      maxZoom: 20,
       pitch: isIndoor ? 25 : (is3D ? 60 : 0),
       bearing: isIndoor ? -15 : (is3D ? 45 : 0)
     });
 
     mapRef.current = map;
-
-    // Controls
     map.addControl(new maplibregl.NavigationControl(), "top-right");
 
     map.on("load", () => {
       if (isIndoor) {
-        // --- INDOOR MODE STUBS: Register route source and layer immediately ---
         map.addSource("indoor-route", {
           type: "geojson",
           data: {
@@ -227,14 +258,12 @@ export default function Map({
             "line-cap": "round"
           },
           paint: {
-            "line-color": "#34a853", // Google Maps green route
+            "line-color": "#34a853",
             "line-width": 6,
             "line-opacity": 0.9
           }
         });
-
       } else {
-        // --- OUTDOOR MODE: Standard geolocated venue marker + real road GPS routing ---
         const el = document.createElement("div");
         el.className = "stadium-marker";
         el.innerHTML = `
@@ -248,23 +277,8 @@ export default function Map({
 
         new maplibregl.Marker({ element: el })
           .setLngLat(coords)
-          .setPopup(
-            new maplibregl.Popup({ offset: 25 })
-              .setHTML(`
-                <div class="p-2 text-on-surface-variant font-sans">
-                  <h4 class="font-bold text-xs text-primary-light">${stadiumName}</h4>
-                  <p class="text-[10px] opacity-80 mt-1">${city}, ${country}</p>
-                  <p class="text-[10px] text-secondary font-mono mt-1">CAPACITY: ${selectedStadium?.capacity?.toLocaleString() || 'N/A'}</p>
-                </div>
-              `)
-          )
           .addTo(map);
 
-        // Generate start point around 1-2 km away from stadium
-        const userStart = [coords[0] - 0.008 - Math.random() * 0.002, coords[1] - 0.008 - Math.random() * 0.002];
-        userCoordsRef.current = userStart;
-
-        // Register route source and layer immediately
         map.addSource("route", {
           type: "geojson",
           data: {
@@ -272,7 +286,7 @@ export default function Map({
             properties: {},
             geometry: {
               type: "LineString",
-              coordinates: [userStart, coords]
+              coordinates: []
             }
           }
         });
@@ -286,48 +300,183 @@ export default function Map({
             "line-cap": "round"
           },
           paint: {
-            "line-color": "#1a73e8", // Google Maps blue
+            "line-color": "#1a73e8",
             "line-width": 6,
             "line-opacity": 0.8
           }
         });
+      }
 
-        // User GPS dot
-        const userEl = document.createElement("div");
-        userEl.className = "user-gps-marker";
-        userEl.innerHTML = `
-          <div class="relative flex items-center justify-center">
-            <div class="absolute w-8 h-8 bg-blue-500/30 rounded-full animate-ping"></div>
-            <div class="w-4.5 h-4.5 bg-blue-600 border-2 border-white rounded-full shadow-[0_0_8px_rgba(0,0,0,0.3)]"></div>
-          </div>
-        `;
+      // User GPS Dot Marker
+      const userEl = document.createElement("div");
+      userEl.className = "user-gps-marker";
+      userEl.innerHTML = `
+        <div class="relative flex items-center justify-center">
+          <div class="absolute w-8 h-8 bg-blue-500/30 rounded-full animate-ping"></div>
+          <div class="w-4.5 h-4.5 bg-blue-600 border-2 border-white rounded-full shadow-[0_0_8px_rgba(0,0,0,0.3)]"></div>
+        </div>
+      `;
 
-        const userMarker = new maplibregl.Marker({ element: userEl })
-          .setLngLat(userStart)
-          .addTo(map);
+      const userMarker = new maplibregl.Marker({ element: userEl })
+        .setLngLat(coords)
+        .addTo(map);
 
-        userMarkerRef.current = userMarker;
+      userMarkerRef.current = userMarker;
+      setMapLoaded(true);
+    });
 
-        // Fetch real-world road route via Open Source Routing Machine (OSRM) API
+    return () => {
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+    };
+  }, [coords, mapType, isIndoor]);
+
+  // 3. Navigation loop (handles Simulated / Real GPS coordinate updates)
+  useEffect(() => {
+    if (!mapRef.current || !mapLoaded || !coords) return;
+    const map = mapRef.current;
+
+    // Reset previous loops/watches
+    if (simIntervalRef.current) {
+      clearInterval(simIntervalRef.current);
+      simIntervalRef.current = null;
+    }
+    if (watchIdRef.current !== null) {
+      navigator.geolocation.clearWatch(watchIdRef.current);
+      watchIdRef.current = null;
+    }
+
+    if (gpsMode === "real") {
+      // --- REAL GPS WATCHING MODE ---
+      if (navigator.geolocation) {
+        watchIdRef.current = navigator.geolocation.watchPosition(
+          (position) => {
+            const { longitude, latitude } = position.coords;
+            const newPos = [longitude, latitude];
+            setUserCoords(newPos);
+            userCoordsRef.current = newPos;
+
+            if (userMarkerRef.current) {
+              userMarkerRef.current.setLngLat(newPos);
+            }
+
+            // Update path line dynamically
+            const sourceName = isIndoor ? "indoor-route" : "route";
+            const routeSource = map.getSource(sourceName);
+            
+            let destPos = coords;
+            if (isIndoor && endNode) {
+              const node = INDOOR_NODE_OFFSETS[endNode];
+              if (node) {
+                destPos = [coords[0] + node.lon, coords[1] + node.lat];
+              }
+            }
+
+            if (routeSource) {
+              routeSource.setData({
+                type: "Feature",
+                properties: {},
+                geometry: {
+                  type: "LineString",
+                  coordinates: [newPos, destPos]
+                }
+              });
+            }
+          },
+          (err) => {
+            console.error("watchPosition error:", err);
+            alert("Unable to fetch GPS. Reverting to simulation.");
+            setGpsMode("simulated");
+          },
+          { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+        );
+      } else {
+        alert("Geolocation not supported. Reverting to simulation.");
+        setGpsMode("simulated");
+      }
+    } else {
+      // --- SIMULATED GPS MODE ---
+      if (isIndoor) {
+        if (path && path.length > 0) {
+          const pathCoordinates = path
+            .map(key => {
+              const node = INDOOR_NODE_OFFSETS[key];
+              return node ? [coords[0] + node.lon, coords[1] + node.lat] : null;
+            })
+            .filter(c => c !== null);
+
+          if (pathCoordinates.length > 0) {
+            let index = 0;
+            setUserCoords(pathCoordinates[0]);
+            userCoordsRef.current = pathCoordinates[0];
+            if (userMarkerRef.current) {
+              userMarkerRef.current.setLngLat(pathCoordinates[0]);
+            }
+
+            // Update static path line
+            const source = map.getSource("indoor-route");
+            if (source) {
+              source.setData({
+                type: "Feature",
+                properties: {},
+                geometry: {
+                  type: "LineString",
+                  coordinates: pathCoordinates
+                }
+              });
+            }
+
+            const interval = setInterval(() => {
+              if (index >= pathCoordinates.length) {
+                index = 0;
+              }
+              const currentPos = pathCoordinates[index];
+              setUserCoords(currentPos);
+              userCoordsRef.current = currentPos;
+              if (userMarkerRef.current) {
+                userMarkerRef.current.setLngLat(currentPos);
+              }
+
+              const progress = index / pathCoordinates.length;
+              const step = Math.min(
+                Math.floor(progress * directions.length),
+                directions.length - 1
+              );
+              setActiveStepIndex(step >= 0 ? step : 0);
+
+              index++;
+            }, 1800);
+
+            simIntervalRef.current = interval;
+          }
+        }
+      } else {
+        const userStart = [coords[0] - 0.008, coords[1] - 0.008];
+        setUserCoords(userStart);
+        userCoordsRef.current = userStart;
+        if (userMarkerRef.current) {
+          userMarkerRef.current.setLngLat(userStart);
+        }
+
         const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${userStart[0]},${userStart[1]};${coords[0]},${coords[1]}?overview=full&geometries=geojson&steps=true`;
         
         fetch(osrmUrl)
           .then(res => res.json())
           .then(data => {
-            let routeCoords = [userStart, coords]; // fallback to straight line
+            let routeCoords = [userStart, coords];
             let steps = ["Head towards stadium", "Arrive at destination"];
 
             if (data.routes && data.routes[0]) {
               routeCoords = data.routes[0].geometry.coordinates;
-              
               if (data.routes[0].legs && data.routes[0].legs[0].steps) {
                 steps = data.routes[0].legs[0].steps.map(s => s.maneuver.instruction);
               }
             }
 
-            setDirections(steps);
+            setDirectionsList(steps);
 
-            // Update route geometry on map
             const source = map.getSource("route");
             if (source) {
               source.setData({
@@ -340,29 +489,25 @@ export default function Map({
               });
             }
 
-            // Animate user dot along OSRM street coordinates step-by-step
             let index = 0;
-            const trackingInterval = setInterval(() => {
+            const interval = setInterval(() => {
               if (index >= routeCoords.length) {
-                index = 0; // restart transit loop
+                index = 0;
               }
-
               const currentPos = routeCoords[index];
+              setUserCoords(currentPos);
               userCoordsRef.current = currentPos;
-
               if (userMarkerRef.current) {
                 userMarkerRef.current.setLngLat(currentPos);
               }
 
-              // Update active direction text index based on travel progress
               const progress = index / routeCoords.length;
-              const activeStep = Math.min(
+              const step = Math.min(
                 Math.floor(progress * steps.length),
                 steps.length - 1
               );
-              setActiveStepIndex(activeStep);
+              setActiveStepIndex(step);
 
-              // Update remaining path line
               const src = map.getSource("route");
               if (src) {
                 src.setData({
@@ -378,21 +523,23 @@ export default function Map({
               index++;
             }, 350);
 
-            mapRef.current.trackingInterval = trackingInterval;
+            simIntervalRef.current = interval;
           })
           .catch(err => {
-            console.error("OSRM routing failed, using fallback:", err);
-            // Fallback straight line animation
+            console.error("OSRM failed, fallback straight line:", err);
             let fraction = 0;
-            const trackingInterval = setInterval(() => {
-              fraction += 0.01;
+            const interval = setInterval(() => {
+              fraction += 0.02;
               if (fraction > 1.0) fraction = 0;
               const currentPos = [
                 userStart[0] + (coords[0] - userStart[0]) * fraction,
                 userStart[1] + (coords[1] - userStart[1]) * fraction
               ];
+              setUserCoords(currentPos);
               userCoordsRef.current = currentPos;
-              if (userMarkerRef.current) userMarkerRef.current.setLngLat(currentPos);
+              if (userMarkerRef.current) {
+                userMarkerRef.current.setLngLat(currentPos);
+              }
 
               const src = map.getSource("route");
               if (src) {
@@ -406,35 +553,50 @@ export default function Map({
                 });
               }
             }, 500);
-            mapRef.current.trackingInterval = trackingInterval;
+
+            simIntervalRef.current = interval;
           });
       }
-
-      setMapLoaded(true);
-    });
+    }
 
     return () => {
-      if (mapRef.current) {
-        if (mapRef.current.trackingInterval) {
-          clearInterval(mapRef.current.trackingInterval);
-        }
-        mapRef.current.remove();
-        mapRef.current = null;
+      if (simIntervalRef.current) {
+        clearInterval(simIntervalRef.current);
+      }
+      if (watchIdRef.current !== null) {
+        navigator.geolocation.clearWatch(watchIdRef.current);
       }
     };
-  }, [coords, mapType, isIndoor]);
+  }, [mapLoaded, gpsMode, coords, isIndoor, path, directions]);
 
-  // 3. Dynamic Node & Pathfinding updates (Triggers instantly WITHOUT map recreation)
+  // 4. Calculate Distance and ETA
+  useEffect(() => {
+    if (!coords || !userCoords) return;
+
+    let destCoords = coords;
+    if (isIndoor && endNode) {
+      const node = INDOOR_NODE_OFFSETS[endNode];
+      if (node) {
+        destCoords = [coords[0] + node.lon, coords[1] + node.lat];
+      }
+    }
+
+    const dist = getHaversineDistance(
+      userCoords[0], userCoords[1],
+      destCoords[0], destCoords[1]
+    );
+
+    setRealTimeDistance(dist);
+  }, [userCoords, coords, isIndoor, endNode]);
+
+  // 5. Indoor Markers rendering
   useEffect(() => {
     if (!mapRef.current || !mapLoaded || !isIndoor || !coords) return;
-
     const map = mapRef.current;
 
-    // 1. Clear previous indoor markers
     indoorMarkersRef.current.forEach(m => m.remove());
     indoorMarkersRef.current = [];
 
-    // 2. Add updated node pins
     Object.keys(INDOOR_NODE_OFFSETS).forEach(key => {
       const node = INDOOR_NODE_OFFSETS[key];
       const nodeCoords = [coords[0] + node.lon, coords[1] + node.lat];
@@ -490,31 +652,9 @@ export default function Map({
 
       indoorMarkersRef.current.push(marker);
     });
+  }, [mapLoaded, isIndoor, startNode, endNode, coords, congestedZones]);
 
-    // 3. Update route data dynamically on existing layer
-    const source = map.getSource("indoor-route");
-    if (source) {
-      const pathCoordinates = path
-        ? path
-            .map(key => {
-              const node = INDOOR_NODE_OFFSETS[key];
-              return node ? [coords[0] + node.lon, coords[1] + node.lat] : null;
-            })
-            .filter(c => c !== null)
-        : [];
-
-      source.setData({
-        type: "Feature",
-        properties: {},
-        geometry: {
-          type: "LineString",
-          coordinates: pathCoordinates
-        }
-      });
-    }
-  }, [mapLoaded, isIndoor, startNode, endNode, path, congestedZones, coords]);
-
-  // 4. Smooth 3D Orbit Camera Rotation (only available in outdoor mode)
+  // 6. Smooth 3D Orbit Camera Rotation
   useEffect(() => {
     if (!mapRef.current || !coords || !is3D || isIndoor) return;
 
@@ -554,7 +694,7 @@ export default function Map({
       {/* Map DOM target */}
       <div ref={mapContainerRef} className="w-full h-full absolute inset-0" />
       
-      {/* Google Maps Style Panel (Only visible in Outdoor mode since Indoor is locked to Satellite) */}
+      {/* Google Maps Style Panel */}
       {!isIndoor && (
         <div className="absolute top-16 left-4 z-20 flex gap-2">
           <div className="flex bg-white border border-gray-300 rounded-md overflow-hidden shadow-md font-sans text-xs text-gray-800">
@@ -619,10 +759,69 @@ export default function Map({
         </div>
       )}
 
+      {/* Floating Navigation HUD Card */}
+      {mapLoaded && (
+        <div className="absolute bottom-4 right-4 z-20 bg-surface-container-high/95 backdrop-blur-md border border-outline-variant/60 p-4 rounded-xl shadow-2xl w-[290px] text-on-surface flex flex-col gap-2.5">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <span className={`w-2 h-2 rounded-full ${gpsMode === "real" ? "bg-secondary shadow-[0_0_8px_#4ae176]" : "bg-primary shadow-[0_0_8px_#b7c4ff] animate-pulse"}`} />
+              <span className="text-[9px] font-mono font-extrabold uppercase tracking-wider text-on-surface-variant">
+                {gpsMode === "real" ? "REAL-TIME GPS" : "SIMULATED NAVIGATION"}
+              </span>
+            </div>
+            <button 
+              onClick={() => setGpsMode(prev => prev === "real" ? "simulated" : "real")}
+              className="text-[9px] bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary/50 text-primary-light px-2.5 py-0.5 rounded font-mono font-extrabold uppercase transition-all"
+            >
+              {gpsMode === "real" ? "Simulate" : "Use Real GPS"}
+            </button>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/35 flex items-center justify-center flex-shrink-0">
+              <span className="material-symbols-outlined text-primary text-lg">
+                {isIndoor ? "directions_walk" : "directions_car"}
+              </span>
+            </div>
+            <div className="min-w-0 flex-1">
+              <span className="text-[8px] text-on-surface-variant font-mono uppercase block leading-none mb-1">Destination</span>
+              <span className="text-xs font-bold truncate block">
+                {isIndoor ? (INDOOR_NODE_OFFSETS[endNode]?.name || "Select Destination") : stadiumName}
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 border-t border-b border-outline-variant/20 py-2">
+            <div>
+              <span className="text-[8px] text-on-surface-variant font-mono uppercase block leading-none mb-1">Distance</span>
+              <span className="text-sm font-bold font-mono text-white">
+                {realTimeDistance !== null ? formatDistance(realTimeDistance) : "..."}
+              </span>
+            </div>
+            <div>
+              <span className="text-[8px] text-on-surface-variant font-mono uppercase block leading-none mb-1">ETA</span>
+              <span className="text-sm font-bold font-mono text-secondary">
+                {realTimeDistance !== null ? formatETA(realTimeDistance, isIndoor ? 1.4 : 13.8) : "..."}
+              </span>
+            </div>
+          </div>
+
+          {/* Active Navigation Step */}
+          <div className="flex gap-2 items-start bg-surface-container/60 p-2 rounded-lg border border-outline-variant/25">
+            <span className="material-symbols-outlined text-outline text-sm mt-0.5">navigation</span>
+            <p className="text-[10px] text-on-surface/90 leading-normal font-sans font-medium">
+              {isIndoor 
+                ? (directions[activeStepIndex] || "Route active. Walk towards destination.")
+                : (directionsList[activeStepIndex] || "Route active. Drive towards destination.")}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* HUD overlay style indicator */}
       <div className="absolute bottom-4 left-4 z-10 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-300 font-mono text-[9px] text-gray-800 flex items-center gap-2 pointer-events-none shadow-md">
         <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-        <span>GOOGLE MAPS: {coords ? `${coords[1].toFixed(4)}°N, ${coords[0].toFixed(4)}°E` : "INIT"}</span>
+        <span>GOOGLE MAPS: {userCoords ? `${userCoords[1].toFixed(4)}°N, ${userCoords[0].toFixed(4)}°E` : (coords ? `${coords[1].toFixed(4)}°N, ${coords[0].toFixed(4)}°E` : "INIT")}</span>
       </div>
     </div>
   );

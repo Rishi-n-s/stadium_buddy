@@ -110,18 +110,18 @@ export default function AuthPortal({ onLoginSuccess }) {
         {/* Flip-card Wrapper */}
         <StyledWrapper>
           <div className="wrapper">
+            <input 
+              type="checkbox" 
+              className="toggle" 
+              id="auth-toggle"
+              checked={isRegisterMode}
+              onChange={(e) => {
+                setIsRegisterMode(e.target.checked);
+                setError("");
+                setSuccess("");
+              }}
+            />
             <div className="card-switch">
-              <input 
-                type="checkbox" 
-                className="toggle" 
-                id="auth-toggle"
-                checked={isRegisterMode}
-                onChange={(e) => {
-                  setIsRegisterMode(e.target.checked);
-                  setError("");
-                  setSuccess("");
-                }}
-              />
               <label className="switch" htmlFor="auth-toggle">
                 <span className="slider" />
                 <span className="card-side" />
@@ -356,19 +356,19 @@ const StyledWrapper = styled.div`
     transition: 0.3s;
   }
 
-  .toggle:checked ~ .switch .slider {
+  .toggle:checked ~ .card-switch .slider {
     background-color: var(--input-focus);
   }
 
-  .toggle:checked ~ .switch .slider:before {
+  .toggle:checked ~ .card-switch .slider:before {
     transform: translateX(30px);
   }
 
-  .toggle:checked ~ .switch .card-side:before {
+  .toggle:checked ~ .card-switch .card-side:before {
     text-decoration: none;
   }
 
-  .toggle:checked ~ .switch .card-side:after {
+  .toggle:checked ~ .card-switch .card-side:after {
     text-decoration: underline;
   }
 
