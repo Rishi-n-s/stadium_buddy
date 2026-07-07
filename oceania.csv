@@ -1,0 +1,34 @@
+id,region,country,location,stadium_name,total_capacity,sport_played
+157,Oceania,Australia,Melbourne,Melbourne Cricket Ground,"1,00,000","Australian football, cricket"
+157,Oceania,Australia,Sydney,Accor Stadium,"83,000",Rugby league
+157,Oceania,Australia,Perth,Optus Stadium,"60,000","Australian football, cricket"
+157,Oceania,Australia,Melbourne,Marvel Stadium,"56,000","Australian football, cricket"
+157,Oceania,Australia,Adelaide,Adelaide Oval,"55,000","Australian football, cricket"
+157,Oceania,Australia,Brisbane,Suncorp Stadium,"52,000","Rugby league, rugby union"
+157,Oceania,Australia,Sydney,Sydney Cricket Ground,"48,000","Australian football, cricket, rugby league"
+157,Oceania,Australia,Sydney,Allianz Stadium,"42,000","Football, rugby league, rugby union"
+157,Oceania,Australia,Brisbane,Brisbane Cricket Ground,"42,000","Australian football, cricket"
+157,Oceania,Australia,Geelong,GMHBA Stadium,"36,000",Australian football
+157,Oceania,Australia,Newcastle,McDonald Jones Stadium,"33,000","Football, rugby league"
+157,Oceania,Australia,Melbourne,AAMI Park,"30,000","Football, rugby league, rugby union"
+157,Oceania,Australia,Sydney,CommBank Stadium,"30,000","Football, rugby league, rugby union"
+157,Oceania,Australia,Gold Coast,Cbus Super Stadium,"27,000",Rugby league
+157,Oceania,Australia,Canberra,GIO Stadium Canberra,"25,000","Rugby league, rugby union"
+157,Oceania,Australia,Gold Coast,Metricon Stadium,"25,000",Australian football
+157,Oceania,Australia,Townsville,Queensland Country Bank Stadium,"25,000",Rugby league
+157,Oceania,Australia,Sydney,GIANTS Stadium,"24,000","Australian football, cricket"
+157,Oceania,Australia,Gosford,Central Coast Stadium,"20,000",Football
+157,Oceania,Australia,Perth,HBF Park,"20,000","Football, rugby union"
+157,Oceania,Australia,Adelaide,Coopers Stadium,"17,000",Football
+157,Oceania,Australia,Perth,RAC Arena,"14,000","Basketball, netball"
+157,Oceania,Australia,Melbourne,Rod Laver Arena,"14,000",Tennis
+157,Oceania,Australia,Melbourne,Lakeside Stadium,"12,000",Football
+157,Oceania,Australia,Kippa-Ring,Moreton Daily Stadium,"11,000","Football, rugby league"
+157,Oceania,Australia,Sydney,Ken Rosewall Arena,"10,000",Tennis
+158,Oceania,Fiji,Labasa,Subrail Park,"10,000","Football, rugby union"
+159,Oceania,New Zealand,Auckland,Eden Park,"50,000","Cricket, rugby union"
+159,Oceania,New Zealand,Wellington,Sky Stadium,"34,000","Football, rugby union"
+159,Oceania,New Zealand,Dunedin,Fortsyth Barr Stadium,"30,000","Football, rugby union"
+159,Oceania,New Zealand,Christchurch,Orangetheory Stadium,"18,000",Rugby union
+160,Oceania,Papua New Guinea,Port Moresby,Sir John Guise Stadium,"15,000","Football, rugby league"
+160,Oceania,Papua New Guinea,Port Moresby,Papua New Guinea National Football Stadium,"14,000",Rugby league

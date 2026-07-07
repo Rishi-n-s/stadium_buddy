@@ -1,25 +1,74 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { STADIUMS } from "../data/stadiums";
 
 // List of popular stadiums for quick-select chips
 const FEATURED_STADIUMS = [
-  { stadium: "Wembley Stadium", city: "London", country: "England" },
-  { stadium: "Camp Nou", city: "Barcelona", country: "Spain" },
-  { stadium: "Santiago Bernabéu", city: "Madrid", country: "Spain" },
-  { stadium: "Maracanã", city: "Rio de Janeiro", country: "Brazil" },
-  { stadium: "Allianz Arena", city: "Munich", country: "Germany" },
-  { stadium: "San Siro", city: "Milan", country: "Italy" }
+  { stadium: "Wembley Stadium", city: "London", country: "England", capacity: 90000, hometeams: "England", confederation: "UEFA" },
+  { stadium: "Camp Nou", city: "Barcelona", country: "Spain", capacity: 99354, hometeams: "FC Barcelona", confederation: "UEFA" },
+  { stadium: "Santiago Bernabéu", city: "Madrid", country: "Spain", capacity: 81044, hometeams: "Real Madrid", confederation: "UEFA" },
+  { stadium: "Maracanã", city: "Rio de Janeiro", country: "Brazil", capacity: 78838, hometeams: "Flamengo, Fluminense", confederation: "CONMEBOL" },
+  { stadium: "Allianz Arena", city: "Munich", country: "Germany", capacity: 75000, hometeams: "Bayern Munich", confederation: "UEFA" },
+  { stadium: "San Siro", city: "Milan", country: "Italy", capacity: 80018, hometeams: "AC Milan, Inter Milan", confederation: "UEFA" }
 ];
 
 export default function LandingPage({ onDeploy }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedStadium, setSelectedStadium] = useState(
-    STADIUMS.find(s => s.stadium.toLowerCase().includes("wembley")) || STADIUMS[0]
-  );
+  const [selectedStadium, setSelectedStadium] = useState(FEATURED_STADIUMS[0]);
   
   // Deployment simulation states
   const [isDeploying, setIsDeploying] = useState(false);
   const [deployStep, setDeployStep] = useState(0);
+
+  // Global search states (All world stadiums via OSM)
+  const [globalResults, setGlobalResults] = useState([]);
+  const [isSearchingGlobally, setIsSearchingGlobally] = useState(false);
+
+  useEffect(() => {
+    if (!searchQuery.trim()) {
+      setGlobalResults([]);
+      return;
+    }
+
+    setIsSearchingGlobally(true);
+    const delayDebounceFn = setTimeout(() => {
+      // Fetch sports stadiums matching search query globally from Nominatim OSM API
+      const searchUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(searchQuery + ' stadium')}&format=json&addressdetails=1&limit=5`;
+      
+      fetch(searchUrl, {
+        headers: {
+          "User-Agent": "StadiumIQ-Hackathon-App/1.0"
+        }
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data) {
+            // Map OSM objects to StadiumIQ schema
+            const mapped = data.map(item => {
+              const address = item.address || {};
+              const name = item.display_name.split(',')[0];
+              const city = address.city || address.town || address.village || address.suburb || address.state || "";
+              const country = address.country || "";
+              
+              return {
+                s_no: `global-${item.place_id}`,
+                confederation: item.class === "leisure" ? "Global Leisure" : "Global Venue",
+                stadium: name,
+                city: city,
+                country: country,
+                capacity: 50000, // default placeholder capacity for dynamic scaling
+                hometeams: "Local Teams / Multi-Sport",
+                ioc: address.country_code?.toUpperCase() || "GL"
+              };
+            });
+            setGlobalResults(mapped);
+          }
+        })
+        .catch(err => console.error("Global search failed:", err))
+        .finally(() => setIsSearchingGlobally(false));
+    }, 500); // 500ms debounce delay
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [searchQuery]);
 
   const deployMessages = [
     "Injecting local stadium node graph...",
@@ -111,7 +160,7 @@ export default function LandingPage({ onDeploy }) {
               <span className="material-symbols-outlined text-outline mr-3">search</span>
               <input
                 type="text"
-                placeholder="Search 1,820+ stadiums by name, city, country..."
+                placeholder="Search 1,820+ catalog stadiums or any sports arena in the world..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="bg-transparent border-none text-on-surface text-sm w-full outline-none focus:ring-0 placeholder-on-surface-variant/50"
@@ -125,33 +174,84 @@ export default function LandingPage({ onDeploy }) {
 
             {/* Dropdown results */}
             {searchQuery && (
-              <div className="absolute left-0 right-0 mt-2 bg-surface-container-high border border-outline-variant/50 rounded-xl overflow-hidden shadow-2xl z-50 backdrop-blur-xl">
-                {filteredStadiums.length > 0 ? (
-                  <div className="divide-y divide-outline-variant/20 max-h-[300px] overflow-y-auto scrollbar-hide">
-                    {filteredStadiums.map((s, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleSelectStadium(s)}
-                        className="w-full text-left px-5 py-3 hover:bg-primary-container/20 flex justify-between items-center transition-colors group"
-                      >
-                        <div>
-                          <div className="font-bold text-on-surface group-hover:text-primary-light text-sm">{s.stadium}</div>
-                          <div className="text-xs text-on-surface-variant mt-0.5">
-                            {s.city}, {s.country}
+              <div className="absolute left-0 right-0 mt-2 bg-surface-container-high border border-outline-variant/50 rounded-xl overflow-hidden shadow-2xl z-50 backdrop-blur-xl max-h-[360px] overflow-y-auto">
+                
+                {/* Catalog matches */}
+                {filteredStadiums.length > 0 && (
+                  <div>
+                    <div className="px-5 py-1.5 bg-surface-container-highest/60 text-[9px] font-mono font-bold text-outline-variant uppercase tracking-wider">
+                      Catalog Venues
+                    </div>
+                    <div className="divide-y divide-outline-variant/10">
+                      {filteredStadiums.map((s, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleSelectStadium(s)}
+                          className="w-full text-left px-5 py-2.5 hover:bg-primary-container/20 flex justify-between items-center transition-colors group"
+                        >
+                          <div>
+                            <div className="font-bold text-on-surface group-hover:text-primary-light text-sm">{s.stadium}</div>
+                            <div className="text-xs text-on-surface-variant mt-0.5">
+                              {s.city}, {s.country}
+                            </div>
                           </div>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <span className="text-[10px] font-mono bg-surface-container px-2 py-0.5 rounded text-outline-variant">
-                            {s.capacity.toLocaleString()} seats
-                          </span>
-                          <span className="material-symbols-outlined text-outline-variant text-sm group-hover:translate-x-1 transition-all">
-                            arrow_forward
-                          </span>
-                        </div>
-                      </button>
-                    ))}
+                          <div className="flex items-center gap-3">
+                            <span className="text-[10px] font-mono bg-surface-container px-2 py-0.5 rounded text-outline-variant">
+                              {s.capacity ? s.capacity.toLocaleString() : "N/A"} seats
+                            </span>
+                            <span className="material-symbols-outlined text-outline-variant text-sm group-hover:translate-x-1 transition-all">
+                              arrow_forward
+                            </span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                ) : (
+                )}
+
+                {/* Global OSM Live matches */}
+                {globalResults.length > 0 && (
+                  <div className="border-t border-outline-variant/20">
+                    <div className="px-5 py-1.5 bg-surface-container-highest/60 text-[9px] font-mono font-bold text-outline-variant uppercase tracking-wider flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+                      <span>Global World Venues (OSM Live)</span>
+                    </div>
+                    <div className="divide-y divide-outline-variant/10">
+                      {globalResults.map((s, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleSelectStadium(s)}
+                          className="w-full text-left px-5 py-2.5 hover:bg-secondary-container/20 flex justify-between items-center transition-colors group"
+                        >
+                          <div>
+                            <div className="font-bold text-on-surface group-hover:text-secondary text-sm">{s.stadium}</div>
+                            <div className="text-xs text-on-surface-variant mt-0.5">
+                              {s.city || "Unknown City"}, {s.country || "Unknown Country"}
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <span className="text-[10px] font-mono bg-surface-container px-2 py-0.5 rounded text-outline-variant">
+                              World Map
+                            </span>
+                            <span className="material-symbols-outlined text-outline-variant text-sm group-hover:translate-x-1 transition-all">
+                              arrow_forward
+                            </span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Loading indicator */}
+                {isSearchingGlobally && (
+                  <div className="p-3 text-center text-xs text-outline-variant font-mono flex items-center justify-center gap-2">
+                    <span className="material-symbols-outlined text-xs animate-spin">sync</span>
+                    <span>SEARCHING GLOBALLY...</span>
+                  </div>
+                )}
+
+                {filteredStadiums.length === 0 && globalResults.length === 0 && !isSearchingGlobally && (
                   <div className="p-4 text-center text-xs text-on-surface-variant font-mono">
                     NO STADIUMS FOUND
                   </div>
@@ -164,11 +264,10 @@ export default function LandingPage({ onDeploy }) {
           <div className="flex flex-wrap items-center gap-2 max-w-xl">
             <span className="text-[10px] text-outline font-mono uppercase mr-1">Popular:</span>
             {FEATURED_STADIUMS.map((item, idx) => {
-              const matched = STADIUMS.find(s => s.stadium === item.stadium);
               return (
                 <button
                   key={idx}
-                  onClick={() => matched && handleSelectStadium(matched)}
+                  onClick={() => handleSelectStadium(item)}
                   className={`px-3 py-1 rounded-full text-xs font-semibold border transition-all ${
                     selectedStadium.stadium === item.stadium
                       ? "bg-secondary/15 border-secondary text-secondary"

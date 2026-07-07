@@ -1,0 +1,633 @@
+id,region,country,location,stadium_name,total_capacity,sport_played
+90,Europe,Albania,Tirana,Air Albania Stadium,22000,Football
+90,Europe,Albania,Shkodër,Stadiumi “Loro Boriçi”,16000,Football
+90,Europe,Albania,Durrës,Stadiumi “Niko Dovana”,12000,Football
+91,Europe,Austria,Vienna,Ernst-Happel-Stadion,50000,Football
+91,Europe,Austria,Wals-Siezenheim,Red Bull Arena,31000,Football
+91,Europe,Austria,Klagenfurt am Wörthersee,Wörthersee Stadion,30000,Football
+91,Europe,Austria,Vienna,Allianz Stadion,28000,Football
+91,Europe,Austria,Vienna,Generali Arena,17000,Football
+91,Europe,Austria,Graz,Merkur Arena,16000,Football
+91,Europe,Austria,Innsbruck,Tivoli Stadion Tirol,16000,"American football, football"
+91,Europe,Austria,Maria Enzersdorf,BSFZ-Arena,10000,Football
+92,Europe,Belarus,Minsk,Dinamo National Olympic Stadium,22000,Football
+92,Europe,Belarus,Minsk,Minsk-Arena,15000,"Basketball, ice hockey"
+92,Europe,Belarus,Gomel,Central Stadium,14000,Football
+92,Europe,Belarus,Borisov,Borisov-Arena,13000,Football
+93,Europe,Belgium,Brussels,Stade Roi Baudouin,50000,Football
+93,Europe,Belgium,Liège,Stade Maurice Dufrasne,30000,Football
+93,Europe,Belgium,Bruges,Jan Breydelstadion,29000,Football
+93,Europe,Belgium,Genk,Cegeka Arena,23000,Football
+93,Europe,Belgium,Brussels,Lotto Park,22000,Football
+93,Europe,Belgium,Ghent,Ghelamco Arena,20000,Football
+93,Europe,Belgium,Mechelen,AFAS Stadion,16000,Football
+93,Europe,Belgium,Charleroi,Stade du Pays de Charleroi,15000,Football
+93,Europe,Belgium,Lier,Herman Vanderpoortenstadion,14000,Football
+93,Europe,Belgium,Sint-Truiden,Stayen,14000,Football
+93,Europe,Belgium,Lokeren,Daknamstadion,12000,Football
+93,Europe,Belgium,Waregem,Elindus Arena,12000,Football
+93,Europe,Belgium,Brussels,Stade Edmond Machtens,12000,Football
+93,Europe,Belgium,Harelbeke,Stedelijk Forestiersstadion,10000,Football
+94,Europe,Bosnia and Herzegovina,Sarajevo,Olimpijski stadion Koševo – Asim Ferhatović-Hase,34000,Football
+94,Europe,Bosnia and Herzegovina,Zenica,Stadion Bilino polje,15000,Football
+95,Europe,Bulgaria,Sofia,Vasil Levski National Stadium,44000,Football
+95,Europe,Bulgaria,Burgas,efbet Arena,18000,Football
+95,Europe,Bulgaria,Veliko Tarnovo,Ivaylo Stadium,18000,Football
+95,Europe,Bulgaria,Sofia,Arena Armeec Sofia,12000,Multi-purpose
+95,Europe,Bulgaria,Razgrad,Huvepharma Arena,10000,Football
+96,Europe,Croatia,Zagreb,Arena Zagreb,15000,Handball
+96,Europe,Croatia,Varaždin,Stadion Anđelko Herjavec,10000,Football
+97,Europe,Czech Republic,Prague,Fortuna Arena,19000,Football
+97,Europe,Czech Republic,Prague,Generali Česká pojišťovna Arena,19000,Football
+97,Europe,Czech Republic,Prague,Stadion Evžena Rošického,19000,Football
+97,Europe,Czech Republic,Teplice,AGC Aréna Na Stínadlech,18000,Football
+97,Europe,Czech Republic,Prague,O2 arena,17000,Ice hockey
+97,Europe,Czech Republic,Ostrava,Městský stadion v Ostravě-Vítkovicích,15000,Football
+97,Europe,Czech Republic,Olomouc,Andrův stadion,12000,Football
+97,Europe,Czech Republic,Plzeň,Doosan Arena,11000,Football
+97,Europe,Czech Republic,Pardubice,enteria arena,10000,Ice hockey
+98,Europe,Denmark,Copenhagen,Parken,38000,Football
+98,Europe,Denmark,Brøndby,Brøndby Stadion,28000,Football
+98,Europe,Denmark,Aarhus,Ceres Park,19000,Football
+98,Europe,Denmark,Esbjerg,Blue Water Arena,16000,Football
+98,Europe,Denmark,Odense,Nature Energy Park,15000,Football
+98,Europe,Denmark,Aalborg,Aalborg Portland Park,14000,Football
+98,Europe,Denmark,Herning,Jyske Bank Boxen,12000,Multi-purpose
+98,Europe,Denmark,Herning,MCH Arena,11000,Football
+98,Europe,Denmark,Vejle,Vejle Stadion,11000,Football
+98,Europe,Denmark,Horsens,CASA Arena Horsens,10000,Football
+98,Europe,Denmark,Randers,Cepheus Park Randers,10000,Football
+98,Europe,Denmark,Silkeborg,JYSK park,10000,Football
+98,Europe,Denmark,Farum,Right to Dream Park,10000,Football
+99,Europe,Estonia,Tallinn,A. Le Coq Arena,14000,Football
+100,Europe,Finland,Helsinki,Helsingin olympiastadion,36000,Football
+100,Europe,Finland,Helsinki,Helsinki-halli,13000,Ice hockey
+100,Europe,Finland,Tampere,Nokia Arena,13000,Ice hockey
+100,Europe,Finland,Turku,Paavo Nurmen stadion,13000,Football
+100,Europe,Finland,Turku,Gatorade Center,11000,Ice hockey
+100,Europe,Finland,Helsinki,Bolt Arena,10000,Football
+101,Europe,French Republic,Saint-Denis,Stade de France,80000,"Football, rugby union"
+101,Europe,French Republic,Marseille,Orange Vélodrome,67000,Football
+101,Europe,French Republic,Lyon,Groupama Stadium,59000,Football
+101,Europe,French Republic,Villeneuve-d’Ascq,Decathlon Arena-Stade Pierre-Mauroy,50000,Football
+101,Europe,French Republic,Paris,Parc des Princes,47000,Football
+101,Europe,French Republic,Bordeaux,Matmut ATLANTIQUE,42000,Football
+101,Europe,French Republic,Saint-Étienne,Stade Geoffroy-Guichard,41000,Football
+101,Europe,French Republic,Lens,Stade Bollaert-Delelis,38000,Football
+101,Europe,French Republic,Nice,Allianz Riviera,36000,Football
+101,Europe,French Republic,Nantes,Stade de la Beaujoire – Louis Fonteneau,35000,Football
+101,Europe,French Republic,Toulouse,Stadium de Toulouse,33000,Football
+101,Europe,French Republic,Montpellier,Stade de la Mosson,32000,Football
+101,Europe,French Republic,Nanterre,Paris La Défense Arena,30000,Rugby union
+101,Europe,French Republic,Rennes,Roazhon Park,29000,Football
+101,Europe,French Republic,Strasbourg,Stade de la Meinau,26000,Football
+101,Europe,French Republic,Le Mans,MMArena,25000,Football
+101,Europe,French Republic,Valenciennes,Stade du Hainaut,25000,Football
+101,Europe,French Republic,Le Havre,Stade Océane,25000,Football
+101,Europe,French Republic,Sedan,Stade Louis-Dugauguez,24000,Football
+101,Europe,French Republic,Reims,Stade Auguste-Delaune,21000,Football
+101,Europe,French Republic,Montbéliard,Stade Auguste-Bonal,20000,Football
+101,Europe,French Republic,Troyes,Stade de l’Aube,20000,Football
+101,Europe,French Republic,Grenoble,Stade des Alpes,20000,"Football, rugby union"
+101,Europe,French Republic,Paris,Stade Jean-Bouin,20000,"Football, rugby union"
+101,Europe,French Republic,Tomblaine,Stade Marcel-Picot,20000,Football
+101,Europe,French Republic,Caen,Stade Michel-d’Ornano,20000,Football
+101,Europe,French Republic,Paris,Stade Sébastien-Charléty,20000,Football
+101,Europe,French Republic,Toulouse,Stade Ernest-Wallon,19000,"Rugby league, rugby union"
+101,Europe,French Republic,Clermont-Ferrand,Stade Marcel-Michelin,19000,Rugby union
+101,Europe,French Republic,Guingamp,Stade municipal de Roudourou,19000,Football
+101,Europe,French Republic,Angers,Stade Raymond-Kopa,19000,Football
+101,Europe,French Republic,Auxerre,Stade Abbé-Deschamps,18000,Football
+101,Europe,French Republic,Nîmes,Stade des Costières,18000,Football
+101,Europe,French Republic,Pau,Stade du Hameau,18000,Rugby union
+101,Europe,French Republic,Toulon,Stade Mayol,18000,Rugby union
+101,Europe,French Republic,Châteauroux,Stade Gaston-Petit,17000,Football
+101,Europe,French Republic,Mont-de-Marsan,Stade André-et-Guy-Boniface,16000,Rugby union
+101,Europe,French Republic,Furiani,Stade Armand-Cesari,16000,Football
+101,Europe,French Republic,Tours,Stade de la Vallée du Cher,16000,Football
+101,Europe,French Republic,Lorient,Stade du Moustoir – Yves Allainmat,16000,Football
+101,Europe,French Republic,La Rochelle,Stade Marcel-Deflandre,16000,Rugby union
+101,Europe,French Republic,Montpellier,GGL Stadium,15000,Rugby union
+101,Europe,French Republic,Brest,Stade Francis-Le Blé,15000,Football
+101,Europe,French Republic,Dijon,Stade Gaston-Gérard,15000,Football
+101,Europe,French Republic,Perpignan,Stade Aimé-Giral,14000,Rugby union
+101,Europe,French Republic,Brive-la-Gaillarde,Stade Amédée-Domenech,13000,Rugby union
+101,Europe,French Republic,Narbonne,Parc des sports et de l’amitié,12000,Rugby union
+101,Europe,French Republic,Amiens,Stade de la Licorne,12000,Football
+101,Europe,French Republic,Calais,Stade de l’Épopée,12000,Football
+101,Europe,French Republic,Créteil,Stade Dominique-Duvauchelle,12000,Football
+101,Europe,French Republic,Clermont-Ferrand,Stade Gabriel-Montpied,12000,Football
+101,Europe,French Republic,Castres,Stade Pierre-Fabre,12000,Rugby union
+101,Europe,French Republic,Oyonnax,Stade Charles-Mathon,11000,Rugby union
+101,Europe,French Republic,Mulhouse,Stade de l’Ill,11000,Football
+101,Europe,French Republic,Colomiers,Stade Michel-Bendichou,11000,Rugby union
+101,Europe,French Republic,Niort,Stade René-Gaillard,11000,Football
+101,Europe,French Republic,Ajaccio,Stade François-Coty,10000,Football
+101,Europe,French Republic,Nouméa,Stade Numa-Daly,10000,Football
+101,Europe,French Republic,Cannes,Stade Pierre-de-Coubertin,10000,Football
+102,Europe,Germany,Dortmund,Signal Iduna Park,81000,Football
+102,Europe,Germany,Munich,Allianz Arena,75000,Football
+102,Europe,Germany,Berlin,Olympiastadion Berlin,74000,Football
+102,Europe,Germany,Munich,Olympiastadion München,69000,Football
+102,Europe,Germany,Gelsenkirchen,VELTINS-Arena,62000,Football
+102,Europe,Germany,Hamburg,Volksparkstadion,57000,Football
+102,Europe,Germany,Mönchengladbach,BORUSSIA-PARK,54000,Football
+102,Europe,Germany,Düsseldorf,MERKUR SPIEL-ARENA,54000,"American football, football"
+102,Europe,Germany,Frankfurt am Main,Deutsche Bank Park,51000,Football
+102,Europe,Germany,Nuremberg,Max-Morlock-Stadion,50000,Football
+102,Europe,Germany,Kaiserslautern,Fritz-Walter-Stadion,49000,Football
+102,Europe,Germany,Hanover,Heinz-von-Heiden-Arena,49000,Football
+102,Europe,Germany,Cologne,RheinEnergieSTADION,49000,Football
+102,Europe,Germany,Leipzig,Red Bull Arena,47000,Football
+102,Europe,Germany,Bremen,wohninvest WESERSTADION,42000,Football
+102,Europe,Germany,Aachen,Hauptstadion,40000,Equestrianism
+102,Europe,Germany,Freiburg im Breisgau,Europa-Park Stadion,34000,Football
+102,Europe,Germany,Mainz,MEWA ARENA,34000,Football
+102,Europe,Germany,Herne,real-Arena,32000,Football
+102,Europe,Germany,Dresden,Rudolf-Harbig-Stadion,32000,Football
+102,Europe,Germany,Aachen,Tivoli,32000,Football
+102,Europe,Germany,Duisburg,Schauinsland-Reisen-Arena,31000,Football
+102,Europe,Germany,Leverkusen,BayArena,30000,Football
+102,Europe,Germany,Magdeburg,MDCC-Arena,30000,Football
+102,Europe,Germany,Sinsheim,PreZero Arena,30000,Football
+102,Europe,Germany,Wolfsburg,Volkswagen Arena,30000,Football
+102,Europe,Germany,Augsburg,WWK ARENA,30000,Football
+102,Europe,Germany,Hamburg,Millerntor-Stadion,29000,Football
+102,Europe,Germany,Rostock,Ostseestadion,29000,Football
+102,Europe,Germany,Bochum,Vonovia Ruhrstadion,27000,Football
+102,Europe,Germany,Bielefeld,SchücoArena,26000,Football
+102,Europe,Germany,Mannheim,Carl-Benz-Stadion,25000,Football
+102,Europe,Germany,Braunschweig,Eintracht-Stadion,24000,"American football, football"
+102,Europe,Germany,Berlin,Stadion An der Alten Försterei,22000,Football
+102,Europe,Germany,Cottbus,Stadion der Freundschaft,22000,Football
+102,Europe,Germany,Offenbach,Sparda-Bank-Hessen-Stadion,20000,Football
+102,Europe,Germany,Essen,Stadion an der Hafenstraße,20000,Football
+102,Europe,Germany,Ulm,Donaustadion,19000,Football
+102,Europe,Germany,Berlin,Friedrich-Ludwig-Jahn-Stadion,19000,"American football, football"
+102,Europe,Germany,Kassel,Auestadion,18000,Football
+102,Europe,Germany,Cologne,LANXESS arena,18000,Ice hockey
+102,Europe,Germany,Erfurt,Steigerwaldstadion,18000,Football
+102,Europe,Germany,Lübeck,Stadion Lohmühle,17000,Football
+102,Europe,Germany,Aue,Erzgebirgsstadion,16000,Football
+102,Europe,Germany,Bochum,Lohrheidestadion,16000,Football
+102,Europe,Germany,Osnabrück,Stadion an der Bremer Brücke,16000,Football
+102,Europe,Germany,Homburg,Waldstadion Homburg,16000,Football
+102,Europe,Germany,Ingolstadt,Audi Sportpark,15000,Football
+102,Europe,Germany,Sandhausen,BWT-Stadion am Hardtwald,15000,Football
+102,Europe,Germany,Kiel,Holstein-Stadion,15000,Football
+102,Europe,Germany,Paderborn,Home Deluxe Arena,15000,Football
+102,Europe,Germany,Regensburg,Jahnstadion Regensburg,15000,Football
+102,Europe,Germany,Halle,LEUNA-CHEMIE-STADION,15000,Football
+102,Europe,Germany,Münster,Preußenstadion,15000,Football
+102,Europe,Germany,Fürth,Sportpark Ronhof | Thomas Sommer,15000,Football
+102,Europe,Germany,Unterhaching,Sportpark Unterhaching,15000,Football
+102,Europe,Germany,Chemnitz,Stadion – An der Gellertstraße,15000,Football
+102,Europe,Germany,Munich,Städtisches Stadion an der Grünwalder Straße,15000,Football
+102,Europe,Germany,Heidenheim an der Brenz,Voith-Arena,15000,Football
+102,Europe,Germany,Aalen,OSTALB ARENA,14000,Football
+102,Europe,Germany,Mannheim,SAP Arena,14000,"Handball, ice hockey"
+102,Europe,Germany,Oer-Erkenschwick,Stimberg-Stadion,14000,Football
+102,Europe,Germany,Würzburg,flyeralarm Arena,13000,Football
+102,Europe,Germany,Meppen,Hänsch-Arena,13000,Football
+102,Europe,Germany,Düsseldorf,PSD Bank Dome,13000,Ice hockey
+102,Europe,Germany,Bielefeld,Bezirkssportanlage Rußheide,12000,"American football, football"
+102,Europe,Germany,Halle,OWL-Arena,12000,Multi-purpose
+102,Europe,Germany,Frankfurt am Main,PSD Bank Arena,12000,"American football, football"
+102,Europe,Germany,Bonn,Stadion Pennenfeld,12000,"American football, football"
+102,Europe,Germany,Ahlen,Wersestadion,12000,Football
+102,Europe,Germany,Cologne,Südstadion,11000,"American football, football"
+102,Europe,Germany,Bayreuth,Hans-Walter-Wild-Stadion,10000,Football
+102,Europe,Germany,Potsdam,Karl-Liebknecht-Stadion,10000,Football
+102,Europe,Germany,Aspach,WIRmachenDRUCK Arena,10000,Football
+102,Europe,Germany,Kiel,Wunderino-Arena,10000,Handball
+103,Europe,Hellenic Republic,Marousi,Olympic Stadium,75000,Football
+103,Europe,Hellenic Republic,Piraeus,Georgios Karaiskakis Stadium,32000,Football
+103,Europe,Hellenic Republic,Nea Filadelfeia,OPAP Arena,32000,Football
+103,Europe,Hellenic Republic,Thessaloniki,PAOK Stadium,29000,Football
+103,Europe,Hellenic Republic,Patras,Pampeloponnisiako Stadium,23000,Football
+103,Europe,Hellenic Republic,Thessaloniki,Kleanthis Vikelidis Stadium,22000,Football
+103,Europe,Hellenic Republic,Marousi,Nikos Galis Olympic Indoor Hall,19000,Basketball
+103,Europe,Hellenic Republic,Larissa,AEL FC Arena,16000,Football
+103,Europe,Hellenic Republic,Athens,Apostolos Nikolaidis Stadium,16000,Football
+104,Europe,Hungary,Budapest,Puskás Aréna,67000,Football
+104,Europe,Hungary,Budapest,Groupama Aréna,23000,Football
+104,Europe,Hungary,Debrecen,Nagyerdei Stadion,20000,Football
+104,Europe,Hungary,Miskolc,DVTK Stadion,15000,Football
+104,Europe,Hungary,Győr,ETO Park,15000,Football
+104,Europe,Hungary,Székesfehérvár,MOL Aréna Sóstó,14000,Football
+104,Europe,Hungary,Dunaújváros,Dunaújváros Stadion,12000,Football
+104,Europe,Hungary,Zalaegerszeg,ZTE Aréna,11000,Football
+105,Europe,Ireland,Dublin,Croke Park,82000,"Gaelic football, hurling"
+105,Europe,Ireland,Dublin,Aviva Stadium,51000,"Football, rugby union"
+105,Europe,Ireland,Cork,Páirc Uí Chaoimh,45000,"Gaelic football, hurling"
+105,Europe,Ireland,Thurles,Semple Stadium,45000,"Gaelic football, hurling"
+105,Europe,Ireland,Limerick,LIT Gaelic Grounds,43000,"Gaelic football, hurling"
+105,Europe,Ireland,Killarney,Fitzgerald Stadium,38000,Gaelic football
+105,Europe,Ireland,Clones,St. Tiernach’s Park,36000,Gaelic football
+105,Europe,Ireland,Kilkenny,UPMC Nowlan Park,27000,Hurling
+105,Europe,Ireland,Wexford,Chadwicks Wexford Park,25000,"Gaelic football, hurling"
+105,Europe,Ireland,Limerick,Thomond Park,25000,Rugby union
+105,Europe,Ireland,Carlow,Netwatch Cullen Park,21000,"Gaelic football, hurling"
+106,Europe,Italian Republic,Milan,Stadio Giuseppe Meazza,80000,Football
+106,Europe,Italian Republic,Rome,Stadio Olimpico,70000,Football
+106,Europe,Italian Republic,Florence,Stadio comunale Artemio Franchi,43000,Football
+106,Europe,Italian Republic,Turin,Allianz Stadium,41000,Football
+106,Europe,Italian Republic,Verona,Stadio Marcantonio Bentegodi,39000,Football
+106,Europe,Italian Republic,Salerno,Stadio comunale Arechi,37000,Football
+106,Europe,Italian Republic,Palermo,Stadio comunale Renzo Barbera,36000,Football
+106,Europe,Italian Republic,Lecce,Stadio Ettore Giardiniero – Via del Mare,31000,Football
+106,Europe,Italian Republic,Parma,Stadio comunale Ennio Tardini,27000,Football
+106,Europe,Italian Republic,Turin,Stadio Olimpico Grande Torino,27000,Football
+106,Europe,Italian Republic,Reggio di Calabria,Stadio Oreste Granillo,27000,Football
+106,Europe,Italian Republic,Avellino,Stadio Partenio-Adriano Lombardi,26000,Football
+106,Europe,Italian Republic,Udine,Dacia Arena,25000,Football
+106,Europe,Italian Republic,Benevento,Stadio Ciro Vigorito,25000,Football
+106,Europe,Italian Republic,Foggia,Stadio Pino Zaccheria,25000,Football
+106,Europe,Italian Republic,Trieste,Stadio Nereo Rocco,24000,Football
+106,Europe,Italian Republic,Cesena,Orogel Stadium Dino Manuzzi,23000,Football
+106,Europe,Italian Republic,Catania,Stadio Angelo Massimino,23000,Football
+106,Europe,Italian Republic,Perugia,Stadio Renato Curi,23000,Football
+106,Europe,Italian Republic,Bergamo,Gewiss Stadium,21000,Football
+106,Europe,Italian Republic,Reggio nell’Emilia,MAPEI STADIUM – Città del Tricolore,21000,Football
+106,Europe,Italian Republic,Modena,Stadio Alberto Braglia,21000,Football
+106,Europe,Italian Republic,Piacenza,Stadio Leonardo Garilli,21000,Football
+106,Europe,Italian Republic,Pescara,Stadio Adriatico – Giovanni Cornacchia,20000,Football
+106,Europe,Italian Republic,Cosenza,Stadio comunale San Vito “Gigi Marulla”,20000,Football
+106,Europe,Italian Republic,Bari,Stadio della Vittoria,19000,"American football, rugby union"
+106,Europe,Italian Republic,Monza,U-Power Stadium,18000,Football
+106,Europe,Italian Republic,Terni,Stadio Libero Liberati,17000,Football
+106,Europe,Italian Republic,Novara,Stadio Silvio Piola,17000,Football
+106,Europe,Italian Republic,Cagliari,Sardegna Arena,16000,Football
+106,Europe,Italian Republic,Frosinone,Stadio Benito Stirpe,16000,Football
+106,Europe,Italian Republic,Empoli,Stadio comunale Carlo Castellani,16000,Football
+106,Europe,Italian Republic,Crotone,Stadio comunale Ezio Scida,16000,Football
+106,Europe,Italian Republic,Cremona,Stadio comunale Giovanni Zini,16000,Football
+106,Europe,Italian Republic,Ferrara,Stadio Paolo Mazza,16000,Football
+106,Europe,Italian Republic,Livorno,Stadio comunale Armando Picchi,14000,Football
+106,Europe,Italian Republic,Como,Stadio Giuseppe Sinigaglia,13000,Football
+106,Europe,Italian Republic,San Benedetto del Tronto,Stadio Riviera delle Palme,13000,Football
+106,Europe,Italian Republic,La Spezia,Stadio Alberto Picco,11000,Football
+106,Europe,Italian Republic,Venice,Stadio Pier Luigi Penzo,11000,Football
+107,Europe,Lithuania,Kaunas,S. Dariaus ir S. Girėno stadionas,15000,Football
+107,Europe,Lithuania,Kaunas,Žalgirio arena,15000,Basketball
+108,Europe,Malta,Ta’ Qali,Grawnd Nazzjonali Ta’ Qali,16000,Football
+109,Europe,Moldova,Tiraspol,Stadionul Sheriff,12000,Football
+109,Europe,Moldova,Chişinău,Stadionul Zimbru,10000,Football
+110,Europe,Monaco,Monaco,Stade Louis-II,18000,Football
+111,Europe,Montenegro,Podgorica,Stadion pod Goricom,15000,Football
+112,Europe,Netherlands,Amsterdam,Johan Cruijff ArenA,55000,Football
+112,Europe,Netherlands,Rotterdam,Stadion Feijenoord,51000,Football
+112,Europe,Netherlands,Eindhoven,Philips Stadion,35000,Football
+112,Europe,Netherlands,Enschede,De Grolsch Veste,30000,Football
+112,Europe,Netherlands,Heerenveen,Abe Lenstra Stadion,26000,Football
+112,Europe,Netherlands,Arnhem,GelreDome,25000,Football
+112,Europe,Netherlands,Utrecht,Stadion Galgenwaard,23000,Football
+112,Europe,Netherlands,Groningen,Euroborg,22000,Football
+112,Europe,Netherlands,Amsterdam,Olympisch Stadion,22000,Football
+112,Europe,Netherlands,Alkmaar,AFAS Stadion,19000,Football
+112,Europe,Netherlands,Kerkrade,Parkstad Limburg Stadion,19000,Football
+112,Europe,Netherlands,Breda,Rat Verlegh Stadion,19000,Football
+112,Europe,Netherlands,Rotterdam,Ahoy Arena,16000,Multi-purpose
+112,Europe,Netherlands,The Hague,Bingoal Stadion,15000,Football
+112,Europe,Netherlands,Tilburg,Koning Willem II Stadion,14000,Football
+112,Europe,Netherlands,Zwolle,MAC³PARK stadion,14000,Football
+112,Europe,Netherlands,Almelo,Erve Asito,12000,Football
+112,Europe,Netherlands,Sittard,Fortuna Sittard Stadion,12000,Football
+112,Europe,Netherlands,Nijmegen,Goffertstadion,12000,Football
+112,Europe,Netherlands,Doetinchem,Stadion De Vijverberg,12000,Football
+112,Europe,Netherlands,Rotterdam,Sparta Stadion,11000,Football
+112,Europe,Netherlands,Leeuwarden,Cambuurstadion,10000,Football
+112,Europe,Netherlands,Deventer,De Adelaarshorst,10000,Football
+112,Europe,Netherlands,Maastricht,Stadion de Geusselt,10000,Football
+112,Europe,Netherlands,Willemstad,Stadion Ergilio Hato,10000,Football
+113,Europe,North Macedonia,Skopje,National Arena Tošhe Proeski,36000,Football
+114,Europe,Norway,Oslo,Ullevaal stadion,28000,Football
+114,Europe,Norway,Trondheim,Lerkendal stadion,21000,Football
+114,Europe,Norway,Bergen,Brann stadion,17000,Football
+114,Europe,Norway,Oslo,Intility Arena,16000,Football
+114,Europe,Norway,Stavanger,SR-Bank Arena,15000,Football
+114,Europe,Norway,Kristiansand,Sparebanken Sør Arena,14000,Football
+114,Europe,Norway,Fredrikstad,Fredrikstad stadion,12000,Football
+114,Europe,Norway,Skien,Skagerak Arena,12000,Football
+114,Europe,Norway,Molde,Aker stadion,11000,Football
+114,Europe,Norway,Lillestrøm,Åråsen stadion,11000,Football
+115,Europe,Poland,Warsaw,PGE Narodowy,58000,Football
+115,Europe,Poland,Chorzów,Stadion Śląski,55000,Football
+115,Europe,Poland,Poznań,Stadion Miejski w Poznaniu,43000,Football
+115,Europe,Poland,Wrocław,Tarczyński Arena,43000,Football
+115,Europe,Poland,Gdańsk,Polsat Plus Arena Gdańsk,41000,Football
+115,Europe,Poland,Kraków,Stadion Miejski im. Henryka Reymana,33000,Football
+115,Europe,Poland,Warsaw,Stadion Miejski Legii Warszawa im. Marszałka Józefa Piłsudskiego,31000,Football
+115,Europe,Poland,Białystok,Stadion Miejski w Białymstoku,22000,Football
+115,Europe,Poland,Szczecin,Stadion Miejski im. Floriana Krygiera,21000,Football
+115,Europe,Poland,Bydgoszcz,Stadion im. Zdzisława Krzyszkowiaka,20000,Football
+115,Europe,Poland,Łódź,Stadion Miejski ŁKS im. Władysława Króla,18000,Football
+115,Europe,Poland,Łódź,Stadion Miejski Widzewa Łódź,18000,Football
+115,Europe,Poland,Lubin,Stadion Zagłębia Lubin,16000,Football
+115,Europe,Poland,Lublin,Arena Lublin,15000,Football
+115,Europe,Poland,Toruń,Motoarena Toruń im. Mariana Rosego,15000,Motorcycle speedway
+115,Europe,Poland,Kraków,Stadion Cracovii im. Józefa Piłsudskiego,15000,Football
+115,Europe,Poland,Gorzów Wielkopolski,Stadion im. Edwarda Jancarza,15000,Motorcycle speedway
+115,Europe,Poland,Bielsko-Biała,Stadion Miejski w Bielsku-Białej,15000,Football
+115,Europe,Poland,Gdynia,Stadion Miejski w Gdyni,15000,Football
+115,Europe,Poland,Tychy,Stadion Miejski w Tychach,15000,Football
+115,Europe,Poland,Kielce,Suzuki Arena,15000,Football
+115,Europe,Poland,Gliwice,Stadion Miejski w Gliwicach,10000,Football
+116,Europe,Portuguese Republic,Lisbon,Estádio do Sport Lisboa e Benfica,64000,Football
+116,Europe,Portuguese Republic,Porto,Estádio do Dragão,50000,Football
+116,Europe,Portuguese Republic,Lisbon,Estádio José Alvalade,50000,Football
+116,Europe,Portuguese Republic,Aveiro,Estádio Municipal de Aveiro,32000,Football
+116,Europe,Portuguese Republic,São João da Venda,Estádio Algarve,30000,Football
+116,Europe,Portuguese Republic,Guimarães,Estádio D. Afonso Henriques,30000,Football
+116,Europe,Portuguese Republic,Braga,Estádio Municipal de Braga,30000,Football
+116,Europe,Portuguese Republic,Porto,Estádio do Bessa Século XXI,28000,Football
+116,Europe,Portuguese Republic,Barcelos,Estádio Cidade de Barcelos,12000,Football
+116,Europe,Portuguese Republic,Faro,Estádio de São Luís,12000,Football
+116,Europe,Portuguese Republic,Funchal,Estádio do Marítimo,10000,Football
+117,Europe,Romania,Bucharest,Arena Națională,55000,Football
+117,Europe,Romania,Bucharest,Stadionul Steaua,31000,Football
+117,Europe,Romania,Cluj-Napoca,Cluj Arena,30000,"Football, rugby union"
+117,Europe,Romania,Craiova,Stadionul Ion Oblemenco,30000,Football
+117,Europe,Romania,Cluj-Napoca,Stadionul Dr. Constantin Rădulescu,23000,Football
+117,Europe,Romania,Piatra Neamt,Stadionul Ceahlăul,18000,Football
+117,Europe,Romania,Ploiesti,Stadionul Ilie Oană,15000,Football
+117,Europe,Romania,Pitești,Stadionul Nicolae Dobrin,15000,Football
+117,Europe,Romania,Bucharest,Stadionul Rapid-Giulești,14000,Football
+117,Europe,Romania,Arad,Stadionul Francisc von Neuman,12000,Football
+117,Europe,Romania,Târgu Jiu,Stadionul Tudor Vladimirescu,12000,Football
+118,Europe,Russia,Moscow,Grand Sports Arena of the Luzhniki Olympic Complex,81000,Football
+118,Europe,Russia,St. Petersburg,Gazprom Arena,67000,Football
+118,Europe,Russia,Kazan,Ak Bars Arena,45000,Football
+118,Europe,Russia,Moscow,Otkritie Bank Arena,45000,Football
+118,Europe,Russia,Rostov-on-Don,Rostov Arena,45000,Football
+118,Europe,Russia,Volgograd,Volgograd Arena,45000,Football
+118,Europe,Russia,Saransk,Mordovia Arena,44000,Football
+118,Europe,Russia,Nizhny Novgorod,Nizhny Novgorod Stadium,44000,Football
+118,Europe,Russia,Samara,Solidarnost Samara Arena,44000,Football
+118,Europe,Russia,Yekaterinburg,Central Stadium,35000,Football
+118,Europe,Russia,Kaliningrad,Kaliningrad Stadium,35000,Football
+118,Europe,Russia,Krasnodar,Krasnodar Stadium,35000,Football
+118,Europe,Russia,Voronezh,Trade Unions Central Stadium,31000,Football
+118,Europe,Russia,Grozny,Akhmat Arena,30000,Football
+118,Europe,Russia,Moscow,VEB Arena,30000,Football
+118,Europe,Russia,Moscow,Dynamo Central Stadium,26000,Football
+118,Europe,Russia,Ryazan,CSK Stadium,25000,Football
+118,Europe,Russia,Yaroslavl,Shinnik Stadium,22000,Football
+118,Europe,Russia,Tula,Arsenal Stadium,20000,Football
+118,Europe,Russia,Vladimir,Torpedo Stadium,19000,Football
+118,Europe,Russia,Khimki,Arena Khimki,18000,Football
+118,Europe,Russia,Astrakhan,Central Stadium,17000,Football
+118,Europe,Russia,Izhevsk,Central Republican Stadium,16000,Football
+118,Europe,Russia,Ufa,BetBoom Arena,15000,Football
+118,Europe,Russia,Chelyabinsk,Central Stadium,15000,Football
+118,Europe,Russia,Stavropol,Dynamo Stadium,15000,Football
+118,Europe,Russia,Khabarovsk,Lenin Stadium,15000,Football
+118,Europe,Russia,Irkutsk,Trud Stadium,15000,"Bandy, football"
+118,Europe,Russia,Ramenskoye,Saturn Stadium,14000,Football
+118,Europe,Russia,Tyumen,Geolog Stadium,13000,Football
+118,Europe,Russia,Sochi,Bolshoy Ice Dome,12000,Ice hockey
+118,Europe,Russia,St. Petersburg,Ice Palace,12000,Ice hockey
+118,Europe,Russia,Moscow,Megasport Sport Palace,12000,"Basketball, ice hockey"
+118,Europe,Russia,Moscow,VTB Arena,12000,Ice hockey
+118,Europe,Russia,Lipetsk,Metallurg Stadium,11000,Football
+118,Europe,Russia,Belgorod,Salyut Stadium,11000,Football
+118,Europe,Russia,Bryansk,Dynamo Stadium,10000,Football
+118,Europe,Russia,Vladivostok,Dynamo Stadium,10000,Football
+118,Europe,Russia,Chita,Lokomotiv Stadium,10000,Football
+118,Europe,Russia,Liski,Lokomotiv Stadium,10000,Football
+118,Europe,Russia,Moscow,Sapsan Arena,10000,Football
+118,Europe,Russia,Sochi,Slava Metreveli Central Stadium,10000,Football
+119,Europe,Serbia,Belgrade,Stadion Rajko Mitić,53000,Football
+119,Europe,Serbia,Belgrade,Stadion Partizana,29000,Football
+119,Europe,Serbia,Belgrade,Štark Arena,18000,Basketball
+119,Europe,Serbia,Kruševac,Stadion Mladost,10000,Football
+120,Europe,Slovak Republic,Bratislava,Národný futbalový štadión,22000,Football
+120,Europe,Slovak Republic,Trnava,CITY ARENA – Štadión Antona Malatinského,19000,Football
+120,Europe,Slovak Republic,Dunajská Streda,MOL Aréna,12000,Football
+120,Europe,Slovak Republic,Žilina,Štadión MŠK Žilina,11000,Football
+120,Europe,Slovak Republic,Bratislava,Zimný štadión Ondreja Nepelu,10000,Ice hockey
+121,Europe,Slovenia,Ljubljana,Stadion Stožice,16000,Football
+121,Europe,Slovenia,Maribor,Stadion Ljudski vrt,12000,Football
+122,Europe,Spain,Madrid,Cívitas Metropolitano,68000,Football
+122,Europe,Spain,Seville,Estadio Benito Villamarín,60000,Football
+122,Europe,Spain,Seville,Estadio La Cartuja de Sevilla,57000,Football
+122,Europe,Spain,Bilbao,San Mamés,53000,Football
+122,Europe,Spain,Valencia,Mestalla,48000,Football
+122,Europe,Spain,Seville,Estadio Ramón Sánchez-Pizjuán,43000,Football
+122,Europe,Spain,Cornellà de Llobregat,RCDE Stadium,40000,Football
+122,Europe,Spain,San Sebastián,Reale Arena,39000,Football
+122,Europe,Spain,Zaragoza,Estadio La Romareda,34000,Football
+122,Europe,Spain,Elche,Estadi Manuel Martínez Valero,33000,Football
+122,Europe,Spain,A Coruña,Estadio ABANCA-RIAZOR,32000,Football
+122,Europe,Spain,Las Palmas de Gran Canaria,Estadio de Gran Canaria,32000,Football
+122,Europe,Spain,Murcia,Estadio Enrique Roca de Murcia,31000,Football
+122,Europe,Spain,Gijón,Estadio El Molinón-Enrique Castro “Quini”,30000,Football
+122,Europe,Spain,Málaga,Estadio La Rosaleda,30000,Football
+122,Europe,Spain,Oviedo,Estadio Municipal Carlos Tartiere,30000,Football
+122,Europe,Spain,Alicante,Estadio José Rico Pérez,29000,Football
+122,Europe,Spain,Valladolid,Estadio Municipal José Zorrilla,27000,Football
+122,Europe,Spain,Valencia,Estadi Ciutat de València,26000,Football
+122,Europe,Spain,Pamplona,Estadio El Sadar,23000,Football
+122,Europe,Spain,Madrid,Plaza de toros de Las Ventas,23000,Bullfighting
+122,Europe,Spain,Santa Cruz de Tenerife,Estadio Heliodoro Rodríguez López,22000,Football
+122,Europe,Spain,Córdoba,Estadio El Arcángel,20000,Football
+122,Europe,Spain,Jerez de la Frontera,Estadio Municipal de Chapín,20000,Football
+122,Europe,Spain,Cádiz,Estadio Nuevo Mirandilla,20000,Football
+122,Europe,Spain,Granada,Estadio Nuevo Los Cármenes,19000,Football
+122,Europe,Spain,Vitoria-Gasteiz,Mendizorrotza,19000,Football
+122,Europe,Spain,Pamplona,Plaza de toros de Pamplona,19000,Bullfighting
+122,Europe,Spain,Getafe,Coliseum Alfonso Pérez,17000,Football
+122,Europe,Spain,Albacete,Estadio Carlos Belmonte,17000,Football
+122,Europe,Spain,Madrid,WiZink Center,17000,Basketball
+122,Europe,Spain,Logroño,Municipal Las Gaunas,16000,Football
+122,Europe,Spain,Cartagena,Estadio Municipal Cartagonova,15000,Football
+122,Europe,Spain,Castellón de la Plana,Estadio Municipal de Castalia,15000,Football
+122,Europe,Spain,Vitoria-Gasteiz,Fernando Buesa Arena,15000,Basketball
+122,Europe,Spain,Huelva,Plaza de toros de La Merced,15000,Bullfighting
+122,Europe,Spain,Murcia,Plaza de toros de Murcia,15000,Bullfighting
+122,Europe,Spain,Madrid,Campo de fútbol de Vallecas,14000,Football
+122,Europe,Spain,Badajoz,Estadio Nuevo Vivero,14000,Football
+122,Europe,Spain,Tarragona,Nou Estadi Costa Daurada,14000,Football
+122,Europe,Spain,Granada,Plaza de toros de Granada,14000,Bullfighting
+122,Europe,Spain,Córdoba,Plaza de toros de Los Califas,14000,Bullfighting
+122,Europe,Spain,Bilbao,Vista Alegre zezen plaza,14000,Bullfighting
+122,Europe,Spain,León,Estadio Municipal Reino de León,13000,Football
+122,Europe,Spain,Madrid,Estadio Manolo Santana,12000,Tennis
+122,Europe,Spain,Ferrol,Estadio Municipal da Malata,12000,Football
+122,Europe,Spain,Leganés,Estadio Municipal de Butarque,12000,Football
+122,Europe,Spain,Burgos,Estadio Municipal de El Plantío,12000,Football
+122,Europe,Spain,Pontevedra,Estadio Municipal de Pasarón,12000,Football
+122,Europe,Spain,Jaén,Estadio Municipal La Victoria,12000,Football
+122,Europe,Spain,Badalona,Palau Municipal d’Esports de Badalona,12000,Basketball
+122,Europe,Spain,Valencia,Plaça de bous de València,12000,Bullfighting
+122,Europe,Spain,Albacete,Plaza de toros de Albacete,12000,Bullfighting
+122,Europe,Spain,Seville,Plaza de toros de la Real Maestranza de Caballería de Sevilla,12000,Bullfighting
+122,Europe,Spain,Sabadell,Estadi Municipal de la Nova Creu Alta,11000,Football
+122,Europe,Spain,Terrassa,Estadi Municipal Olímpic,11000,Football
+122,Europe,Spain,Las Palmas de Gran Canaria,Gran Canaria Arena,11000,Basketball
+122,Europe,Spain,Algeciras,Monumental Las Palomas,11000,Bullfighting
+122,Europe,Spain,Málaga,Palacio de deportes José María Martín Carpena,11000,Basketball
+122,Europe,Spain,Logroño,Plaza de toros de La Ribera,11000,Bullfighting
+122,Europe,Spain,Valladolid,Plaza de toros de Valladolid,11000,Bullfighting
+122,Europe,Spain,Melilla,Estadio Álvarez Claro,10000,Football
+122,Europe,Spain,Zaragoza,Pabellón Príncipe Felipe,10000,Basketball
+122,Europe,Spain,Almería,Plaza de toros de Almería,10000,Bullfighting
+122,Europe,Spain,Jaén,Plaza de toros de Jaén,10000,Bullfighting
+122,Europe,Spain,Palencia,Plaza de toros de Palencia,10000,Bullfighting
+122,Europe,Spain,Salamanca,Plaza de toros de Salamanca – La Glorieta,10000,Bullfighting
+122,Europe,Spain,Santander,Plaza de toros de Santander,10000,Bullfighting
+122,Europe,Spain,Zaragoza,Plaza de toros de Zaragoza,10000,Bullfighting
+123,Europe,Sweden,Solna,Friends Arena,54000,Football
+123,Europe,Sweden,Gothenburg,Ullevi,40000,Football
+123,Europe,Sweden,Stockholm,Tele2 Arena,30000,Football
+123,Europe,Sweden,Malmö,Eleda Stadion,22000,Football
+123,Europe,Sweden,Gothenburg,Gamla Ullevi,18000,Football
+123,Europe,Sweden,Norrköping,PlatinumCars Arena,17000,Football
+123,Europe,Sweden,Borås,Borås Arena,16000,Football
+123,Europe,Sweden,Helsingborg,Olympia,16000,Football
+123,Europe,Sweden,Örebro,Behrn Arena,12000,"American football, football"
+123,Europe,Sweden,Kalmar,Guldfågeln Arena,12000,Football
+123,Europe,Sweden,Gothenburg,Scandinavium,12000,Ice hockey
+123,Europe,Sweden,Växjö,Visma Arena,12000,Football
+123,Europe,Sweden,Landskrona,Landskrona IP,10000,Football
+124,Europe,Swiss Confederation,Basel,St. Jakob-Park,38000,Football
+124,Europe,Swiss Confederation,Bern,Stadion Wankdorf,32000,Football
+124,Europe,Swiss Confederation,Geneva,Stade de Genève,30000,Football
+124,Europe,Swiss Confederation,Zürich,Stadion Letzigrund,26000,Football
+124,Europe,Swiss Confederation,St. Gallen,kybunpark,19000,Football
+124,Europe,Swiss Confederation,Bern,PostFinance-Arena,17000,Ice hockey
+124,Europe,Swiss Confederation,Lucerne,swissporarena,16000,Football
+124,Europe,Swiss Confederation,Sion,Stade de Tourbillon,14000,Football
+124,Europe,Swiss Confederation,La Chaux-de-Fonds,Stade de la Charrière,12000,Football
+124,Europe,Swiss Confederation,Neuchâtel,Stade de la Maladière,12000,Football
+124,Europe,Swiss Confederation,Zürich,Hallenstadion,11000,Ice hockey
+124,Europe,Swiss Confederation,Thun,Stockhorn Arena,10000,Football
+125,Europe,Ukraine,Kyiv,Olympic National Sports Complex Stadium,70000,Football
+125,Europe,Ukraine,Kharkiv,Metalist Stadium,40000,Football
+125,Europe,Ukraine,Lviv,Arena Lviv,34000,Football
+125,Europe,Ukraine,Odessa,Chernomorets Stadium,34000,Football
+125,Europe,Ukraine,Sumy,Yuvileiny Stadium,25000,Football
+125,Europe,Ukraine,Ternopil,Roman Shukhevych Ternopil City Stadium,15000,Football
+125,Europe,Ukraine,Kropyvnytskyi,Zirka Stadium,14000,Football
+125,Europe,Ukraine,Chernivtsi,Bukovyna Stadium,12000,Football
+125,Europe,Ukraine,Mariupol,Volodymyr Boiko Stadium,12000,Football
+127,Europe,England,London,Wembley Stadium,90000,Football
+127,Europe,England,Twickenham,Twickenham Stadium,82000,Rugby union
+127,Europe,England,Stretford,Old Trafford,74000,Football
+127,Europe,England,London,London Stadium,66000,Football
+127,Europe,England,London,Tottenham Hotspur Stadium,62000,Football
+127,Europe,England,London,Emirates Stadium,60000,Football
+127,Europe,England,Manchester,Etihad Stadium,55000,Football
+127,Europe,England,Liverpool,Anfield Stadium,53000,Football
+127,Europe,England,Newcastle upon Tyne,St. James’ Park,52000,Football
+127,Europe,England,Sunderland,Stadium of Light,49000,Football
+127,Europe,England,Birmingham,Villa Park,42000,Football
+127,Europe,England,London,Stamford Bridge,41000,Football
+127,Europe,England,Liverpool,Goodison Park,39000,Football
+127,Europe,England,Sheffield,Hillsborough Stadium,39000,Football
+127,Europe,England,Leeds,Elland Road Stadium,37000,Football
+127,Europe,England,Middlesbrough,Riverside Stadium,34000,Football
+127,Europe,England,Derby,Pride Park Stadium,33000,Football
+127,Europe,England,Sheffield,Bramall Lane Stadium,32000,Football
+127,Europe,England,Leicester,King Power Stadium,32000,Football
+127,Europe,England,Wolverhampton,Molineux Stadium,32000,Football
+127,Europe,England,Coventry,Stadium Bowl,32000,"Football, rugby union"
+127,Europe,England,Southampton,St. Mary’s Stadium,32000,Football
+127,Europe,England,Blackburn,Ewood Park,31000,Football
+127,Europe,England,London,Lord’s Cricket Ground,31000,Cricket
+127,Europe,England,Brighton,American Express Community Stadium,30000,Football
+127,Europe,England,Stoke-on-Trent,bet365 Stadium,30000,Football
+127,Europe,England,Ipswich,Portman Road Stadium,30000,Football
+127,Europe,England,Milton Keynes,Stadium MK,30000,Football
+127,Europe,England,West Bridgford,The City Ground,30000,Football
+127,Europe,England,London,Craven Cottage,29000,Football
+127,Europe,England,Birmingham,St. Andrew’s Stadium,29000,Football
+127,Europe,England,Bolton,University of Bolton Stadium,28000,Football
+127,Europe,England,Bristol,Ashton Gate Stadium,27000,"Football, rugby union"
+127,Europe,England,Norwich,Carrow Road Stadium,27000,Football
+127,Europe,England,London,The Valley,27000,Football
+127,Europe,England,London,Selhurst Park,26000,Football
+127,Europe,England,West Bromwich,The Hawthorns,26000,Football
+127,Europe,England,Wigan,DW Stadium,25000,"Football, rugby league"
+127,Europe,England,Birmingham,Edgbaston Cricket Ground,25000,Cricket
+127,Europe,England,London,Kia Oval,25000,Cricket
+127,Europe,England,Leicester,Mattioli Woods Welford Road,25000,Rugby union
+127,Europe,England,Kingston upon Hull,MKM Stadium,25000,"Football, rugby league"
+127,Europe,England,Bradford,Northern Commercials Stadium,25000,Football
+127,Europe,England,Huddersfield,John Smith’s Stadium,24000,"Football, rugby league"
+127,Europe,England,Reading,Select Car Leasing Stadium,24000,Football
+127,Europe,England,Preston,Deepdale,23000,Football
+127,Europe,England,Barnsley,Oakwell Stadium,23000,Football
+127,Europe,England,Watford,Vicarage Road Stadium,22000,Football
+127,Europe,England,Burnley,Turf Moor,21000,Football
+127,Europe,England,Portsmouth,Fratton Park,20000,Football
+127,Europe,England,Nottingham,Meadow Lane Stadium,20000,Football
+127,Europe,England,London,The Den,20000,Football
+127,Europe,England,Leeds,Emerald Headingley Rugby Stadium,19000,Rugby league
+127,Europe,England,Leeds,Emerald Headingley Cricket Ground,18000,Cricket
+127,Europe,England,London,Loftus Road Stadium,18000,Football
+127,Europe,England,St. Helens,Totally Wicked Stadium,18000,"Football, rugby league"
+127,Europe,England,Carlisle,Brunton Park,17000,Football
+127,Europe,England,Brentford,Gtech Community Stadium,17000,"Football, rugby union"
+127,Europe,England,Plymouth,Home Park,17000,Football
+127,Europe,England,West Bridgford,Trent Bridge Cricket Ground,17000,Cricket
+127,Europe,England,Blackpool,Bloomfield Road Stadium,16000,Football
+127,Europe,England,Gloucester,Kingsholm Stadium,16000,Rugby union
+127,Europe,England,Birkenhead,Prenton Park,16000,Football
+127,Europe,England,Doncaster,Eco-Power Stadium,15000,"Football, rugby league"
+127,Europe,England,Northampton,Franklin’s Gardens,15000,Rugby union
+127,Europe,England,Swindon,The Energy Check County Ground,15000,Football
+127,Europe,England,Warrington,The Halliwell Jones Stadium,15000,Rugby league
+127,Europe,England,Peterborough,Weston Homes Stadium,15000,Football
+127,Europe,England,London,Centre Court,14000,Tennis
+127,Europe,England,Twickenham,Twickenham Stoop Stadium,14000,Rugby union
+127,Europe,England,Oldham,Boundary Park,13000,Football
+127,Europe,England,Exeter,Sandy Park Stadium,13000,Rugby union
+127,Europe,England,Rotherham,AESSEAL New York Stadium,12000,Football
+127,Europe,England,Eccles,AJ Bell Stadium,12000,"Rugby league, rugby union"
+127,Europe,England,Kingston upon Hull,Hull College Craven Park Stadium,12000,Rugby league
+127,Europe,England,Oxford,Kassam Stadium,12000,Football
+127,Europe,England,Leigh,Leigh Sports Village Stadium,12000,"Football, rugby league"
+127,Europe,England,Bristol,Memorial Stadium,12000,Football
+127,Europe,England,Southend-on-Sea,Roots Hall Stadium,12000,Football
+127,Europe,England,Walsall,Banks’s Stadium,11000,Football
+127,Europe,England,Gillingham,MEMS Priestfield Stadium,11000,Football
+127,Europe,England,Castleford,Mend-A-Hose Jungle,11000,Rugby league
+127,Europe,England,Bournemouth,Vitality Stadium,11000,Football
+127,Europe,England,Scarborough,North Marine Road Ground,11000,Cricket
+127,Europe,England,Worcester,Sixways Stadium,11000,Rugby union
+127,Europe,England,High Wycombe,Adams Park,10000,Football
+127,Europe,England,Crewe,Alexandra Stadium,10000,Football
+127,Europe,England,Rochdale,Crown Oil Arena,10000,"Football, rugby league"
+127,Europe,England,Stockport,Edgeley Park Stadium,10000,Football
+127,Europe,England,Colchester,JobServe Community Stadium,10000,Football
+127,Europe,England,Luton,Kenilworth Road Stadium,10000,Football
+127,Europe,England,Newcastle upon Tyne,Kingston Park,10000,"Rugby league, rugby union"
+127,Europe,England,Lincoln,LNER Stadium,10000,Football
+127,Europe,England,Chesterfield,Technique Stadium,10000,Football
+128,Europe,Northern Ireland,Armagh,Athletic Grounds,18000,"Gaelic football, hurling"
+128,Europe,Northern Ireland,Londonderry,Celtic Park,18000,"Gaelic football, hurling"
+128,Europe,Northern Ireland,Omagh,Healy Park,18000,Gaelic football
+128,Europe,Northern Ireland,Belfast,Kingspan Stadium,18000,Rugby union
+128,Europe,Northern Ireland,Belfast,Windsor Park,18000,Football
+129,Europe,Scotland,Edinburgh,BT Murrayfield Stadium,67000,Rugby union
+129,Europe,Scotland,Glasgow,Celtic Park,60000,Football
+129,Europe,Scotland,Glasgow,Hampden Park,51000,Football
+129,Europe,Scotland,Glasgow,Ibrox Stadium,50000,Football
+129,Europe,Scotland,Edinburgh,Easter Road Stadium,20000,Football
+129,Europe,Scotland,Aberdeen,Pittodrie Stadium,20000,Football
+129,Europe,Scotland,Edinburgh,Tynecastle Park,19000,Football
+129,Europe,Scotland,Kilmarnock,Rugby Park,17000,Football
+129,Europe,Scotland,Dundee,Tannadice Park,14000,Football
+129,Europe,Scotland,Greenock,Cappielow Park,11000,Football
+129,Europe,Scotland,Dunfermline,East End Park,11000,Football
+129,Europe,Scotland,Dundee,Kilmac Stadium,11000,Football
+129,Europe,Scotland,Glasgow,Firhill Stadium,10000,Football
+129,Europe,Scotland,Perth,McDiarmid Park,10000,Football
+129,Europe,Scotland,Airdrie,Penny Cars Stadium,10000,Football
+129,Europe,Scotland,Ayr,Somerset Park,10000,Football
+130,Europe,Wales,Cardiff,Principality Stadium,73000,Rugby union
+130,Europe,Wales,Cardiff,Cardiff City Stadium,33000,Football
+130,Europe,Wales,Swansea,Swansea.com Stadium,21000,"Football, rugby union"
+130,Europe,Wales,Cardiff,Cardiff Wales Stadium,15000,Cricket
+130,Europe,Wales,Llanelli,Parc y Scarlets,14000,Rugby union

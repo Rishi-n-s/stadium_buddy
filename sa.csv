@@ -1,0 +1,215 @@
+id,region,country,location,stadium_name,total_capacity,sport_played
+147,South America,Argentine Republic,Avellaneda,Estadio Presidente Juan Domingo PerÃ³n,"61,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Alberto J. Armando,"59,000",Football
+147,South America,Argentine Republic,CÃ³rdoba,Estadio Mario Alberto Kempes,"57,000",Football
+147,South America,Argentine Republic,La Plata,Estadio Ãšnico Diego Armando Maradona,"53,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio JosÃ© Amalfitani,"49,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio TomÃ¡s Adolfo DucÃ³,"48,000",Football
+147,South America,Argentine Republic,LanÃºs,Estadio Ciudad de LanÃºs â€“ NÃ©stor DÃ­az PÃ©rez,"47,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Pedro Bidegain,"47,000",Football
+147,South America,Argentine Republic,Rosario,Estadio Marcelo A. Bielsa,"42,000",Football
+147,South America,Argentine Republic,Rosario,Estadio Gigante de Arroyito,"41,000",Football
+147,South America,Argentine Republic,Santa Fe,Estadio Brigadier General Estanislao LÃ³pez,"40,000",Football
+147,South America,Argentine Republic,Mendoza,Estadio Malvinas Argentinas,"40,000",Football
+147,South America,Argentine Republic,Lomas de Zamora,Estadio Eduardo GallardÃ³n,"36,000",Football
+147,South America,Argentine Republic,La Rioja,Estadio Carlos Augusto Mercado Luna,"35,000",Football
+147,South America,Argentine Republic,Mar del Plata,Estadio JosÃ© MarÃ­a Minella,"35,000",Football
+147,South America,Argentine Republic,TucumÃ¡n,Estadio Monumental JosÃ© Fierro,"35,000",Football
+147,South America,Argentine Republic,MorÃ³n,Estadio Nuevo Francisco Urbano,"32,000",Football
+147,South America,Argentine Republic,JesÃºs MarÃ­a,Anfiteatro JosÃ© Hernandez,"31,000",Rodeo
+147,South America,Argentine Republic,Quilmes,Estadio Centenario Ciudad de Quilmes,"30,000",Football
+147,South America,Argentine Republic,La Plata,Estadio Jorge Luis Hirschi,"30,000",Football
+147,South America,Argentine Republic,CÃ³rdoba,Estadio Julio CÃ©sar Villagra,"30,000",Football
+147,South America,Argentine Republic,Santiago del Estero,Estadio Ãšnico Madre de Ciudades,"30,000",Football
+147,South America,Argentine Republic,Vicente LÃ³pez,Estadio Ciudad de Vicente LÃ³pez,"28,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Nueva Chicago,"28,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio AutocrÃ©dito Diego Armando Maradona,"26,000",Football
+147,South America,Argentine Republic,Victoria,Estadio JosÃ© Dellagiovanna,"26,000",Football
+147,South America,Argentine Republic,CÃ³rdoba,Estadio Juan Domingo PerÃ³n,"26,000",Football
+147,South America,Argentine Republic,Resistencia,Estadio Centenario,"25,000",Football
+147,South America,Argentine Republic,San Juan,Estadio San Juan del Bicentenario,"25,000",Football
+147,South America,Argentine Republic,Formosa,Estadio Don Carlos Antonio Romero,"23,000",Football
+147,South America,Argentine Republic,ParanÃ¡,Estadio PresbÃ­tero BartolomÃ© Grella,"23,000",Football
+147,South America,Argentine Republic,BahÃ­a Blanca,Estadio Roberto Natalio Carminatti,"18,000",Football
+147,South America,Argentine Republic,Caseros,Estadio Ciudad de Caseros,"16,000",Football
+147,South America,Argentine Republic,Isidro Casanova,Estadio Fragata Presidente Sarmiento,"16,000",Football
+147,South America,Argentine Republic,SarandÃ­,Estadio Julio Humberto Grondona,"16,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Don LeÃ³n Kolbowski,"14,000",Football
+147,South America,Argentine Republic,Temperley,Estadio Alfredo MartÃ­n Beranger,"13,000",Football
+147,South America,Argentine Republic,CÃ³rdoba,Estadio Francisco CabasÃ©s,"13,000",Football
+147,South America,Argentine Republic,JosÃ© Ingenieros,Estadio 3 de Febrero,"12,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Islas Malvinas,"12,000",Football
+147,South America,Argentine Republic,Florencio Varela,Estadio Norberto â€œTitoâ€ Tomaghello,"10,000",Football
+148,South America,Bolivia,La Paz,Estadio Hernando Siles,"41,000",Football
+148,South America,Bolivia,Santa Cruz,Estadio RamÃ³n â€œTahuichiâ€ Aguilera Costas,"38,000",Football
+148,South America,Bolivia,Oruro,Estadio JesÃºs BermÃºdez,"33,000",Football
+148,South America,Bolivia,Cochabamba,Estadio Sudamericano FÃ©lix Capriles,"32,000",Football
+148,South America,Bolivia,PotosÃ­,Estadio VÃ­ctor AgustÃ­n Ugarte,"32,000",Football
+148,South America,Bolivia,Villa Tunari,Estadio OlÃ­mpico Bicentenario de Villa Tunari,"25,000",Football
+148,South America,Bolivia,Yacuiba,Estadio Ovidio Messa Soruco,"25,000",Football
+148,South America,Bolivia,Cobija,Estadio Roberto JordÃ¡n Cuellar,"24,000",Football
+148,South America,Bolivia,El Alto,Estadio de fÃºtbol Municipal El Alto,"22,000",Football
+148,South America,Bolivia,Santa Cruz,Estadio Edgar PeÃ±a Gutierrez,"17,000",Football
+148,South America,Bolivia,Tarija,Estadio IV Centenario,"15,000",Football
+148,South America,Bolivia,La Paz,Estadio Rafael Mendoza CastellÃ³n,"14,000",Football
+148,South America,Bolivia,Montero,Estadio Gilberto Parada,"13,000",Football
+149,South America,Brazil,Rio de Janeiro,EstÃ¡dio Jornalista MÃ¡rio Filho,"78,000",Football
+149,South America,Brazil,BrasÃ­lia,Arena BRB,"72,000",Football
+149,South America,Brazil,SÃ£o Paulo,EstÃ¡dio CÃ­cero Pompeu de Toledo,"66,000",Football
+149,South America,Brazil,Fortaleza,EstÃ¡dio Governador PlÃ¡cido Castelo,"63,000",Football
+149,South America,Brazil,Belo Horizonte,EstÃ¡dio Governador MagalhÃ£es Pinto,"61,000",Football
+149,South America,Brazil,Porto Alegre,Arena do GrÃªmio,"60,000",Football
+149,South America,Brazil,Porto Alegre,EstÃ¡dio JosÃ© Pinheiro Borda,"50,000",Football
+149,South America,Brazil,SÃ£o Paulo,Neo QuÃ­mica Arena,"49,000",Football
+149,South America,Brazil,Salvador,Itaipava Arena Fonte Nova,"48,000",Football
+149,South America,Brazil,SÃ£o LourenÃ§o da Mata,EstÃ¡dio Governador Carlos Wilson Campos,"46,000",Football
+149,South America,Brazil,Rio de Janeiro,EstÃ¡dio OlÃ­mpico Nilton Santos,"46,000",Football
+149,South America,Brazil,BelÃ©m,EstÃ¡dio Estadual Jornalista Edgar Augusto ProenÃ§a,"45,000",Football
+149,South America,Brazil,Manaus,Arena da AmazÃ´nia â€“ Vivaldo Lima,"44,000",Football
+149,South America,Brazil,CuiabÃ¡,Arena Pantanal,"44,000",Football
+149,South America,Brazil,SÃ£o Paulo,Allianz Parque,"43,000",Football
+149,South America,Brazil,Curitiba,EstÃ¡dio Joaquim AmÃ©rico GuimarÃ£es,"42,000",Football
+149,South America,Brazil,SÃ£o LuÃ­s,EstÃ¡dio Governador JoÃ£o Castelo,"40,000",Football
+149,South America,Brazil,Natal,Arena das Dunas,"31,000",Football
+149,South America,Brazil,RibeirÃ£o Preto,Arena Eurobike,"29,000",Football
+149,South America,Brazil,Campinas,EstÃ¡dio Brinco de Ouro da Princesa,"29,000",Football
+149,South America,Brazil,Cascavel,EstÃ¡dio OlÃ­mpico Regional Arnaldo Busatto,"28,000",Football
+149,South America,Brazil,Araraquara,EstÃ¡dio Dr. Adhemar de Barros,"25,000",Football
+149,South America,Brazil,Caxias do Sul,EstÃ¡dio Francisco StÃ©dile,"22,000",Football
+149,South America,Brazil,Cariacica,EstÃ¡dio Estadual Kleber JosÃ© de Andrade,"21,000",Football
+149,South America,Brazil,Rio de Janeiro,EstÃ¡dio Vasco da Gama,"21,000",Football
+149,South America,Brazil,ChapecÃ³,Arena CondÃ¡,"20,000",Football
+149,South America,Brazil,Curitiba,EstÃ¡dio Durival Britto e Silva,"20,000",Football
+149,South America,Brazil,Sete Lagoas,EstÃ¡dio Joaquim Henrique Nogueira,"20,000",Football
+149,South America,Brazil,Volta Redonda,EstÃ¡dio Municipal General Sylvio Raulino de Oliveira,"20,000",Football
+149,South America,Brazil,Fortaleza,EstÃ¡dio Municipal Presidente GetÃºlio Vargas,"20,000","American football, football"
+149,South America,Brazil,Gama,EstÃ¡dio Walmir Campelo Bezerra,"20,000",Football
+149,South America,Brazil,Capivari,Arena Capivari,"19,000",Football
+149,South America,Brazil,CriciÃºma,EstÃ¡dio Heriberto HÃ¼lse,"19,000",Football
+149,South America,Brazil,Campinas,EstÃ¡dio MoisÃ©s Lucarelli,"19,000",Football
+149,South America,Brazil,FlorianÃ³polis,EstÃ¡dio Orlando Scarpelli,"19,000",Football
+149,South America,Brazil,MaceiÃ³,EstÃ¡dio Rei PelÃ©,"19,000",Football
+149,South America,Brazil,Piracicaba,EstÃ¡dio BarÃ£o de Serra Negra,"18,000",Football
+149,South America,Brazil,Limeira,EstÃ¡dio Major JosÃ© Levy Sobrinho,"18,000",Football
+149,South America,Brazil,Itu,EstÃ¡dio Municipal Dr. Novelli JÃºnior,"18,000",Football
+149,South America,Brazil,FlorianÃ³polis,EstÃ¡dio Aderbal Ramos da Silva,"17,000",Football
+149,South America,Brazil,Arapiraca,EstÃ¡dio Municipal Coaracy da Mata Fonseca,"17,000",Football
+149,South America,Brazil,Pouso Alegre,EstÃ¡dio Municipal IrmÃ£o Gino Maria Rossi,"17,000",Football
+149,South America,Brazil,BraganÃ§a Paulista,EstÃ¡dio Nabi Abi Chedid,"17,000",Football
+149,South America,Brazil,BelÃ©m,EstÃ¡dio LeÃ´nidas SodrÃ© de Castro,"16,000",Football
+149,South America,Brazil,Feira de Santana,EstÃ¡dio Municipal Alberto Sampaio de Oliveira,"16,000",Football
+149,South America,Brazil,Santos,EstÃ¡dio Urbano Caldeira,"16,000",Football
+149,South America,Brazil,JundiaÃ­,EstÃ¡dio Dr. Jayme Cintra,"15,000",Football
+149,South America,Brazil,Aracaju,EstÃ¡dio Estadual Lourival Baptista,"15,000",Football
+149,South America,Brazil,Varginha,EstÃ¡dio Municipal Prefeito Dilzon Luiz de Melo,"15,000",Football
+149,South America,Brazil,Rio Preto,EstÃ¡dio AnÃ­sio Haddad,"14,000",Football
+149,South America,Brazil,Itumbiara,EstÃ¡dio Municipal Juscelino Kubitschek,"14,000",Football
+149,South America,Brazil,Mesquita,EstÃ¡dio Giulite Coutinho,"13,000",Football
+149,South America,Brazil,GoiÃ¢nia,EstÃ¡dio OlÃ­mpico Pedro Ludovico Teixeira,"13,000",Football
+149,South America,Brazil,Monte Azul Paulista,EstÃ¡dio OtacÃ­lia PatrÃ­cio Arroyo,"13,000",Football
+149,South America,Brazil,GoiÃ¢nia,EstÃ¡dio AntÃ´nio Accioly,"12,000",Football
+149,South America,Brazil,Novo Horizonte,EstÃ¡dio Dr. Jorge Ismael de Biasi,"12,000",Football
+149,South America,Brazil,Imperatriz,EstÃ¡dio Municipal Frei EpifÃ¢nio dâ€™Abadia,"12,000",Football
+149,South America,Brazil,SÃ£o LuÃ­s,EstÃ¡dio Municipal Nhozinho Santos,"12,000",Football
+149,South America,Brazil,BrasÃ­lia,Arena BRB Nilson Nelson,"11,000",Volleyball
+149,South America,Brazil,CuiabÃ¡,GinÃ¡sio Aecim Tocantins,"11,000",Volleyball
+149,South America,Brazil,Rio de Janeiro,GinÃ¡sio Gilberto Cardoso,"11,000",Volleyball
+149,South America,Brazil,GoiÃ¢nia,GoiÃ¢nia Arena,"11,000",Volleyball
+149,South America,Brazil,Manaus,Arena Poliesportiva Amadeu Teixeira,"10,000","Futsal, volleyball"
+149,South America,Brazil,Rio Branco,EstÃ¡dio AntÃ´nio Aquino Lopes,"10,000",Football
+149,South America,Brazil,Diadema,EstÃ¡dio Municipal JosÃ© Batista Pereira Fernandes,"10,000",Football
+149,South America,Brazil,SÃ£o Paulo,GinÃ¡sio Estadual Geraldo JosÃ© de Almeida,"10,000",Volleyball
+150,South America,Chile,Santiago,Estadio Nacional Julio MartÃ­nez PrÃ¡danos,"48,000","Football, rugby union"
+150,South America,Chile,Santiago,Estadio Monumental,"47,000",Football
+150,South America,Chile,ConcepciÃ³n,Estadio Municipal Alcaldesa Ester Roa Rebolledo,"30,000",Football
+150,South America,Chile,ViÃ±a del Mar,Estadio Sausalito,"22,000",Football
+150,South America,Chile,Antofagasta,Estadio Regional Bicentenario Calvo y BascuÃ±an de Antofagasta,"21,000",Football
+150,South America,Chile,ValparaÃ­so,Estadio ElÃ­as Figueroa Brander,"20,000",Football
+150,South America,Chile,Santiago,Estadio Santa Laura-Universidad SEK,"19,000",Football
+150,South America,Chile,Coquimbo,Estadio Francisco SÃ¡nchez Rumoroso,"18,000",Football
+150,South America,Chile,La Serena,Estadio La Portada,"18,000",Football
+150,South America,Chile,Temuco,Estadio Municipal Bicentenario GermÃ¡n Becker Baechler,"18,000",Football
+150,South America,Chile,Fiscal de Talca,Estadio Fiscal de Talca,"16,000",Football
+150,South America,Chile,Rancagua,Estadio El Teniente-Codelco,"14,000",Football
+150,South America,Chile,Santiago,Estadio San Carlos de Apoquindo,"14,000",Football
+150,South America,Chile,Iquique,Estadio Tierra de Campeones RamÃ³n Estay Saavedra,"13,000",Football
+150,South America,Chile,La Florida,Estadio Bicentenario Municipal de La Florida,"12,000",Football
+150,South America,Chile,ChillÃ¡n,Estadio Bicentenario Municipal Nelson OyarzÃºn,"12,000",Football
+150,South America,Chile,Rancagua,Medialuna Monumental de Rancagua,"12,000",Rodeo
+150,South America,Chile,Talcahuano,Estadio Huachipato-CAP Acero,"10,000",Football
+150,South America,Chile,Osorno,Estadio Municipal RubÃ©n Marcos Peralta,"10,000",Football
+150,South America,Chile,Puerto Montt,Estadio Regional de Chinquihue,"10,000",Football
+151,South America,Colombia,MedellÃ­n,Estadio Atanasio Girardot,"45,000",Football
+151,South America,Colombia,Palmira,Estadio Deportivo Cali,"42,000",Football
+151,South America,Colombia,Cali,Estadio OlÃ­mpico Pascual Guerrero,"35,000",Football
+151,South America,Colombia,Pereira,Estadio HernÃ¡n RamÃ­rez Villegas,"30,000",Football
+151,South America,Colombia,IbaguÃ©,Estadio Manuel Murillo Toro,"28,000",Football
+151,South America,Colombia,Manizales,Estadio Palogrande,"28,000",Football
+151,South America,Colombia,Cartagena,Estadio OlÃ­mpico Jaime MorÃ³n LeÃ³n,"16,000",Football
+151,South America,Colombia,Santa Marta,Estadio Sierra Nevada,"16,000",Football
+151,South America,Colombia,Cali,Arena CaÃ±averalejo,"14,000",Bullfighting
+151,South America,Colombia,BogotÃ¡,Estadio Alfonso LÃ³pez Pumarejo de la Ciudad Universitaria,"12,000",Football
+151,South America,Colombia,Barranquilla,Estadio de bÃ©isbol Ã‰dgar RenterÃ­a,"12,000",Baseball
+151,South America,Colombia,Valledupar,Estadio Armando Maestre Pavajeau,"11,000",Football
+151,South America,Colombia,Envigado,Estadio Polideportivo Sur,"11,000",Football
+151,South America,Colombia,Barrancabermeja,Estadio Daniel Villa Zapata,"10,000",Football
+152,South America,Ecuador,Guayaquil,Estadio Monumental Banco Pichincha,"57,000",Football
+152,South America,Ecuador,Guayaquil,Estadio Modelo Alberto Spencer Herrera,"42,000",Football
+152,South America,Ecuador,Quito,Estadio Rodrigo Paz Delgado,"41,000",Football
+152,South America,Ecuador,Guayaquil,Estadio Banco del PacÃ­fico â€“ Capwell,"40,000",Football
+152,South America,Ecuador,Quito,Estadio OlÃ­mpico Atahualpa,"35,000",Football
+152,South America,Ecuador,Quito,Estadio Gonzalo Pozo Ripalda,"18,000",Football
+152,South America,Ecuador,Ibarra,Estadio OlÃ­mpico Ciudad de Ibarra,"18,000",Football
+152,South America,Ecuador,Machala,Estadio 9 de Mayo,"16,000",Football
+152,South America,Ecuador,Cuenca,Estadio Alejandro Serrano Aguilar Banco del Austro,"16,000",Football
+152,South America,Ecuador,Ambato,Estadio Bellavista,"16,000",Football
+152,South America,Ecuador,Quevedo,Estadio 7 de Octubre,"15,000",Football
+152,South America,Ecuador,Latacunga,Estadio Municipal La Cocha,"15,000",Football
+152,South America,Ecuador,Riobamba,Primer Estadio OlÃ­mpico,"14,000",Football
+152,South America,Ecuador,Riobamba,Monumental RaÃºl DÃ¡valos,"13,000",Bullfighting
+152,South America,Ecuador,Quito,Estadio Banco Guayaquil,"12,000",Football
+152,South America,Ecuador,Ambato,Plaza de toros Monumental,"11,000",Bullfighting
+152,South America,Ecuador,Guayaquil,Estadio Christian BenÃ­tez Betancourt,"10,000",Football
+152,South America,Ecuador,Santo Domingo,Estadio OlÃ­mpico TsÃ¡chila,"10,000",Football
+153,South America,Paraguay,AsunciÃ³n,Estadio General Pablo Rojas,"45,000",Football
+153,South America,Paraguay,AsunciÃ³n,Estadio Defensores del Chaco,"42,000",Football
+153,South America,Paraguay,AsunciÃ³n,Estadio Tigo Manuel Ferreira,"22,000",Football
+153,South America,Paraguay,CapiatÃ¡,Estadio Lic. Erico Galeano Segovia,"10,000",Football
+154,South America,Peru,Lima,Estadio Monumental,"80,000",Football
+154,South America,Peru,Arequipa,Estadio de la UNSA,"60,000",Football
+154,South America,Peru,Lima,Estadio Nacional,"50,000",Football
+154,South America,Peru,Lima,Estadio Alejandro Villanueva,"33,000",Football
+154,South America,Peru,Lima,Estadio de la UNMSM,"32,000",Football
+154,South America,Peru,Chimbote,Estadio Municipal Centenario Manuel Rivera SÃ¡nchez,"25,000",Football
+154,South America,Peru,Chiclayo,Estadio CapitÃ¡n Remigio ElÃ­as Aguirre Romero,"23,000",Football
+154,South America,Peru,Trujillo,Estadio Mansiche,"23,000",Football
+154,South America,Peru,Lima,Estadio Alberto Gallardo,"18,000",Football
+154,South America,Peru,Huaraz,Estadio Rosas Pampa,"18,000",Football
+154,South America,Peru,Huancayo,Estadio Huancayo,"17,000",Football
+154,South America,Peru,Arequipa,Estadio Melgar,"15,000",Football
+154,South America,Peru,Lima,Plaza de toros de Acho,"13,000",Bullfighting
+154,South America,Peru,Ayacucho,Estadio Ciudad de CumanÃ¡,"12,000",Football
+154,South America,Peru,Lima,Estadio IvÃ¡n ElÃ­as Moreno,"10,000",Football
+155,South America,Uruguay,Montevideo,Estadio Centenario,"60,000",Football
+155,South America,Uruguay,Montevideo,Estadio CampeÃ³n del Siglo,"40,000",Football
+155,South America,Uruguay,Montevideo,Estadio Gran Parque Central,"34,000",Football
+155,South America,Uruguay,Rivera,Estadio Atilio Paiva Olivera,"27,000",Football
+155,South America,Uruguay,PaysandÃº,Estadio Parque Artigas,"25,000",Football
+155,South America,Uruguay,Maldonado,Estadio Domingo BurgueÃ±o Miguel,"22,000",Football
+155,South America,Uruguay,Montevideo,Estadio Luis Franzini,"16,000",Football
+155,South America,Uruguay,Montevideo,Estadio CharrÃºa,"14,000","Football, rugby union"
+155,South America,Uruguay,Montevideo,Estadio JosÃ© Pedro Damiani,"12,000",Football
+155,South America,Uruguay,Las Piedras,Estadio Parque Artigas Las Piedras,"12,000",Football
+156,South America,Venezuela,MaturÃ­n,Estadio Monumental de MaturÃ­n,"51,000",Football
+156,South America,Venezuela,Ciudad Guayana,Estadio La Ceiba,"30,000",Baseball
+156,South America,Venezuela,Caracas,Estadio Universitario,"25,000",Baseball
+156,South America,Venezuela,Valencia,Plaza de toros Monumental de Valencia,"24,000",Bullfighting
+156,South America,Venezuela,Puerto La Cruz,Estadio Alfonso â€œChicoâ€ Carrasquel,"18,000",Baseball
+156,South America,Venezuela,Porlamar,Stadium Nueva Esparta,"18,000",Baseball
+156,South America,Venezuela,MÃ©rida,Plaza Monumental RomÃ¡n Eduardo Sandia,"16,000",Bullfighting
+156,South America,Venezuela,Valencia,Estadio JosÃ© Bernardo PÃ©rez,"15,000",Baseball
+156,South America,Venezuela,Maracaibo,Plaza de toros Monumental de Maracaibo,"15,000",Bullfighting
+156,South America,Venezuela,San CristÃ³bal,Plaza Monumental de toros de Pueblo Nuevo,"15,000",Bullfighting
+156,South America,Venezuela,MÃ©rida,Estadio OlÃ­mpico Guillermo Soto Rosa,"14,000",Football
+156,South America,Venezuela,Barquisimeto,Estadio de fÃºtbol Farid Richa,"12,000",Football
+156,South America,Venezuela,Barquisimeto,Domo Bolivariano de Barquisimeto,"10,000",Basketball

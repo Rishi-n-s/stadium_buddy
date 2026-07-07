@@ -1,0 +1,161 @@
+id,country,region,capital,most_popular_sport,no_stadiums
+1,Algeria,Africa,Algiers,Football,22
+2,Angola,Africa,Luanda,Football,5
+3,Benin,Africa,Porto-Novo,Football,1
+4,Botswana,Africa,Gaborone,Football,2
+5,Burkina Faso,Africa,Ouagadougou,Football,1
+6,Burundi,Africa,Gitega,Football,1
+7,Cabo Verde,Africa,Praia,Football,1
+8,Cameroon,Africa,Yaoundé,Football,7
+9,Central African Republic,Africa,Bangui,Football,1
+10,Chad,Africa,N’Djamena,Football,1
+11,Congo,Africa,Brazzaville,Football,4
+12,Côte d’Ivoire,Africa,Yamoussoukro,Football,3
+13,Djibouti,Africa,Djibouti,Football,1
+14,DR Congo,Africa,Kinshasa,Football,5
+15,Egypt,Africa,Cairo,Football,15
+16,Equatorial Guinea,Africa,Malabo,Football,3
+17,Ethiopia,Africa,Addis Ababa,Football,5
+18,Gabon,Africa,Libreville,Football,4
+19,Gambia,Africa,Banjul,Football,1
+20,Ghana,Africa,Accra,Football,4
+21,Guinea,Africa,Conakry,Football,1
+22,Guinea-Bissau,Africa,Bissau,Football,1
+23,Kenya,Africa,Nairobi,Football,4
+24,Lesotho,Africa,Maseru,Football,1
+25,Liberia,Africa,Monrovia,Football,1
+26,Libya,Africa,Tripoli,Football,1
+27,Madagascar,Africa,Antananarivo,Football,2
+28,Malawi,Africa,Lilongwe,Football,2
+29,Mali,Africa,Bamako,Football,2
+30,Mauritania,Africa,Nouakchott,Football,2
+31,Mauritius,Africa,Port Louis,Football,1
+32,Morocco,Africa,Rabat,Football,10
+33,Mozambique,Africa,Maputo,Football,1
+34,Namibia,Africa,Windhoek,Football,2
+35,Niger,Africa,Niamey,Football,2
+36,Nigeria,Africa,Abuja,Football,20
+37,Rwanda,Africa,Kigali,Football,3
+38,Senegal,Africa,Dakar,Football,4
+39,Seychelles,Africa,Victoria,Football,1
+40,Somalia,Africa,Mogadishu,Football,2
+41,South Africa,Africa,Pretoria,Football,22
+42,Sudan,Africa,Khartoum,Football,1
+43,Tanzania,Africa,Dodoma,Football,13
+44,Togo,Africa,Lomé,Football,2
+45,Tunisia,Africa,Tunis,Football,5
+46,Uganda,Africa,Kampala,Football,1
+47,Zambia,Africa,Lusaka,Football,3
+48,Zimbabwe,Africa,Harare,Football,5
+49,Afghanistan,Asia,Kabul,Cricket,1
+50,Armenia,Asia,Yerevan,Football,1
+51,Azerbaijan,Asia,Baku,Football,5
+52,Bahrain,Asia,Manama,Football,2
+53,Bangladesh,Asia,Dhaka,Cricket,7
+54,Brunei,Asia,Bandar Seri Begawan,Football,1
+55,Cambodia,Asia,Phnom Penh,Football,2
+56,China,Asia,Beijing,Football,178
+57,Cyprus,Asia,Nicosia,Football,1
+58,DPR Korea,Asia,Pyongyang,Football,2
+59,Georgia,Asia,Tbilisi,Football,3
+60,India,Asia,New Delhi,Cricket,103
+61,Indonesia,Asia,Jakarta,Football,36
+62,Iran,Asia,Tehran,Football,13
+63,Iraq,Asia,Baghdad,Football,4
+64,Israel,Asia,Jerusalem,Football,6
+65,Japan,Asia,Tokyo,Baseball,72
+66,Jordan,Asia,Amman,Football,3
+67,Kazakhstan,Asia,Astana,Football,6
+68,Korea,Asia,Seoul,Baseball,44
+69,Kuwait,Asia,Kuwait City,Football,3
+70,Lao PDR,Asia,Vientiane,Football,2
+71,Malaysia,Asia,Kuala Lumpur,Football,18
+72,Maldives,Asia,Malé,Football,1
+73,Myanmar,Asia,Naypyitaw,Football,2
+74,Nepal,Asia,Kathmandu,Football,3
+75,Oman,Asia,Muscat,Football,4
+76,Pakistan,Asia,Islamabad,Cricket,9
+77,Philippines,Asia,Manila,Basketball,5
+78,Qatar,Asia,Doha,Football,11
+79,Saudi Arabia,Asia,Riyadh,Football,12
+80,Singapore,Asia,Singapore,Football,2
+81,Sri Lanka,Asia,Colombo,Cricket,2
+82,Syria,Asia,Damascus,Football,1
+83,Tajikistan,Asia,Dushanbe,Football,1
+84,Thailand,Asia,Bangkok,Football,12
+85,Türkiye,Asia,Ankara,Football,38
+86,Turkmenistan,Asia,Ashgabat,Football,1
+87,United Arab Emirates,Asia,Abu Dhabi,Football,7
+88,Uzbekistan,Asia,Tashkent,Football,3
+89,Vietnam,Asia,Hanoi,Football,11
+90,Albania,Europe,Tirana,Football,3
+91,Austria,Europe,Vienna,Football,8
+92,Belarus,Europe,Minsk,Football,4
+93,Belgium,Europe,Brussels,Football,14
+94,Bosnia and Herzegovina,Europe,Sarajevo,Football,2
+95,Bulgaria,Europe,Sofia,Football,5
+96,Croatia,Europe,Zagreb,Football,2
+97,Czech Republic,Europe,Prague,Football,9
+98,Denmark,Europe,Copenhagen,Football,13
+99,Estonia,Europe,Tallinn,Basketball,1
+100,Finland,Europe,Helsinki,Ice hockey,6
+101,French Republic,Europe,Paris,Football,60
+102,Germany,Europe,Berlin,Football,75
+103,Hellenic Republic,Europe,Athens,Football,9
+104,Hungary,Europe,Budapest,Football,8
+105,Ireland,Europe,Dublin,Gaelic football,11
+106,Italian Republic,Europe,Rome,Football,40
+107,Lithuania,Europe,Vilnius,Basketball,2
+108,Malta,Europe,Valletta,Football,1
+109,Moldova,Europe,Chisinau,Football,2
+110,Monaco,Europe,Monaco,Football,1
+111,Montenegro,Europe,Podgorica,Football,1
+112,Netherlands,Europe,Amsterdam,Football,25
+113,North Macedonia,Europe,Skopje,Football,1
+114,Norway,Europe,Oslo,Football,10
+115,Poland,Europe,Warsaw,Football,22
+116,Portuguese Republic,Europe,Lisbon,Football,11
+117,Romania,Europe,Bucharest,Football,11
+118,Russia,Europe,Moscow,Football,42
+119,Serbia,Europe,Belgrade,Football,4
+120,Slovak Republic,Europe,Bratislava,Football,5
+121,Slovenia,Europe,Ljubljana,Football,2
+122,Spain,Europe,Madrid,Football,68
+123,Sweden,Europe,Stockholm,Football,13
+124,Swiss Confederation,Europe,Bern,Football,12
+125,Ukraine,Europe,Kyiv,Football,9
+126,United Kingdom,Europe,London,Football,120
+127,England,Europe,London,Football,94
+128,Northern Ireland,Europe,Belfast,Gaelic football,5
+129,Scotland,Europe,Edinburgh,Football,16
+130,Wales,Europe,Cardiff,Rugby union,5
+131,Bahamas,North America,Nassau,Basketball,1
+132,Barbados,North America,Bridgetown,Cricket,1
+133,Canada,North America,Ottawa,Ice hockey,22
+134,Costa Rica,North America,San José,Football,3
+135,Cuba,North America,Havana,Baseball,3
+136,Dominican Republic,North America,Santo Domingo,Baseball,1
+137,El Salvador,North America,San Salvador,Football,1
+138,Guatemala,North America,Guatemala City,Football,3
+139,Honduras,North America,Tegucigalpa,Football,3
+140,Jamaica,North America,Kingston,Cricket,2
+141,Nicaragua,North America,Managua,Baseball,2
+142,Panama,North America,Panama City,Baseball,1
+143,St. Vincent and the Grenadines,North America,Kingstown,Cricket,1
+144,Trinidad and Tobago,North America,Port-of-Spain,Cricket,4
+145,United Mexican States,North America,Mexico City,Football,50
+146,United States,North America,Washington,American football,371
+147,Argentine Republic,South America,Buenos Aires,Football,41
+148,Bolivia,South America,Sucre,Football,13
+149,Brazil,South America,Brasília,Football,66
+150,Chile,South America,Santiago,Football,20
+151,Colombia,South America,Bogotá,Football,14
+152,Ecuador,South America,Quito,Football,18
+153,Paraguay,South America,Asunción,Football,4
+154,Peru,South America,Lima,Football,15
+155,Uruguay,South America,Montevideo,Football,10
+156,Venezuela,South America,Caracas,Baseball,13
+157,Australia,Oceania,Canberra,Australian football,26
+158,Fiji,Oceania,Suva,Rugby union,1
+159,New Zealand,Oceania,Wellington,Rugby union,4
+160,Papua New Guinea,Oceania,Port Moresby,Rugby league,2

@@ -1,0 +1,470 @@
+id,region,country,location,stadium_name,total_capacity,sport_played
+146,North America,United States,Birmingham,Legion Field,"71,000",American football
+146,North America,United States,Birmingham,Protective Stadium,"47,000","American football, football"
+146,North America,United States,Mobile,Ladd-Peebles Stadium,"40,000",American football
+146,North America,United States,Troy,Veterans Memorial Stadium,"30,000",American football
+146,North America,United States,Jacksonville,JSU Stadium,"24,000",American football
+146,North America,United States,Tuscaloosa,Coleman Coliseum,"15,000","Basketball, gymnastics"
+146,North America,United States,Florence,Tom Braly Municipal Stadium,"14,000",American football
+146,North America,United States,Huntsville,Milton Frank Stadium,"12,000","American football, football"
+146,North America,United States,Dothan,Rip Hewes Stadium,"10,000",American football
+146,North America,United States,Prattville,Stanley-Jensen Stadium,"10,000","American football, football"
+146,North America,United States,Glendale,State Farm Stadium,"63,000",American football
+146,North America,United States,Tucson,Arizona Stadium,"50,000",American football
+146,North America,United States,Phoenix,Chase Field,"48,000",Baseball
+146,North America,United States,Phoenix,Footprint Center,"18,000","Basketball, indoor American football"
+146,North America,United States,Tucson,McKale Memorial Center,"14,000",Basketball
+146,North America,United States,Goodyear,Goodyear Ballpark,"10,000",Baseball
+146,North America,United States,Chandler,Wild Horse Pass Stadium,"10,000",Football
+146,North America,United States,Fayetteville,Donald W. Reynolds Razorback Stadium,"76,000",American football
+146,North America,United States,Little Rock,War Memorial Stadium,"54,000","American football, football"
+146,North America,United States,Fayetteville,Bud Walton Arena,"19,000",Basketball
+131,North America,Bahamas,Nassau,Thomas A. Robinson National Stadium,"15,000",Football
+132,North America,Barbados,Bridgetown,Kensington Oval,"11,000",Cricket
+146,North America,United States,Pasadena,Rose Bowl Stadium,"92,000",American football
+146,North America,United States,Los Angeles,Los Angeles Memorial Coliseum,"77,000","American football, rugby union"
+146,North America,United States,Inglewood,SoFi Stadium,"70,000",American football
+146,North America,United States,Santa Clara,Leviâ€™s Stadium,"68,000",American football
+146,North America,United States,Los Angeles,Dodger Stadium,"56,000",Baseball
+146,North America,United States,Oakland,RingCentral Coliseum,"55,000",Baseball
+146,North America,United States,Stanford,Stanford Stadium,"50,000",American football
+146,North America,United States,Anaheim,Angel Stadium of Anaheim,"45,000",Baseball
+146,North America,United States,San Francisco,Oracle Park,"41,000",Baseball
+146,North America,United States,San Diego,Petco Park,"40,000",Baseball
+146,North America,United States,San Diego,Snapdragon Stadium,"35,000","American football, football, rugby union"
+146,North America,United States,Carson,Dignity Health Sports Park Soccer Stadium,"27,000","American football, football"
+146,North America,United States,San Luis Obispo,Alex G. Spanos Stadium,"22,000","American football, football"
+146,North America,United States,Los Angeles,Banc of California Stadium,"22,000",Football
+146,North America,United States,Berkeley,Edwards Stadium,"22,000",Football
+146,North America,United States,Los Angeles,Crypto.com Arena,"19,000","Basketball, ice hockey"
+146,North America,United States,San Francisco,Chase Center,"18,000",Basketball
+146,North America,United States,San JosÃ©,PayPal Park,"18,000",Football
+146,North America,United States,Sacramento,Golden 1 Center,"17,000",Basketball
+146,North America,United States,Anaheim,Honda Center,"17,000",Ice hockey
+146,North America,United States,Santa Barbara,Harder Stadium,"17,000",Football
+146,North America,United States,San JosÃ©,SAP Center at San Jose,"17,000","Ice hockey, indoor American football"
+146,North America,United States,Indian Wells,Stadium 1,"16,000",Tennis
+146,North America,United States,Norwalk,Falcon Field,"12,000",American football
+146,North America,United States,San Diego,Pechanga Arena,"12,000",Multi-purpose
+146,North America,United States,San Diego,Viejas Arena,"12,000",Basketball
+146,North America,United States,Sacramento,Heart Health Park,"11,000",Football
+146,North America,United States,Fresno,Chukchansi Park,"10,000",Baseball
+133,North America,Canada,Montreal,Stade olympique,"61,000",Football
+133,North America,Canada,Edmonton,Commonwealth Stadium,"55,000",Canadian football
+133,North America,Canada,Vancouver,BC Place,"54,000","Canadian football, football"
+133,North America,Canada,Toronto,Rogers Centre,"49,000",Baseball
+133,North America,Canada,Calgary,McMahon Stadium,"35,000",Canadian football
+133,North America,Canada,Winnipeg,IG Field,"33,000","Canadian football, football"
+133,North America,Canada,Regina,Mosaic Stadium,"33,000",Canadian football
+133,North America,Canada,Toronto,BMO Field,"30,000","Canadian football, football"
+133,North America,Canada,Ottawa,TD Place Stadium,"24,000","Canadian football, football"
+133,North America,Canada,Hamilton,Tim Hortons Field,"23,000","Canadian football, football"
+133,North America,Canada,Montreal,Centre Bell,"21,000",Ice hockey
+133,North America,Canada,Toronto,Scotiabank Arena,"19,000","Basketball, box lacrosse, ice hockey"
+133,North America,Canada,Calgary,Scotiabank Saddledome,"19,000","Box lacrosse, ice hockey"
+133,North America,Canada,Montreal,Stade Saputo,"19,000",Football
+133,North America,Canada,Ottawa,Canadian Tire Centre,"18,000",Ice hockey
+133,North America,Canada,Quebec City,Centre VidÃƒÂ©otron,"18,000",Ice hockey
+133,North America,Canada,Vancouver,Rogers Arena,"18,000","Box lacrosse, esports, ice hockey"
+133,North America,Canada,Edmonton,Rogers Place,"18,000",Ice hockey
+133,North America,Canada,Winnipeg,Canada Life Centre,"15,000",Ice hockey
+133,North America,Canada,Saskatoon,SaskTel Centre,"15,000","Basketball, box lacrosse, ice hockey"
+133,North America,Canada,Quebec City,Stade TELUS-UniversitÃƒÂ© Laval,"12,000","Canadian football, football"
+133,North America,Canada,Toronto,Stadium Court,"12,000",Tennis
+146,North America,United States,Denver,Empower Field at Mile High,"76,000","American football, field lacrosse"
+146,North America,United States,Denver,Coors Field,"50,000",Baseball
+146,North America,United States,Boulder,Folsom Field,"50,000",American football
+146,North America,United States,Colorado Springs,Falcon Stadium,"46,000",American football
+146,North America,United States,Fort Collins,Canvas Stadium,"41,000",American football
+146,North America,United States,Denver,Ball Arena,"19,000","Basketball, box lacrosse, ice hockey"
+146,North America,United States,Commerce City,Dickâ€™s Sporting Goods Park,"18,000",Football
+146,North America,United States,Boulder,CU Events Center,"11,000","Basketball, volleyball"
+146,North America,United States,New Haven,Yale Bowl Stadium,"61,000",American football
+146,North America,United States,East Hartford,Pratt & Whitney Stadium,"38,000",American football
+134,North America,Costa Rica,San JosÃ©,Estadio Nacional de Costa Rica,"35,000",Football
+134,North America,Costa Rica,San Juan,Estadio Ricardo Saprissa AymÃƒÂ¡,"23,000",Football
+134,North America,Costa Rica,Alajuela,Estadio Alejandro Morera Soto,"17,000",Football
+135,North America,Cuba,Santiago de Cuba,Estadio GuillermÃ³n Moncada,"25,000",Baseball
+135,North America,Cuba,Matanzas,Estadio Victoria de GirÃ³n,"22,000",Baseball
+135,North America,Cuba,Cienfuegos,Estadio 5 de Septiembre,"15,000",Baseball
+146,North America,United States,Washington,Nationals Park,"41,000",Baseball
+146,North America,United States,Washington,Audi Field,"20,000","American football, football"
+146,North America,United States,Washington,Capital One Arena,"20,000","Basketball, ice hockey"
+136,North America,Dominican Republic,La Romana,Estadio Francisco A. Micheli,"10,000",Baseball
+137,North America,El Salvador,San Salvador,Estadio CuscatlÃ¡n,"53,000",Football
+146,North America,United States,Gainesville,Ben Hill Griffin Stadium,"88,000",American football
+146,North America,United States,Tallahassee,Doak S. Campbell Stadium,"79,000",American football
+146,North America,United States,Jacksonville,TIAA Bank Field,"67,000",American football
+146,North America,United States,Tampa,Raymond James Stadium,"65,000",American football
+146,North America,United States,Miami Gardens,Hard Rock Stadium,"64,000",American football
+146,North America,United States,Orlando,Camping World Stadium,"60,000",American football
+146,North America,United States,Orlando,FBC Mortgage Stadium,"44,000",American football
+146,North America,United States,St. Petersburg,Tropicana Field,"42,000",Baseball
+146,North America,United States,Miami,loanDepot park,"36,000",Baseball
+146,North America,United States,Boca Raton,FAU Stadium,"29,000",American football
+146,North America,United States,Tallahassee,Bragg Memorial Stadium,"25,000",American football
+146,North America,United States,Orlando,Exploria Stadium,"25,000",Football
+146,North America,United States,Miami,Riccardo Silva Stadium,"20,000","American football, football"
+146,North America,United States,Tampa,AMALIE Arena,"19,000",Ice hockey
+146,North America,United States,Sunrise,FLA Live Arena,"19,000",Ice hockey
+146,North America,United States,Miami,FTX Arena,"19,000",Basketball
+146,North America,United States,Orlando,Amway Center,"18,000","Basketball, ice hockey, indoor American football"
+146,North America,United States,Fort Lauderdale,DRV PNK Stadium,"18,000",Football
+146,North America,United States,Jacksonville,Hodges Stadium,"12,000",Football
+146,North America,United States,Jacksonville,121 Financial Ballpark,"11,000",Baseball
+146,North America,United States,Tampa,George M. Steinbrenner Field,"11,000",Baseball
+146,North America,United States,Gainesville,Exactech Arena,"10,000","Basketball, gymnastics, volleyball"
+146,North America,United States,Fort Myers,jetBlue Park,"10,000",Baseball
+146,North America,United States,Tampa,Yuengling Center,"10,000","Basketball, volleyball"
+146,North America,United States,Atlanta,Mercedes-Benz Stadium,"71,000","American football, football"
+146,North America,United States,Atlanta,Bobby Dodd Stadium,"55,000",American football
+146,North America,United States,Cumberland,Truist Park,"41,000",Baseball
+146,North America,United States,Atlanta,State Farm Arena,"16,000",Basketball
+146,North America,United States,Powder Springs,Walter H. Cantrell Stadium,"12,000","American football, football"
+146,North America,United States,Athens,Stegeman Coliseum,"10,000","Basketball, gymnastics"
+138,North America,Guatemala,Guatemala City,Estadio Nacional Doroteo Guamuch Flores,"26,000",Football
+138,North America,Guatemala,Guatemala City,Estadio Cementos Progreso,"14,000",Football
+138,North America,Guatemala,Mazatenango,Estadio Carlos Salazar Hijo,"10,000",Football
+146,North America,United States,Wailuku,War Memorial Football Stadium,"23,000",American football
+139,North America,Honduras,San Pedro Sula,Estadio OlÃ­mpico Metropolitano,"37,000",Football
+139,North America,Honduras,Tegucigalpa,Estadio Tiburcio CarÃ­as Andino,"35,000",Football
+139,North America,Honduras,San Pedro Sula,Estadio General Francisco MorazÃ¡n,"18,000",Football
+146,North America,United States,Boise,Albertsons Stadium,"36,000",American football
+146,North America,United States,Chicago,Soldier Field,"61,000","American football, football"
+146,North America,United States,Champaign,Memorial Stadium,"60,000",American football
+146,North America,United States,Chicago,Wrigley Field,"41,000",Baseball
+146,North America,United States,Chicago,Guaranteed Rate Field,"40,000",Baseball
+146,North America,United States,DeKalb,Huskie Stadium,"24,000",American football
+146,North America,United States,Bridgeview,SeatGeek Stadium,"20,000",Football
+146,North America,United States,Chicago,United Center,"20,000","Basketball, ice hockey"
+146,North America,United States,Rosemont,Allstate Arena,"16,000",Ice hockey
+146,North America,United States,Joliet,Joliet Memorial Stadium,"10,000","American football, football"
+146,North America,United States,Normal,Redbird Arena,"10,000","Basketball, volleyball"
+146,North America,United States,South Bend,Notre Dame Stadium,"77,000",American football
+146,North America,United States,Indianapolis,Lucas Oil Stadium,"67,000",American football
+146,North America,United States,West Lafayette,Ross-Ade Stadium,"57,000",American football
+146,North America,United States,Bloomington,Memorial Stadium,"52,000",American football
+146,North America,United States,Indianapolis,Gainbridge Fieldhouse,"17,000",Basketball
+146,North America,United States,Bloomington,Simon Skjodt Assembly Hall,"17,000",Basketball
+146,North America,United States,West Lafayette,Mackey Arena,"14,000",Basketball
+146,North America,United States,Indianapolis,Victory Field,"14,000",Baseball
+146,North America,United States,Terre Haute,Memorial Stadium,"12,000","American football, football"
+146,North America,United States,Iowa City,Kinnick Stadium,"69,000",American football
+146,North America,United States,Ames,Jack Trice Stadium,"61,000",American football
+146,North America,United States,Cedar Falls,UNI-Dome,"16,000",American football
+146,North America,United States,Iowa City,Carver-Hawkeye Arena,"15,000","Basketball, volleyball"
+146,North America,United States,Cedar Rapids,Kingston Stadium,"15,000","American football, football"
+146,North America,United States,Des Moines,Drake Stadium,"14,000","American football, football"
+146,North America,United States,Des Moines,Principal Park,"11,000",Baseball
+140,North America,Jamaica,Kingston,National Stadium,"35,000",Football
+140,North America,Jamaica,Kingston,Sabina Park,"15,000",Cricket
+146,North America,United States,Manhattan,Bill Snyder Family Stadium,"50,000",American football
+146,North America,United States,Lawrence,David Booth Kansas Memorial Stadium,"47,000",American football
+146,North America,United States,Kansas City,ChildrenÃ¢â‚¬â„¢s Mercy Park,"18,000",Football
+146,North America,United States,Lawrence,Allen Fieldhouse,"16,000",Basketball
+146,North America,United States,Wichita,Charles Koch Arena,"10,000","Basketball, volleyball"
+146,North America,United States,Louisville,Cardinal Stadium,"61,000",American football
+146,North America,United States,Lexington,Kroger Field,"61,000",American football
+146,North America,United States,Bowling Green,Houchens Industries-LT Smith Stadium,"22,000",American football
+146,North America,United States,Lexington,Rupp Arena,"20,000",Basketball
+146,North America,United States,Louisville,Lynn Family Stadium,"15,000",Football
+146,North America,United States,Baton Rouge,Tiger Stadium,"1,02,000",American football
+146,North America,United States,New Orleans,Caesars Superdome,"73,000",American football
+146,North America,United States,Shreveport,Independence Stadium,"49,000",American football
+146,North America,United States,New Orleans,Yulman Stadium,"30,000",American football
+146,North America,United States,Ruston,Joe Aillet Stadium,"28,000",American football
+146,North America,United States,New Orleans,Tad Gormley Stadium,"26,000","American football, football"
+146,North America,United States,New Orleans,Smoothie King Center,"16,000",Basketball
+146,North America,United States,Baton Rouge,Pete Maravich Assembly Center,"13,000","Basketball, gymnastics, volleyball"
+146,North America,United States,Baltimore,M&T Bank Stadium,"70,000",American football
+146,North America,United States,Landover,FedExField,"67,000",American football
+146,North America,United States,College Park,SECU Stadium,"51,000","American football, field lacrosse"
+146,North America,United States,Baltimore,Oriole Park at Camden Yards,"45,000",Baseball
+146,North America,United States,College Park,XFINITY Center,"17,000",Basketball
+146,North America,United States,Baltimore,Royal Farms Arena,"11,000",Multi-purpose
+146,North America,United States,Foxborough,Gillette Stadium,"65,000","American football, football"
+146,North America,United States,Chestnut Hill,Alumni Stadium,"44,000",American football
+146,North America,United States,Boston,Fenway Park,"37,000",Baseball
+146,North America,United States,Boston,Harvard Stadium,"30,000",American football
+146,North America,United States,Boston,TD Garden,"18,000","Basketball, ice hockey"
+146,North America,United States,Ann Arbor,Michigan Stadium,"1,07,000","American football, field lacrosse"
+146,North America,United States,East Lansing,Spartan Stadium,"75,000",American football
+146,North America,United States,Detroit,Ford Field,"65,000",American football
+146,North America,United States,Detroit,Comerica Park,"41,000",Baseball
+146,North America,United States,Mount Pleasant,Kelly/Shorts Stadium,"30,000",American football
+146,North America,United States,Detroit,Little Caesars Arena,"20,000","Basketball, ice hockey"
+146,North America,United States,East Lansing,Jack Breslin Student Events Center,"16,000",Basketball
+146,North America,United States,Flint,Atwood Stadium,"11,000","American football, field lacrosse, football"
+146,North America,United States,Grand Rapids,Van Andel Arena,"11,000",Ice hockey
+146,North America,United States,Minneapolis,US Bank Stadium,"66,000",American football
+146,North America,United States,Minneapolis,Huntington Bank Stadium,"50,000",American football
+146,North America,United States,Minneapolis,Target Field,"38,000",Baseball
+146,North America,United States,St. Paul,Allianz Field,"19,000",Football
+146,North America,United States,Minneapolis,Target Center,"18,000",Basketball
+146,North America,United States,St. Paul,Xcel Energy Center,"17,000",Ice hockey
+146,North America,United States,Minneapolis,Williams Arena,"14,000",Basketball
+146,North America,United States,Minneapolis,3M Arena at Mariucci,"10,000",Ice hockey
+146,North America,United States,University,Vaught-Hemingway Stadium,"64,000",American football
+146,North America,United States,Hattiesburg,MM Roberts Stadium,"36,000",American football
+146,North America,United States,Mississippi State,Humphrey Coliseum,"10,000",Basketball
+146,North America,United States,Kansas City,Arrowhead Stadium,"76,000",American football
+146,North America,United States,St. Louis,Busch Stadium,"45,000",Baseball
+146,North America,United States,Kansas City,Kauffman Stadium,"37,000",Baseball
+146,North America,United States,St. Louis,CITYPARK,"22,000",Football
+146,North America,United States,St. Louis,Enterprise Center,"18,000",Ice hockey
+146,North America,United States,Cape Girardeau,Houck Stadium,"11,000","American football, football"
+146,North America,United States,Missoula,Washington-Grizzly Stadium,"25,000",American football
+146,North America,United States,Bozeman,Bobcat Stadium,"17,000",American football
+146,North America,United States,Lincoln,Memorial Stadium,"85,000",American football
+146,North America,United States,Omaha,TD Ameritrade Park Omaha,"24,000",Baseball
+146,North America,United States,Omaha,CHI Health Center Arena,"18,000",Basketball
+146,North America,United States,Lincoln,Pinnacle Bank Arena,"15,000",Basketball
+146,North America,United States,Paradise,Allegiant Stadium,"65,000",American football
+146,North America,United States,Whitney,Sam Boyd Stadium,"36,000",American football
+146,North America,United States,Paradise,T-Mobile Arena,"17,000",Ice hockey
+146,North America,United States,East Rutherford,MetLife Stadium,"82,000",American football
+146,North America,United States,Piscataway,SHI Stadium,"52,000",American football
+146,North America,United States,Princeton,Princeton University Stadium,"27,000",American football
+146,North America,United States,Harrison,Red Bull Arena,"25,000",Football
+146,North America,United States,Newark,Prudential Center,"18,000","Basketball, ice hockey"
+146,North America,United States,Albuquerque,Dreamstyle Arena,"15,000",Basketball
+146,North America,United States,Las Cruces,Field of Dreams,"15,000",American football
+146,North America,United States,Las Cruces,Pan American Center,"12,000","Basketball, volleyball"
+146,North America,United States,Orchard Park,Highmark Blue Cross Blue Shield Stadium,"71,000",American football
+146,North America,United States,Syracuse,JMA Wireless Dome,"49,000","American football, basketball, field lacrosse"
+146,North America,United States,New York,Yankee Stadium,"47,000","Baseball, football"
+146,North America,United States,New York,Citi Field,"41,000",Baseball
+146,North America,United States,West Point,Michie Stadium,"38,000",American football
+146,North America,United States,Amherst,UB Stadium,"25,000","American football, football"
+146,North America,United States,New York,Arthur Ashe Stadium,"23,000",Tennis
+146,North America,United States,Buffalo,KeyBank Center,"19,000","Box lacrosse, ice hockey"
+146,North America,United States,New York,Madison Square Garden,"19,000","Basketball, ice hockey"
+146,North America,United States,New York,Barclays Center,"17,000",Basketball
+146,North America,United States,Rochester,Frontier Field,"13,000",Baseball
+146,North America,United States,Rochester,Marina Auto Stadium,"13,000","Field lacrosse, football"
+146,North America,United States,Brockport,Eunice Kennedy Shriver Stadium,"11,000",Multi-purpose
+146,North America,United States,Hempstead,James M. Shuart Stadium,"11,000",Field lacrosse
+146,North America,United States,Syracuse,NBT Bank Stadium,"11,000",Baseball
+146,North America,United States,Hamilton,Andy Kerr Stadium,"10,000","American football, field lacrosse"
+146,North America,United States,New York,Louis Armstrong Stadium,"10,000",Tennis
+146,North America,United States,Uniondale,Mitchel Athletic Complex Stadium,"10,000","American football, football"
+141,North America,Nicaragua,Managua,Estadio Nacional de fÃºtbol de Nicaragua,"20,000",Football
+141,North America,Nicaragua,Managua,Estadio Nacional Dennis MartÃ­nez,"15,000",Baseball
+146,North America,United States,Charlotte,Bank of America Stadium,"75,000","American football, football"
+146,North America,United States,Raleigh,Carter-Finley Stadium,"56,000",American football
+146,North America,United States,Chapel Hill,Kenan Memorial Stadium,"50,000",American football
+146,North America,United States,Durham,Wallace Wade Stadium,"40,000",American football
+146,North America,United States,Chapel Hill,Dean E. Smith Student Activities Center,"21,000",Basketball
+146,North America,United States,Greensboro,Truist Stadium,"21,000",American football
+146,North America,United States,Charlotte,Spectrum Center,"19,000",Basketball
+146,North America,United States,Charlotte,Jerry Richardson Stadium,"15,000",American football
+146,North America,United States,Winston-Salem,Lawrence Joel Veterans Memorial Coliseum,"14,000",Basketball
+146,North America,United States,Charlotte,American Legion Memorial Stadium,"10,000",Football
+146,North America,United States,Durham,Oâ€™Kelly-Riddick Stadium,"10,000",American football
+146,North America,United States,Cary,Sahlenâ€™s Stadium,"10,000","Football, ultimate"
+146,North America,United States,Fargo,Fargodome,"18,000",American football
+146,North America,United States,Grand Forks,Ralph Engelstad Arena,"11,000",Ice hockey
+146,North America,United States,Columbus,Ohio Stadium,"1,02,000",American football
+146,North America,United States,Cleveland,FirstEnergy Stadium,"67,000",American football
+146,North America,United States,Cincinnati,Paycor Stadium,"65,000",American football
+146,North America,United States,Cincinnati,Great American Ball Park,"43,000",Baseball
+146,North America,United States,Cincinnati,Nippert Stadium,"40,000",American football
+146,North America,United States,Cleveland,Progressive Field,"34,000",Baseball
+146,North America,United States,Toledo,Glass Bowl Stadium,"26,000",American football
+146,North America,United States,Cincinnati,TQL Stadium,"26,000",Football
+146,North America,United States,Kent,Dix Stadium,"25,000","American football, field lacrosse, football"
+146,North America,United States,Bowling Green,Doyt L. Perry Stadium,"24,000",American football
+146,North America,United States,Oxford,Fred C. Yager Stadium,"24,000",American football
+146,North America,United States,Youngstown,Arnold D. Stambaugh Stadium,"20,000",American football
+146,North America,United States,Columbus,Lower.com Field,"20,000",Football
+146,North America,United States,Columbus,Historic Crew Stadium,"19,000",Football
+146,North America,United States,Cleveland,Rocket Mortgage FieldHouse,"19,000","Basketball, ice hockey"
+146,North America,United States,Columbus,Nationwide Arena,"18,000",Ice hockey
+146,North America,United States,Columbus,Value City Arena,"18,000","Basketball, ice hockey"
+146,North America,United States,Parma,Byers Field,"12,000","American football, football"
+146,North America,United States,Mason,Center Court,"11,000",Tennis
+146,North America,United States,Dayton,Welcome Stadium,"11,000",American football
+146,North America,United States,Cincinnati,Cintas Center,"10,000","Basketball, volleyball"
+146,North America,United States,Columbus,Jesse Owens Memorial Stadium,"10,000","Field lacrosse, football"
+146,North America,United States,Norman,Gaylord Family â€“ Oklahoma Memorial Stadium,"80,000",American football
+146,North America,United States,Stillwater,Boone Pickens Stadium,"55,000",American football
+146,North America,United States,Tulsa,HA Chapman Stadium,"30,000",American football
+146,North America,United States,Norman,Lloyd Noble Center,"11,000",Basketball
+146,North America,United States,Tulsa,Mabee Center,"11,000",Basketball
+146,North America,United States,Eugene,Autzen Stadium,"54,000",American football
+146,North America,United States,Portland,Providence Park,"25,000",Football
+146,North America,United States,Portland,Moda Center,"19,000","Basketball, ice hockey"
+146,North America,United States,Pendleton,Pendleton Round-Up Stadium,"17,000",Rodeo
+146,North America,United States,Portland,Veterans Memorial Coliseum,"12,000",Ice hockey
+142,North America,Panama,Panama City,Estadio OlÃ­mpico Rommel FernÃ¡ndez GutiÃ©rrez,"32,000",Football
+146,North America,United States,University Park,Beaver Stadium,"1,06,000",American football
+146,North America,United States,Philadelphia,Lincoln Financial Field,"69,000",American football
+146,North America,United States,Pittsburgh,Acrisure Stadium,"68,000",American football
+146,North America,United States,Philadelphia,Franklin Field,"52,000","American football, field lacrosse"
+146,North America,United States,Philadelphia,Citizens Bank Park,"42,000",Baseball
+146,North America,United States,Pittsburgh,PNC Park,"38,000",Baseball
+146,North America,United States,Philadelphia,Wells Fargo Center,"20,000","Basketball, box lacrosse, ice hockey"
+146,North America,United States,Pittsburgh,PPG Paints Arena,"18,000",Ice hockey
+146,North America,United States,Philadelphia,Subaru Park,"18,000",Football
+146,North America,United States,Bethlehem,Bethlehem Area School District Stadium,"16,000",Multi-purpose
+146,North America,United States,Hershey,Hersheypark Stadium,"15,000","American football, football"
+146,North America,United States,Bryn Mawr,Villanova Stadium,"12,000","American football,Ã‚ field hockey, field lacrosse"
+146,North America,United States,Erie,Erie Veterans Memorial Stadium,"10,000","American football, football"
+146,North America,United States,Hershey,Giant Center,"10,000",Ice hockey
+146,North America,United States,Altoona,Mansion Park Stadium,"10,000","American football, football"
+146,North America,United States,MayagÃ¼ez,Estadio Isidoro GarcÃ­a,"10,000",Baseball
+146,North America,United States,Providence,Amica Mutual Pavilion,"12,000","Basketball, ice hockey"
+146,North America,United States,Clemson,Memorial Stadium,"81,000",American football
+146,North America,United States,Orangeburg,Oliver C. Dawson Stadium,"22,000","American football, football"
+146,North America,United States,Columbia,Colonial Life Arena,"18,000",Basketball
+146,North America,United States,Columbia,Charlie W. Johnson Stadium,"11,000",American football
+146,North America,United States,Summerville,Memorial' Stadium,"10,000",American football
+146,North America,United States,Brookings,Dana J. Dykhouse Stadium,"19,000",American football
+146,North America,United States,Sioux Falls,Howard Wood Field,"10,000","American football, football"
+143,North America,St. Vincent and the Grenadines,Arnos Vale,Arnos Vale Stadium,"18,000","Cricket, football"
+146,North America,United States,Knoxville,Neyland Stadium,"1,02,000",American football
+146,North America,United States,Nashville,Nissan Stadium,"69,000",American football
+146,North America,United States,Memphis,Simmons Bank Liberty Stadium,"58,000",American football
+146,North America,United States,Nashville,Vanderbilt Stadium,"40,000",American football
+146,North America,United States,Nashville,GEODIS Park,"30,000",Football
+146,North America,United States,Murfreesboro,Johnny Ã¢â‚¬Å“RedÃ¢â‚¬Â Floyd Stadium,"30,000",American football
+146,North America,United States,Knoxville,Thompson-Boling Arena,"21,000","Basketball, volleyball"
+146,North America,United States,Chattanooga,W. Max Finley Stadium,"20,000","American football, football"
+146,North America,United States,Memphis,FedExForum,"18,000",Basketball
+146,North America,United States,Nashville,Bridgestone Arena,"17,000",Ice hockey
+146,North America,United States,Nashville,Memorial Gymnasium,"14,000",Basketball
+146,North America,United States,College Station,Kyle Field,"1,02,000",American football
+146,North America,United States,Austin,Darrell K. Royal-Texas Memorial Stadium,"1,00,000",American football
+146,North America,United States,Dallas,Cotton Bowl Stadium,"92,000",American football
+146,North America,United States,Arlington,AT&T Stadium,"80,000",American football
+146,North America,United States,Houston,NRG Stadium,"72,000",American football
+146,North America,United States,San Antonio,Alamodome,"64,000",American football
+146,North America,United States,Lubbock,Jones AT&T Stadium,"60,000",American football
+146,North America,United States,El Paso,Sun Bowl Stadium,"51,000",American football
+146,North America,United States,Fort Worth,Amon G. Carter Stadium,"47,000",American football
+146,North America,United States,Waco,McLane Stadium,"45,000",American football
+146,North America,United States,Houston,Minute Maid Park,"41,000",Baseball
+146,North America,United States,Houston,TDECU Stadium,"40,000",American football
+146,North America,United States,Denton,Apogee Stadium,"30,000",American football
+146,North America,United States,San Marcos,Bobcat Stadium,"30,000",American football
+146,North America,United States,Houston,PNC Stadium,"22,000","American football, football"
+146,North America,United States,Austin,Mike A. Myers Stadium,"20,000",Football
+146,North America,United States,Austin,Q2 Stadium,"20,000",Football
+146,North America,United States,Frisco,Toyota Stadium,"20,000","American football, football"
+146,North America,United States,Dallas,American Airlines Center,"19,000","Basketball, ice hockey"
+146,North America,United States,San Antonio,Alamo Stadium,"18,000","American football, football"
+146,North America,United States,San Antonio,AT&T Center,"18,000",Basketball
+146,North America,United States,Corpus Christi,Buccaneer Stadium,"18,000",American football
+146,North America,United States,Houston,Toyota Center,"18,000",Basketball
+146,North America,United States,Baytown,Stallworth Stadium,"16,000","American football, football"
+146,North America,United States,Kingsville,Javelina Stadium,"15,000",American football
+146,North America,United States,McAllen,McAllen Veterans Memorial Stadium,"13,000","American football, football"
+146,North America,United States,Carrollton,Tommy Standridge Stadium,"13,000","American football, football"
+146,North America,United States,San Benito,Bobby Morrow Stadium,"12,000","American football, football"
+146,North America,United States,Austin,Burger Stadium,"12,000","American football, football"
+146,North America,United States,Denton,CH Collins Stadium,"12,000","American football, football"
+146,North America,United States,Houston,Jones-Cowart Stadium,"12,000",American football
+146,North America,United States,Irving,Joy and Ralph Ellis Stadium,"12,000","American football, football"
+146,North America,United States,Bedford,Pennington Field,"12,000","American football, football"
+146,North America,United States,College Station,Reed Arena,"12,000","Basketball, volleyball"
+146,North America,United States,Pasadena,Veterans Memorial Stadium,"12,000","American football, football"
+146,North America,United States,Cypress,Cy-Fair FCU Stadium,"11,000","American football, football"
+146,North America,United States,El Paso,Don Haskins Center,"11,000",Basketball
+146,North America,United States,Austin,Kelly Reeves Stadium,"11,000",American football
+146,North America,United States,Commerce,Memorial Stadium,"11,000",American football
+146,North America,United States,San Antonio,Dub Farris Stadium,"10,000","American football, football"
+146,North America,United States,Dallas,Forester Stadium,"10,000","American football, football"
+146,North America,United States,San Antonio,Jerry Comalander Stadium,"10,000","American football, football"
+146,North America,United States,Harlingen,J. Lewis Boggus Stadium,"10,000","American football, football"
+146,North America,United States,Waco,Paul J. Meyer Arena,"10,000","Basketball, volleyball"
+146,North America,United States,Brownsville,Sams Memorial Stadium,"10,000","American football, football"
+146,North America,United States,New Braunfels,Unicorn Stadium,"10,000","American football, football"
+146,North America,United States,Waller,Waller ISD Stadium,"10,000",American football
+144,North America,Trinidad and Tobago,Port-of-Spain,Hasely Crawford Stadium,"23,000",Football
+144,North America,Trinidad and Tobago,Port-of-Spain,Queenâ€™s Park Oval,"20,000",Cricket
+144,North America,Trinidad and Tobago,Couva,Ato Boldon Stadium,"10,000",Football
+144,North America,Trinidad and Tobago,Arima,Larry Gomes Stadium,"10,000",Football
+145,North America,United Mexican States,Mexico City,Estadio Azteca,"87,000",Football
+145,North America,United Mexican States,Mexico City,Estadio OlÃ­mpico Universitario,"69,000","American football, football"
+145,North America,United Mexican States,Guadalajara,Estadio Jalisco,"55,000",Football
+145,North America,United Mexican States,Guadalupe,Estadio BBVA,"53,000",Football
+145,North America,United Mexican States,Puebla,Estadio CuauhtÃ©moc,"51,000",Football
+145,North America,United Mexican States,Zapopan,Estadio Akron,"49,000",Football
+145,North America,United Mexican States,San NicolÃ¡s,Estadio Universitario,"41,000",Football
+145,North America,United Mexican States,Mexico City,Plaza MÃ©xico,"41,000",Bullfighting
+145,North America,United Mexican States,Morelia,Estadio JosÃ© MarÃ­a Morelos y PavÃ³n,"35,000",Football
+145,North America,United Mexican States,QuerÃ©taro,Estadio Corregidora de QuerÃ©taro,"33,000",Football
+145,North America,United Mexican States,LeÃ³n,Estadio LeÃ³n,"31,000",Football
+145,North America,United Mexican States,TorreÃ³n,Estadio Corona,"30,000",Football
+145,North America,United Mexican States,Toluca,Estadio Nemesio DÃ­ez,"30,000",Football
+145,North America,United Mexican States,Tuxtla GutiÃ©rrez,Estadio VÃ­ctor Manuel Reyna,"29,000",Football
+145,North America,United Mexican States,Pachuca,Estadio Hidalgo,"27,000",Football
+145,North America,United Mexican States,Zacatepec,Estadio AgustÃ­n â€œCorucoâ€ DÃ­az,"24,000",Football
+145,North America,United Mexican States,Aguascalientes,Estadio Victoria,"23,000",Football
+145,North America,United Mexican States,Mexico City,Arena Ciudad de MÃ©xico,"22,000",Multi-purpose
+145,North America,United Mexican States,Chihuahua,Estadio OlÃ­mpico Universitario,"22,000","American football, football"
+145,North America,United Mexican States,Monterrey,Estadio de bÃ©isbol Monterrey,"21,000",Baseball
+145,North America,United Mexican States,Tijuana,Plaza Monumental de Tijuana,"21,000",Bullfighting
+145,North America,United Mexican States,Mexico City,Estadio Alfredo Harp HelÃº,"20,000",Baseball
+145,North America,United Mexican States,CuliacÃ¡n Rosales,Estadio Banorte,"20,000",Football
+145,North America,United Mexican States,Zacatecas,Estadio Carlos Vega Villalba,"20,000",Football
+145,North America,United Mexican States,CuliacÃ¡n Rosales,Estadio de los Tomateros de CuliacÃ¡n,"20,000",Baseball
+145,North America,United Mexican States,Mexicali,Estadio Farmacias Santa MÃ³nica,"19,000",Baseball
+145,North America,United Mexican States,Puebla,Estadio Universitario BUAP,"19,000","American football, football"
+145,North America,United Mexican States,Zapopan,Estadio 3 de Marzo,"18,000",Football
+145,North America,United Mexican States,Durango,Estadio Francisco Zarco,"18,000",Football
+145,North America,United Mexican States,Hermosillo,Estadio HÃ©roe de Nacozari,"18,000",Football
+145,North America,United Mexican States,CancÃºn,Estadio OlÃ­mpico AndrÃ©s Quintana Roo,"17,000",Football
+145,North America,United Mexican States,Morelia,Estadio OlÃ­mpico Venustiano Carranza,"17,000",Football
+145,North America,United Mexican States,Saltillo,Estadio Francisco I. Madero,"16,000",Baseball
+145,North America,United Mexican States,San NicolÃ¡s,Estadio Gaspar Mass,"16,000",American football
+145,North America,United Mexican States,Hermosillo,Estadio Sonora,"16,000",Baseball
+145,North America,United Mexican States,MazatlÃ¡n,Estadio Teodoro Mariscal,"16,000",Baseball
+145,North America,United Mexican States,Ciudad ObregÃ³n,Estadio Yaquis,"16,000",Baseball
+145,North America,United Mexican States,Aguascalientes,Plaza de toros Monumental de Aguascalientes,"16,000",Bullfighting
+145,North America,United Mexican States,Guadalajara,Plaza de toros Nuevo Progreso,"16,000",Bullfighting
+145,North America,United Mexican States,MÃ©rida,Estadio Carlos Iturralde Rivero,"15,000",Football
+145,North America,United Mexican States,Tlaxcala,Estadio Tlahuicole,"15,000",Football
+145,North America,United Mexican States,Oaxaca,Estadio TecnolÃ³gico de Oaxaca,"14,000",Football
+145,North America,United Mexican States,MÃ©rida,Parque KukulcÃ¡n Alamo,"14,000",Baseball
+145,North America,United Mexican States,La Piedad,Estadio Juan N. LÃ³pez,"13,000",Football
+145,North America,United Mexican States,Mexico City,Estadio Wilfrido Massieu,"13,000",American football
+145,North America,United Mexican States,Tepic,Estadio NicolÃ¡s Ãlvarez Ortega,"12,000",Football
+145,North America,United Mexican States,Los Mochis,Estadio Centenario,"11,000",Football
+145,North America,United Mexican States,Mexicali,Plaza de toros Calafia,"11,000",Bullfighting
+145,North America,United Mexican States,Monterrey,Estadio Borregos,"10,000",American football
+145,North America,United Mexican States,Ciudad Victoria,Estadio Marte Rodolfo GÃ³mez Segura,"10,000",Football
+146,North America,United States,Provo,LaVell Edwards Stadium,"63,000",American football
+146,North America,United States,Salt Lake,Rice-Eccles Stadium,"45,000",American football
+146,North America,United States,Logan,Maverik Stadium,"25,000",American football
+146,North America,United States,Sandy,America First Field,"20,000",Football
+146,North America,United States,Provo,J. Willard Marriott Center,"18,000",Basketball
+146,North America,United States,Salt Lake,vivint arena,"18,000",Basketball
+146,North America,United States,Logan,Dee Glen Smith Spectrum,"10,000","Basketball, gymnastics, volleyball"
+146,North America,United States,Blacksburg,Lane Stadium,"65,000",American football
+146,North America,United States,Norfolk,William â€œDickâ€ Price Football Stadium,"30,000",American football
+146,North America,United States,Harrisonburg,Bridgeforth Stadium,"24,000",American football
+146,North America,United States,Richmond,City Stadium,"22,000",Football
+146,North America,United States,Norfolk,SB Ballard Stadium,"22,000",American football
+146,North America,United States,Charlottesville,John Paul Jones Arena,"14,000",Basketball
+146,North America,United States,Hampton,Armstrong Stadium,"12,000","American football,Ã‚ field lacrosse"
+146,North America,United States,Norfolk,Harbor Park,"11,000",Baseball
+146,North America,United States,Blacksburg,Cassell Coliseum,"10,000","Basketball, volleyball"
+146,North America,United States,Richmond,Hovey Field,"10,000",American football
+146,North America,United States,Seattle,Husky Stadium,"70,000",American football
+146,North America,United States,Seattle,Lumen Field,"68,000","American football, football"
+146,North America,United States,Seattle,T-Mobile Park,"47,000",Baseball
+146,North America,United States,Pullman,Martin Stadium,"32,000",American football
+146,North America,United States,Seattle,Memorial Stadium,"12,000","American football, football, ultimate"
+146,North America,United States,Pullman,Beasley Coliseum,"11,000",Basketball
+146,North America,United States,Morgantown,Milan Puskar Stadium,"60,000",American football
+146,North America,United States,Huntington,Joan C. Edwards Stadium,"38,000",American football
+146,North America,United States,Charleston,University of Charleston Stadium,"18,000",American football
+146,North America,United States,Wheeling,Wheeling Island Stadium,"12,000","American football, football"
+146,North America,United States,Green Bay,Lambeau Field,"81,000",American football
+146,North America,United States,Madison,Camp Randall Stadium,"80,000",American football
+146,North America,United States,Milwaukee,American Family Field,"41,000",Baseball
+146,North America,United States,Milwaukee,Fiserv Forum,"17,000",Basketball
+146,North America,United States,Madison,Kohl Center,"17,000","Basketball, dodgeball, ice hockey"
+146,North America,United States,Laramie,War Memorial Stadium,"29,000",American football
+146,North America,United States,Laramie,Arena-Auditorium,"11,000",Basketball

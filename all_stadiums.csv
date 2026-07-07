@@ -1,0 +1,2190 @@
+id,region,country,location,stadium_name,total_capacity,sport_played
+1,Africa,Algeria,Algiers,Stade du 5-juillet-1962,"64,000",Football
+1,Africa,Algeria,Bir el-Djir,Stade olympique d’Oran,"40,000",Football
+1,Africa,Algeria,Biskra,Stade du 18-février,"35,000",Football
+1,Africa,Algeria,Skikda,Stade du 20-août-1955,"30,000",Football
+1,Africa,Algeria,Bouïra,Stade Rabah-Bitat,"30,000",Football
+1,Africa,Algeria,Relizane,Stade Tahar-Zoughari,"30,000",Football
+1,Africa,Algeria,Sétif,Stade du 8-mai-1945,"25,000",Football
+1,Africa,Algeria,Mascara,Stade de l’Unité africaine,"22,000",Football
+1,Africa,Algeria,Batna,Stade 1er-novembre-1954,"20,000",Football
+1,Africa,Algeria,Béchar,Stade du 20-août-1955,"20,000",Football
+1,Africa,Algeria,Tlemcen,Stade Akid-Lotfi,"18,000",Football
+1,Africa,Algeria,Béjaïa,Stade de l’Unité maghrébine,"18,000",Football
+1,Africa,Algeria,Chlef,Stade olympique de Mohamed-Boumezrag,"18,000",Football
+1,Africa,Algeria,Algiers,Stade Omar-Hamadi,"17,000",Football
+1,Africa,Algeria,Sig,Stade Abdelkrim-Kerroum,"15,000",Football
+1,Africa,Algeria,Tiaret,Stade Ahmed-Kaïd,"14,000",Football
+1,Africa,Algeria,Constantine,Stade Benabdelmalek-Ramdane,"13,000",Football
+1,Africa,Algeria,Tébessa,Stade du 4-mars,"11,000",Football
+1,Africa,Algeria,Algiers,Stade Omar-Benrabah,"11,000",Football
+1,Africa,Algeria,Ain Temouchent,Stade Omar-Oucief,"11,000",Football
+1,Africa,Algeria,Mostaganem,Stade Mohamed-Bensaïd,"10,000",Football
+1,Africa,Algeria,Annaba,Stade municipal Colonel-Chabou-Abdelkader,"10,000",Football
+2,Africa,Angola,Benguela,Estádio Nacional de Ombaka,"35,000",Football
+2,Africa,Angola,Lubango,Estádio Nacional da Tundavala,"20,000",Football
+2,Africa,Angola,Cabinda,Estádio Nacional do Chiazi,"20,000",Football
+2,Africa,Angola,Kilamba,Pavilhão Multiusos do Kilamba,"12,000",Basketball
+2,Africa,Angola,Caála,Estádio Mártires da Canhala,"11,000",Football
+3,Africa,Benin,Porto-Novo,Stade Charles de Gaulle,"15,000",Football
+4,Africa,Botswana,Francistown,Obed Itani Chilume Stadium,"26,000",Football
+4,Africa,Botswana,Lobatse,Lobatse Stadium,"20,000",Football
+5,Africa,Burkina Faso,Ouagadougou,Stade du 4-août-1983,"60,000",Football
+6,Africa,Burundi,Gitega,Stade Ingoma,"20,000",Football
+7,Africa,Cabo Verde,Praia,Estádio Nacional de Cabo Verde,"15,000",Football
+8,Africa,Cameroon,Yaoundé,Stade omnisport Paul Biya,"60,000",Football
+8,Africa,Cameroon,Douala,Stade de Japoma,"50,000",Football
+8,Africa,Cameroon,Yaoundé,Stade Ahmadou Ahidjo,"42,000",Football
+8,Africa,Cameroon,Douala,Stade de la Réunification,"39,000",Football
+8,Africa,Cameroon,Garoua,Stade Roumdé Adjia,"30,000",Football
+8,Africa,Cameroon,Limbé,Stade omnisport de Limbé,"20,000",Football
+8,Africa,Cameroon,Bafoussam,Stade omnisports de Bafoussam,"20,000",Football
+9,Africa,Central African Republic,Bangui,Stade Barthélemy Boganda,"50,000",Football
+10,Africa,Chad,N’Djamena,Stade omnisports Idriss Mahamat Ouya,"20,000",Football
+11,Africa,Congo,Brazzaville,Stade municipal de Kintélé,"60,000",Football
+11,Africa,Congo,Ouesso,Stade de Ouesso,"16,000",Football
+11,Africa,Congo,Pointe-Noire,Stade municipal,"13,000",Football
+11,Africa,Congo,Owando,Stade omnisport Marien Ngouabi d’Owando,"13,000",Football
+12,Africa,Côte d’Ivoire,Abidjan,Stade olympique Alassane Ouattara,"60,000",Football
+12,Africa,Côte d’Ivoire,Yamoussoukro,Stade de Yamoussoukro,"20,000",Football
+12,Africa,Côte d’Ivoire,Abidjan,Stade Robert Champroux,"10,000",Football
+13,Africa,Djibouti,Djibouti,Stade El-Hadj Hassan Gouled Aptidon,"20,000",Football
+14,Africa,DR Congo,Lubumbashi,Stade TP Mazembe,"18,000",Football
+14,Africa,DR Congo,Kalemie,Stade Joseph Kabila Kabange,"14,000",Football
+14,Africa,DR Congo,Goma,Stade de l’Unité,"10,000",Football
+14,Africa,DR Congo,Kamina,Stade Joseph Kabila Kabange,"10,000",Football
+14,Africa,DR Congo,Kindu,Stade Joseph Kabila Kabange,"10,000",Football
+15,Africa,Egypt,Borg el-Arab,Borg el-Arab Stadium,"86,000",Football
+15,Africa,Egypt,Cairo,Cairo International Stadium,"74,000",Football
+15,Africa,Egypt,Cairo,30 June Stadium,"30,000",Football
+15,Africa,Egypt,Cairo,Al-Ahly WE al-Salam Stadium,"30,000",Football
+15,Africa,Egypt,Al-Fayoum,Al-Fayoum Stadium,"20,000",Football
+15,Africa,Egypt,Port Said,Al-Masry Club Stadium,"18,000",Football
+15,Africa,Egypt,El-Mansoura,El-Mansoura Stadium,"18,000",Football
+15,Africa,Egypt,Cairo,Main Hall,"16,000",Basketball
+15,Africa,Egypt,New Cairo,Petrosport Stadium,"16,000",Football
+15,Africa,Egypt,Alexandria,Izz al-Din Yacoub Stadium,"15,000",Football
+15,Africa,Egypt,Alexandria,Alexandria Stadium,"13,000",Football
+15,Africa,Egypt,Asyut,Asyut University Stadium,"12,000",Football
+15,Africa,Egypt,El-Gouna,Khaled Bichara Stadium,"12,000",Football
+15,Africa,Egypt,Aswan,Aswan Stadium,"11,000",Football
+15,Africa,Egypt,Asyut,Arba’een Sporting Stadium,"10,000",Football
+16,Africa,Equatorial Guinea,Bata,Estadio de Bata,"35,000",Football
+16,Africa,Equatorial Guinea,Malabo,Estadio de Malabo,"15,000",Football
+16,Africa,Equatorial Guinea,Mongomo,Estadio de Mongomo,"10,000",Football
+17,Africa,Ethiopia,Nekemte,Welega Stadium,"50,000",Football
+17,Africa,Ethiopia,Woldia,Sheikh Mohammed Hussein Ali al-Amoudi Stadium,"25,000",Football
+17,Africa,Ethiopia,Dire Dawa,Dire Dawa Stadium,"18,000",Football
+17,Africa,Ethiopia,Hawassa,Hawassa University Stadium,"15,000",Football
+17,Africa,Ethiopia,Jigjiga,Jigjiga Stadium,"15,000",Football
+18,Africa,Gabon,Libreville,Stade de l’Amitié sino-gabonaise,"40,000",Football
+18,Africa,Gabon,Franceville,Stade de Franceville,"22,000",Football
+18,Africa,Gabon,Port-Gentil,Stade de Port-Gentil,"20,000",Football
+18,Africa,Gabon,Oyem,Stade d’Oyem,"20,000",Football
+19,Africa,Gambia,Bakau,Independence Stadium,"40,000",Football
+20,Africa,Ghana,Accra,Accra Sports Stadium,"40,000",Football
+20,Africa,Ghana,Kumasi,Baba Yara Sports Stadium,"40,000",Football
+20,Africa,Ghana,Obuasi,Len Clay Stadium,"20,000",Football
+20,Africa,Ghana,Cape Coast,Cape Coast Sports Stadium,"15,000",Football
+22,Africa,Guinea-Bissau,Bissau,Estádio Nacional 24 de Setembro,"20,000",Football
+21,Africa,Guinea,Conakry,Stade Général Lansana Conté,"50,000",Football
+23,Africa,Kenya,Nairobi,Kasarani Stadium,"80,000",Football
+23,Africa,Kenya,Narok,William Ole Ntimama Stadium,"20,000",Football
+23,Africa,Kenya,Meru,Kinoru Stadium,"15,000",Football
+23,Africa,Kenya,Nairobi,Nyayo National Stadium,"15,000",Football
+24,Africa,Lesotho,Maseru,Setsoto Stadium,"20,000",Football
+25,Africa,Liberia,Paynesville,Samuel Kanyon Doe Sports Stadium,"22,000",Football
+26,Africa,Libya,Benina,Martyrs of February Stadium,"10,000",Football
+27,Africa,Madagascar,Antananarivo,Kianja Barea Mahamasina,"40,000",Football
+27,Africa,Madagascar,Toamasina,Kianja Barikadimy,"25,000",Football
+28,Africa,Malawi,Blantyre,Kamuzu Stadium,"65,000",Football
+28,Africa,Malawi,Lilongwe,Bingu National Stadium,"41,000",Football
+29,Africa,Mali,Bamako,Stade du 26 mars,"50,000",Football
+29,Africa,Mali,Bamako,Stade Mamadou Konaté,"10,000",Football
+30,Africa,Mauritania,Nouakchott,Stade olympique,"20,000",Football
+30,Africa,Mauritania,Nouadhibou,Stade municipal de Nouadhibou,"10,000",Football
+31,Africa,Mauritius,Port Louis,Anjalay Stadium,"16,000",Football
+32,Africa,Morocco,Rabat,Stade Prince Moulay Abdellah,"53,000",Football
+32,Africa,Morocco,Agadir,Stade Adrar,"45,000",Football
+32,Africa,Morocco,Marrakesh,Grand stade de Marrakech,"45,000",Football
+32,Africa,Morocco,Tangier,Stade Ibn Battuta,"45,000",Football
+32,Africa,Morocco,Casablanca,Stade Mohammed V,"45,000",Football
+32,Africa,Morocco,Fez,Stade du Complexe sportif de Fès,"37,000",Football
+32,Africa,Morocco,Kenitra,Stade municipal,"28,000",Football
+32,Africa,Morocco,Casablanca,Stade Hay Moulay Rachid,"25,000",Football
+32,Africa,Morocco,Oujda,Stade d’Honneur,"19,000",Football
+32,Africa,Morocco,Casablanca,Stade Larbi Zaouli,"16,000",Football
+33,Africa,Mozambique,Maputo,Estádio Nacional do Zimpeto,"42,000",Football
+34,Africa,Namibia,Windhoek,Independence Stadium,"25,000",Football
+34,Africa,Namibia,Windhoek,Hage Geingob Stadium,"10,000",Rugby union
+35,Africa,Niger,Niamey,Stade municipal,"10,000",Football
+35,Africa,Niger,Zinder,Stade municipal Lawandidi,"10,000",Football
+36,Africa,Nigeria,Abuja,Moshood Abiola National Stadium,"60,000",Football
+36,Africa,Nigeria,Port Harcourt,Adokiye Amiesimaka Stadium,"38,000",Football
+36,Africa,Nigeria,Katsina,Muhammadu Dikko Stadium,"35,000",Football
+36,Africa,Nigeria,Uyo,Godswill Akpabio International Stadium,"30,000",Football
+36,Africa,Nigeria,Asaba,Governor Okowa Main Bowl,"22,000",Football
+36,Africa,Nigeria,Osogbo,Osogbo Township Stadium,"20,000",Football
+36,Africa,Nigeria,Kaduna,Ahmadu Bello Stadium,"16,000",Football
+36,Africa,Nigeria,Aba,Enyimba International Stadium,"16,000",Football
+36,Africa,Nigeria,Kano,Sani Abacha Stadium,"16,000",Football
+36,Africa,Nigeria,Eket,Eket Stadium,"15,000",Football
+36,Africa,Nigeria,Jalingo,Jolly Nyame Stadium,"12,000",Football
+36,Africa,Nigeria,Gombe,Pantami Stadium,"12,000",Football
+36,Africa,Nigeria,Benin City,Samuel Ogbemudia Stadium,"12,000",Football
+36,Africa,Nigeria,Calabar,UJ Esuene Stadium,"12,000",Football
+36,Africa,Nigeria,Bauchi,Abubakar Tafawa Balewa Stadium,"11,000",Football
+36,Africa,Nigeria,Ibadan,Adamasingba Stadium,"10,000",Football
+36,Africa,Nigeria,Owerri,Dan Anyiam Stadium,"10,000",Football
+36,Africa,Nigeria,Maiduguri,El-Kanemi Stadium,"10,000",Football
+36,Africa,Nigeria,Kano,Kano Pillars Stadium,"10,000",Football
+36,Africa,Nigeria,Lagos,Mobolaji Johnson Arena,"10,000",Football
+37,Africa,Rwanda,Kigali,Amahoro National Stadium,"30,000",Football
+37,Africa,Rwanda,Kigali,Kigali Stadium,"22,000",Football
+37,Africa,Rwanda,Kigali,BK Arena,"10,000",Basketball
+38,Africa,Senegal,Diamniadio,Stade Abdoulaye Wade,"50,000",Football
+38,Africa,Senegal,Dakar,Stade Demba Diop,"20,000",Football
+38,Africa,Senegal,Diamniadio,Dakar Arena,"15,000",Basketball
+38,Africa,Senegal,Pikine,Stade Alassane Djigo,"10,000",Football
+39,Africa,Seychelles,Victoria,Stad Linite,"10,000",Football
+40,Africa,Somalia,Mogadishu,Muqdisho Stadium,"60,000",Football
+40,Africa,Somalia,Mogadishu,Eng. Yariisow Stadium,"20,000",Football
+41,Africa,South Africa,Johannesburg,FNB Stadium,"94,000",Football
+41,Africa,South Africa,Johannesburg,Emirates Airline Park,"62,000","Football, rugby union"
+41,Africa,South Africa,Cape Town,DHL Stadium,"57,000","Football, rugby union"
+41,Africa,South Africa,Durban,Moses Mabhida Stadium,"56,000",Football
+41,Africa,South Africa,Durban,Hollywoodbets Kings Park,"52,000","Football, rugby union"
+41,Africa,South Africa,Pretoria,Loftus Versfeld Stadium,"51,000","Football, rugby union"
+41,Africa,South Africa,Port Elizabeth,Nelson Mandela Bay Stadium,"46,000","Football, rugby union"
+41,Africa,South Africa,Bloemfontein,Toyota Stadium,"46,000",Rugby union
+41,Africa,South Africa,Phokeng,Royal Bafokeng Stadium,"44,000",Football
+41,Africa,South Africa,Nelspruit,Mbombela Stadium,"40,000","Football, rugby union"
+41,Africa,South Africa,Johannesburg,Orlando Stadium,"37,000",Football
+41,Africa,South Africa,Johannesburg,Rand Stadium,"30,000",Football
+41,Africa,South Africa,Pretoria,Lucas “Masterpieces” Moripe Stadium,"28,000",Football
+41,Africa,South Africa,Ekurhuleni,Vosloorus Stadium,"25,000",Football
+41,Africa,South Africa,Johannesburg,Dobsonville Stadium,"24,000",Football
+41,Africa,South Africa,Bloemfontein,Dr. Rantlai Petrus Molemela Stadium,"22,000",Football
+41,Africa,South Africa,Potchefstroom,Profert Olën Park,"22,000","Football, rugby union"
+41,Africa,South Africa,Giyani,Giyani Stadium,"20,000",Football
+41,Africa,South Africa,Stellenbosch,Danie Craven Stadium,"16,000","Football, rugby union"
+41,Africa,South Africa,Pietermaritzburg,Harry Gwala Stadium,"12,000",Football
+41,Africa,South Africa,Kimberley,Griqua Park,"11,000",Rugby union
+41,Africa,South Africa,Tembisa,Makhulong Stadium,"10,000",Football
+42,Africa,Sudan,Port Sudan,Port Sudan International Stadium,"20,000",Football
+43,Africa,Tanzania,Dar es-Salaam,Tanzania National Main Stadium,"60,000",Football
+43,Africa,Tanzania,Tabora,Ali Hassan Mwinyi Stadium,"35,000",Football
+43,Africa,Tanzania,Mwanza,CCM Kirumba Stadium,"35,000",Football
+43,Africa,Tanzania,Chake-Chake,Gombani Stadium,"30,000",Football
+43,Africa,Tanzania,Dodoma,Jamhuri Stadium,"30,000",Football
+43,Africa,Tanzania,Shinyanga,Kambarage Stadium,"30,000",Football
+43,Africa,Tanzania,Songea,Maji-Maji Stadium,"30,000",Football
+43,Africa,Tanzania,Zanzibar,Amaan Stadium,"20,000",Football
+43,Africa,Tanzania,Morogoro,Jamhuri Stadium,"20,000",Football
+43,Africa,Tanzania,Arusha,Sheikh Amri Abeid Memorial Stadium,"20,000",Football
+43,Africa,Tanzania,Mbeya,Sokoine Stadium,"20,000",Football
+43,Africa,Tanzania,Tanga,Mkwakwani Stadium,"15,000",Football
+43,Africa,Tanzania,Dar es-Salaam,Azam Complex Stadium,"10,000",Football
+44,Africa,Togo,Lomé,Stade de Kégué,"25,000",Football
+44,Africa,Togo,Lomé,Stade omnisport de Lomé,"20,000",Football
+45,Africa,Tunisia,Radès,Stade Olympique Hammadi Agrebi,"60,000",Football
+45,Africa,Tunisia,Sousse,Stade Olympique de Sousse,"28,000",Football
+45,Africa,Tunisia,Sfax,Stade Taïeb Mhiri,"18,000",Football
+45,Africa,Tunisia,Radès,Palais des Sports du 14 Janvier,"17,000",Basketball
+45,Africa,Tunisia,Hammam-Lif,Stade Municipal de Hammam-Lif,"15,000",Football
+46,Africa,Uganda,Kampala,St. Mary’s Stadium,"15,000",Football
+47,Africa,Zambia,Lusaka,Heroes National Stadium,"60,000",Football
+47,Africa,Zambia,Ndola,Levy Mwanawasa Stadium,"49,000",Football
+47,Africa,Zambia,Lusaka,Woodlands Stadium,"10,000",Football
+48,Africa,Zimbabwe,Harare,National Sports Stadium,"80,000",Football
+48,Africa,Zimbabwe,Harare,Rufaro Stadium,"60,000",Football
+48,Africa,Zimbabwe,Bulawayo,Barbourfields Stadium,"40,000",Football
+48,Africa,Zimbabwe,Zvishavane,Mandava Stadium,"15,000",Football
+48,Africa,Zimbabwe,Harare,Harare Sports Club Ground,"10,000",Cricket
+49,Asia,Afghanistan,Kandahar,Ahmad Shahi Stadium,"20,000",Football
+50,Asia,Armenia,Yerevan,Vazgen Sargsyan Republican Stadium,"14,000",Football
+51,Asia,Azerbaijan,Baku,Bakı Olimpiya Stadionu,"68,000",Football
+51,Asia,Azerbaijan,Baku,Tofiq Bəhramov adına Respublika Stadionu,"31,000",Football
+51,Asia,Azerbaijan,Lankaran,Xəzər Lənkəran Mərkəzi Stadionu,"15,000",Football
+51,Asia,Azerbaijan,Masazır,Bank Respublika Arena,"13,000",Football
+51,Asia,Azerbaijan,Baku,Bakcell Arena,"11,000",Football
+52,Asia,Bahrain,Riffa,Bahrain National Stadium,"24,000",Football
+52,Asia,Bahrain,Isa Town,Khalifa Sports City Stadium,"15,000",Football
+53,Asia,Bangladesh,Chittagong,MA Aziz Stadium,"40,000","Cricket, football"
+53,Asia,Bangladesh,Faridpur,Sheikh Jamal Stadium,"30,000","Cricket, football"
+53,Asia,Bangladesh,Habiganj,Habiganj Adhunik Stadium,"25,000","Cricket, football"
+53,Asia,Bangladesh,Mymensingh,Rafiq Uddin Bhuiyan Stadium,"25,000","Cricket, football"
+53,Asia,Bangladesh,Rangpur,Rangpur Stadium,"25,000","Cricket, football"
+53,Asia,Bangladesh,Dhaka,Bangladesh Army Stadium,"20,000",Football
+53,Asia,Bangladesh,Sylhet,Sylhet District Stadium,"15,000","Cricket, football"
+54,Asia,Brunei,Bandar Seri Begawan,Stadium Negara Hassanal Bolkiah,"28,000",Football
+55,Asia,Cambodia,Phnom Penh,Olympic Stadium,"70,000",Football
+55,Asia,Cambodia,Phnom Penh,Morodok Techo National Stadium,"60,000",Football
+57,Asia,Cyprus,Nicosia,GSP Stadium,"22,000",Football
+58,Asia,DPR Korea,Pyongyang,Rungrado 1st of May Stadium,"114,000","Football, mass games"
+58,Asia,DPR Korea,Pyongyang,Kim Il-sung Stadium,"50,000",Football
+59,Asia,Georgia,Tbilisi,Boris Paichadze Dinamo Arena,"54,000",Football
+59,Asia,Georgia,Tbilisi,Mikheil Meskhi Stadium,"27,000",Football
+59,Asia,Georgia,Batumi,Batumi Stadium,"20,000",Football
+61,Asia,Indonesia,Jakarta,Jakarta International Stadium,"82,000",Football
+61,Asia,Indonesia,Jakarta,Stadion Utama Gelora Bung Karno,"77,000",Football
+61,Asia,Indonesia,Sleman,Stadion Maguwoharjo,"50,000",Football
+61,Asia,Indonesia,Surabaya,Stadion Gelora Bung Tomo,"46,000",Football
+61,Asia,Indonesia,Bandung,Stadion Gelora Bandung Lautan Api,"38,000",Football
+61,Asia,Indonesia,Tenggarong,Stadion Aji Imbut,"35,000",Football
+61,Asia,Indonesia,Malang,Stadion Gajayana,"35,000",Football
+61,Asia,Indonesia,Yogyakarta,Stadion Mandala Krida,"35,000",Football
+61,Asia,Indonesia,Samarinda,Stadion Utama Kaltim,"35,000",Football
+61,Asia,Indonesia,Serang,Banten International Stadium,"30,000",Football
+61,Asia,Indonesia,Tangerang,Indomilk Arena,"30,000",Football
+61,Asia,Indonesia,Pekanbaru,Stadion Kaharudin Nasution,"30,000",Football
+61,Asia,Indonesia,Cibinong,Stadion Pakansari,"30,000",Football
+61,Asia,Indonesia,Bekasi,Stadion Patriot Candrabhaga,"30,000",Football
+61,Asia,Indonesia,Sidorejo,Stadion Surajaya,"30,000",Football
+61,Asia,Indonesia,Sertajaya,Stadion Wibawa Mukti,"30,000",Football
+61,Asia,Indonesia,Soreang,Stadion Si Jalak Harupat,"27,000",Football
+61,Asia,Indonesia,Bandung,Stadion Siliwangi,"25,000",Football
+61,Asia,Indonesia,Karawang,Stadion Singaperbangsa,"25,000",Football
+61,Asia,Indonesia,Madiun,Stadion Wilis,"25,000",Football
+61,Asia,Indonesia,Kediri,Stadion Brawijaya,"20,000",Football
+61,Asia,Indonesia,Ciamis,Stadion Galuh,"20,000",Football
+61,Asia,Indonesia,Jepara,Stadion Gelora Bumi Kartini,"20,000",Football
+61,Asia,Indonesia,Padang,Stadion Gelora Haji Agus Salim,"20,000",Football
+61,Asia,Indonesia,Banda Aceh,Stadion H. Dimurthala,"20,000",Football
+61,Asia,Indonesia,Surakarta,Stadion Manahan,"20,000",Football
+61,Asia,Indonesia,Kebondalem,Stadion Utama Kebondalem,"20,000",Football
+61,Asia,Indonesia,Samarinda,Stadion Segiri,"16,000",Football
+61,Asia,Indonesia,Martapura,Stadion Demang Lehman,"15,000",Football
+61,Asia,Indonesia,Pangkalpinang,Stadion Depati Amir,"15,000",Football
+61,Asia,Indonesia,Pasuruhan,Stadion Gemilang Kabupaten Magelang,"15,000",Football
+61,Asia,Indonesia,Serang,Stadion Maulana Yusuf,"15,000",Football
+61,Asia,Indonesia,Kepuharjo,Stadion Semeru,"15,000",Football
+61,Asia,Indonesia,Pamekasan,Stadion Gelora Ratu Pamelingan,"13,000",Football
+61,Asia,Indonesia,Bontang,Stadion Mulawarman,"12,000",Football
+61,Asia,Indonesia,Kebonmanis,Stadion Wijaya Kusuma,"10,000",Football
+62,Asia,Iran,Tehran,Azadi Stadium,"78,000",Football
+62,Asia,Iran,Isfahan,Naghsh-e-Jahan Stadium,"60,000",Football
+62,Asia,Iran,Shiraz,Pars Stadium,"50,000",Football
+62,Asia,Iran,Ahvaz,Foolad Arena,"30,000",Football
+62,Asia,Iran,Tehran,Takhti Stadium,"30,000",Football
+62,Asia,Iran,Mashhad,Imam Reza Stadium,"27,000",Football
+62,Asia,Iran,Kermanshah,Azadi Stadium,"20,000",Football
+62,Asia,Iran,Tehran,IUST Stadium,"20,000",Football
+62,Asia,Iran,Karaj,Enghelab Stadium,"15,000",Football
+62,Asia,Iran,Rasht,Sardar Jangal Stadium,"15,000",Football
+62,Asia,Iran,Bushehr,Shahid Mahdavi Stadium,"15,000",Football
+62,Asia,Iran,Semnan,Velayat Stadium,"15,000",Football
+62,Asia,Iran,Tehran,Imam Reza Stadium,"12,000",Football
+63,Asia,Iraq,Basra,Basra International Stadium,"65,000",Football
+63,Asia,Iraq,Baghdad,Al-Shaab Stadium,"34,000",Football
+63,Asia,Iraq,Al-Kut,Al-Kut Olympic Stadium,"20,000",Football
+63,Asia,Iraq,Basra,Al-Fayhaa Stadium,"10,000",Football
+64,Asia,Israel,Jerusalem,Teddy Stadium,"31,000",Football
+64,Asia,Israel,Haifa,Sammy Ofer Stadium,"30,000",Football
+64,Asia,Israel,Tel-Aviv,Bloomfield Stadium,"29,000",Football
+64,Asia,Israel,Be’er-Sheva,Yaakov Turner Toto Stadium Be’er-Sheva,"16,000",Football
+64,Asia,Israel,Petah Tikva,HaMoshava Stadium,"11,000",Football
+64,Asia,Israel,Tel-Aviv,Menora Mivtachim Arena,"10,000",Basketball
+65,Asia,Japan,Yokohama,Nissan Stadium,"72,000","Football, rugby union"
+65,Asia,Japan,Tokyo,National Stadium,"68,000",Football
+65,Asia,Japan,Saitama,Saitama Stadium 2002,"63,000",Football
+65,Asia,Japan,Fukuroi,Shizuoka Stadium ECOPA,"50,000",Football
+65,Asia,Japan,Chofu,Ajinomoto Stadium,"49,000","Football, rugby union"
+65,Asia,Japan,Rifu,Q&A Stadium Miyagi,"49,000",Football
+65,Asia,Japan,Nishinomiya,Hanshin Koshien Stadium,"47,000",Baseball
+65,Asia,Japan,Osaka,Yanmar Stadium Nagai,"47,000",Football
+65,Asia,Japan,Tokyo,Tokyo Dome,"45,000",Baseball
+65,Asia,Japan,Toyota,Toyota Stadium,"45,000",Football
+65,Asia,Japan,Niigata,Denka Big Swan Stadium,"42,000",Football
+65,Asia,Japan,Sapporo,Sapporo Dome,"42,000","Baseball, football"
+65,Asia,Japan,Kashima,Kashima FootballÂ Stadium,"40,000",Football
+65,Asia,Japan,Fukuoka,PayPay Dome,"40,000",Baseball
+65,Asia,Japan,Ōita,Showa Denko Dome ÅŒita,"40,000",Football
+65,Asia,Japan,Nagoya,Vantelin Dome Nagoya,"40,000",Baseball
+65,Asia,Japan,Suita,Panasonic Stadium Suita,"39,000",Football
+65,Asia,Japan,Tokyo,Meiji Jingu Stadium,"37,000",Baseball
+65,Asia,Japan,Hiroshima,EDION Stadium Hiroshima,"36,000",Football
+65,Asia,Japan,Osaka,Kyocera Dome Osaka,"36,000",Baseball
+65,Asia,Japan,Kobe,Hotto Motto Field Kobe,"35,000",Baseball
+65,Asia,Japan,Yokohama,Yokohama Stadium,"34,000",Baseball
+65,Asia,Japan,Tokorozawa,MetLife Dome,"33,000",Baseball
+65,Asia,Japan,Hiroshima,MAZDA Zoom-Zoom Stadium Hiroshima,"32,000",Baseball
+65,Asia,Japan,Matsuyama,Matsuyama Central Park Baseball Stadium,"30,000",Baseball
+65,Asia,Japan,Kurashiki,Muscat Stadium,"30,000",Baseball
+65,Asia,Japan,Kobe,NOEVIR Stadium Kobe,"30,000","Football, rugby union"
+65,Asia,Japan,Marugame,Pikara Stadium,"30,000",Football
+65,Asia,Japan,Sendai,Rakuten Seimei Park Miyagi,"30,000",Baseball
+65,Asia,Japan,Chiba,ZOZO Marine Stadium,"30,000",Baseball
+65,Asia,Japan,Tokyo,Chichibunomiya Rugby Stadium,"27,000","Rugby sevens, rugby union"
+65,Asia,Japan,Nagoya,Paloma Mizuho Stadium,"27,000",Football
+65,Asia,Japan,Higashiosaka,Hanazono Rugby Stadium,"26,000",Rugby union
+65,Asia,Japan,Kawasaki,Todoroki Athletics Stadium,"26,000",Football
+65,Asia,Japan,Utsunomiya,Tochigi Prefectural Sports Park Athletics Stadium,"25,000",Football
+65,Asia,Japan,Osaka,Yodoko Sakura Stadium,"25,000","Football, rugby union"
+65,Asia,Japan,Tosu,Ekimae Real Estate Stadium,"24,000",Football
+65,Asia,Japan,Kumagaya,Kumagaya Rugby Stadium,"24,000",Rugby union
+65,Asia,Japan,Suita,Expo ’70 Commemorative Stadium,"21,000",Football
+65,Asia,Japan,Matsuyama,Ningineer Stadium,"21,000",Football
+65,Asia,Japan,Kameoka,SANGA STADIUM by KYOCERA,"21,000",Football
+65,Asia,Japan,Fukui,Technoport Fukui Stadium,"21,000",Football
+65,Asia,Japan,Saitama,Urawa Komaba Stadium,"21,000",Football
+65,Asia,Japan,Okayama,City Light Stadium,"20,000",Football
+65,Asia,Japan,Shizuoka,IAI Stadium Nihondaira,"20,000",Football
+65,Asia,Japan,Kanazawa,Ishikawa Athletics Stadium,"20,000",Football
+65,Asia,Japan,Kashiwa,Kashiwanoha Park Stadium,"20,000","Football, rugby union"
+65,Asia,Japan,Tokyo,Komazawa Olympic Park Stadium,"20,000","Football, rugby union"
+65,Asia,Japan,Tendo,ND Soft Stadium Yamagata,"20,000",Football
+65,Asia,Japan,Sapporo,Sapporo Atsubetsu Park Stadium,"20,000",Football
+65,Asia,Japan,Matsumoto,Sunpro Alwin,"20,000",Football
+65,Asia,Japan,Isahaya,Transcosmos Stadium Nagasaki,"20,000",Football
+65,Asia,Japan,Chiba,Fukuda Denshi Arena,"19,000",Football
+65,Asia,Japan,Sendai,Yurtec Stadium Sendai,"19,000",Football
+65,Asia,Japan,Kōfu,JIT Recycle Ink Stadium,"17,000",Football
+65,Asia,Japan,Naruto,Naruto Otsuka Sports Park Pocari Sweat Stadium,"17,000",Football
+65,Asia,Japan,Tottori,Axis Bird Stadium,"16,000",Football
+65,Asia,Japan,Kumagaya,Kumagaya Athletic Stadium,"15,000",Football
+65,Asia,Japan,Hiratsuka,Lemon Gas Stadium Hiratsuka,"15,000",Football
+65,Asia,Japan,Machida,Machida GION Stadium,"15,000",Football
+65,Asia,Japan,Kitakyushu,Mikuni World Stadium Kitakyushu,"15,000",Football
+65,Asia,Japan,Nagano,Minami Nagano Sports Park Stadium,"15,000",Football
+65,Asia,Japan,Saitama,NACK5 Stadium Omiya,"15,000",Football
+65,Asia,Japan,Yokohama,NHK Spring Mitsuzawa Football Stadium,"15,000",Football
+65,Asia,Japan,Nagoya,Paloma Mizuho Rugby Stadium,"15,000",Rugby union
+65,Asia,Japan,Kashiwa,Sankyo Frontier Kashiwa Stadium,"15,000",Football
+65,Asia,Japan,Maebashi,Shoda Shoyu Stadium Gunma,"15,000",Football
+65,Asia,Japan,Iwata,Yamaha Stadium,"15,000","Football, rugby union"
+65,Asia,Japan,Mito,K’s denki Stadium Mito,"12,000",Football
+65,Asia,Japan,Tokyo,Ryōgoku Kokugikan,"11,000",Sumo
+65,Asia,Japan,Tokyo,Ariake Coliseum,"10,000",Tennis
+65,Asia,Japan,Kitakyushu,Honjo Athletic Stadium,"10,000",Football
+66,Asia,Jordan,Zarqa,Prince Mohammed Stadium,"15,000",Football
+66,Asia,Jordan,Amman,King Abdullah II Stadium,"13,000",Football
+66,Asia,Jordan,Irbid,Al-Hassan Stadium,"12,000",Football
+67,Asia,Kazakhstan,Astana,Astana Arena,"30,000",Football
+67,Asia,Kazakhstan,Almaty,Central Stadium,"23,000",Football
+67,Asia,Kazakhstan,Shymkent,Kazhymukan Munaitpasov Stadium,"20,000",Football
+67,Asia,Kazakhstan,Aktobe,Koblandy Batyr Stadium,"13,000",Football
+67,Asia,Kazakhstan,Taraz,Central Stadium,"12,000",Football
+67,Asia,Kazakhstan,Astana,Barys Arena,"11,000",Ice hockey
+68,Asia,Korea,Daegu,Daegu Stadium,"66,000",Football
+68,Asia,Korea,Seoul,Seoul World Cup Stadium,"66,000",Football
+68,Asia,Korea,Busan,Busan Asiad Main Stadium,"53,000",Football
+68,Asia,Korea,Suwon,SuwonÂ World Cup Stadium,"44,000",Football
+68,Asia,Korea,Ulsan,Ulsan Munsu Football Stadium,"44,000",Football
+68,Asia,Korea,Jeonju,Jeonju World Cup Stadium,"42,000",Football
+68,Asia,Korea,Goyang,Goyang Stadium,"41,000",Football
+68,Asia,Korea,Daejeon,Daejeon World Cup Stadium,"40,000",Football
+68,Asia,Korea,Gwangju,Gwangju World Cup Stadium,"40,000",Football
+68,Asia,Korea,Yongin,Yongin Citizen Sports Park Stadium,"37,000",Football
+68,Asia,Korea,Ansan,Ansan Wa~ Stadium,"35,000",Football
+68,Asia,Korea,Hwaseong,Hwaseong Stadium,"35,000",Football
+68,Asia,Korea,Seogwipo,Jeju World Cup Stadium,"35,000",Football
+68,Asia,Korea,Gimcheon,Gimcheon Stadium,"32,000",Football
+68,Asia,Korea,Uijeongbu,Uijeongbu Stadium,"28,000",Football
+68,Asia,Korea,Changwon,Changwon Civic Stadium,"27,000",Football
+68,Asia,Korea,Gwangju,Gwangju-Kia Champions Field,"27,000",Baseball
+68,Asia,Korea,Incheon,Incheon SSG Landers Field,"26,000",Baseball
+68,Asia,Korea,Seoul,Jamsil Baseball Stadium,"25,000",Baseball
+68,Asia,Korea,Busan,Busan Gudeok Stadium,"24,000",Football
+68,Asia,Korea,Daegu,Daegu Samsung Lions Park,"24,000",Baseball
+68,Asia,Korea,Changwon,Changwon NC Park,"22,000",Baseball
+68,Asia,Korea,Gangneung,Gangneung Stadium,"22,000",Football
+68,Asia,Korea,Yangsan,Yangsan Stadium,"22,000",Football
+68,Asia,Korea,Daejeon,Daejeon Hanbat Stadium,"20,000",Football
+68,Asia,Korea,Incheon,Incheon Football Stadium,"20,000",Football
+68,Asia,Korea,Jeju,Jeju Stadium,"20,000",Football
+68,Asia,Korea,Jinju,Jinju Stadium,"20,000",Football
+68,Asia,Korea,Seoul,Mok-dong Stadium,"20,000",Football
+68,Asia,Korea,Wonju,Wonju Stadium,"20,000",Football
+68,Asia,Korea,Ulsan,Ulsan Stadium,"19,000",Football
+68,Asia,Korea,Anyang,Anyang Stadium,"17,000",Football
+68,Asia,Korea,Pohang,Pohang Steel Yard,"17,000",Football
+68,Asia,Korea,Seoul,Gocheok Sky Dome,"16,000",Baseball
+68,Asia,Korea,Seongnam,Tancheon Stadium,"16,000",Football
+68,Asia,Korea,Changwon,Changwon Football Centre Stadium,"15,000",Football
+68,Asia,Korea,Sangju,Sangju Civic Stadium,"15,000",Football
+68,Asia,Korea,Busan,Sajik Arena,"14,000",Basketball
+68,Asia,Korea,Gwangyang,Gwangyang Football Stadium,"13,000",Football
+68,Asia,Korea,Daejeon,Hanwha Life Eagles Park,"13,000",Baseball
+68,Asia,Korea,Daegu,DGB Daegu Bank Park,"12,000",Football
+68,Asia,Korea,Yongin,Yongin Stadium,"12,000",Football
+68,Asia,Korea,Seoul,Jamsil Arena,"11,000",Basketball
+68,Asia,Korea,Seoul,Seoul Olympic Tennis Court,"10,000",Tennis
+69,Asia,Kuwait,Kuwait City,Jaber al-Ahmad International Stadium,"60,000",Football
+69,Asia,Kuwait,Al-Jahra,Al-Shabab Mubarak al-Aiar Stadium,"17,000",Football
+69,Asia,Kuwait,Salmiya,Thamir Stadium,"16,000",Football
+70,Asia,Lao PDR,Vientiane,Lao National Stadium,"25,000",Football
+70,Asia,Lao PDR,Vientiane,Anouvong Stadium,"20,000",Football
+71,Asia,Malaysia,Kuala Lumpur,Stadium Nasional Bukit Jalil,"87,000",Football
+71,Asia,Malaysia,Shah Alam,Stadium Shah Alam,"80,000",Football
+71,Asia,Malaysia,Kuala Terengganu,Stadium Sultan Mizan Zainal Abidin,"50,000",Football
+71,Asia,Malaysia,Seremban,Stadium Tuanku Abdul Rahman,"45,000",Football
+71,Asia,Malaysia,Kuantan,Stadium Darul Makmur,"41,000",Football
+71,Asia,Malaysia,Batu Kawan,Stadium Negeri Pulau Pinang,"40,000",Football
+71,Asia,Malaysia,Iskandar Puteri,Stadium Sultan Ibrahim,"40,000",Football
+71,Asia,Malaysia,Alor Setar,Stadium Darul Aman,"32,000",Football
+71,Asia,Malaysia,Ipoh,Stadium Perak,"30,000",Football
+71,Asia,Malaysia,Johor Bahru,Stadium Tan Sri Dato’ Hj. Hassan Yunos,"30,000",Football
+71,Asia,Malaysia,Kuching,Stadium Negeri Sarawak,"26,000",Football
+71,Asia,Malaysia,Petaling Jaya,Stadium Petaling Jaya,"25,000",Football
+71,Asia,Malaysia,Bandar Tun Razak,Stadium Tun Abdul Razak,"25,000",Football
+71,Asia,Malaysia,Kota Bharu,Stadium Sultan Muhammed IV,"22,000",Football
+71,Asia,Malaysia,Kangar,Stadium Tuanku Syed Putra,"20,000",Football
+71,Asia,Malaysia,Kuala Lumpur,Stadium Bola Sepak Kuala Lumpur,"18,000",Football
+71,Asia,Malaysia,Selayang,Stadium Majlis Perbandaran Selayang,"16,000",Football
+71,Asia,Malaysia,Kuala Lumpur,Stadium Hoki Nasional Malaysia,"12,000",Field hockey
+72,Asia,Maldives,Malé,National Football Stadium,"11,000",Football
+73,Asia,Myanmar,Yangon,Bogyoke Aung San Stadium,"40,000",Football
+73,Asia,Myanmar,Mandalay,Bahtoo Memorial Stadium,"17,000",Football
+74,Asia,Nepal,Pokhara,Pokhara Rangasala Stadium,"16,000",Football
+74,Asia,Nepal,Kathmandu,Dashrath Rangasala Stadium,"15,000",Football
+74,Asia,Nepal,Birgunj,Narayani Stadium,"15,000",Football
+75,Asia,Oman,Muscat,Sultan Qaboos Stadium,"34,000",Football
+75,Asia,Oman,Al-Buraimi,Al-Buraimi Sports Stadium,"17,000",Football
+75,Asia,Oman,Al-Seeb,Al-Seeb Stadium,"14,000",Football
+75,Asia,Oman,Muscat,Royal Oman Police Stadium,"12,000",Football
+76,Asia,Pakistan,Gujranwala,Jinnah Stadium,"40,000",Cricket
+76,Asia,Pakistan,Faisalabad,Faisalabad Hockey Stadium,"30,000",Field hockey
+76,Asia,Pakistan,Lahore,Gaddafi Stadium,"27,000",Cricket
+76,Asia,Pakistan,Gujrat,Zahoor Elahi Stadium,"25,000",Cricket
+76,Asia,Pakistan,Karachi,KMC Football Stadium,"15,000",Football
+76,Asia,Pakistan,Gujranwala,Mini Stadium,"15,000",Football
+76,Asia,Pakistan,Lahore,Punjab Stadium,"15,000",Football
+76,Asia,Pakistan,Quetta,Ayub Football Stadium,"10,000",Football
+76,Asia,Pakistan,Bannu,Bannu Stadium,"10,000",Football
+77,Asia,Philippines,Santa Maria,Philippine Arena,"55,000",Multi-purpose
+77,Asia,Philippines,Manila,Philippine Sports Stadium,"20,000",Football
+77,Asia,Philippines,Quezon City,Smart Araneta Coliseum,"14,000",Basketball
+77,Asia,Philippines,Pasay,Cuneta Astrodome,"12,000",Basketball
+77,Asia,Philippines,Manila,Rizal Memorial Track and Football Stadium,"12,000",Football
+78,Asia,Qatar,Lusail,Lusail Iconic Stadium,"88,000",Football
+78,Asia,Qatar,Al-Khor,Al-Bayt Stadium,"68,000",Football
+78,Asia,Qatar,Al-Rayyan,Ahmad bin Ali Stadium,"45,000",Football
+78,Asia,Qatar,Doha,Khalifa International Stadium,"45,000",Football
+78,Asia,Qatar,Al-Wakrah,Al-Janoub Stadium,"44,000",Football
+78,Asia,Qatar,Doha,Al-Thumama Stadium,"44,000",Football
+78,Asia,Qatar,Doha,Grand Hamad Stadium,"13,000",Football
+78,Asia,Qatar,Doha,West End Park International Cricket Stadium,"13,000",Cricket
+78,Asia,Qatar,Al-Khor,Al-Khor SC Stadium,"12,000",Football
+78,Asia,Qatar,Doha,Jassim bin Hamad Stadium,"12,000",Football
+78,Asia,Qatar,Al-Wakrah,Saoud bin Abdulrahman al-Thani Stadium,"12,000",Football
+79,Asia,Saudi Arabia,Riyadh,King Fahd International Stadium,"68,000",Football
+79,Asia,Saudi Arabia,Jeddah,King Abdullah Sports City Stadium,"62,000",Football
+79,Asia,Saudi Arabia,Mecca,King Abdulaziz Stadium,"38,000",Football
+79,Asia,Saudi Arabia,Jeddah,Prince Abdullah al-Faisal Stadium,"38,000",Football
+79,Asia,Saudi Arabia,Dammam,Prince Mohammad bin Fahd Stadium,"26,000",Football
+79,Asia,Saudi Arabia,Buraidah,King Abdullah Sports City Stadium,"25,000",Football
+79,Asia,Saudi Arabia,Riyadh,MRSOOL Park,"25,000",Football
+79,Asia,Saudi Arabia,Medina,Prince Mohammad bin Abdulaziz Stadium,"24,000",Football
+79,Asia,Saudi Arabia,Riyadh,Prince Faisal bin Fahd Stadium,"22,000",Football
+79,Asia,Saudi Arabia,Abha,Prince Sultan bin Abdulaziz Stadium,"20,000",Football
+79,Asia,Saudi Arabia,Al-Hofuf,Prince Abdullah bin Jalawi Stadium,"19,000",Football
+79,Asia,Saudi Arabia,Khobar,Prince Saud bin Jalawi Stadium,"15,000",Football
+80,Asia,Singapore,Singapore,National Stadium,"55,000",Football
+80,Asia,Singapore,Singapore,Singapore Indoor Stadium,"12,000",Multi-purpose
+81,Asia,Sri Lanka,Colombo,R. Premadasa International Cricket Stadium,"35,000",Cricket
+81,Asia,Sri Lanka,Colombo,Sugathadasa Stadium,"25,000","Football, rugby union"
+82,Asia,Syria,Aleppo,Aleppo International Stadium,"53,000",Football
+83,Asia,Tajikistan,Khujand,20 Years of Independence Stadium,"25,000",Football
+84,Asia,Thailand,Buriram,Chang Arena,"32,000",Football
+84,Asia,Thailand,Chiangmai,700th Anniversary Stadium,"25,000",Football
+84,Asia,Thailand,Hatyai,Chiranakhon Stadium,"25,000",Football
+84,Asia,Thailand,Rangsit,Thammasat Stadium,"25,000",Football
+84,Asia,Thailand,Nakhonratchasima,80th Birthday Stadium,"24,000",Football
+84,Asia,Thailand,Bangkok,Chulalongkorn University Stadium,"20,000",Football
+84,Asia,Thailand,Suphanburi,Suphanburi Provincial Stadium,"15,000",Football
+84,Asia,Thailand,Pakkret,Thunderdome Stadium,"15,000",Football
+84,Asia,Thailand,Bangkok,Bangkok Arena,"12,000",Futsal
+84,Asia,Thailand,Chiangrai,Singha Stadium,"11,000",Football
+84,Asia,Thailand,Thanyaburi,BG Stadium,"10,000",Football
+84,Asia,Thailand,Nonthaburi,Nonthaburi Provincial Stadium,"10,000",Football
+86,Asia,Turkmenistan,Ashgabat,Aşgabat stadiony,"20,000",Football
+87,Asia,United Arab Emirates,Abu Dhabi,Zayed Sports City Stadium,"43,000",Football
+87,Asia,United Arab Emirates,Abu Dhabi,Al-Jazira Mohammed bin Zayed Stadium,"42,000",Football
+87,Asia,United Arab Emirates,Dubai,Dubai International Cricket Stadium,"25,000",Cricket
+87,Asia,United Arab Emirates,Al-Ain,Hazza bin Zayed Stadium,"25,000",Football
+87,Asia,United Arab Emirates,Sharjah,Sharjah Cricket Stadium,"17,000",Cricket
+87,Asia,United Arab Emirates,Dubai,Al-Maktoum Stadium,"15,000",Football
+87,Asia,United Arab Emirates,Fujairah,Fujairah Stadium,"10,000",Football
+88,Asia,Uzbekistan,Tashkent,Paxtakor markaziy stadioni,"35,000",Football
+88,Asia,Uzbekistan,Tashkent,Milliy stadioni,"34,000",Football
+88,Asia,Uzbekistan,Qarshi,Qarshi markaziy stadioni,"16,000",Football
+89,Asia,Vietnam,Hanoi,Sân vận động Quốc gia Mỹ Đình,"40,000",Football
+89,Asia,Vietnam,Haiphong,Sân vận động Lạch Tray,"30,000",Football
+89,Asia,Vietnam,Nha Trang,Sân vận động 19 tháng 8,"25,000",Football
+89,Asia,Vietnam,Hue,Sân vận động Tự Do,"25,000",Football
+89,Asia,Vietnam,Cao Lãnh,Sân vận động Cao Lãnh,"23,000",Football
+89,Asia,Vietnam,Cẩm Phả,Sân vận động Cẩm Phả,"20,000",Football
+89,Asia,Vietnam,Da Nang,Sân vận động Hòa Xuân,"20,000",Football
+89,Asia,Vietnam,Tân An,Sân vận động Long An,"19,000",Football
+89,Asia,Vietnam,Thủ Dầu Một,Sân vận động Gò Ðậu,"18,000",Football
+89,Asia,Vietnam,Ho Chi Minh City,Sân vận động Thống Nhất,"15,000",Football
+89,Asia,Vietnam,Pleiku,Sân vận động Pleiku,"12,000",Football
+56,Asia,China,Hefei,Hefei Olympic Sports Centre Stadium,"60,000",Football
+56,Asia,China,Anqing,Anqing Sports Centre Stadium,"40,000",Football
+56,Asia,China,Huaibei,Huaibei City Stadium,"30,000",Football
+56,Asia,China,Hefei,Anhui Laomingguang Stadium,"20,000",Football
+56,Asia,China,Wuhu,Fanchang County Stadium,"12,000",Football
+56,Asia,China,Beijing,National Stadium,"91,000",Football
+56,Asia,China,Beijing,Olympic Sports Centre Stadium,"36,000",Football
+56,Asia,China,Beijing,Beijing Fengtai Stadium,"31,000",Football
+56,Asia,China,Beijing,National Indoor Stadium,"18,000",Multi-purpose
+56,Asia,China,Beijing,Capital Indoor Stadium,"17,000",Multi-purpose
+56,Asia,China,Beijing,Diamond Court,"15,000",Tennis
+56,Asia,China,Beijing,Workers’ Gymnasium,"13,000",Multi-purpose
+56,Asia,China,Beijing,Lotus Court,"10,000",Tennis
+56,Asia,China,Chongqing,Chongqing Olympic Sports Centre Stadium,"58,000",Football
+56,Asia,China,Chongqing,Wanzhou Pailou Sports Stadium,"26,000",Football
+56,Asia,China,Chongqing,Yongchuan Stadium,"25,000",Football
+56,Asia,China,Chongqing,Liangping District National Fitness Centre Stadium,"20,000",Football
+56,Asia,China,Xiamen,Xiamen Sports Centre Stadium,"32,000",Football
+56,Asia,China,Xiamen,Haicang Sports Centre Stadium,"15,000",Football
+56,Asia,China,Ningde,Ningde Stadium,"15,000",Football
+56,Asia,China,Linxia,Linxia Olympic Sports Centre Stadium,"20,000",Football
+56,Asia,China,Lanzhou,North West Minzu University Stadium,"14,000",Football
+56,Asia,China,Guangzhou,Aoti Main Stadium,"80,000",Football
+56,Asia,China,Shenzhen,Shenzhen Universiade Sports Centre Stadium,"60,000",Football
+56,Asia,China,Guangzhou,Tianhe Stadium,"54,000",Football
+56,Asia,China,Shenzhen,Bao’an Stadium,"40,000",Football
+56,Asia,China,Huizhou,Huizhou Olympic Stadium,"40,000",Football
+56,Asia,China,Zhanjiang,Zhanjiang Olympic Main Stadium,"40,000",Football
+56,Asia,China,Guangzhou,Guangzhou Higher Education Mega Centre Central Stadium,"39,000",Football
+56,Asia,China,Foshan,Century Lotus Stadium,"36,000",Football
+56,Asia,China,Zhuhai,Zhuhai Sports Centre Stadium,"35,000",Football
+56,Asia,China,Shenzhen,Shenzhen Stadium,"32,000",Football
+56,Asia,China,Meizhou,Huitang Stadium,"27,000",Football
+56,Asia,China,Shenzhen,Shenzhen Bay Sports Centre Stadium,"20,000",Football
+56,Asia,China,Zhaoqing,Zhaoqing New District Stadium,"20,000",Football
+56,Asia,China,Shenzhen,Shenzhen Dayun Arena,"18,000",Basketball
+56,Asia,China,Guangzhou,Yuexiushan Stadium,"18,000",Football
+56,Asia,China,Dongguan,Bank of Dongguan Basketball Centree,"16,000",Basketball
+56,Asia,China,Guangzhou,Guangdong Provincial People's Stadium,"15,000",Football
+56,Asia,China,Guangzhou,Henry Fok Stadium,"14,000",Football
+56,Asia,China,Guangzhou,City Forex Stadium,"12,000",Cricket
+56,Asia,China,Guangzhou,Huangpu Sports Centre Stadium,"12,000",Football
+56,Asia,China,Zhongshan,Zhongshan Sports Centre Stadium,"12,000",Football
+56,Asia,China,Guangzhou,Guangzhou Gymnasium,"10,000",Multi-purpose
+56,Asia,China,Nanning,Guangxi Sports Centre Stadium,"60,000",Football
+56,Asia,China,Guigang,Guigang Sports Centre Stadium,"30,000",Football
+56,Asia,China,Chongzhuo,Chongzuo Sports Centre Stadium,"22,000",Football
+56,Asia,China,Yulin,Yulin Stadium,"20,000",Football
+56,Asia,China,Guiyang,Guiyang Olympic Sports Centre Stadium,"51,000",Football
+56,Asia,China,Zunyi,Huichuan Stadium,"26,000",Football
+56,Asia,China,Haikou,Wuyuanhe Stadium,"41,000",Football
+56,Asia,China,Shijiazhuang,Hebei Olympic Sports Centre Stadium,"60,000",Football
+56,Asia,China,Qinhuangdao,Qinhuangdao Olympic Sports Centre Stadium,"33,000",Football
+56,Asia,China,Langfang,Langfang Stadium,"30,000",Football
+56,Asia,China,Shijiazhuang,Yutong International Sports Centre Stadium,"29,000",Football
+56,Asia,China,Harbin,Harbin International Convention and Exhibition Centre Stadium,"48,000",Football
+56,Asia,China,Daqing,Daqing Olympic Park Stadium,"32,000",Football
+56,Asia,China,Mudanjiang,Beishan Stadium,"15,000",Football
+56,Asia,China,Qiqihar,Hecheng Stadium,"15,000",Football
+56,Asia,China,Zhengzhou,Henan Provincial Sports Centre Stadium,"48,000",Football
+56,Asia,China,Luoyang,Luoyang Sports Centre Stadium,"39,000",Football
+56,Asia,China,Zhengzhou,Zhengzhou Hanghai Stadium,"29,000",Football
+56,Asia,China,Hong Kong,Hong Kong Stadium,"40,000",Football
+56,Asia,China,Wuhan,Wuhan Sports Centre Stadium,"54,000",Football
+56,Asia,China,Wuhan,Wuhan Five Rings Sports Centre Stadium,"30,000",Football
+56,Asia,China,Wuhan,Xinhua Road Sports Centre Stadium,"22,000",Football
+56,Asia,China,Huanggang,Huanggang Sports Centre Stadium,"20,000",Football
+56,Asia,China,Wuhan,Central Court,"15,000",Tennis
+56,Asia,China,Xianning,Xianning Sports Centre Stadium,"12,000",Football
+56,Asia,China,Changsha,He Long Stadium,"55,000",Football
+56,Asia,China,Hengyang,Hengyang Stadium,"35,000",Football
+56,Asia,China,Chenzhou,Chenzhou Olympic Sports Centre Stadium,"30,000",Football
+56,Asia,China,Ordos,Ordos Sports Centre Stadium,"60,000",Football
+56,Asia,China,Hohhot,Hohhot City Stadium,"51,000",Football
+56,Asia,China,Baotou,Baotou Olympic Sports Centre Stadium,"40,000",Football
+56,Asia,China,Ordos,Ordos Dongsheng Stadium,"35,000",Football
+56,Asia,China,Ulanqab,Ulanqab Stadium,"30,000",Football
+56,Asia,China,Xilinhot,Xilingol Stadium,"25,000",Football
+56,Asia,China,Nanjing,Nanjing Olympic Sports Centre Stadium,"61,000",Football
+56,Asia,China,Suzhou,Suzhou Olympic Sports Centre Stadium,"40,000",Football
+56,Asia,China,Changzhou,Changzhou Olympic Sports Centre Stadium,"38,000",Football
+56,Asia,China,Suzhou,Suzhou City Stadium,"35,000",Football
+56,Asia,China,Xuzhou,Xuzhou Olympic Sports Centre Stadium,"35,000",Football
+56,Asia,China,Zhenjiang,Zhenjiang Sports Centre Stadium,"31,000",Football
+56,Asia,China,Huai'an,Huai’an City Sports Centre Stadium,"30,000",Football
+56,Asia,China,Jiangyin,Jiangyin Sports Park Stadium,"30,000",Football
+56,Asia,China,Kunshan,Kunshan Sports Centre Stadium,"30,000",Football
+56,Asia,China,Nanjing,Jiangning Sports Centre Stadium,"28,000",Football
+56,Asia,China,Nantong,Nantong Stadium,"22,000",Football
+56,Asia,China,Nanjing,Nanjing Youth Olympic Sports Park Arena,"21,000",Basketball
+56,Asia,China,Nanjing,Nanjing Youth Olympic Sports Park Stadium,"18,000",Football
+56,Asia,China,Xuyi,Xuyi Olympic Sports Centre Stadium,"18,000",Football
+56,Asia,China,Suzhou,Wujiang Stadium,"15,000",Football
+56,Asia,China,Nanchang,Jiangxi Olympic Sports Centre Stadium,"50,000",Football
+56,Asia,China,Shangrao,Shangrao Stadium,"21,000",Football
+56,Asia,China,Changchun,Changchun Stadium,"38,000",Football
+56,Asia,China,Yanji,Yanji Nationwide Fitness Centre Stadium,"30,000",Football
+56,Asia,China,Changchun,Development Area Stadium,"23,000",Football
+56,Asia,China,Hunchun,Hunchun People's Stadium,"18,000",Football
+56,Asia,China,Liaoyuan,Liaoyuan Stadium,"15,000",Football
+56,Asia,China,Dalian,Dalian Sports Centre Stadium,"61,000",Football
+56,Asia,China,Shenyang,Shenyang Olympic Sports Centre Stadium,"60,000",Football
+56,Asia,China,Anshan,Anshan Sports Centre Stadium,"40,000",Football
+56,Asia,China,Panjin,Panjin Red Beach Sports Centre Jinxiu Stadium,"35,000",Football
+56,Asia,China,Yingkou,Yingkou Olympic Sports Centre Stadium,"35,000",Football
+56,Asia,China,Huludao,Huludao City Sports Centre Stadium,"32,000",Football
+56,Asia,China,Dalian,Jinzhou Stadium,"30,000",Football
+56,Asia,China,Dalian,Puwan New District Stadium,"30,000",Football
+56,Asia,China,Shenyang,Tiexi Stadium,"30,000",Football
+56,Asia,China,Dalian,Damai Centre,"18,000",Multi-purpose
+56,Asia,China,Shenyang,Liaoning Gymnasium,"12,000",Basketball
+56,Asia,China,Yinchuan,Helan Mountain Stadium,"39,000",Football
+56,Asia,China,Wuzhong,Yellow River Sports Exhibition Centre Stadium,"30,000",Football
+56,Asia,China,Xining,Xining Stadium,"40,000",Football
+56,Asia,China,Xi’an,Xi’an Olympic Sports Centre Stadium,"60,000",Football
+56,Asia,China,Xi’an,Shaanxi Province Stadium,"43,000",Football
+56,Asia,China,Yulin,Dingbian County Sports Centre Stadium,"32,000",Football
+56,Asia,China,Xi’an,Weinan Sports Centre Stadium,"32,000",Football
+56,Asia,China,Baoji,Baoji City Stadium,"27,000",Football
+56,Asia,China,Jinan,Jinan Olympic Sports Centre Stadium,"56,000",Football
+56,Asia,China,Qingdao,Qingdao Conson Stadium,"45,000",Football
+56,Asia,China,Weifang,Weifang Olympic Sports Centre Stadium,"45,000",Football
+56,Asia,China,Zibo,Zibo City Sports Centre Stadium,"45,000",Football
+56,Asia,China,Jinan,Shandong Provincial Sports Centre Stadium,"43,000",Football
+56,Asia,China,Jining,Jining Stadium,"34,000",Football
+56,Asia,China,Weihai,Weihai City Commercial Bank Stadium,"31,000",Football
+56,Asia,China,Rongcheng,Rongcheng Stadium,"30,000",Football
+56,Asia,China,Tengzhou,Tengzhou Olympic Centre Stadium,"30,000",Football
+56,Asia,China,Shouguang,Shouguang Derun Greentown Stadium,"25,000",Football
+56,Asia,China,Qingdao,Qingdao Tiantai Stadium,"20,000",Football
+56,Asia,China,Jinan,Jinan Olympic Sports Centre Gymnasium,"12,000",Multi-purpose
+56,Asia,China,Qingdao,Jiaozhou Sports Centre Stadium,"12,000",Football
+56,Asia,China,Qingdao,Qingdao Sports Centre Conson Gymnasium,"12,000",Basketball
+56,Asia,China,Qingdao,Laixi Sports Centre Stadium,"10,000",Football
+56,Asia,China,Shanghai,SAIC Motor Pudong Arena,"37,000",Football
+56,Asia,China,Shanghai,Hongkou Football Stadium,"33,000",Football
+56,Asia,China,Shanghai,Jinshan Football Stadium,"30,000",Football
+56,Asia,China,Shanghai,Indoor Stadium,"18,000",Multi-purpose
+56,Asia,China,Shanghai,Qizhong Forest Sports City Arena,"15,000",Tennis
+56,Asia,China,Taiyuan,Shanxi Sports Centre Stadium,"62,000",Football
+56,Asia,China,Changzhi,Changzhi Stadium,"27,000",Football
+56,Asia,China,Chengdu,Phoenix Mountain Sports Park Professional Football Stadium,"57,000",Football
+56,Asia,China,Chengdu,Chengdu Sports Centre Stadium,"39,000",Football
+56,Asia,China,Suining,Suining Sports Centre Stadium,"30,000",Football
+56,Asia,China,Chengdu,Chengdu Longquanyi Football Stadium,"27,000",Football
+56,Asia,China,Chengdu,Shuangliu Sports Centre Stadium,"26,000",Football
+56,Asia,China,Luzhou,Luzhou Olympic Sports Park Stadium,"20,000",Football
+56,Asia,China,Dujiangyan,Dujiangyan Phoenix Stadium,"12,000",Football
+56,Asia,China,Mianzhu,Mianzhu Sports Centre Stadium,"10,000",Football
+56,Asia,China,Kaohsiung,National Stadium,"55,000",Football
+56,Asia,China,Taichung,Taichung Intercontinental Baseball Stadium,"20,000",Baseball
+56,Asia,China,Taipei,Taipei Municipal Stadium,"20,000",Football
+56,Asia,China,Douliu,Douliu Baseball Stadium,"15,000",Baseball
+56,Asia,China,Tainan,Tainan Municipal Baseball Stadium,"12,000",Baseball
+56,Asia,China,New Taipei,Xinzhuang Baseball Stadium,"12,000",Baseball
+56,Asia,China,Taipei,Taipei Tianmu Baseball Stadium,"10,000",Baseball
+56,Asia,China,Tianjin,Tianjin Olympic Centre Stadium,"54,000",Football
+56,Asia,China,Tianjin,TEDA Football Stadium,"37,000",Football
+56,Asia,China,Tianjin,Haihe Educational Football Stadium,"29,000",Football
+56,Asia,China,Tianjin,Tianjin Tuanbo Football Stadium,"22,000",Football
+56,Asia,China,Tianjin,Tianjin Arena,"10,000",Basketball
+56,Asia,China,Lhasa,Lhasa Stadium,"20,000",Football
+56,Asia,China,Ürümqi,Ninomiya Stadium,"50,000",Football
+56,Asia,China,Kunming,Tuodong Stadium,"35,000",Football
+56,Asia,China,Qujing,Qujing City Sports Centre Stadium,"34,000",Football
+56,Asia,China,Lijiang,Lijiang Sports Development Centre Stadium,"22,000",Football
+56,Asia,China,Qujing,Huize County Stadium,"20,000",Football
+56,Asia,China,Zhaotong,Yuanbaoshan Stadium,"18,000",Football
+56,Asia,China,Mangshi,Dehong Stadium,"15,000",Football
+56,Asia,China,Pu’er,Pu’er Stadium,"15,000",Football
+56,Asia,China,Hangzhou,Hangzhou Olympic Sports Centre Stadium,"80,000",Football
+56,Asia,China,Hangzhou,Yellow Dragon Sports Centre Stadium,"52,000",Football
+56,Asia,China,Taizhou,Taizhou Sports Centre Stadium,"40,000",Football
+56,Asia,China,Jiaxing,Jiaxing Sports Centre Stadium,"35,000",Football
+56,Asia,China,Yiwu,Yiwu Meihu Stadium,"35,000",Football
+56,Asia,China,Jinhua,Jinhua Stadium,"30,000",Football
+56,Asia,China,Shaoxing,Shaoxing China Textile City Sports Centre Stadium,"20,000",Football
+56,Asia,China,Lishui,Lishui Stadium,"19,000",Football
+60,Asia,India,Visakhapatnam,Dr. YS Rajasekhara Reddy ACA-VDCA Cricket Stadium,"27,000",Cricket
+60,Asia,India,Gudivada,NTR Stadium,"25,000",Multi-purpose
+60,Asia,India,Kadapa,YS Raja Reddy Cricket Stadium,"15,000",Cricket
+60,Asia,India,Guwahati,Dr. Bhupen Hazarika Cricket Stadium,"40,000",Cricket
+60,Asia,India,Guwahati,Indira Gandhi Athletic Stadium,"23,000",Football
+60,Asia,India,Patna,Patliputra Stadium,"20,000",Football
+60,Asia,India,Siwan,Rajendra Stadium,"15,000",Football
+60,Asia,India,Purnia,Indira Gandhi Stadium,"10,000",Cricket
+60,Asia,India,Chandigarh,Chandigarh Hockey Stadium,"30,000",Field hockey
+60,Asia,India,Bhilai,Jayanti Stadium,"20,000","Field hockey, football"
+60,Asia,India,Ambikapur,Gandhi Stadium,"10,000","Cricket, football"
+60,Asia,India,Delhi,Jawaharlal Nehru Stadium,"60,000",Football
+60,Asia,India,Delhi,Chhatrasal Stadium,"16,000",Football
+60,Asia,India,Delhi,Major Dhyan Chand National Stadium,"16,000",Field hockey
+60,Asia,India,Delhi,Indira Gandhi Arena,"14,000",Multi-purpose
+60,Asia,India,Margao,Pandit Jawaharlal Nehru Stadium,"19,000",Football
+60,Asia,India,Mapusa,Duler Stadium,"10,000",Football
+60,Asia,India,Ahmedabad,Narendra Modi Stadium,"132,000",Cricket
+60,Asia,India,Rajkot,Saurashtra Cricket Association Stadium,"28,000",Cricket
+60,Asia,India,Sirsa,Shah Satnam Ji Cricket Stadium,"35,000",Cricket
+60,Asia,India,Hisar,Mahabir Stadium,"25,000",Football
+60,Asia,India,Gurugram,Tau Devi Lal Football Stadium,"12,000",Football
+60,Asia,India,Jammu,TRC Polo Synthetic Turf Ground,"10,000",Football
+60,Asia,India,Ranchi,Birsa Munda Football Stadium,"40,000",Football
+60,Asia,India,Jamshedpur,JRD Tata Sports Complex Stadium,"40,000",Football
+60,Asia,India,Ranchi,JSCA International Cricket Stadium,"39,000",Cricket
+60,Asia,India,Ranchi,Birsa Munda Athletics Stadium,"35,000",Football
+60,Asia,India,Bokaro Steel City,Mohan Kumar Mangalam Stadium,"30,000",Football
+60,Asia,India,Saraikela,Birsa Munda Stadium,"20,000","Cricket, football"
+60,Asia,India,Silli,Silli Stadium,"20,000",Football
+60,Asia,India,Jamshedpur,Keenan Stadium,"19,000",Football
+60,Asia,India,Jamshedpur,Sumant Moolgaokar Stadium,"15,000",Football
+60,Asia,India,Mahthadih,Giridih Stadium,"15,000","Cricket, football"
+60,Asia,India,Bengaluru,M. Chinnaswamy Stadium,"35,000",Cricket
+60,Asia,India,Bengaluru,Sree Kanteerava Outdoor Stadium,"25,000",Football
+60,Asia,India,Davanagere,Davanagere City Corporation Stadium,"20,000",Cricket
+60,Asia,India,Thiruvananthapuram,Greenfield International Stadium,"55,000","Cricket, football"
+60,Asia,India,Kozhikode,EMS Stadium,"50,000",Football
+60,Asia,India,Kochi,Jawaharlal Nehru International Stadium,"41,000",Football
+60,Asia,India,Kollam,Lal Bahadur Shastri Corporation Stadium,"40,000",Football
+60,Asia,India,Payyanad,Malappuram District Sports Complex Stadium,"30,000",Football
+60,Asia,India,Thiruvananthapuram,University Stadium,"20,000",Football
+60,Asia,India,Malappuram,Kottappadi Football Stadium,"10,000",Football
+60,Asia,India,Kochi,Rajiv Gandhi Indoor Stadium,"10,000",Multi-purpose
+60,Asia,India,Indore,Holkar Cricket Stadium,"30,000",Cricket
+60,Asia,India,Indore,Jawaharlal Nehru Stadium,"25,000",Multi-purpose
+60,Asia,India,Mandsaur,Nutan Stadium,"20,000",Cricket
+60,Asia,India,Waidhan,Rajmata Chun Kumari Stadium,"20,000",Football
+60,Asia,India,Bhopal,TT Nagar Stadium,"20,000",Football
+60,Asia,India,Bhopal,Aishbagh Stadium,"15,000",Field hockey
+60,Asia,India,Balaghat,Mulna Stadium,"15,000","Cricket, football"
+60,Asia,India,Neemuch,Dr. Rajendra Prasad Football Stadium,"10,000",Football
+60,Asia,India,Navi Mumbai,Dr DY Patil Sports Stadium,"55,000",Cricket
+60,Asia,India,Mumbai,Brabourne Stadium,"50,000",Cricket
+60,Asia,India,Nagpur,Vidarbha Cricket Association Stadium,"45,000",Cricket
+60,Asia,India,Pune,Maharashtra Cricket Association Stadium,"37,000",Cricket
+60,Asia,India,Thane,Dadoji Konddev Stadium,"33,000",Cricket
+60,Asia,India,Mumbai,Wankhede Stadium,"33,000",Cricket
+60,Asia,India,Kolhapur,Rajarshi Shahu Football Stadium,"30,000",Football
+60,Asia,India,Mumbai,Mumbai Football Arena,"18,000",Football
+60,Asia,India,Pune,Shree Shiv Chhatrapati Sports Complex Stadium,"11,000",Football
+60,Asia,India,Sangamner,Sangamner Municipal Cricket Stadium,"10,000",Cricket
+60,Asia,India,Imphal,Khuman Lampak Main Stadium,"35,000",Football
+60,Asia,India,Shillong,Jawaharlal Nehru Stadium,"30,000",Football
+60,Asia,India,Cuttack,Barabati Stadium,"60,000","Cricket, football"
+60,Asia,India,Rourkela,Biju Patnaik Hockey Stadium,"25,000",Field hockey
+60,Asia,India,Rourkela,Ispat Stadium,"20,000","Cricket, football"
+60,Asia,India,Sambalpur,Veer Surendra Sai Stadium,"20,000","Cricket, field hockey, football"
+60,Asia,India,Bhubaneswar,Kalinga Hockey Stadium,"16,000",Field Hockey
+60,Asia,India,Bhubaneswar,Kalinga Stadium,"15,000",Football
+60,Asia,India,Ludhiana,Guru Nanak Stadium,"30,000",Football
+60,Asia,India,Mohali,Inderjit Singh Bindra Stadium,"26,000",Cricket
+60,Asia,India,Jalandhar,Guru Gobind Singh Stadium,"22,000",Football
+60,Asia,India,Hoshiarpur,Lajwanti Stadium,"20,000",Football
+60,Asia,India,Jalalabad,Sports Stadium,"20,000",Football
+60,Asia,India,Kapurthala,Guru Nanak Stadium,"15,000",Field hockey
+60,Asia,India,Mohali,International Hockey Stadium,"13,000",Field hockey
+60,Asia,India,Jodhpur,Barkatullah Khan Stadium,"40,000",Cricket
+60,Asia,India,Alwar,Indira Gandhi Stadium,"40,000","Field hockey, football"
+60,Asia,India,Bikaner,Dr. Karni Singh Stadium,"20,000",Football
+60,Asia,India,Udaipur,Maharana Bhupal Stadium,"10,000",Multi-purpose
+60,Asia,India,Jorethang,Jorethang Ground,"10,000",Football
+60,Asia,India,Chennai,MA Chidambaram Stadium,"50,000",Cricket
+60,Asia,India,Coimbatore,Jawaharlal Nehru Stadium,"30,000",Football
+60,Asia,India,Hyderabad,GMC Balayogi Athletic Stadium,"30,000",Football
+60,Asia,India,Hyderabad,Lal Bahadur Shastri Stadium,"30,000","Cricket, football"
+60,Asia,India,Lucknow,BRSABV Ekana Cricket Stadium,"50,000",Cricket
+60,Asia,India,Lucknow,KD Singh Babu Stadium,"50,000","Cricket, field hockey, football"
+60,Asia,India,Saifai,Saifai International Cricket Stadium,"43,000",Cricket
+60,Asia,India,Kanpur,Green Park Stadium,"32,000",Cricket
+60,Asia,India,Lucknow,Dr. Akhilesh Das Gupta Stadium,"20,000","Cricket, football"
+60,Asia,India,Saifai,Master Chandgi Ram Hockey Stadium,"20,000",Field hockey
+60,Asia,India,Varanasi,Dr. Sampurnanand Sports Stadium,"10,000","Cricket, field hockey, football"
+60,Asia,India,Ranipur,BHEL Stadium,"25,000","Cricket, football"
+60,Asia,India,Dehradun,Rajiv Gandhi International Cricket Stadium,"25,000",Cricket
+60,Asia,India,Kolkata,Vivekananda Yuba Bharati Krirangan,"85,000",Football
+60,Asia,India,Kolkata,Eden Gardens,"66,000",Cricket
+60,Asia,India,Kolkata,East Bengal Ground,"40,000",Football
+60,Asia,India,Siliguri,Kanchenjunga Stadium,"40,000","Cricket, football"
+60,Asia,India,Naihati,Bankimanjali Stadium,"25,000",Football
+60,Asia,India,Barasat,Barasat District Sports Stadium,"22,000",Football
+60,Asia,India,Kolkata,Netaji Subhash Chandra Bose Indoor Stadium,"12,000",Kabaddi
+60,Asia,India,Kalimpong,Mela Ground,"10,000",Football
+60,Asia,India,Midnapore,Sri Aurobindo Stadium,"10,000",Football
+85,Asia,Türkiye,Istanbul,Atatürk Olimpiyat Stadyumu,"75,000",Football
+85,Asia,Türkiye,Istanbul,Nef Stadyumu,"52,000",Football
+85,Asia,Türkiye,İzmir,İzmir Atatürk Stadyumu,"51,000",Football
+85,Asia,Türkiye,Istanbul,Ülker Stadyumu,"47,000",Football
+85,Asia,Türkiye,Bursa,Bursa Büyükşehir Belediye Stadyumu,"43,000",Football
+85,Asia,Türkiye,Konya,Konya Büyükşehir Belediye Stadyumu,"42,000",Football
+85,Asia,Türkiye,Istanbul,Vodafone Park,"41,000",Football
+85,Asia,Türkiye,Trabzon,Medical Park Stadyumu,"40,000",Football
+85,Asia,Türkiye,Gaziantep,Kalyon Stadyumu,"35,000",Football
+85,Asia,Türkiye,Eskişehir,Eskişehir Yeni Atatürk Stadyumu,"34,000",Football
+85,Asia,Türkiye,Samsun,Samsun 19 Mayıs Stadyumu,"33,000",Football
+85,Asia,Türkiye,Adana,Yeni Adana Stadyumu,"33,000",Football
+85,Asia,Türkiye,Antalya,Antalya Stadyumu,"32,000",Football
+85,Asia,Türkiye,Kayseri,Kayseri Kadir Has Åžehir Stadyumu,"32,000",Football
+85,Asia,Türkiye,Adapazarı,Sakarya Atatürk Stadyumu,"28,000",Football
+85,Asia,Türkiye,Sivas,Yeni Sivas 4 Eylül Stadyumu,"27,000",Football
+85,Asia,Türkiye,Mersin,Mersin Stadyumu,"25,000",Football
+85,Asia,Türkiye,Antakya,Yeni Hatay Stadyumu,"25,000",Football
+85,Asia,Türkiye,Malatya,Yeni Malatya Stadyumu,"25,000",Football
+85,Asia,Türkiye,Giresun,Çotanak Stadyumu,"22,000",Football
+85,Asia,Türkiye,Erzurum,Kâzım Karabekir Stadyumu,"21,000",Football
+85,Asia,Türkiye,Ankara,Eryaman Stadyumu,"20,000",Football
+85,Asia,Türkiye,İzmir,Gürsel Aksel Spor ve Sağlıklı Yaşam Merkezi,"20,000",Football
+85,Asia,Türkiye,Sincan,Osmanlı Stadyumu,"18,000",Football
+85,Asia,Türkiye,Istanbul,3. İstanbul Başakşehir Fatih Terim Stadyumu,"17,000",Football
+85,Asia,Türkiye,Istanbul,Sinan Erdem Spor Salonu,"16,000",Basketball
+85,Asia,Türkiye,İzmir,Alsancak Mustafa Denizli Stadyumu,"15,000",Football
+85,Asia,Türkiye,BalÄ±kesir,Balıkesir Atatürk Stadyumu,"15,000",Football
+85,Asia,Türkiye,Rize,Çaykur Didi Stadyumu,"15,000",Football
+85,Asia,Türkiye,Afyonkarahisar,Zafer Stadyumu,"15,000",Football
+85,Asia,Türkiye,Istanbul,Recep Tayyip ErdoÄŸan Stadyumu,"14,000",Football
+85,Asia,Türkiye,Istanbul,Fenerbahçe Ülker Spor ve Etkinlik Salonu,"13,000",Basketball
+85,Asia,Türkiye,Ä°zmir,Bornova Stadyumu,"12,000",Football
+85,Asia,Türkiye,Erzincan,Erzincan 13 Şubat Şehir Stadyumu,"12,000",Football
+85,Asia,Türkiye,Akhisar,Spor Toto Akhisar Stadyumu,"12,000",Football
+85,Asia,Türkiye,Ordu,19 Eylül Stadyumu,"11,000",Football
+85,Asia,Türkiye,Ankara,Ankara Spor Salonu,"10,000",Basketball
+85,Asia,Türkiye,Alanya,Bahçeşehir Okulları Stadyumu,"10,000",Football
+90,Europe,Albania,Tirana,Air Albania Stadium,"22,000",Football
+90,Europe,Albania,Shkodër,Stadiumi “Loro Boriçi”,"16,000",Football
+90,Europe,Albania,Durrës,Stadiumi “Niko Dovana”,"12,000",Football
+91,Europe,Austria,Vienna,Ernst-Happel-Stadion,"50,000",Football
+91,Europe,Austria,Wals-Siezenheim,Red Bull Arena,"31,000",Football
+91,Europe,Austria,Klagenfurt am Wörthersee,Wörthersee Stadion,"30,000",Football
+91,Europe,Austria,Vienna,Allianz Stadion,"28,000",Football
+91,Europe,Austria,Vienna,Generali Arena,"17,000",Football
+91,Europe,Austria,Graz,Merkur Arena,"16,000",Football
+91,Europe,Austria,Innsbruck,Tivoli Stadion Tirol,"16,000","American football, football"
+91,Europe,Austria,Maria Enzersdorf,BSFZ-Arena,"10,000",Football
+92,Europe,Belarus,Minsk,Dinamo National Olympic Stadium,"22,000",Football
+92,Europe,Belarus,Minsk,Minsk-Arena,"15,000","Basketball, ice hockey"
+92,Europe,Belarus,Gomel,Central Stadium,"14,000",Football
+92,Europe,Belarus,Borisov,Borisov-Arena,"13,000",Football
+93,Europe,Belgium,Brussels,Stade Roi Baudouin,"50,000",Football
+93,Europe,Belgium,Liège,Stade Maurice Dufrasne,"30,000",Football
+93,Europe,Belgium,Bruges,Jan Breydelstadion,"29,000",Football
+93,Europe,Belgium,Genk,Cegeka Arena,"23,000",Football
+93,Europe,Belgium,Brussels,Lotto Park,"22,000",Football
+93,Europe,Belgium,Ghent,Ghelamco Arena,"20,000",Football
+93,Europe,Belgium,Mechelen,AFAS Stadion,"16,000",Football
+93,Europe,Belgium,Charleroi,Stade du Pays de Charleroi,"15,000",Football
+93,Europe,Belgium,Lier,Herman Vanderpoortenstadion,"14,000",Football
+93,Europe,Belgium,Sint-Truiden,Stayen,"14,000",Football
+93,Europe,Belgium,Lokeren,Daknamstadion,"12,000",Football
+93,Europe,Belgium,Waregem,Elindus Arena,"12,000",Football
+93,Europe,Belgium,Brussels,Stade Edmond Machtens,"12,000",Football
+93,Europe,Belgium,Harelbeke,Stedelijk Forestiersstadion,"10,000",Football
+94,Europe,Bosnia and Herzegovina,Sarajevo,Olimpijski stadion Koševo – Asim Ferhatović-Hase,"34,000",Football
+94,Europe,Bosnia and Herzegovina,Zenica,Stadion Bilino polje,"15,000",Football
+95,Europe,Bulgaria,Sofia,Vasil Levski National Stadium,"44,000",Football
+95,Europe,Bulgaria,Burgas,efbet Arena,"18,000",Football
+95,Europe,Bulgaria,Veliko Tarnovo,Ivaylo Stadium,"18,000",Football
+95,Europe,Bulgaria,Sofia,Arena Armeec Sofia,"12,000",Multi-purpose
+95,Europe,Bulgaria,Razgrad,Huvepharma Arena,"10,000",Football
+96,Europe,Croatia,Zagreb,Arena Zagreb,"15,000",Handball
+96,Europe,Croatia,Varaždin,Stadion Anđelko Herjavec,"10,000",Football
+97,Europe,Czech Republic,Prague,Fortuna Arena,"19,000",Football
+97,Europe,Czech Republic,Prague,Generali Česká pojišťovna Arena,"19,000",Football
+97,Europe,Czech Republic,Prague,Stadion Evžena Rošického,"19,000",Football
+97,Europe,Czech Republic,Teplice,AGC Aréna Na Stínadlech,"18,000",Football
+97,Europe,Czech Republic,Prague,O2 arena,"17,000",Ice hockey
+97,Europe,Czech Republic,Ostrava,Městský stadion v Ostravě-Vítkovicích,"15,000",Football
+97,Europe,Czech Republic,Olomouc,Andrův stadion,"12,000",Football
+97,Europe,Czech Republic,Plzeň,Doosan Arena,"11,000",Football
+97,Europe,Czech Republic,Pardubice,enteria arena,"10,000",Ice hockey
+98,Europe,Denmark,Copenhagen,Parken,"38,000",Football
+98,Europe,Denmark,Brøndby,Brøndby Stadion,"28,000",Football
+98,Europe,Denmark,Aarhus,Ceres Park,"19,000",Football
+98,Europe,Denmark,Esbjerg,Blue Water Arena,"16,000",Football
+98,Europe,Denmark,Odense,Nature Energy Park,"15,000",Football
+98,Europe,Denmark,Aalborg,Aalborg Portland Park,"14,000",Football
+98,Europe,Denmark,Herning,Jyske Bank Boxen,"12,000",Multi-purpose
+98,Europe,Denmark,Herning,MCH Arena,"11,000",Football
+98,Europe,Denmark,Vejle,Vejle Stadion,"11,000",Football
+98,Europe,Denmark,Horsens,CASA Arena Horsens,"10,000",Football
+98,Europe,Denmark,Randers,Cepheus Park Randers,"10,000",Football
+98,Europe,Denmark,Silkeborg,JYSK park,"10,000",Football
+98,Europe,Denmark,Farum,Right to Dream Park,"10,000",Football
+99,Europe,Estonia,Tallinn,A. Le Coq Arena,"14,000",Football
+100,Europe,Finland,Helsinki,Helsingin olympiastadion,"36,000",Football
+100,Europe,Finland,Helsinki,Helsinki-halli,"13,000",Ice hockey
+100,Europe,Finland,Tampere,Nokia Arena,"13,000",Ice hockey
+100,Europe,Finland,Turku,Paavo Nurmen stadion,"13,000",Football
+100,Europe,Finland,Turku,Gatorade Center,"11,000",Ice hockey
+100,Europe,Finland,Helsinki,Bolt Arena,"10,000",Football
+101,Europe,French Republic,Saint-Denis,Stade de France,"80,000","Football, rugby union"
+101,Europe,French Republic,Marseille,Orange Vélodrome,"67,000",Football
+101,Europe,French Republic,Lyon,Groupama Stadium,"59,000",Football
+101,Europe,French Republic,Villeneuve-d’Ascq,Decathlon Arena-Stade Pierre-Mauroy,"50,000",Football
+101,Europe,French Republic,Paris,Parc des Princes,"47,000",Football
+101,Europe,French Republic,Bordeaux,Matmut ATLANTIQUE,"42,000",Football
+101,Europe,French Republic,Saint-Étienne,Stade Geoffroy-Guichard,"41,000",Football
+101,Europe,French Republic,Lens,Stade Bollaert-Delelis,"38,000",Football
+101,Europe,French Republic,Nice,Allianz Riviera,"36,000",Football
+101,Europe,French Republic,Nantes,Stade de la Beaujoire – Louis Fonteneau,"35,000",Football
+101,Europe,French Republic,Toulouse,Stadium de Toulouse,"33,000",Football
+101,Europe,French Republic,Montpellier,Stade de la Mosson,"32,000",Football
+101,Europe,French Republic,Nanterre,Paris La Défense Arena,"30,000",Rugby union
+101,Europe,French Republic,Rennes,Roazhon Park,"29,000",Football
+101,Europe,French Republic,Strasbourg,Stade de la Meinau,"26,000",Football
+101,Europe,French Republic,Le Mans,MMArena,"25,000",Football
+101,Europe,French Republic,Valenciennes,Stade du Hainaut,"25,000",Football
+101,Europe,French Republic,Le Havre,Stade Océane,"25,000",Football
+101,Europe,French Republic,Sedan,Stade Louis-Dugauguez,"24,000",Football
+101,Europe,French Republic,Reims,Stade Auguste-Delaune,"21,000",Football
+101,Europe,French Republic,Montbéliard,Stade Auguste-Bonal,"20,000",Football
+101,Europe,French Republic,Troyes,Stade de l’Aube,"20,000",Football
+101,Europe,French Republic,Grenoble,Stade des Alpes,"20,000","Football, rugby union"
+101,Europe,French Republic,Paris,Stade Jean-Bouin,"20,000","Football, rugby union"
+101,Europe,French Republic,Tomblaine,Stade Marcel-Picot,"20,000",Football
+101,Europe,French Republic,Caen,Stade Michel-d’Ornano,"20,000",Football
+101,Europe,French Republic,Paris,Stade Sébastien-Charléty,"20,000",Football
+101,Europe,French Republic,Toulouse,Stade Ernest-Wallon,"19,000","Rugby league, rugby union"
+101,Europe,French Republic,Clermont-Ferrand,Stade Marcel-Michelin,"19,000",Rugby union
+101,Europe,French Republic,Guingamp,Stade municipal de Roudourou,"19,000",Football
+101,Europe,French Republic,Angers,Stade Raymond-Kopa,"19,000",Football
+101,Europe,French Republic,Auxerre,Stade Abbé-Deschamps,"18,000",Football
+101,Europe,French Republic,Nîmes,Stade des Costières,"18,000",Football
+101,Europe,French Republic,Pau,Stade du Hameau,"18,000",Rugby union
+101,Europe,French Republic,Toulon,Stade Mayol,"18,000",Rugby union
+101,Europe,French Republic,Châteauroux,Stade Gaston-Petit,"17,000",Football
+101,Europe,French Republic,Mont-de-Marsan,Stade André-et-Guy-Boniface,"16,000",Rugby union
+101,Europe,French Republic,Furiani,Stade Armand-Cesari,"16,000",Football
+101,Europe,French Republic,Tours,Stade de la Vallée du Cher,"16,000",Football
+101,Europe,French Republic,Lorient,Stade du Moustoir – Yves Allainmat,"16,000",Football
+101,Europe,French Republic,La Rochelle,Stade Marcel-Deflandre,"16,000",Rugby union
+101,Europe,French Republic,Montpellier,GGL Stadium,"15,000",Rugby union
+101,Europe,French Republic,Brest,Stade Francis-Le Blé,"15,000",Football
+101,Europe,French Republic,Dijon,Stade Gaston-Gérard,"15,000",Football
+101,Europe,French Republic,Perpignan,Stade Aimé-Giral,"14,000",Rugby union
+101,Europe,French Republic,Brive-la-Gaillarde,Stade Amédée-Domenech,"13,000",Rugby union
+101,Europe,French Republic,Narbonne,Parc des sports et de l’amitié,"12,000",Rugby union
+101,Europe,French Republic,Amiens,Stade de la Licorne,"12,000",Football
+101,Europe,French Republic,Calais,Stade de l’Épopée,"12,000",Football
+101,Europe,French Republic,Créteil,Stade Dominique-Duvauchelle,"12,000",Football
+101,Europe,French Republic,Clermont-Ferrand,Stade Gabriel-Montpied,"12,000",Football
+101,Europe,French Republic,Castres,Stade Pierre-Fabre,"12,000",Rugby union
+101,Europe,French Republic,Oyonnax,Stade Charles-Mathon,"11,000",Rugby union
+101,Europe,French Republic,Mulhouse,Stade de l’Ill,"11,000",Football
+101,Europe,French Republic,Colomiers,Stade Michel-Bendichou,"11,000",Rugby union
+101,Europe,French Republic,Niort,Stade René-Gaillard,"11,000",Football
+101,Europe,French Republic,Ajaccio,Stade François-Coty,"10,000",Football
+101,Europe,French Republic,Nouméa,Stade Numa-Daly,"10,000",Football
+101,Europe,French Republic,Cannes,Stade Pierre-de-Coubertin,"10,000",Football
+102,Europe,Germany,Dortmund,Signal Iduna Park,"81,000",Football
+102,Europe,Germany,Munich,Allianz Arena,"75,000",Football
+102,Europe,Germany,Berlin,Olympiastadion Berlin,"74,000",Football
+102,Europe,Germany,Munich,Olympiastadion München,"69,000",Football
+102,Europe,Germany,Gelsenkirchen,VELTINS-Arena,"62,000",Football
+102,Europe,Germany,Hamburg,Volksparkstadion,"57,000",Football
+102,Europe,Germany,Mönchengladbach,BORUSSIA-PARK,"54,000",Football
+102,Europe,Germany,Düsseldorf,MERKUR SPIEL-ARENA,"54,000","American football, football"
+102,Europe,Germany,Frankfurt am Main,Deutsche Bank Park,"51,000",Football
+102,Europe,Germany,Nuremberg,Max-Morlock-Stadion,"50,000",Football
+102,Europe,Germany,Kaiserslautern,Fritz-Walter-Stadion,"49,000",Football
+102,Europe,Germany,Hanover,Heinz-von-Heiden-Arena,"49,000",Football
+102,Europe,Germany,Cologne,RheinEnergieSTADION,"49,000",Football
+102,Europe,Germany,Leipzig,Red Bull Arena,"47,000",Football
+102,Europe,Germany,Bremen,wohninvest WESERSTADION,"42,000",Football
+102,Europe,Germany,Aachen,Hauptstadion,"40,000",Equestrianism
+102,Europe,Germany,Freiburg im Breisgau,Europa-Park Stadion,"34,000",Football
+102,Europe,Germany,Mainz,MEWA ARENA,"34,000",Football
+102,Europe,Germany,Herne,real-Arena,"32,000",Football
+102,Europe,Germany,Dresden,Rudolf-Harbig-Stadion,"32,000",Football
+102,Europe,Germany,Aachen,Tivoli,"32,000",Football
+102,Europe,Germany,Duisburg,Schauinsland-Reisen-Arena,"31,000",Football
+102,Europe,Germany,Leverkusen,BayArena,"30,000",Football
+102,Europe,Germany,Magdeburg,MDCC-Arena,"30,000",Football
+102,Europe,Germany,Sinsheim,PreZero Arena,"30,000",Football
+102,Europe,Germany,Wolfsburg,Volkswagen Arena,"30,000",Football
+102,Europe,Germany,Augsburg,WWK ARENA,"30,000",Football
+102,Europe,Germany,Hamburg,Millerntor-Stadion,"29,000",Football
+102,Europe,Germany,Rostock,Ostseestadion,"29,000",Football
+102,Europe,Germany,Bochum,Vonovia Ruhrstadion,"27,000",Football
+102,Europe,Germany,Bielefeld,SchücoArena,"26,000",Football
+102,Europe,Germany,Mannheim,Carl-Benz-Stadion,"25,000",Football
+102,Europe,Germany,Braunschweig,Eintracht-Stadion,"24,000","American football, football"
+102,Europe,Germany,Berlin,Stadion An der Alten Försterei,"22,000",Football
+102,Europe,Germany,Cottbus,Stadion der Freundschaft,"22,000",Football
+102,Europe,Germany,Offenbach,Sparda-Bank-Hessen-Stadion,"20,000",Football
+102,Europe,Germany,Essen,Stadion an der Hafenstraße,"20,000",Football
+102,Europe,Germany,Ulm,Donaustadion,"19,000",Football
+102,Europe,Germany,Berlin,Friedrich-Ludwig-Jahn-Stadion,"19,000","American football, football"
+102,Europe,Germany,Kassel,Auestadion,"18,000",Football
+102,Europe,Germany,Cologne,LANXESS arena,"18,000",Ice hockey
+102,Europe,Germany,Erfurt,Steigerwaldstadion,"18,000",Football
+102,Europe,Germany,Lübeck,Stadion Lohmühle,"17,000",Football
+102,Europe,Germany,Aue,Erzgebirgsstadion,"16,000",Football
+102,Europe,Germany,Bochum,Lohrheidestadion,"16,000",Football
+102,Europe,Germany,Osnabrück,Stadion an der Bremer Brücke,"16,000",Football
+102,Europe,Germany,Homburg,Waldstadion Homburg,"16,000",Football
+102,Europe,Germany,Ingolstadt,Audi Sportpark,"15,000",Football
+102,Europe,Germany,Sandhausen,BWT-Stadion am Hardtwald,"15,000",Football
+102,Europe,Germany,Kiel,Holstein-Stadion,"15,000",Football
+102,Europe,Germany,Paderborn,Home Deluxe Arena,"15,000",Football
+102,Europe,Germany,Regensburg,Jahnstadion Regensburg,"15,000",Football
+102,Europe,Germany,Halle,LEUNA-CHEMIE-STADION,"15,000",Football
+102,Europe,Germany,Münster,Preußenstadion,"15,000",Football
+102,Europe,Germany,Fürth,Sportpark Ronhof | Thomas Sommer,"15,000",Football
+102,Europe,Germany,Unterhaching,Sportpark Unterhaching,"15,000",Football
+102,Europe,Germany,Chemnitz,Stadion – An der Gellertstraße,"15,000",Football
+102,Europe,Germany,Munich,Städtisches Stadion an der Grünwalder Straße,"15,000",Football
+102,Europe,Germany,Heidenheim an der Brenz,Voith-Arena,"15,000",Football
+102,Europe,Germany,Aalen,OSTALB ARENA,"14,000",Football
+102,Europe,Germany,Mannheim,SAP Arena,"14,000","Handball, ice hockey"
+102,Europe,Germany,Oer-Erkenschwick,Stimberg-Stadion,"14,000",Football
+102,Europe,Germany,Würzburg,flyeralarm Arena,"13,000",Football
+102,Europe,Germany,Meppen,Hänsch-Arena,"13,000",Football
+102,Europe,Germany,Düsseldorf,PSD Bank Dome,"13,000",Ice hockey
+102,Europe,Germany,Bielefeld,Bezirkssportanlage Rußheide,"12,000","American football, football"
+102,Europe,Germany,Halle,OWL-Arena,"12,000",Multi-purpose
+102,Europe,Germany,Frankfurt am Main,PSD Bank Arena,"12,000","American football, football"
+102,Europe,Germany,Bonn,Stadion Pennenfeld,"12,000","American football, football"
+102,Europe,Germany,Ahlen,Wersestadion,"12,000",Football
+102,Europe,Germany,Cologne,Südstadion,"11,000","American football, football"
+102,Europe,Germany,Bayreuth,Hans-Walter-Wild-Stadion,"10,000",Football
+102,Europe,Germany,Potsdam,Karl-Liebknecht-Stadion,"10,000",Football
+102,Europe,Germany,Aspach,WIRmachenDRUCK Arena,"10,000",Football
+102,Europe,Germany,Kiel,Wunderino-Arena,"10,000",Handball
+103,Europe,Hellenic Republic,Marousi,Olympic Stadium,"75,000",Football
+103,Europe,Hellenic Republic,Piraeus,Georgios Karaiskakis Stadium,"32,000",Football
+103,Europe,Hellenic Republic,Nea Filadelfeia,OPAP Arena,"32,000",Football
+103,Europe,Hellenic Republic,Thessaloniki,PAOK Stadium,"29,000",Football
+103,Europe,Hellenic Republic,Patras,Pampeloponnisiako Stadium,"23,000",Football
+103,Europe,Hellenic Republic,Thessaloniki,Kleanthis Vikelidis Stadium,"22,000",Football
+103,Europe,Hellenic Republic,Marousi,Nikos Galis Olympic Indoor Hall,"19,000",Basketball
+103,Europe,Hellenic Republic,Larissa,AEL FC Arena,"16,000",Football
+103,Europe,Hellenic Republic,Athens,Apostolos Nikolaidis Stadium,"16,000",Football
+104,Europe,Hungary,Budapest,Puskás Aréna,"67,000",Football
+104,Europe,Hungary,Budapest,Groupama Aréna,"23,000",Football
+104,Europe,Hungary,Debrecen,Nagyerdei Stadion,"20,000",Football
+104,Europe,Hungary,Miskolc,DVTK Stadion,"15,000",Football
+104,Europe,Hungary,Győr,ETO Park,"15,000",Football
+104,Europe,Hungary,Székesfehérvár,MOL Aréna Sóstó,"14,000",Football
+104,Europe,Hungary,Dunaújváros,Dunaújváros Stadion,"12,000",Football
+104,Europe,Hungary,Zalaegerszeg,ZTE Aréna,"11,000",Football
+105,Europe,Ireland,Dublin,Croke Park,"82,000","Gaelic football, hurling"
+105,Europe,Ireland,Dublin,Aviva Stadium,"51,000","Football, rugby union"
+105,Europe,Ireland,Cork,Páirc Uí Chaoimh,"45,000","Gaelic football, hurling"
+105,Europe,Ireland,Thurles,Semple Stadium,"45,000","Gaelic football, hurling"
+105,Europe,Ireland,Limerick,LIT Gaelic Grounds,"43,000","Gaelic football, hurling"
+105,Europe,Ireland,Killarney,Fitzgerald Stadium,"38,000",Gaelic football
+105,Europe,Ireland,Clones,St. Tiernach’s Park,"36,000",Gaelic football
+105,Europe,Ireland,Kilkenny,UPMC Nowlan Park,"27,000",Hurling
+105,Europe,Ireland,Wexford,Chadwicks Wexford Park,"25,000","Gaelic football, hurling"
+105,Europe,Ireland,Limerick,Thomond Park,"25,000",Rugby union
+105,Europe,Ireland,Carlow,Netwatch Cullen Park,"21,000","Gaelic football, hurling"
+106,Europe,Italian Republic,Milan,Stadio Giuseppe Meazza,"80,000",Football
+106,Europe,Italian Republic,Rome,Stadio Olimpico,"70,000",Football
+106,Europe,Italian Republic,Florence,Stadio comunale Artemio Franchi,"43,000",Football
+106,Europe,Italian Republic,Turin,Allianz Stadium,"41,000",Football
+106,Europe,Italian Republic,Verona,Stadio Marcantonio Bentegodi,"39,000",Football
+106,Europe,Italian Republic,Salerno,Stadio comunale Arechi,"37,000",Football
+106,Europe,Italian Republic,Palermo,Stadio comunale Renzo Barbera,"36,000",Football
+106,Europe,Italian Republic,Lecce,Stadio Ettore Giardiniero – Via del Mare,"31,000",Football
+106,Europe,Italian Republic,Parma,Stadio comunale Ennio Tardini,"27,000",Football
+106,Europe,Italian Republic,Turin,Stadio Olimpico Grande Torino,"27,000",Football
+106,Europe,Italian Republic,Reggio di Calabria,Stadio Oreste Granillo,"27,000",Football
+106,Europe,Italian Republic,Avellino,Stadio Partenio-Adriano Lombardi,"26,000",Football
+106,Europe,Italian Republic,Udine,Dacia Arena,"25,000",Football
+106,Europe,Italian Republic,Benevento,Stadio Ciro Vigorito,"25,000",Football
+106,Europe,Italian Republic,Foggia,Stadio Pino Zaccheria,"25,000",Football
+106,Europe,Italian Republic,Trieste,Stadio Nereo Rocco,"24,000",Football
+106,Europe,Italian Republic,Cesena,Orogel Stadium Dino Manuzzi,"23,000",Football
+106,Europe,Italian Republic,Catania,Stadio Angelo Massimino,"23,000",Football
+106,Europe,Italian Republic,Perugia,Stadio Renato Curi,"23,000",Football
+106,Europe,Italian Republic,Bergamo,Gewiss Stadium,"21,000",Football
+106,Europe,Italian Republic,Reggio nell’Emilia,MAPEI STADIUM – Città del Tricolore,"21,000",Football
+106,Europe,Italian Republic,Modena,Stadio Alberto Braglia,"21,000",Football
+106,Europe,Italian Republic,Piacenza,Stadio Leonardo Garilli,"21,000",Football
+106,Europe,Italian Republic,Pescara,Stadio Adriatico – Giovanni Cornacchia,"20,000",Football
+106,Europe,Italian Republic,Cosenza,Stadio comunale San Vito “Gigi Marulla”,"20,000",Football
+106,Europe,Italian Republic,Bari,Stadio della Vittoria,"19,000","American football, rugby union"
+106,Europe,Italian Republic,Monza,U-Power Stadium,"18,000",Football
+106,Europe,Italian Republic,Terni,Stadio Libero Liberati,"17,000",Football
+106,Europe,Italian Republic,Novara,Stadio Silvio Piola,"17,000",Football
+106,Europe,Italian Republic,Cagliari,Sardegna Arena,"16,000",Football
+106,Europe,Italian Republic,Frosinone,Stadio Benito Stirpe,"16,000",Football
+106,Europe,Italian Republic,Empoli,Stadio comunale Carlo Castellani,"16,000",Football
+106,Europe,Italian Republic,Crotone,Stadio comunale Ezio Scida,"16,000",Football
+106,Europe,Italian Republic,Cremona,Stadio comunale Giovanni Zini,"16,000",Football
+106,Europe,Italian Republic,Ferrara,Stadio Paolo Mazza,"16,000",Football
+106,Europe,Italian Republic,Livorno,Stadio comunale Armando Picchi,"14,000",Football
+106,Europe,Italian Republic,Como,Stadio Giuseppe Sinigaglia,"13,000",Football
+106,Europe,Italian Republic,San Benedetto del Tronto,Stadio Riviera delle Palme,"13,000",Football
+106,Europe,Italian Republic,La Spezia,Stadio Alberto Picco,"11,000",Football
+106,Europe,Italian Republic,Venice,Stadio Pier Luigi Penzo,"11,000",Football
+107,Europe,Lithuania,Kaunas,S. Dariaus ir S. Girėno stadionas,"15,000",Football
+107,Europe,Lithuania,Kaunas,Žalgirio arena,"15,000",Basketball
+108,Europe,Malta,Ta’ Qali,Grawnd Nazzjonali Ta’ Qali,"16,000",Football
+109,Europe,Moldova,Tiraspol,Stadionul Sheriff,"12,000",Football
+109,Europe,Moldova,Chişinău,Stadionul Zimbru,"10,000",Football
+110,Europe,Monaco,Monaco,Stade Louis-II,"18,000",Football
+111,Europe,Montenegro,Podgorica,Stadion pod Goricom,"15,000",Football
+112,Europe,Netherlands,Amsterdam,Johan Cruijff ArenA,"55,000",Football
+112,Europe,Netherlands,Rotterdam,Stadion Feijenoord,"51,000",Football
+112,Europe,Netherlands,Eindhoven,Philips Stadion,"35,000",Football
+112,Europe,Netherlands,Enschede,De Grolsch Veste,"30,000",Football
+112,Europe,Netherlands,Heerenveen,Abe Lenstra Stadion,"26,000",Football
+112,Europe,Netherlands,Arnhem,GelreDome,"25,000",Football
+112,Europe,Netherlands,Utrecht,Stadion Galgenwaard,"23,000",Football
+112,Europe,Netherlands,Groningen,Euroborg,"22,000",Football
+112,Europe,Netherlands,Amsterdam,Olympisch Stadion,"22,000",Football
+112,Europe,Netherlands,Alkmaar,AFAS Stadion,"19,000",Football
+112,Europe,Netherlands,Kerkrade,Parkstad Limburg Stadion,"19,000",Football
+112,Europe,Netherlands,Breda,Rat Verlegh Stadion,"19,000",Football
+112,Europe,Netherlands,Rotterdam,Ahoy Arena,"16,000",Multi-purpose
+112,Europe,Netherlands,The Hague,Bingoal Stadion,"15,000",Football
+112,Europe,Netherlands,Tilburg,Koning Willem II Stadion,"14,000",Football
+112,Europe,Netherlands,Zwolle,MAC³PARK stadion,"14,000",Football
+112,Europe,Netherlands,Almelo,Erve Asito,"12,000",Football
+112,Europe,Netherlands,Sittard,Fortuna Sittard Stadion,"12,000",Football
+112,Europe,Netherlands,Nijmegen,Goffertstadion,"12,000",Football
+112,Europe,Netherlands,Doetinchem,Stadion De Vijverberg,"12,000",Football
+112,Europe,Netherlands,Rotterdam,Sparta Stadion,"11,000",Football
+112,Europe,Netherlands,Leeuwarden,Cambuurstadion,"10,000",Football
+112,Europe,Netherlands,Deventer,De Adelaarshorst,"10,000",Football
+112,Europe,Netherlands,Maastricht,Stadion de Geusselt,"10,000",Football
+112,Europe,Netherlands,Willemstad,Stadion Ergilio Hato,"10,000",Football
+113,Europe,North Macedonia,Skopje,National Arena Tošhe Proeski,"36,000",Football
+114,Europe,Norway,Oslo,Ullevaal stadion,"28,000",Football
+114,Europe,Norway,Trondheim,Lerkendal stadion,"21,000",Football
+114,Europe,Norway,Bergen,Brann stadion,"17,000",Football
+114,Europe,Norway,Oslo,Intility Arena,"16,000",Football
+114,Europe,Norway,Stavanger,SR-Bank Arena,"15,000",Football
+114,Europe,Norway,Kristiansand,Sparebanken Sør Arena,"14,000",Football
+114,Europe,Norway,Fredrikstad,Fredrikstad stadion,"12,000",Football
+114,Europe,Norway,Skien,Skagerak Arena,"12,000",Football
+114,Europe,Norway,Molde,Aker stadion,"11,000",Football
+114,Europe,Norway,Lillestrøm,Åråsen stadion,"11,000",Football
+115,Europe,Poland,Warsaw,PGE Narodowy,"58,000",Football
+115,Europe,Poland,Chorzów,Stadion Śląski,"55,000",Football
+115,Europe,Poland,Poznań,Stadion Miejski w Poznaniu,"43,000",Football
+115,Europe,Poland,Wrocław,Tarczyński Arena,"43,000",Football
+115,Europe,Poland,Gdańsk,Polsat Plus Arena Gdańsk,"41,000",Football
+115,Europe,Poland,Kraków,Stadion Miejski im. Henryka Reymana,"33,000",Football
+115,Europe,Poland,Warsaw,Stadion Miejski Legii Warszawa im. Marszałka Józefa Piłsudskiego,"31,000",Football
+115,Europe,Poland,Białystok,Stadion Miejski w Białymstoku,"22,000",Football
+115,Europe,Poland,Szczecin,Stadion Miejski im. Floriana Krygiera,"21,000",Football
+115,Europe,Poland,Bydgoszcz,Stadion im. Zdzisława Krzyszkowiaka,"20,000",Football
+115,Europe,Poland,Łódź,Stadion Miejski ŁKS im. Władysława Króla,"18,000",Football
+115,Europe,Poland,Łódź,Stadion Miejski Widzewa Łódź,"18,000",Football
+115,Europe,Poland,Lubin,Stadion Zagłębia Lubin,"16,000",Football
+115,Europe,Poland,Lublin,Arena Lublin,"15,000",Football
+115,Europe,Poland,Toruń,Motoarena Toruń im. Mariana Rosego,"15,000",Motorcycle speedway
+115,Europe,Poland,Kraków,Stadion Cracovii im. Józefa Piłsudskiego,"15,000",Football
+115,Europe,Poland,Gorzów Wielkopolski,Stadion im. Edwarda Jancarza,"15,000",Motorcycle speedway
+115,Europe,Poland,Bielsko-Biała,Stadion Miejski w Bielsku-Białej,"15,000",Football
+115,Europe,Poland,Gdynia,Stadion Miejski w Gdyni,"15,000",Football
+115,Europe,Poland,Tychy,Stadion Miejski w Tychach,"15,000",Football
+115,Europe,Poland,Kielce,Suzuki Arena,"15,000",Football
+115,Europe,Poland,Gliwice,Stadion Miejski w Gliwicach,"10,000",Football
+116,Europe,Portuguese Republic,Lisbon,Estádio do Sport Lisboa e Benfica,"64,000",Football
+116,Europe,Portuguese Republic,Porto,Estádio do Dragão,"50,000",Football
+116,Europe,Portuguese Republic,Lisbon,Estádio José Alvalade,"50,000",Football
+116,Europe,Portuguese Republic,Aveiro,Estádio Municipal de Aveiro,"32,000",Football
+116,Europe,Portuguese Republic,São João da Venda,Estádio Algarve,"30,000",Football
+116,Europe,Portuguese Republic,Guimarães,Estádio D. Afonso Henriques,"30,000",Football
+116,Europe,Portuguese Republic,Braga,Estádio Municipal de Braga,"30,000",Football
+116,Europe,Portuguese Republic,Porto,Estádio do Bessa Século XXI,"28,000",Football
+116,Europe,Portuguese Republic,Barcelos,Estádio Cidade de Barcelos,"12,000",Football
+116,Europe,Portuguese Republic,Faro,Estádio de São Luís,"12,000",Football
+116,Europe,Portuguese Republic,Funchal,Estádio do Marítimo,"10,000",Football
+117,Europe,Romania,Bucharest,Arena Națională,"55,000",Football
+117,Europe,Romania,Bucharest,Stadionul Steaua,"31,000",Football
+117,Europe,Romania,Cluj-Napoca,Cluj Arena,"30,000","Football, rugby union"
+117,Europe,Romania,Craiova,Stadionul Ion Oblemenco,"30,000",Football
+117,Europe,Romania,Cluj-Napoca,Stadionul Dr. Constantin Rădulescu,"23,000",Football
+117,Europe,Romania,Piatra Neamt,Stadionul Ceahlăul,"18,000",Football
+117,Europe,Romania,Ploiesti,Stadionul Ilie Oană,"15,000",Football
+117,Europe,Romania,Pitești,Stadionul Nicolae Dobrin,"15,000",Football
+117,Europe,Romania,Bucharest,Stadionul Rapid-Giulești,"14,000",Football
+117,Europe,Romania,Arad,Stadionul Francisc von Neuman,"12,000",Football
+117,Europe,Romania,Târgu Jiu,Stadionul Tudor Vladimirescu,"12,000",Football
+118,Europe,Russia,Moscow,Grand Sports Arena of the Luzhniki Olympic Complex,"81,000",Football
+118,Europe,Russia,St. Petersburg,Gazprom Arena,"67,000",Football
+118,Europe,Russia,Kazan,Ak Bars Arena,"45,000",Football
+118,Europe,Russia,Moscow,Otkritie Bank Arena,"45,000",Football
+118,Europe,Russia,Rostov-on-Don,Rostov Arena,"45,000",Football
+118,Europe,Russia,Volgograd,Volgograd Arena,"45,000",Football
+118,Europe,Russia,Saransk,Mordovia Arena,"44,000",Football
+118,Europe,Russia,Nizhny Novgorod,Nizhny Novgorod Stadium,"44,000",Football
+118,Europe,Russia,Samara,Solidarnost Samara Arena,"44,000",Football
+118,Europe,Russia,Yekaterinburg,Central Stadium,"35,000",Football
+118,Europe,Russia,Kaliningrad,Kaliningrad Stadium,"35,000",Football
+118,Europe,Russia,Krasnodar,Krasnodar Stadium,"35,000",Football
+118,Europe,Russia,Voronezh,Trade Unions Central Stadium,"31,000",Football
+118,Europe,Russia,Grozny,Akhmat Arena,"30,000",Football
+118,Europe,Russia,Moscow,VEB Arena,"30,000",Football
+118,Europe,Russia,Moscow,Dynamo Central Stadium,"26,000",Football
+118,Europe,Russia,Ryazan,CSK Stadium,"25,000",Football
+118,Europe,Russia,Yaroslavl,Shinnik Stadium,"22,000",Football
+118,Europe,Russia,Tula,Arsenal Stadium,"20,000",Football
+118,Europe,Russia,Vladimir,Torpedo Stadium,"19,000",Football
+118,Europe,Russia,Khimki,Arena Khimki,"18,000",Football
+118,Europe,Russia,Astrakhan,Central Stadium,"17,000",Football
+118,Europe,Russia,Izhevsk,Central Republican Stadium,"16,000",Football
+118,Europe,Russia,Ufa,BetBoom Arena,"15,000",Football
+118,Europe,Russia,Chelyabinsk,Central Stadium,"15,000",Football
+118,Europe,Russia,Stavropol,Dynamo Stadium,"15,000",Football
+118,Europe,Russia,Khabarovsk,Lenin Stadium,"15,000",Football
+118,Europe,Russia,Irkutsk,Trud Stadium,"15,000","Bandy, football"
+118,Europe,Russia,Ramenskoye,Saturn Stadium,"14,000",Football
+118,Europe,Russia,Tyumen,Geolog Stadium,"13,000",Football
+118,Europe,Russia,Sochi,Bolshoy Ice Dome,"12,000",Ice hockey
+118,Europe,Russia,St. Petersburg,Ice Palace,"12,000",Ice hockey
+118,Europe,Russia,Moscow,Megasport Sport Palace,"12,000","Basketball, ice hockey"
+118,Europe,Russia,Moscow,VTB Arena,"12,000",Ice hockey
+118,Europe,Russia,Lipetsk,Metallurg Stadium,"11,000",Football
+118,Europe,Russia,Belgorod,Salyut Stadium,"11,000",Football
+118,Europe,Russia,Bryansk,Dynamo Stadium,"10,000",Football
+118,Europe,Russia,Vladivostok,Dynamo Stadium,"10,000",Football
+118,Europe,Russia,Chita,Lokomotiv Stadium,"10,000",Football
+118,Europe,Russia,Liski,Lokomotiv Stadium,"10,000",Football
+118,Europe,Russia,Moscow,Sapsan Arena,"10,000",Football
+118,Europe,Russia,Sochi,Slava Metreveli Central Stadium,"10,000",Football
+119,Europe,Serbia,Belgrade,Stadion Rajko Mitić,"53,000",Football
+119,Europe,Serbia,Belgrade,Stadion Partizana,"29,000",Football
+119,Europe,Serbia,Belgrade,Štark Arena,"18,000",Basketball
+119,Europe,Serbia,Kruševac,Stadion Mladost,"10,000",Football
+120,Europe,Slovak Republic,Bratislava,Národný futbalový štadión,"22,000",Football
+120,Europe,Slovak Republic,Trnava,CITY ARENA – Štadión Antona Malatinského,"19,000",Football
+120,Europe,Slovak Republic,Dunajská Streda,MOL Aréna,"12,000",Football
+120,Europe,Slovak Republic,Žilina,Štadión MŠK Žilina,"11,000",Football
+120,Europe,Slovak Republic,Bratislava,Zimný štadión Ondreja Nepelu,"10,000",Ice hockey
+121,Europe,Slovenia,Ljubljana,Stadion Stožice,"16,000",Football
+121,Europe,Slovenia,Maribor,Stadion Ljudski vrt,"12,000",Football
+122,Europe,Spain,Madrid,Cívitas Metropolitano,"68,000",Football
+122,Europe,Spain,Seville,Estadio Benito Villamarín,"60,000",Football
+122,Europe,Spain,Seville,Estadio La Cartuja de Sevilla,"57,000",Football
+122,Europe,Spain,Bilbao,San Mamés,"53,000",Football
+122,Europe,Spain,Valencia,Mestalla,"48,000",Football
+122,Europe,Spain,Seville,Estadio Ramón Sánchez-Pizjuán,"43,000",Football
+122,Europe,Spain,Cornellà de Llobregat,RCDE Stadium,"40,000",Football
+122,Europe,Spain,San Sebastián,Reale Arena,"39,000",Football
+122,Europe,Spain,Zaragoza,Estadio La Romareda,"34,000",Football
+122,Europe,Spain,Elche,Estadi Manuel Martínez Valero,"33,000",Football
+122,Europe,Spain,A Coruña,Estadio ABANCA-RIAZOR,"32,000",Football
+122,Europe,Spain,Las Palmas de Gran Canaria,Estadio de Gran Canaria,"32,000",Football
+122,Europe,Spain,Murcia,Estadio Enrique Roca de Murcia,"31,000",Football
+122,Europe,Spain,Gijón,Estadio El Molinón-Enrique Castro “Quini”,"30,000",Football
+122,Europe,Spain,Málaga,Estadio La Rosaleda,"30,000",Football
+122,Europe,Spain,Oviedo,Estadio Municipal Carlos Tartiere,"30,000",Football
+122,Europe,Spain,Alicante,Estadio José Rico Pérez,"29,000",Football
+122,Europe,Spain,Valladolid,Estadio Municipal José Zorrilla,"27,000",Football
+122,Europe,Spain,Valencia,Estadi Ciutat de València,"26,000",Football
+122,Europe,Spain,Pamplona,Estadio El Sadar,"23,000",Football
+122,Europe,Spain,Madrid,Plaza de toros de Las Ventas,"23,000",Bullfighting
+122,Europe,Spain,Santa Cruz de Tenerife,Estadio Heliodoro Rodríguez López,"22,000",Football
+122,Europe,Spain,Córdoba,Estadio El Arcángel,"20,000",Football
+122,Europe,Spain,Jerez de la Frontera,Estadio Municipal de Chapín,"20,000",Football
+122,Europe,Spain,Cádiz,Estadio Nuevo Mirandilla,"20,000",Football
+122,Europe,Spain,Granada,Estadio Nuevo Los Cármenes,"19,000",Football
+122,Europe,Spain,Vitoria-Gasteiz,Mendizorrotza,"19,000",Football
+122,Europe,Spain,Pamplona,Plaza de toros de Pamplona,"19,000",Bullfighting
+122,Europe,Spain,Getafe,Coliseum Alfonso Pérez,"17,000",Football
+122,Europe,Spain,Albacete,Estadio Carlos Belmonte,"17,000",Football
+122,Europe,Spain,Madrid,WiZink Center,"17,000",Basketball
+122,Europe,Spain,Logroño,Municipal Las Gaunas,"16,000",Football
+122,Europe,Spain,Cartagena,Estadio Municipal Cartagonova,"15,000",Football
+122,Europe,Spain,Castellón de la Plana,Estadio Municipal de Castalia,"15,000",Football
+122,Europe,Spain,Vitoria-Gasteiz,Fernando Buesa Arena,"15,000",Basketball
+122,Europe,Spain,Huelva,Plaza de toros de La Merced,"15,000",Bullfighting
+122,Europe,Spain,Murcia,Plaza de toros de Murcia,"15,000",Bullfighting
+122,Europe,Spain,Madrid,Campo de fútbol de Vallecas,"14,000",Football
+122,Europe,Spain,Badajoz,Estadio Nuevo Vivero,"14,000",Football
+122,Europe,Spain,Tarragona,Nou Estadi Costa Daurada,"14,000",Football
+122,Europe,Spain,Granada,Plaza de toros de Granada,"14,000",Bullfighting
+122,Europe,Spain,Córdoba,Plaza de toros de Los Califas,"14,000",Bullfighting
+122,Europe,Spain,Bilbao,Vista Alegre zezen plaza,"14,000",Bullfighting
+122,Europe,Spain,León,Estadio Municipal Reino de León,"13,000",Football
+122,Europe,Spain,Madrid,Estadio Manolo Santana,"12,000",Tennis
+122,Europe,Spain,Ferrol,Estadio Municipal da Malata,"12,000",Football
+122,Europe,Spain,Leganés,Estadio Municipal de Butarque,"12,000",Football
+122,Europe,Spain,Burgos,Estadio Municipal de El Plantío,"12,000",Football
+122,Europe,Spain,Pontevedra,Estadio Municipal de Pasarón,"12,000",Football
+122,Europe,Spain,Jaén,Estadio Municipal La Victoria,"12,000",Football
+122,Europe,Spain,Badalona,Palau Municipal d’Esports de Badalona,"12,000",Basketball
+122,Europe,Spain,Valencia,Plaça de bous de València,"12,000",Bullfighting
+122,Europe,Spain,Albacete,Plaza de toros de Albacete,"12,000",Bullfighting
+122,Europe,Spain,Seville,Plaza de toros de la Real Maestranza de Caballería de Sevilla,"12,000",Bullfighting
+122,Europe,Spain,Sabadell,Estadi Municipal de la Nova Creu Alta,"11,000",Football
+122,Europe,Spain,Terrassa,Estadi Municipal Olímpic,"11,000",Football
+122,Europe,Spain,Las Palmas de Gran Canaria,Gran Canaria Arena,"11,000",Basketball
+122,Europe,Spain,Algeciras,Monumental Las Palomas,"11,000",Bullfighting
+122,Europe,Spain,Málaga,Palacio de deportes José María Martín Carpena,"11,000",Basketball
+122,Europe,Spain,Logroño,Plaza de toros de La Ribera,"11,000",Bullfighting
+122,Europe,Spain,Valladolid,Plaza de toros de Valladolid,"11,000",Bullfighting
+122,Europe,Spain,Melilla,Estadio Álvarez Claro,"10,000",Football
+122,Europe,Spain,Zaragoza,Pabellón Príncipe Felipe,"10,000",Basketball
+122,Europe,Spain,Almería,Plaza de toros de Almería,"10,000",Bullfighting
+122,Europe,Spain,Jaén,Plaza de toros de Jaén,"10,000",Bullfighting
+122,Europe,Spain,Palencia,Plaza de toros de Palencia,"10,000",Bullfighting
+122,Europe,Spain,Salamanca,Plaza de toros de Salamanca – La Glorieta,"10,000",Bullfighting
+122,Europe,Spain,Santander,Plaza de toros de Santander,"10,000",Bullfighting
+122,Europe,Spain,Zaragoza,Plaza de toros de Zaragoza,"10,000",Bullfighting
+123,Europe,Sweden,Solna,Friends Arena,"54,000",Football
+123,Europe,Sweden,Gothenburg,Ullevi,"40,000",Football
+123,Europe,Sweden,Stockholm,Tele2 Arena,"30,000",Football
+123,Europe,Sweden,Malmö,Eleda Stadion,"22,000",Football
+123,Europe,Sweden,Gothenburg,Gamla Ullevi,"18,000",Football
+123,Europe,Sweden,Norrköping,PlatinumCars Arena,"17,000",Football
+123,Europe,Sweden,Borås,Borås Arena,"16,000",Football
+123,Europe,Sweden,Helsingborg,Olympia,"16,000",Football
+123,Europe,Sweden,Örebro,Behrn Arena,"12,000","American football, football"
+123,Europe,Sweden,Kalmar,Guldfågeln Arena,"12,000",Football
+123,Europe,Sweden,Gothenburg,Scandinavium,"12,000",Ice hockey
+123,Europe,Sweden,Växjö,Visma Arena,"12,000",Football
+123,Europe,Sweden,Landskrona,Landskrona IP,"10,000",Football
+124,Europe,Swiss Confederation,Basel,St. Jakob-Park,"38,000",Football
+124,Europe,Swiss Confederation,Bern,Stadion Wankdorf,"32,000",Football
+124,Europe,Swiss Confederation,Geneva,Stade de Genève,"30,000",Football
+124,Europe,Swiss Confederation,Zürich,Stadion Letzigrund,"26,000",Football
+124,Europe,Swiss Confederation,St. Gallen,kybunpark,"19,000",Football
+124,Europe,Swiss Confederation,Bern,PostFinance-Arena,"17,000",Ice hockey
+124,Europe,Swiss Confederation,Lucerne,swissporarena,"16,000",Football
+124,Europe,Swiss Confederation,Sion,Stade de Tourbillon,"14,000",Football
+124,Europe,Swiss Confederation,La Chaux-de-Fonds,Stade de la Charrière,"12,000",Football
+124,Europe,Swiss Confederation,Neuchâtel,Stade de la Maladière,"12,000",Football
+124,Europe,Swiss Confederation,Zürich,Hallenstadion,"11,000",Ice hockey
+124,Europe,Swiss Confederation,Thun,Stockhorn Arena,"10,000",Football
+125,Europe,Ukraine,Kyiv,Olympic National Sports Complex Stadium,"70,000",Football
+125,Europe,Ukraine,Kharkiv,Metalist Stadium,"40,000",Football
+125,Europe,Ukraine,Lviv,Arena Lviv,"34,000",Football
+125,Europe,Ukraine,Odessa,Chernomorets Stadium,"34,000",Football
+125,Europe,Ukraine,Sumy,Yuvileiny Stadium,"25,000",Football
+125,Europe,Ukraine,Ternopil,Roman Shukhevych Ternopil City Stadium,"15,000",Football
+125,Europe,Ukraine,Kropyvnytskyi,Zirka Stadium,"14,000",Football
+125,Europe,Ukraine,Chernivtsi,Bukovyna Stadium,"12,000",Football
+125,Europe,Ukraine,Mariupol,Volodymyr Boiko Stadium,"12,000",Football
+127,Europe,England,London,Wembley Stadium,"90,000",Football
+127,Europe,England,Twickenham,Twickenham Stadium,"82,000",Rugby union
+127,Europe,England,Stretford,Old Trafford,"74,000",Football
+127,Europe,England,London,London Stadium,"66,000",Football
+127,Europe,England,London,Tottenham Hotspur Stadium,"62,000",Football
+127,Europe,England,London,Emirates Stadium,"60,000",Football
+127,Europe,England,Manchester,Etihad Stadium,"55,000",Football
+127,Europe,England,Liverpool,Anfield Stadium,"53,000",Football
+127,Europe,England,Newcastle upon Tyne,St. James’ Park,"52,000",Football
+127,Europe,England,Sunderland,Stadium of Light,"49,000",Football
+127,Europe,England,Birmingham,Villa Park,"42,000",Football
+127,Europe,England,London,Stamford Bridge,"41,000",Football
+127,Europe,England,Liverpool,Goodison Park,"39,000",Football
+127,Europe,England,Sheffield,Hillsborough Stadium,"39,000",Football
+127,Europe,England,Leeds,Elland Road Stadium,"37,000",Football
+127,Europe,England,Middlesbrough,Riverside Stadium,"34,000",Football
+127,Europe,England,Derby,Pride Park Stadium,"33,000",Football
+127,Europe,England,Sheffield,Bramall Lane Stadium,"32,000",Football
+127,Europe,England,Leicester,King Power Stadium,"32,000",Football
+127,Europe,England,Wolverhampton,Molineux Stadium,"32,000",Football
+127,Europe,England,Coventry,Stadium Bowl,"32,000","Football, rugby union"
+127,Europe,England,Southampton,St. Mary’s Stadium,"32,000",Football
+127,Europe,England,Blackburn,Ewood Park,"31,000",Football
+127,Europe,England,London,Lord’s Cricket Ground,"31,000",Cricket
+127,Europe,England,Brighton,American Express Community Stadium,"30,000",Football
+127,Europe,England,Stoke-on-Trent,bet365 Stadium,"30,000",Football
+127,Europe,England,Ipswich,Portman Road Stadium,"30,000",Football
+127,Europe,England,Milton Keynes,Stadium MK,"30,000",Football
+127,Europe,England,West Bridgford,The City Ground,"30,000",Football
+127,Europe,England,London,Craven Cottage,"29,000",Football
+127,Europe,England,Birmingham,St. Andrew’s Stadium,"29,000",Football
+127,Europe,England,Bolton,University of Bolton Stadium,"28,000",Football
+127,Europe,England,Bristol,Ashton Gate Stadium,"27,000","Football, rugby union"
+127,Europe,England,Norwich,Carrow Road Stadium,"27,000",Football
+127,Europe,England,London,The Valley,"27,000",Football
+127,Europe,England,London,Selhurst Park,"26,000",Football
+127,Europe,England,West Bromwich,The Hawthorns,"26,000",Football
+127,Europe,England,Wigan,DW Stadium,"25,000","Football, rugby league"
+127,Europe,England,Birmingham,Edgbaston Cricket Ground,"25,000",Cricket
+127,Europe,England,London,Kia Oval,"25,000",Cricket
+127,Europe,England,Leicester,Mattioli Woods Welford Road,"25,000",Rugby union
+127,Europe,England,Kingston upon Hull,MKM Stadium,"25,000","Football, rugby league"
+127,Europe,England,Bradford,Northern Commercials Stadium,"25,000",Football
+127,Europe,England,Huddersfield,John Smith’s Stadium,"24,000","Football, rugby league"
+127,Europe,England,Reading,Select Car Leasing Stadium,"24,000",Football
+127,Europe,England,Preston,Deepdale,"23,000",Football
+127,Europe,England,Barnsley,Oakwell Stadium,"23,000",Football
+127,Europe,England,Watford,Vicarage Road Stadium,"22,000",Football
+127,Europe,England,Burnley,Turf Moor,"21,000",Football
+127,Europe,England,Portsmouth,Fratton Park,"20,000",Football
+127,Europe,England,Nottingham,Meadow Lane Stadium,"20,000",Football
+127,Europe,England,London,The Den,"20,000",Football
+127,Europe,England,Leeds,Emerald Headingley Rugby Stadium,"19,000",Rugby league
+127,Europe,England,Leeds,Emerald Headingley Cricket Ground,"18,000",Cricket
+127,Europe,England,London,Loftus Road Stadium,"18,000",Football
+127,Europe,England,St. Helens,Totally Wicked Stadium,"18,000","Football, rugby league"
+127,Europe,England,Carlisle,Brunton Park,"17,000",Football
+127,Europe,England,Brentford,Gtech Community Stadium,"17,000","Football, rugby union"
+127,Europe,England,Plymouth,Home Park,"17,000",Football
+127,Europe,England,West Bridgford,Trent Bridge Cricket Ground,"17,000",Cricket
+127,Europe,England,Blackpool,Bloomfield Road Stadium,"16,000",Football
+127,Europe,England,Gloucester,Kingsholm Stadium,"16,000",Rugby union
+127,Europe,England,Birkenhead,Prenton Park,"16,000",Football
+127,Europe,England,Doncaster,Eco-Power Stadium,"15,000","Football, rugby league"
+127,Europe,England,Northampton,Franklin’s Gardens,"15,000",Rugby union
+127,Europe,England,Swindon,The Energy Check County Ground,"15,000",Football
+127,Europe,England,Warrington,The Halliwell Jones Stadium,"15,000",Rugby league
+127,Europe,England,Peterborough,Weston Homes Stadium,"15,000",Football
+127,Europe,England,London,Centre Court,"14,000",Tennis
+127,Europe,England,Twickenham,Twickenham Stoop Stadium,"14,000",Rugby union
+127,Europe,England,Oldham,Boundary Park,"13,000",Football
+127,Europe,England,Exeter,Sandy Park Stadium,"13,000",Rugby union
+127,Europe,England,Rotherham,AESSEAL New York Stadium,"12,000",Football
+127,Europe,England,Eccles,AJ Bell Stadium,"12,000","Rugby league, rugby union"
+127,Europe,England,Kingston upon Hull,Hull College Craven Park Stadium,"12,000",Rugby league
+127,Europe,England,Oxford,Kassam Stadium,"12,000",Football
+127,Europe,England,Leigh,Leigh Sports Village Stadium,"12,000","Football, rugby league"
+127,Europe,England,Bristol,Memorial Stadium,"12,000",Football
+127,Europe,England,Southend-on-Sea,Roots Hall Stadium,"12,000",Football
+127,Europe,England,Walsall,Banks’s Stadium,"11,000",Football
+127,Europe,England,Gillingham,MEMS Priestfield Stadium,"11,000",Football
+127,Europe,England,Castleford,Mend-A-Hose Jungle,"11,000",Rugby league
+127,Europe,England,Bournemouth,Vitality Stadium,"11,000",Football
+127,Europe,England,Scarborough,North Marine Road Ground,"11,000",Cricket
+127,Europe,England,Worcester,Sixways Stadium,"11,000",Rugby union
+127,Europe,England,High Wycombe,Adams Park,"10,000",Football
+127,Europe,England,Crewe,Alexandra Stadium,"10,000",Football
+127,Europe,England,Rochdale,Crown Oil Arena,"10,000","Football, rugby league"
+127,Europe,England,Stockport,Edgeley Park Stadium,"10,000",Football
+127,Europe,England,Colchester,JobServe Community Stadium,"10,000",Football
+127,Europe,England,Luton,Kenilworth Road Stadium,"10,000",Football
+127,Europe,England,Newcastle upon Tyne,Kingston Park,"10,000","Rugby league, rugby union"
+127,Europe,England,Lincoln,LNER Stadium,"10,000",Football
+127,Europe,England,Chesterfield,Technique Stadium,"10,000",Football
+128,Europe,Northern Ireland,Armagh,Athletic Grounds,"18,000","Gaelic football, hurling"
+128,Europe,Northern Ireland,Londonderry,Celtic Park,"18,000","Gaelic football, hurling"
+128,Europe,Northern Ireland,Omagh,Healy Park,"18,000",Gaelic football
+128,Europe,Northern Ireland,Belfast,Kingspan Stadium,"18,000",Rugby union
+128,Europe,Northern Ireland,Belfast,Windsor Park,"18,000",Football
+129,Europe,Scotland,Edinburgh,BT Murrayfield Stadium,"67,000",Rugby union
+129,Europe,Scotland,Glasgow,Celtic Park,"60,000",Football
+129,Europe,Scotland,Glasgow,Hampden Park,"51,000",Football
+129,Europe,Scotland,Glasgow,Ibrox Stadium,"50,000",Football
+129,Europe,Scotland,Edinburgh,Easter Road Stadium,"20,000",Football
+129,Europe,Scotland,Aberdeen,Pittodrie Stadium,"20,000",Football
+129,Europe,Scotland,Edinburgh,Tynecastle Park,"19,000",Football
+129,Europe,Scotland,Kilmarnock,Rugby Park,"17,000",Football
+129,Europe,Scotland,Dundee,Tannadice Park,"14,000",Football
+129,Europe,Scotland,Greenock,Cappielow Park,"11,000",Football
+129,Europe,Scotland,Dunfermline,East End Park,"11,000",Football
+129,Europe,Scotland,Dundee,Kilmac Stadium,"11,000",Football
+129,Europe,Scotland,Glasgow,Firhill Stadium,"10,000",Football
+129,Europe,Scotland,Perth,McDiarmid Park,"10,000",Football
+129,Europe,Scotland,Airdrie,Penny Cars Stadium,"10,000",Football
+129,Europe,Scotland,Ayr,Somerset Park,"10,000",Football
+130,Europe,Wales,Cardiff,Principality Stadium,"73,000",Rugby union
+130,Europe,Wales,Cardiff,Cardiff City Stadium,"33,000",Football
+130,Europe,Wales,Swansea,Swansea.com Stadium,"21,000","Football, rugby union"
+130,Europe,Wales,Cardiff,Cardiff Wales Stadium,"15,000",Cricket
+130,Europe,Wales,Llanelli,Parc y Scarlets,"14,000",Rugby union
+146,North America,United States,Birmingham,Legion Field,"71,000",American football
+146,North America,United States,Birmingham,Protective Stadium,"47,000","American football, football"
+146,North America,United States,Mobile,Ladd-Peebles Stadium,"40,000",American football
+146,North America,United States,Troy,Veterans Memorial Stadium,"30,000",American football
+146,North America,United States,Jacksonville,JSU Stadium,"24,000",American football
+146,North America,United States,Tuscaloosa,Coleman Coliseum,"15,000","Basketball, gymnastics"
+146,North America,United States,Florence,Tom Braly Municipal Stadium,"14,000",American football
+146,North America,United States,Huntsville,Milton Frank Stadium,"12,000","American football, football"
+146,North America,United States,Dothan,Rip Hewes Stadium,"10,000",American football
+146,North America,United States,Prattville,Stanley-Jensen Stadium,"10,000","American football, football"
+146,North America,United States,Glendale,State Farm Stadium,"63,000",American football
+146,North America,United States,Tucson,Arizona Stadium,"50,000",American football
+146,North America,United States,Phoenix,Chase Field,"48,000",Baseball
+146,North America,United States,Phoenix,Footprint Center,"18,000","Basketball, indoor American football"
+146,North America,United States,Tucson,McKale Memorial Center,"14,000",Basketball
+146,North America,United States,Goodyear,Goodyear Ballpark,"10,000",Baseball
+146,North America,United States,Chandler,Wild Horse Pass Stadium,"10,000",Football
+146,North America,United States,Fayetteville,Donald W. Reynolds Razorback Stadium,"76,000",American football
+146,North America,United States,Little Rock,War Memorial Stadium,"54,000","American football, football"
+146,North America,United States,Fayetteville,Bud Walton Arena,"19,000",Basketball
+131,North America,Bahamas,Nassau,Thomas A. Robinson National Stadium,"15,000",Football
+132,North America,Barbados,Bridgetown,Kensington Oval,"11,000",Cricket
+146,North America,United States,Pasadena,Rose Bowl Stadium,"92,000",American football
+146,North America,United States,Los Angeles,Los Angeles Memorial Coliseum,"77,000","American football, rugby union"
+146,North America,United States,Inglewood,SoFi Stadium,"70,000",American football
+146,North America,United States,Santa Clara,Levi’s Stadium,"68,000",American football
+146,North America,United States,Los Angeles,Dodger Stadium,"56,000",Baseball
+146,North America,United States,Oakland,RingCentral Coliseum,"55,000",Baseball
+146,North America,United States,Stanford,Stanford Stadium,"50,000",American football
+146,North America,United States,Anaheim,Angel Stadium of Anaheim,"45,000",Baseball
+146,North America,United States,San Francisco,Oracle Park,"41,000",Baseball
+146,North America,United States,San Diego,Petco Park,"40,000",Baseball
+146,North America,United States,San Diego,Snapdragon Stadium,"35,000","American football, football, rugby union"
+146,North America,United States,Carson,Dignity Health Sports Park Soccer Stadium,"27,000","American football, football"
+146,North America,United States,San Luis Obispo,Alex G. Spanos Stadium,"22,000","American football, football"
+146,North America,United States,Los Angeles,Banc of California Stadium,"22,000",Football
+146,North America,United States,Berkeley,Edwards Stadium,"22,000",Football
+146,North America,United States,Los Angeles,Crypto.com Arena,"19,000","Basketball, ice hockey"
+146,North America,United States,San Francisco,Chase Center,"18,000",Basketball
+146,North America,United States,San José,PayPal Park,"18,000",Football
+146,North America,United States,Sacramento,Golden 1 Center,"17,000",Basketball
+146,North America,United States,Anaheim,Honda Center,"17,000",Ice hockey
+146,North America,United States,Santa Barbara,Harder Stadium,"17,000",Football
+146,North America,United States,San José,SAP Center at San Jose,"17,000","Ice hockey, indoor American football"
+146,North America,United States,Indian Wells,Stadium 1,"16,000",Tennis
+146,North America,United States,Norwalk,Falcon Field,"12,000",American football
+146,North America,United States,San Diego,Pechanga Arena,"12,000",Multi-purpose
+146,North America,United States,San Diego,Viejas Arena,"12,000",Basketball
+146,North America,United States,Sacramento,Heart Health Park,"11,000",Football
+146,North America,United States,Fresno,Chukchansi Park,"10,000",Baseball
+133,North America,Canada,Montreal,Stade olympique,"61,000",Football
+133,North America,Canada,Edmonton,Commonwealth Stadium,"55,000",Canadian football
+133,North America,Canada,Vancouver,BC Place,"54,000","Canadian football, football"
+133,North America,Canada,Toronto,Rogers Centre,"49,000",Baseball
+133,North America,Canada,Calgary,McMahon Stadium,"35,000",Canadian football
+133,North America,Canada,Winnipeg,IG Field,"33,000","Canadian football, football"
+133,North America,Canada,Regina,Mosaic Stadium,"33,000",Canadian football
+133,North America,Canada,Toronto,BMO Field,"30,000","Canadian football, football"
+133,North America,Canada,Ottawa,TD Place Stadium,"24,000","Canadian football, football"
+133,North America,Canada,Hamilton,Tim Hortons Field,"23,000","Canadian football, football"
+133,North America,Canada,Montreal,Centre Bell,"21,000",Ice hockey
+133,North America,Canada,Toronto,Scotiabank Arena,"19,000","Basketball, box lacrosse, ice hockey"
+133,North America,Canada,Calgary,Scotiabank Saddledome,"19,000","Box lacrosse, ice hockey"
+133,North America,Canada,Montreal,Stade Saputo,"19,000",Football
+133,North America,Canada,Ottawa,Canadian Tire Centre,"18,000",Ice hockey
+133,North America,Canada,Quebec City,Centre VidÃ©otron,"18,000",Ice hockey
+133,North America,Canada,Vancouver,Rogers Arena,"18,000","Box lacrosse, esports, ice hockey"
+133,North America,Canada,Edmonton,Rogers Place,"18,000",Ice hockey
+133,North America,Canada,Winnipeg,Canada Life Centre,"15,000",Ice hockey
+133,North America,Canada,Saskatoon,SaskTel Centre,"15,000","Basketball, box lacrosse, ice hockey"
+133,North America,Canada,Quebec City,Stade TELUS-UniversitÃ© Laval,"12,000","Canadian football, football"
+133,North America,Canada,Toronto,Stadium Court,"12,000",Tennis
+146,North America,United States,Denver,Empower Field at Mile High,"76,000","American football, field lacrosse"
+146,North America,United States,Denver,Coors Field,"50,000",Baseball
+146,North America,United States,Boulder,Folsom Field,"50,000",American football
+146,North America,United States,Colorado Springs,Falcon Stadium,"46,000",American football
+146,North America,United States,Fort Collins,Canvas Stadium,"41,000",American football
+146,North America,United States,Denver,Ball Arena,"19,000","Basketball, box lacrosse, ice hockey"
+146,North America,United States,Commerce City,Dick’s Sporting Goods Park,"18,000",Football
+146,North America,United States,Boulder,CU Events Center,"11,000","Basketball, volleyball"
+146,North America,United States,New Haven,Yale Bowl Stadium,"61,000",American football
+146,North America,United States,East Hartford,Pratt & Whitney Stadium,"38,000",American football
+134,North America,Costa Rica,San José,Estadio Nacional de Costa Rica,"35,000",Football
+134,North America,Costa Rica,San Juan,Estadio Ricardo Saprissa AymÃ¡,"23,000",Football
+134,North America,Costa Rica,Alajuela,Estadio Alejandro Morera Soto,"17,000",Football
+135,North America,Cuba,Santiago de Cuba,Estadio Guillermón Moncada,"25,000",Baseball
+135,North America,Cuba,Matanzas,Estadio Victoria de Girón,"22,000",Baseball
+135,North America,Cuba,Cienfuegos,Estadio 5 de Septiembre,"15,000",Baseball
+146,North America,United States,Washington,Nationals Park,"41,000",Baseball
+146,North America,United States,Washington,Audi Field,"20,000","American football, football"
+146,North America,United States,Washington,Capital One Arena,"20,000","Basketball, ice hockey"
+136,North America,Dominican Republic,La Romana,Estadio Francisco A. Micheli,"10,000",Baseball
+137,North America,El Salvador,San Salvador,Estadio Cuscatlán,"53,000",Football
+146,North America,United States,Gainesville,Ben Hill Griffin Stadium,"88,000",American football
+146,North America,United States,Tallahassee,Doak S. Campbell Stadium,"79,000",American football
+146,North America,United States,Jacksonville,TIAA Bank Field,"67,000",American football
+146,North America,United States,Tampa,Raymond James Stadium,"65,000",American football
+146,North America,United States,Miami Gardens,Hard Rock Stadium,"64,000",American football
+146,North America,United States,Orlando,Camping World Stadium,"60,000",American football
+146,North America,United States,Orlando,FBC Mortgage Stadium,"44,000",American football
+146,North America,United States,St. Petersburg,Tropicana Field,"42,000",Baseball
+146,North America,United States,Miami,loanDepot park,"36,000",Baseball
+146,North America,United States,Boca Raton,FAU Stadium,"29,000",American football
+146,North America,United States,Tallahassee,Bragg Memorial Stadium,"25,000",American football
+146,North America,United States,Orlando,Exploria Stadium,"25,000",Football
+146,North America,United States,Miami,Riccardo Silva Stadium,"20,000","American football, football"
+146,North America,United States,Tampa,AMALIE Arena,"19,000",Ice hockey
+146,North America,United States,Sunrise,FLA Live Arena,"19,000",Ice hockey
+146,North America,United States,Miami,FTX Arena,"19,000",Basketball
+146,North America,United States,Orlando,Amway Center,"18,000","Basketball, ice hockey, indoor American football"
+146,North America,United States,Fort Lauderdale,DRV PNK Stadium,"18,000",Football
+146,North America,United States,Jacksonville,Hodges Stadium,"12,000",Football
+146,North America,United States,Jacksonville,121 Financial Ballpark,"11,000",Baseball
+146,North America,United States,Tampa,George M. Steinbrenner Field,"11,000",Baseball
+146,North America,United States,Gainesville,Exactech Arena,"10,000","Basketball, gymnastics, volleyball"
+146,North America,United States,Fort Myers,jetBlue Park,"10,000",Baseball
+146,North America,United States,Tampa,Yuengling Center,"10,000","Basketball, volleyball"
+146,North America,United States,Atlanta,Mercedes-Benz Stadium,"71,000","American football, football"
+146,North America,United States,Atlanta,Bobby Dodd Stadium,"55,000",American football
+146,North America,United States,Cumberland,Truist Park,"41,000",Baseball
+146,North America,United States,Atlanta,State Farm Arena,"16,000",Basketball
+146,North America,United States,Powder Springs,Walter H. Cantrell Stadium,"12,000","American football, football"
+146,North America,United States,Athens,Stegeman Coliseum,"10,000","Basketball, gymnastics"
+138,North America,Guatemala,Guatemala City,Estadio Nacional Doroteo Guamuch Flores,"26,000",Football
+138,North America,Guatemala,Guatemala City,Estadio Cementos Progreso,"14,000",Football
+138,North America,Guatemala,Mazatenango,Estadio Carlos Salazar Hijo,"10,000",Football
+146,North America,United States,Wailuku,War Memorial Football Stadium,"23,000",American football
+139,North America,Honduras,San Pedro Sula,Estadio Olímpico Metropolitano,"37,000",Football
+139,North America,Honduras,Tegucigalpa,Estadio Tiburcio Carías Andino,"35,000",Football
+139,North America,Honduras,San Pedro Sula,Estadio General Francisco Morazán,"18,000",Football
+146,North America,United States,Boise,Albertsons Stadium,"36,000",American football
+146,North America,United States,Chicago,Soldier Field,"61,000","American football, football"
+146,North America,United States,Champaign,Memorial Stadium,"60,000",American football
+146,North America,United States,Chicago,Wrigley Field,"41,000",Baseball
+146,North America,United States,Chicago,Guaranteed Rate Field,"40,000",Baseball
+146,North America,United States,DeKalb,Huskie Stadium,"24,000",American football
+146,North America,United States,Bridgeview,SeatGeek Stadium,"20,000",Football
+146,North America,United States,Chicago,United Center,"20,000","Basketball, ice hockey"
+146,North America,United States,Rosemont,Allstate Arena,"16,000",Ice hockey
+146,North America,United States,Joliet,Joliet Memorial Stadium,"10,000","American football, football"
+146,North America,United States,Normal,Redbird Arena,"10,000","Basketball, volleyball"
+146,North America,United States,South Bend,Notre Dame Stadium,"77,000",American football
+146,North America,United States,Indianapolis,Lucas Oil Stadium,"67,000",American football
+146,North America,United States,West Lafayette,Ross-Ade Stadium,"57,000",American football
+146,North America,United States,Bloomington,Memorial Stadium,"52,000",American football
+146,North America,United States,Indianapolis,Gainbridge Fieldhouse,"17,000",Basketball
+146,North America,United States,Bloomington,Simon Skjodt Assembly Hall,"17,000",Basketball
+146,North America,United States,West Lafayette,Mackey Arena,"14,000",Basketball
+146,North America,United States,Indianapolis,Victory Field,"14,000",Baseball
+146,North America,United States,Terre Haute,Memorial Stadium,"12,000","American football, football"
+146,North America,United States,Iowa City,Kinnick Stadium,"69,000",American football
+146,North America,United States,Ames,Jack Trice Stadium,"61,000",American football
+146,North America,United States,Cedar Falls,UNI-Dome,"16,000",American football
+146,North America,United States,Iowa City,Carver-Hawkeye Arena,"15,000","Basketball, volleyball"
+146,North America,United States,Cedar Rapids,Kingston Stadium,"15,000","American football, football"
+146,North America,United States,Des Moines,Drake Stadium,"14,000","American football, football"
+146,North America,United States,Des Moines,Principal Park,"11,000",Baseball
+140,North America,Jamaica,Kingston,National Stadium,"35,000",Football
+140,North America,Jamaica,Kingston,Sabina Park,"15,000",Cricket
+146,North America,United States,Manhattan,Bill Snyder Family Stadium,"50,000",American football
+146,North America,United States,Lawrence,David Booth Kansas Memorial Stadium,"47,000",American football
+146,North America,United States,Kansas City,Childrenâ€™s Mercy Park,"18,000",Football
+146,North America,United States,Lawrence,Allen Fieldhouse,"16,000",Basketball
+146,North America,United States,Wichita,Charles Koch Arena,"10,000","Basketball, volleyball"
+146,North America,United States,Louisville,Cardinal Stadium,"61,000",American football
+146,North America,United States,Lexington,Kroger Field,"61,000",American football
+146,North America,United States,Bowling Green,Houchens Industries-LT Smith Stadium,"22,000",American football
+146,North America,United States,Lexington,Rupp Arena,"20,000",Basketball
+146,North America,United States,Louisville,Lynn Family Stadium,"15,000",Football
+146,North America,United States,Baton Rouge,Tiger Stadium,"102,000",American football
+146,North America,United States,New Orleans,Caesars Superdome,"73,000",American football
+146,North America,United States,Shreveport,Independence Stadium,"49,000",American football
+146,North America,United States,New Orleans,Yulman Stadium,"30,000",American football
+146,North America,United States,Ruston,Joe Aillet Stadium,"28,000",American football
+146,North America,United States,New Orleans,Tad Gormley Stadium,"26,000","American football, football"
+146,North America,United States,New Orleans,Smoothie King Center,"16,000",Basketball
+146,North America,United States,Baton Rouge,Pete Maravich Assembly Center,"13,000","Basketball, gymnastics, volleyball"
+146,North America,United States,Baltimore,M&T Bank Stadium,"70,000",American football
+146,North America,United States,Landover,FedExField,"67,000",American football
+146,North America,United States,College Park,SECU Stadium,"51,000","American football, field lacrosse"
+146,North America,United States,Baltimore,Oriole Park at Camden Yards,"45,000",Baseball
+146,North America,United States,College Park,XFINITY Center,"17,000",Basketball
+146,North America,United States,Baltimore,Royal Farms Arena,"11,000",Multi-purpose
+146,North America,United States,Foxborough,Gillette Stadium,"65,000","American football, football"
+146,North America,United States,Chestnut Hill,Alumni Stadium,"44,000",American football
+146,North America,United States,Boston,Fenway Park,"37,000",Baseball
+146,North America,United States,Boston,Harvard Stadium,"30,000",American football
+146,North America,United States,Boston,TD Garden,"18,000","Basketball, ice hockey"
+146,North America,United States,Ann Arbor,Michigan Stadium,"107,000","American football, field lacrosse"
+146,North America,United States,East Lansing,Spartan Stadium,"75,000",American football
+146,North America,United States,Detroit,Ford Field,"65,000",American football
+146,North America,United States,Detroit,Comerica Park,"41,000",Baseball
+146,North America,United States,Mount Pleasant,Kelly/Shorts Stadium,"30,000",American football
+146,North America,United States,Detroit,Little Caesars Arena,"20,000","Basketball, ice hockey"
+146,North America,United States,East Lansing,Jack Breslin Student Events Center,"16,000",Basketball
+146,North America,United States,Flint,Atwood Stadium,"11,000","American football, field lacrosse, football"
+146,North America,United States,Grand Rapids,Van Andel Arena,"11,000",Ice hockey
+146,North America,United States,Minneapolis,US Bank Stadium,"66,000",American football
+146,North America,United States,Minneapolis,Huntington Bank Stadium,"50,000",American football
+146,North America,United States,Minneapolis,Target Field,"38,000",Baseball
+146,North America,United States,St. Paul,Allianz Field,"19,000",Football
+146,North America,United States,Minneapolis,Target Center,"18,000",Basketball
+146,North America,United States,St. Paul,Xcel Energy Center,"17,000",Ice hockey
+146,North America,United States,Minneapolis,Williams Arena,"14,000",Basketball
+146,North America,United States,Minneapolis,3M Arena at Mariucci,"10,000",Ice hockey
+146,North America,United States,University,Vaught-Hemingway Stadium,"64,000",American football
+146,North America,United States,Hattiesburg,MM Roberts Stadium,"36,000",American football
+146,North America,United States,Mississippi State,Humphrey Coliseum,"10,000",Basketball
+146,North America,United States,Kansas City,Arrowhead Stadium,"76,000",American football
+146,North America,United States,St. Louis,Busch Stadium,"45,000",Baseball
+146,North America,United States,Kansas City,Kauffman Stadium,"37,000",Baseball
+146,North America,United States,St. Louis,CITYPARK,"22,000",Football
+146,North America,United States,St. Louis,Enterprise Center,"18,000",Ice hockey
+146,North America,United States,Cape Girardeau,Houck Stadium,"11,000","American football, football"
+146,North America,United States,Missoula,Washington-Grizzly Stadium,"25,000",American football
+146,North America,United States,Bozeman,Bobcat Stadium,"17,000",American football
+146,North America,United States,Lincoln,Memorial Stadium,"85,000",American football
+146,North America,United States,Omaha,TD Ameritrade Park Omaha,"24,000",Baseball
+146,North America,United States,Omaha,CHI Health Center Arena,"18,000",Basketball
+146,North America,United States,Lincoln,Pinnacle Bank Arena,"15,000",Basketball
+146,North America,United States,Paradise,Allegiant Stadium,"65,000",American football
+146,North America,United States,Whitney,Sam Boyd Stadium,"36,000",American football
+146,North America,United States,Paradise,T-Mobile Arena,"17,000",Ice hockey
+146,North America,United States,East Rutherford,MetLife Stadium,"82,000",American football
+146,North America,United States,Piscataway,SHI Stadium,"52,000",American football
+146,North America,United States,Princeton,Princeton University Stadium,"27,000",American football
+146,North America,United States,Harrison,Red Bull Arena,"25,000",Football
+146,North America,United States,Newark,Prudential Center,"18,000","Basketball, ice hockey"
+146,North America,United States,Albuquerque,Dreamstyle Arena,"15,000",Basketball
+146,North America,United States,Las Cruces,Field of Dreams,"15,000",American football
+146,North America,United States,Las Cruces,Pan American Center,"12,000","Basketball, volleyball"
+146,North America,United States,Orchard Park,Highmark Blue Cross Blue Shield Stadium,"71,000",American football
+146,North America,United States,Syracuse,JMA Wireless Dome,"49,000","American football, basketball, field lacrosse"
+146,North America,United States,New York,Yankee Stadium,"47,000","Baseball, football"
+146,North America,United States,New York,Citi Field,"41,000",Baseball
+146,North America,United States,West Point,Michie Stadium,"38,000",American football
+146,North America,United States,Amherst,UB Stadium,"25,000","American football, football"
+146,North America,United States,New York,Arthur Ashe Stadium,"23,000",Tennis
+146,North America,United States,Buffalo,KeyBank Center,"19,000","Box lacrosse, ice hockey"
+146,North America,United States,New York,Madison Square Garden,"19,000","Basketball, ice hockey"
+146,North America,United States,New York,Barclays Center,"17,000",Basketball
+146,North America,United States,Rochester,Frontier Field,"13,000",Baseball
+146,North America,United States,Rochester,Marina Auto Stadium,"13,000","Field lacrosse, football"
+146,North America,United States,Brockport,Eunice Kennedy Shriver Stadium,"11,000",Multi-purpose
+146,North America,United States,Hempstead,James M. Shuart Stadium,"11,000",Field lacrosse
+146,North America,United States,Syracuse,NBT Bank Stadium,"11,000",Baseball
+146,North America,United States,Hamilton,Andy Kerr Stadium,"10,000","American football, field lacrosse"
+146,North America,United States,New York,Louis Armstrong Stadium,"10,000",Tennis
+146,North America,United States,Uniondale,Mitchel Athletic Complex Stadium,"10,000","American football, football"
+141,North America,Nicaragua,Managua,Estadio Nacional de fútbol de Nicaragua,"20,000",Football
+141,North America,Nicaragua,Managua,Estadio Nacional Dennis Martínez,"15,000",Baseball
+146,North America,United States,Charlotte,Bank of America Stadium,"75,000","American football, football"
+146,North America,United States,Raleigh,Carter-Finley Stadium,"56,000",American football
+146,North America,United States,Chapel Hill,Kenan Memorial Stadium,"50,000",American football
+146,North America,United States,Durham,Wallace Wade Stadium,"40,000",American football
+146,North America,United States,Chapel Hill,Dean E. Smith Student Activities Center,"21,000",Basketball
+146,North America,United States,Greensboro,Truist Stadium,"21,000",American football
+146,North America,United States,Charlotte,Spectrum Center,"19,000",Basketball
+146,North America,United States,Charlotte,Jerry Richardson Stadium,"15,000",American football
+146,North America,United States,Winston-Salem,Lawrence Joel Veterans Memorial Coliseum,"14,000",Basketball
+146,North America,United States,Charlotte,American Legion Memorial Stadium,"10,000",Football
+146,North America,United States,Durham,O’Kelly-Riddick Stadium,"10,000",American football
+146,North America,United States,Cary,Sahlen’s Stadium,"10,000","Football, ultimate"
+146,North America,United States,Fargo,Fargodome,"18,000",American football
+146,North America,United States,Grand Forks,Ralph Engelstad Arena,"11,000",Ice hockey
+146,North America,United States,Columbus,Ohio Stadium,"102,000",American football
+146,North America,United States,Cleveland,FirstEnergy Stadium,"67,000",American football
+146,North America,United States,Cincinnati,Paycor Stadium,"65,000",American football
+146,North America,United States,Cincinnati,Great American Ball Park,"43,000",Baseball
+146,North America,United States,Cincinnati,Nippert Stadium,"40,000",American football
+146,North America,United States,Cleveland,Progressive Field,"34,000",Baseball
+146,North America,United States,Toledo,Glass Bowl Stadium,"26,000",American football
+146,North America,United States,Cincinnati,TQL Stadium,"26,000",Football
+146,North America,United States,Kent,Dix Stadium,"25,000","American football, field lacrosse, football"
+146,North America,United States,Bowling Green,Doyt L. Perry Stadium,"24,000",American football
+146,North America,United States,Oxford,Fred C. Yager Stadium,"24,000",American football
+146,North America,United States,Youngstown,Arnold D. Stambaugh Stadium,"20,000",American football
+146,North America,United States,Columbus,Lower.com Field,"20,000",Football
+146,North America,United States,Columbus,Historic Crew Stadium,"19,000",Football
+146,North America,United States,Cleveland,Rocket Mortgage FieldHouse,"19,000","Basketball, ice hockey"
+146,North America,United States,Columbus,Nationwide Arena,"18,000",Ice hockey
+146,North America,United States,Columbus,Value City Arena,"18,000","Basketball, ice hockey"
+146,North America,United States,Parma,Byers Field,"12,000","American football, football"
+146,North America,United States,Mason,Center Court,"11,000",Tennis
+146,North America,United States,Dayton,Welcome Stadium,"11,000",American football
+146,North America,United States,Cincinnati,Cintas Center,"10,000","Basketball, volleyball"
+146,North America,United States,Columbus,Jesse Owens Memorial Stadium,"10,000","Field lacrosse, football"
+146,North America,United States,Norman,Gaylord Family – Oklahoma Memorial Stadium,"80,000",American football
+146,North America,United States,Stillwater,Boone Pickens Stadium,"55,000",American football
+146,North America,United States,Tulsa,HA Chapman Stadium,"30,000",American football
+146,North America,United States,Norman,Lloyd Noble Center,"11,000",Basketball
+146,North America,United States,Tulsa,Mabee Center,"11,000",Basketball
+146,North America,United States,Eugene,Autzen Stadium,"54,000",American football
+146,North America,United States,Portland,Providence Park,"25,000",Football
+146,North America,United States,Portland,Moda Center,"19,000","Basketball, ice hockey"
+146,North America,United States,Pendleton,Pendleton Round-Up Stadium,"17,000",Rodeo
+146,North America,United States,Portland,Veterans Memorial Coliseum,"12,000",Ice hockey
+142,North America,Panama,Panama City,Estadio Olímpico Rommel Fernández Gutiérrez,"32,000",Football
+146,North America,United States,University Park,Beaver Stadium,"106,000",American football
+146,North America,United States,Philadelphia,Lincoln Financial Field,"69,000",American football
+146,North America,United States,Pittsburgh,Acrisure Stadium,"68,000",American football
+146,North America,United States,Philadelphia,Franklin Field,"52,000","American football, field lacrosse"
+146,North America,United States,Philadelphia,Citizens Bank Park,"42,000",Baseball
+146,North America,United States,Pittsburgh,PNC Park,"38,000",Baseball
+146,North America,United States,Philadelphia,Wells Fargo Center,"20,000","Basketball, box lacrosse, ice hockey"
+146,North America,United States,Pittsburgh,PPG Paints Arena,"18,000",Ice hockey
+146,North America,United States,Philadelphia,Subaru Park,"18,000",Football
+146,North America,United States,Bethlehem,Bethlehem Area School District Stadium,"16,000",Multi-purpose
+146,North America,United States,Hershey,Hersheypark Stadium,"15,000","American football, football"
+146,North America,United States,Bryn Mawr,Villanova Stadium,"12,000","American football,Â field hockey, field lacrosse"
+146,North America,United States,Erie,Erie Veterans Memorial Stadium,"10,000","American football, football"
+146,North America,United States,Hershey,Giant Center,"10,000",Ice hockey
+146,North America,United States,Altoona,Mansion Park Stadium,"10,000","American football, football"
+146,North America,United States,Mayagüez,Estadio Isidoro García,"10,000",Baseball
+146,North America,United States,Providence,Amica Mutual Pavilion,"12,000","Basketball, ice hockey"
+146,North America,United States,Clemson,Memorial Stadium,"81,000",American football
+146,North America,United States,Orangeburg,Oliver C. Dawson Stadium,"22,000","American football, football"
+146,North America,United States,Columbia,Colonial Life Arena,"18,000",Basketball
+146,North America,United States,Columbia,Charlie W. Johnson Stadium,"11,000",American football
+146,North America,United States,Summerville,Memorial' Stadium,"10,000",American football
+146,North America,United States,Brookings,Dana J. Dykhouse Stadium,"19,000",American football
+146,North America,United States,Sioux Falls,Howard Wood Field,"10,000","American football, football"
+143,North America,St. Vincent and the Grenadines,Arnos Vale,Arnos Vale Stadium,"18,000","Cricket, football"
+146,North America,United States,Knoxville,Neyland Stadium,"102,000",American football
+146,North America,United States,Nashville,Nissan Stadium,"69,000",American football
+146,North America,United States,Memphis,Simmons Bank Liberty Stadium,"58,000",American football
+146,North America,United States,Nashville,Vanderbilt Stadium,"40,000",American football
+146,North America,United States,Nashville,GEODIS Park,"30,000",Football
+146,North America,United States,Murfreesboro,"Johnny ""Red"" Floyd Stadium","30,000",American football
+146,North America,United States,Knoxville,Thompson-Boling Arena,"21,000","Basketball, volleyball"
+146,North America,United States,Chattanooga,W. Max Finley Stadium,"20,000","American football, football"
+146,North America,United States,Memphis,FedExForum,"18,000",Basketball
+146,North America,United States,Nashville,Bridgestone Arena,"17,000",Ice hockey
+146,North America,United States,Nashville,Memorial Gymnasium,"14,000",Basketball
+146,North America,United States,College Station,Kyle Field,"102,000",American football
+146,North America,United States,Austin,Darrell K. Royal-Texas Memorial Stadium,"100,000",American football
+146,North America,United States,Dallas,Cotton Bowl Stadium,"92,000",American football
+146,North America,United States,Arlington,AT&T Stadium,"80,000",American football
+146,North America,United States,Houston,NRG Stadium,"72,000",American football
+146,North America,United States,San Antonio,Alamodome,"64,000",American football
+146,North America,United States,Lubbock,Jones AT&T Stadium,"60,000",American football
+146,North America,United States,El Paso,Sun Bowl Stadium,"51,000",American football
+146,North America,United States,Fort Worth,Amon G. Carter Stadium,"47,000",American football
+146,North America,United States,Waco,McLane Stadium,"45,000",American football
+146,North America,United States,Houston,Minute Maid Park,"41,000",Baseball
+146,North America,United States,Houston,TDECU Stadium,"40,000",American football
+146,North America,United States,Denton,Apogee Stadium,"30,000",American football
+146,North America,United States,San Marcos,Bobcat Stadium,"30,000",American football
+146,North America,United States,Houston,PNC Stadium,"22,000","American football, football"
+146,North America,United States,Austin,Mike A. Myers Stadium,"20,000",Football
+146,North America,United States,Austin,Q2 Stadium,"20,000",Football
+146,North America,United States,Frisco,Toyota Stadium,"20,000","American football, football"
+146,North America,United States,Dallas,American Airlines Center,"19,000","Basketball, ice hockey"
+146,North America,United States,San Antonio,Alamo Stadium,"18,000","American football, football"
+146,North America,United States,San Antonio,AT&T Center,"18,000",Basketball
+146,North America,United States,Corpus Christi,Buccaneer Stadium,"18,000",American football
+146,North America,United States,Houston,Toyota Center,"18,000",Basketball
+146,North America,United States,Baytown,Stallworth Stadium,"16,000","American football, football"
+146,North America,United States,Kingsville,Javelina Stadium,"15,000",American football
+146,North America,United States,McAllen,McAllen Veterans Memorial Stadium,"13,000","American football, football"
+146,North America,United States,Carrollton,Tommy Standridge Stadium,"13,000","American football, football"
+146,North America,United States,San Benito,Bobby Morrow Stadium,"12,000","American football, football"
+146,North America,United States,Austin,Burger Stadium,"12,000","American football, football"
+146,North America,United States,Denton,CH Collins Stadium,"12,000","American football, football"
+146,North America,United States,Houston,Jones-Cowart Stadium,"12,000",American football
+146,North America,United States,Irving,Joy and Ralph Ellis Stadium,"12,000","American football, football"
+146,North America,United States,Bedford,Pennington Field,"12,000","American football, football"
+146,North America,United States,College Station,Reed Arena,"12,000","Basketball, volleyball"
+146,North America,United States,Pasadena,Veterans Memorial Stadium,"12,000","American football, football"
+146,North America,United States,Cypress,Cy-Fair FCU Stadium,"11,000","American football, football"
+146,North America,United States,El Paso,Don Haskins Center,"11,000",Basketball
+146,North America,United States,Austin,Kelly Reeves Stadium,"11,000",American football
+146,North America,United States,Commerce,Memorial Stadium,"11,000",American football
+146,North America,United States,San Antonio,Dub Farris Stadium,"10,000","American football, football"
+146,North America,United States,Dallas,Forester Stadium,"10,000","American football, football"
+146,North America,United States,San Antonio,Jerry Comalander Stadium,"10,000","American football, football"
+146,North America,United States,Harlingen,J. Lewis Boggus Stadium,"10,000","American football, football"
+146,North America,United States,Waco,Paul J. Meyer Arena,"10,000","Basketball, volleyball"
+146,North America,United States,Brownsville,Sams Memorial Stadium,"10,000","American football, football"
+146,North America,United States,New Braunfels,Unicorn Stadium,"10,000","American football, football"
+146,North America,United States,Waller,Waller ISD Stadium,"10,000",American football
+144,North America,Trinidad and Tobago,Port-of-Spain,Hasely Crawford Stadium,"23,000",Football
+144,North America,Trinidad and Tobago,Port-of-Spain,Queen’s Park Oval,"20,000",Cricket
+144,North America,Trinidad and Tobago,Couva,Ato Boldon Stadium,"10,000",Football
+144,North America,Trinidad and Tobago,Arima,Larry Gomes Stadium,"10,000",Football
+145,North America,United Mexican States,Mexico City,Estadio Azteca,"87,000",Football
+145,North America,United Mexican States,Mexico City,Estadio Olímpico Universitario,"69,000","American football, football"
+145,North America,United Mexican States,Guadalajara,Estadio Jalisco,"55,000",Football
+145,North America,United Mexican States,Guadalupe,Estadio BBVA,"53,000",Football
+145,North America,United Mexican States,Puebla,Estadio Cuauhtémoc,"51,000",Football
+145,North America,United Mexican States,Zapopan,Estadio Akron,"49,000",Football
+145,North America,United Mexican States,San Nicolás,Estadio Universitario,"41,000",Football
+145,North America,United Mexican States,Mexico City,Plaza México,"41,000",Bullfighting
+145,North America,United Mexican States,Morelia,Estadio José María Morelos y Pavón,"35,000",Football
+145,North America,United Mexican States,Querétaro,Estadio Corregidora de Querétaro,"33,000",Football
+145,North America,United Mexican States,León,Estadio León,"31,000",Football
+145,North America,United Mexican States,Torreón,Estadio Corona,"30,000",Football
+145,North America,United Mexican States,Toluca,Estadio Nemesio Díez,"30,000",Football
+145,North America,United Mexican States,Tuxtla Gutiérrez,Estadio Víctor Manuel Reyna,"29,000",Football
+145,North America,United Mexican States,Pachuca,Estadio Hidalgo,"27,000",Football
+145,North America,United Mexican States,Zacatepec,Estadio Agustín “Coruco” Díaz,"24,000",Football
+145,North America,United Mexican States,Aguascalientes,Estadio Victoria,"23,000",Football
+145,North America,United Mexican States,Mexico City,Arena Ciudad de México,"22,000",Multi-purpose
+145,North America,United Mexican States,Chihuahua,Estadio Olímpico Universitario,"22,000","American football, football"
+145,North America,United Mexican States,Monterrey,Estadio de béisbol Monterrey,"21,000",Baseball
+145,North America,United Mexican States,Tijuana,Plaza Monumental de Tijuana,"21,000",Bullfighting
+145,North America,United Mexican States,Mexico City,Estadio Alfredo Harp Helú,"20,000",Baseball
+145,North America,United Mexican States,Culiacán Rosales,Estadio Banorte,"20,000",Football
+145,North America,United Mexican States,Zacatecas,Estadio Carlos Vega Villalba,"20,000",Football
+145,North America,United Mexican States,Culiacán Rosales,Estadio de los Tomateros de Culiacán,"20,000",Baseball
+145,North America,United Mexican States,Mexicali,Estadio Farmacias Santa Mónica,"19,000",Baseball
+145,North America,United Mexican States,Puebla,Estadio Universitario BUAP,"19,000","American football, football"
+145,North America,United Mexican States,Zapopan,Estadio 3 de Marzo,"18,000",Football
+145,North America,United Mexican States,Durango,Estadio Francisco Zarco,"18,000",Football
+145,North America,United Mexican States,Hermosillo,Estadio Héroe de Nacozari,"18,000",Football
+145,North America,United Mexican States,Cancún,Estadio Olímpico Andrés Quintana Roo,"17,000",Football
+145,North America,United Mexican States,Morelia,Estadio Olímpico Venustiano Carranza,"17,000",Football
+145,North America,United Mexican States,Saltillo,Estadio Francisco I. Madero,"16,000",Baseball
+145,North America,United Mexican States,San Nicolás,Estadio Gaspar Mass,"16,000",American football
+145,North America,United Mexican States,Hermosillo,Estadio Sonora,"16,000",Baseball
+145,North America,United Mexican States,Mazatlán,Estadio Teodoro Mariscal,"16,000",Baseball
+145,North America,United Mexican States,Ciudad Obregón,Estadio Yaquis,"16,000",Baseball
+145,North America,United Mexican States,Aguascalientes,Plaza de toros Monumental de Aguascalientes,"16,000",Bullfighting
+145,North America,United Mexican States,Guadalajara,Plaza de toros Nuevo Progreso,"16,000",Bullfighting
+145,North America,United Mexican States,Mérida,Estadio Carlos Iturralde Rivero,"15,000",Football
+145,North America,United Mexican States,Tlaxcala,Estadio Tlahuicole,"15,000",Football
+145,North America,United Mexican States,Oaxaca,Estadio Tecnológico de Oaxaca,"14,000",Football
+145,North America,United Mexican States,Mérida,Parque Kukulcán Alamo,"14,000",Baseball
+145,North America,United Mexican States,La Piedad,Estadio Juan N. López,"13,000",Football
+145,North America,United Mexican States,Mexico City,Estadio Wilfrido Massieu,"13,000",American football
+145,North America,United Mexican States,Tepic,Estadio Nicolás Álvarez Ortega,"12,000",Football
+145,North America,United Mexican States,Los Mochis,Estadio Centenario,"11,000",Football
+145,North America,United Mexican States,Mexicali,Plaza de toros Calafia,"11,000",Bullfighting
+145,North America,United Mexican States,Monterrey,Estadio Borregos,"10,000",American football
+145,North America,United Mexican States,Ciudad Victoria,Estadio Marte Rodolfo Gómez Segura,"10,000",Football
+146,North America,United States,Provo,LaVell Edwards Stadium,"63,000",American football
+146,North America,United States,Salt Lake,Rice-Eccles Stadium,"45,000",American football
+146,North America,United States,Logan,Maverik Stadium,"25,000",American football
+146,North America,United States,Sandy,America First Field,"20,000",Football
+146,North America,United States,Provo,J. Willard Marriott Center,"18,000",Basketball
+146,North America,United States,Salt Lake,vivint arena,"18,000",Basketball
+146,North America,United States,Logan,Dee Glen Smith Spectrum,"10,000","Basketball, gymnastics, volleyball"
+146,North America,United States,Blacksburg,Lane Stadium,"65,000",American football
+146,North America,United States,Norfolk,William “Dick” Price Football Stadium,"30,000",American football
+146,North America,United States,Harrisonburg,Bridgeforth Stadium,"24,000",American football
+146,North America,United States,Richmond,City Stadium,"22,000",Football
+146,North America,United States,Norfolk,SB Ballard Stadium,"22,000",American football
+146,North America,United States,Charlottesville,John Paul Jones Arena,"14,000",Basketball
+146,North America,United States,Hampton,Armstrong Stadium,"12,000","American football,Â field lacrosse"
+146,North America,United States,Norfolk,Harbor Park,"11,000",Baseball
+146,North America,United States,Blacksburg,Cassell Coliseum,"10,000","Basketball, volleyball"
+146,North America,United States,Richmond,Hovey Field,"10,000",American football
+146,North America,United States,Seattle,Husky Stadium,"70,000",American football
+146,North America,United States,Seattle,Lumen Field,"68,000","American football, football"
+146,North America,United States,Seattle,T-Mobile Park,"47,000",Baseball
+146,North America,United States,Pullman,Martin Stadium,"32,000",American football
+146,North America,United States,Seattle,Memorial Stadium,"12,000","American football, football, ultimate"
+146,North America,United States,Pullman,Beasley Coliseum,"11,000",Basketball
+146,North America,United States,Morgantown,Milan Puskar Stadium,"60,000",American football
+146,North America,United States,Huntington,Joan C. Edwards Stadium,"38,000",American football
+146,North America,United States,Charleston,University of Charleston Stadium,"18,000",American football
+146,North America,United States,Wheeling,Wheeling Island Stadium,"12,000","American football, football"
+146,North America,United States,Green Bay,Lambeau Field,"81,000",American football
+146,North America,United States,Madison,Camp Randall Stadium,"80,000",American football
+146,North America,United States,Milwaukee,American Family Field,"41,000",Baseball
+146,North America,United States,Milwaukee,Fiserv Forum,"17,000",Basketball
+146,North America,United States,Madison,Kohl Center,"17,000","Basketball, dodgeball, ice hockey"
+146,North America,United States,Laramie,War Memorial Stadium,"29,000",American football
+146,North America,United States,Laramie,Arena-Auditorium,"11,000",Basketball
+147,South America,Argentine Republic,Avellaneda,Estadio Presidente Juan Domingo Perón,"61,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Alberto J. Armando,"59,000",Football
+147,South America,Argentine Republic,Córdoba,Estadio Mario Alberto Kempes,"57,000",Football
+147,South America,Argentine Republic,La Plata,Estadio Único Diego Armando Maradona,"53,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio José Amalfitani,"49,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Tomás Adolfo Ducó,"48,000",Football
+147,South America,Argentine Republic,Lanús,Estadio Ciudad de Lanús – Néstor Díaz Pérez,"47,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Pedro Bidegain,"47,000",Football
+147,South America,Argentine Republic,Rosario,Estadio Marcelo A. Bielsa,"42,000",Football
+147,South America,Argentine Republic,Rosario,Estadio Gigante de Arroyito,"41,000",Football
+147,South America,Argentine Republic,Santa Fe,Estadio Brigadier General Estanislao López,"40,000",Football
+147,South America,Argentine Republic,Mendoza,Estadio Malvinas Argentinas,"40,000",Football
+147,South America,Argentine Republic,Lomas de Zamora,Estadio Eduardo Gallardón,"36,000",Football
+147,South America,Argentine Republic,La Rioja,Estadio Carlos Augusto Mercado Luna,"35,000",Football
+147,South America,Argentine Republic,Mar del Plata,Estadio José María Minella,"35,000",Football
+147,South America,Argentine Republic,Tucumán,Estadio Monumental José Fierro,"35,000",Football
+147,South America,Argentine Republic,Morón,Estadio Nuevo Francisco Urbano,"32,000",Football
+147,South America,Argentine Republic,Jesús María,Anfiteatro José Hernandez,"31,000",Rodeo
+147,South America,Argentine Republic,Quilmes,Estadio Centenario Ciudad de Quilmes,"30,000",Football
+147,South America,Argentine Republic,La Plata,Estadio Jorge Luis Hirschi,"30,000",Football
+147,South America,Argentine Republic,Córdoba,Estadio Julio César Villagra,"30,000",Football
+147,South America,Argentine Republic,Santiago del Estero,Estadio Único Madre de Ciudades,"30,000",Football
+147,South America,Argentine Republic,Vicente López,Estadio Ciudad de Vicente López,"28,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Nueva Chicago,"28,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Autocrédito Diego Armando Maradona,"26,000",Football
+147,South America,Argentine Republic,Victoria,Estadio José Dellagiovanna,"26,000",Football
+147,South America,Argentine Republic,Córdoba,Estadio Juan Domingo Perón,"26,000",Football
+147,South America,Argentine Republic,Resistencia,Estadio Centenario,"25,000",Football
+147,South America,Argentine Republic,San Juan,Estadio San Juan del Bicentenario,"25,000",Football
+147,South America,Argentine Republic,Formosa,Estadio Don Carlos Antonio Romero,"23,000",Football
+147,South America,Argentine Republic,Paraná,Estadio Presbítero Bartolomé Grella,"23,000",Football
+147,South America,Argentine Republic,Bahía Blanca,Estadio Roberto Natalio Carminatti,"18,000",Football
+147,South America,Argentine Republic,Caseros,Estadio Ciudad de Caseros,"16,000",Football
+147,South America,Argentine Republic,Isidro Casanova,Estadio Fragata Presidente Sarmiento,"16,000",Football
+147,South America,Argentine Republic,Sarandí,Estadio Julio Humberto Grondona,"16,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Don León Kolbowski,"14,000",Football
+147,South America,Argentine Republic,Temperley,Estadio Alfredo Martín Beranger,"13,000",Football
+147,South America,Argentine Republic,Córdoba,Estadio Francisco Cabasés,"13,000",Football
+147,South America,Argentine Republic,José Ingenieros,Estadio 3 de Febrero,"12,000",Football
+147,South America,Argentine Republic,Buenos Aires,Estadio Islas Malvinas,"12,000",Football
+147,South America,Argentine Republic,Florencio Varela,Estadio Norberto “Tito” Tomaghello,"10,000",Football
+148,South America,Bolivia,La Paz,Estadio Hernando Siles,"41,000",Football
+148,South America,Bolivia,Santa Cruz,Estadio Ramón “Tahuichi” Aguilera Costas,"38,000",Football
+148,South America,Bolivia,Oruro,Estadio Jesús Bermúdez,"33,000",Football
+148,South America,Bolivia,Cochabamba,Estadio Sudamericano Félix Capriles,"32,000",Football
+148,South America,Bolivia,Potosí,Estadio Víctor Agustín Ugarte,"32,000",Football
+148,South America,Bolivia,Villa Tunari,Estadio Olímpico Bicentenario de Villa Tunari,"25,000",Football
+148,South America,Bolivia,Yacuiba,Estadio Ovidio Messa Soruco,"25,000",Football
+148,South America,Bolivia,Cobija,Estadio Roberto Jordán Cuellar,"24,000",Football
+148,South America,Bolivia,El Alto,Estadio de fútbol Municipal El Alto,"22,000",Football
+148,South America,Bolivia,Santa Cruz,Estadio Edgar Peña Gutierrez,"17,000",Football
+148,South America,Bolivia,Tarija,Estadio IV Centenario,"15,000",Football
+148,South America,Bolivia,La Paz,Estadio Rafael Mendoza Castellón,"14,000",Football
+148,South America,Bolivia,Montero,Estadio Gilberto Parada,"13,000",Football
+149,South America,Brazil,Rio de Janeiro,Estádio Jornalista Mário Filho,"78,000",Football
+149,South America,Brazil,Brasília,Arena BRB,"72,000",Football
+149,South America,Brazil,São Paulo,Estádio Cícero Pompeu de Toledo,"66,000",Football
+149,South America,Brazil,Fortaleza,Estádio Governador Plácido Castelo,"63,000",Football
+149,South America,Brazil,Belo Horizonte,Estádio Governador Magalhães Pinto,"61,000",Football
+149,South America,Brazil,Porto Alegre,Arena do Grêmio,"60,000",Football
+149,South America,Brazil,Porto Alegre,Estádio José Pinheiro Borda,"50,000",Football
+149,South America,Brazil,São Paulo,Neo Química Arena,"49,000",Football
+149,South America,Brazil,Salvador,Itaipava Arena Fonte Nova,"48,000",Football
+149,South America,Brazil,São Lourenço da Mata,Estádio Governador Carlos Wilson Campos,"46,000",Football
+149,South America,Brazil,Rio de Janeiro,Estádio Olímpico Nilton Santos,"46,000",Football
+149,South America,Brazil,Belém,Estádio Estadual Jornalista Edgar Augusto Proença,"45,000",Football
+149,South America,Brazil,Manaus,Arena da Amazônia – Vivaldo Lima,"44,000",Football
+149,South America,Brazil,Cuiabá,Arena Pantanal,"44,000",Football
+149,South America,Brazil,São Paulo,Allianz Parque,"43,000",Football
+149,South America,Brazil,Curitiba,Estádio Joaquim Américo Guimarães,"42,000",Football
+149,South America,Brazil,São Luís,Estádio Governador João Castelo,"40,000",Football
+149,South America,Brazil,Natal,Arena das Dunas,"31,000",Football
+149,South America,Brazil,Ribeirão Preto,Arena Eurobike,"29,000",Football
+149,South America,Brazil,Campinas,Estádio Brinco de Ouro da Princesa,"29,000",Football
+149,South America,Brazil,Cascavel,Estádio Olímpico Regional Arnaldo Busatto,"28,000",Football
+149,South America,Brazil,Araraquara,Estádio Dr. Adhemar de Barros,"25,000",Football
+149,South America,Brazil,Caxias do Sul,Estádio Francisco Stédile,"22,000",Football
+149,South America,Brazil,Cariacica,Estádio Estadual Kleber José de Andrade,"21,000",Football
+149,South America,Brazil,Rio de Janeiro,Estádio Vasco da Gama,"21,000",Football
+149,South America,Brazil,Chapecó,Arena Condá,"20,000",Football
+149,South America,Brazil,Curitiba,Estádio Durival Britto e Silva,"20,000",Football
+149,South America,Brazil,Sete Lagoas,Estádio Joaquim Henrique Nogueira,"20,000",Football
+149,South America,Brazil,Volta Redonda,Estádio Municipal General Sylvio Raulino de Oliveira,"20,000",Football
+149,South America,Brazil,Fortaleza,Estádio Municipal Presidente Getúlio Vargas,"20,000","American football, football"
+149,South America,Brazil,Gama,Estádio Walmir Campelo Bezerra,"20,000",Football
+149,South America,Brazil,Capivari,Arena Capivari,"19,000",Football
+149,South America,Brazil,Criciúma,Estádio Heriberto Hülse,"19,000",Football
+149,South America,Brazil,Campinas,Estádio Moisés Lucarelli,"19,000",Football
+149,South America,Brazil,Florianópolis,Estádio Orlando Scarpelli,"19,000",Football
+149,South America,Brazil,Maceió,Estádio Rei Pelé,"19,000",Football
+149,South America,Brazil,Piracicaba,Estádio Barão de Serra Negra,"18,000",Football
+149,South America,Brazil,Limeira,Estádio Major José Levy Sobrinho,"18,000",Football
+149,South America,Brazil,Itu,Estádio Municipal Dr. Novelli Júnior,"18,000",Football
+149,South America,Brazil,Florianópolis,Estádio Aderbal Ramos da Silva,"17,000",Football
+149,South America,Brazil,Arapiraca,Estádio Municipal Coaracy da Mata Fonseca,"17,000",Football
+149,South America,Brazil,Pouso Alegre,Estádio Municipal Irmão Gino Maria Rossi,"17,000",Football
+149,South America,Brazil,Bragança Paulista,Estádio Nabi Abi Chedid,"17,000",Football
+149,South America,Brazil,Belém,Estádio Leônidas Sodré de Castro,"16,000",Football
+149,South America,Brazil,Feira de Santana,Estádio Municipal Alberto Sampaio de Oliveira,"16,000",Football
+149,South America,Brazil,Santos,Estádio Urbano Caldeira,"16,000",Football
+149,South America,Brazil,Jundiaí,Estádio Dr. Jayme Cintra,"15,000",Football
+149,South America,Brazil,Aracaju,Estádio Estadual Lourival Baptista,"15,000",Football
+149,South America,Brazil,Varginha,Estádio Municipal Prefeito Dilzon Luiz de Melo,"15,000",Football
+149,South America,Brazil,Rio Preto,Estádio Anísio Haddad,"14,000",Football
+149,South America,Brazil,Itumbiara,Estádio Municipal Juscelino Kubitschek,"14,000",Football
+149,South America,Brazil,Mesquita,Estádio Giulite Coutinho,"13,000",Football
+149,South America,Brazil,Goiânia,Estádio Olímpico Pedro Ludovico Teixeira,"13,000",Football
+149,South America,Brazil,Monte Azul Paulista,Estádio Otacília Patrício Arroyo,"13,000",Football
+149,South America,Brazil,Goiânia,Estádio Antônio Accioly,"12,000",Football
+149,South America,Brazil,Novo Horizonte,Estádio Dr. Jorge Ismael de Biasi,"12,000",Football
+149,South America,Brazil,Imperatriz,Estádio Municipal Frei Epifânio d’Abadia,"12,000",Football
+149,South America,Brazil,São Luís,Estádio Municipal Nhozinho Santos,"12,000",Football
+149,South America,Brazil,Brasília,Arena BRB Nilson Nelson,"11,000",Volleyball
+149,South America,Brazil,Cuiabá,Ginásio Aecim Tocantins,"11,000",Volleyball
+149,South America,Brazil,Rio de Janeiro,Ginásio Gilberto Cardoso,"11,000",Volleyball
+149,South America,Brazil,Goiânia,Goiânia Arena,"11,000",Volleyball
+149,South America,Brazil,Manaus,Arena Poliesportiva Amadeu Teixeira,"10,000","Futsal, volleyball"
+149,South America,Brazil,Rio Branco,Estádio Antônio Aquino Lopes,"10,000",Football
+149,South America,Brazil,Diadema,Estádio Municipal José Batista Pereira Fernandes,"10,000",Football
+149,South America,Brazil,São Paulo,Ginásio Estadual Geraldo José de Almeida,"10,000",Volleyball
+150,South America,Chile,Santiago,Estadio Nacional Julio Martínez Prádanos,"48,000","Football, rugby union"
+150,South America,Chile,Santiago,Estadio Monumental,"47,000",Football
+150,South America,Chile,Concepción,Estadio Municipal Alcaldesa Ester Roa Rebolledo,"30,000",Football
+150,South America,Chile,Viña del Mar,Estadio Sausalito,"22,000",Football
+150,South America,Chile,Antofagasta,Estadio Regional Bicentenario Calvo y Bascuñan de Antofagasta,"21,000",Football
+150,South America,Chile,Valparaíso,Estadio Elías Figueroa Brander,"20,000",Football
+150,South America,Chile,Santiago,Estadio Santa Laura-Universidad SEK,"19,000",Football
+150,South America,Chile,Coquimbo,Estadio Francisco Sánchez Rumoroso,"18,000",Football
+150,South America,Chile,La Serena,Estadio La Portada,"18,000",Football
+150,South America,Chile,Temuco,Estadio Municipal Bicentenario Germán Becker Baechler,"18,000",Football
+150,South America,Chile,Fiscal de Talca,Estadio Fiscal de Talca,"16,000",Football
+150,South America,Chile,Rancagua,Estadio El Teniente-Codelco,"14,000",Football
+150,South America,Chile,Santiago,Estadio San Carlos de Apoquindo,"14,000",Football
+150,South America,Chile,Iquique,Estadio Tierra de Campeones Ramón Estay Saavedra,"13,000",Football
+150,South America,Chile,La Florida,Estadio Bicentenario Municipal de La Florida,"12,000",Football
+150,South America,Chile,Chillán,Estadio Bicentenario Municipal Nelson Oyarzún,"12,000",Football
+150,South America,Chile,Rancagua,Medialuna Monumental de Rancagua,"12,000",Rodeo
+150,South America,Chile,Talcahuano,Estadio Huachipato-CAP Acero,"10,000",Football
+150,South America,Chile,Osorno,Estadio Municipal Rubén Marcos Peralta,"10,000",Football
+150,South America,Chile,Puerto Montt,Estadio Regional de Chinquihue,"10,000",Football
+151,South America,Colombia,Medellín,Estadio Atanasio Girardot,"45,000",Football
+151,South America,Colombia,Palmira,Estadio Deportivo Cali,"42,000",Football
+151,South America,Colombia,Cali,Estadio Olímpico Pascual Guerrero,"35,000",Football
+151,South America,Colombia,Pereira,Estadio Hernán Ramírez Villegas,"30,000",Football
+151,South America,Colombia,Ibagué,Estadio Manuel Murillo Toro,"28,000",Football
+151,South America,Colombia,Manizales,Estadio Palogrande,"28,000",Football
+151,South America,Colombia,Cartagena,Estadio Olímpico Jaime Morón León,"16,000",Football
+151,South America,Colombia,Santa Marta,Estadio Sierra Nevada,"16,000",Football
+151,South America,Colombia,Cali,Arena Cañaveralejo,"14,000",Bullfighting
+151,South America,Colombia,Bogotá,Estadio Alfonso López Pumarejo de la Ciudad Universitaria,"12,000",Football
+151,South America,Colombia,Barranquilla,Estadio de béisbol Édgar Rentería,"12,000",Baseball
+151,South America,Colombia,Valledupar,Estadio Armando Maestre Pavajeau,"11,000",Football
+151,South America,Colombia,Envigado,Estadio Polideportivo Sur,"11,000",Football
+151,South America,Colombia,Barrancabermeja,Estadio Daniel Villa Zapata,"10,000",Football
+152,South America,Ecuador,Guayaquil,Estadio Monumental Banco Pichincha,"57,000",Football
+152,South America,Ecuador,Guayaquil,Estadio Modelo Alberto Spencer Herrera,"42,000",Football
+152,South America,Ecuador,Quito,Estadio Rodrigo Paz Delgado,"41,000",Football
+152,South America,Ecuador,Guayaquil,Estadio Banco del Pacífico – Capwell,"40,000",Football
+152,South America,Ecuador,Quito,Estadio Olímpico Atahualpa,"35,000",Football
+152,South America,Ecuador,Quito,Estadio Gonzalo Pozo Ripalda,"18,000",Football
+152,South America,Ecuador,Ibarra,Estadio Olímpico Ciudad de Ibarra,"18,000",Football
+152,South America,Ecuador,Machala,Estadio 9 de Mayo,"16,000",Football
+152,South America,Ecuador,Cuenca,Estadio Alejandro Serrano Aguilar Banco del Austro,"16,000",Football
+152,South America,Ecuador,Ambato,Estadio Bellavista,"16,000",Football
+152,South America,Ecuador,Quevedo,Estadio 7 de Octubre,"15,000",Football
+152,South America,Ecuador,Latacunga,Estadio Municipal La Cocha,"15,000",Football
+152,South America,Ecuador,Riobamba,Primer Estadio Olímpico,"14,000",Football
+152,South America,Ecuador,Riobamba,Monumental Raúl Dávalos,"13,000",Bullfighting
+152,South America,Ecuador,Quito,Estadio Banco Guayaquil,"12,000",Football
+152,South America,Ecuador,Ambato,Plaza de toros Monumental,"11,000",Bullfighting
+152,South America,Ecuador,Guayaquil,Estadio Christian Benítez Betancourt,"10,000",Football
+152,South America,Ecuador,Santo Domingo,Estadio Olímpico Tsáchila,"10,000",Football
+153,South America,Paraguay,Asunción,Estadio General Pablo Rojas,"45,000",Football
+153,South America,Paraguay,Asunción,Estadio Defensores del Chaco,"42,000",Football
+153,South America,Paraguay,Asunción,Estadio Tigo Manuel Ferreira,"22,000",Football
+153,South America,Paraguay,Capiatá,Estadio Lic. Erico Galeano Segovia,"10,000",Football
+154,South America,Peru,Lima,Estadio Monumental,"80,000",Football
+154,South America,Peru,Arequipa,Estadio de la UNSA,"60,000",Football
+154,South America,Peru,Lima,Estadio Nacional,"50,000",Football
+154,South America,Peru,Lima,Estadio Alejandro Villanueva,"33,000",Football
+154,South America,Peru,Lima,Estadio de la UNMSM,"32,000",Football
+154,South America,Peru,Chimbote,Estadio Municipal Centenario Manuel Rivera Sánchez,"25,000",Football
+154,South America,Peru,Chiclayo,Estadio Capitán Remigio Elías Aguirre Romero,"23,000",Football
+154,South America,Peru,Trujillo,Estadio Mansiche,"23,000",Football
+154,South America,Peru,Lima,Estadio Alberto Gallardo,"18,000",Football
+154,South America,Peru,Huaraz,Estadio Rosas Pampa,"18,000",Football
+154,South America,Peru,Huancayo,Estadio Huancayo,"17,000",Football
+154,South America,Peru,Arequipa,Estadio Melgar,"15,000",Football
+154,South America,Peru,Lima,Plaza de toros de Acho,"13,000",Bullfighting
+154,South America,Peru,Ayacucho,Estadio Ciudad de Cumaná,"12,000",Football
+154,South America,Peru,Lima,Estadio Iván Elías Moreno,"10,000",Football
+155,South America,Uruguay,Montevideo,Estadio Centenario,"60,000",Football
+155,South America,Uruguay,Montevideo,Estadio Campeón del Siglo,"40,000",Football
+155,South America,Uruguay,Montevideo,Estadio Gran Parque Central,"34,000",Football
+155,South America,Uruguay,Rivera,Estadio Atilio Paiva Olivera,"27,000",Football
+155,South America,Uruguay,Paysandú,Estadio Parque Artigas,"25,000",Football
+155,South America,Uruguay,Maldonado,Estadio Domingo Burgueño Miguel,"22,000",Football
+155,South America,Uruguay,Montevideo,Estadio Luis Franzini,"16,000",Football
+155,South America,Uruguay,Montevideo,Estadio Charrúa,"14,000","Football, rugby union"
+155,South America,Uruguay,Montevideo,Estadio José Pedro Damiani,"12,000",Football
+155,South America,Uruguay,Las Piedras,Estadio Parque Artigas Las Piedras,"12,000",Football
+156,South America,Venezuela,Maturín,Estadio Monumental de Maturín,"51,000",Football
+156,South America,Venezuela,Ciudad Guayana,Estadio La Ceiba,"30,000",Baseball
+156,South America,Venezuela,Caracas,Estadio Universitario,"25,000",Baseball
+156,South America,Venezuela,Valencia,Plaza de toros Monumental de Valencia,"24,000",Bullfighting
+156,South America,Venezuela,Puerto La Cruz,Estadio Alfonso “Chico” Carrasquel,"18,000",Baseball
+156,South America,Venezuela,Porlamar,Stadium Nueva Esparta,"18,000",Baseball
+156,South America,Venezuela,Mérida,Plaza Monumental Román Eduardo Sandia,"16,000",Bullfighting
+156,South America,Venezuela,Valencia,Estadio José Bernardo Pérez,"15,000",Baseball
+156,South America,Venezuela,Maracaibo,Plaza de toros Monumental de Maracaibo,"15,000",Bullfighting
+156,South America,Venezuela,San Cristóbal,Plaza Monumental de toros de Pueblo Nuevo,"15,000",Bullfighting
+156,South America,Venezuela,Mérida,Estadio Olímpico Guillermo Soto Rosa,"14,000",Football
+156,South America,Venezuela,Barquisimeto,Estadio de fútbol Farid Richa,"12,000",Football
+156,South America,Venezuela,Barquisimeto,Domo Bolivariano de Barquisimeto,"10,000",Basketball
+157,Oceania,Australia,Melbourne,Melbourne Cricket Ground,"100,000","Australian football, cricket"
+157,Oceania,Australia,Sydney,Accor Stadium,"83,000",Rugby league
+157,Oceania,Australia,Perth,Optus Stadium,"60,000","Australian football, cricket"
+157,Oceania,Australia,Melbourne,Marvel Stadium,"56,000","Australian football, cricket"
+157,Oceania,Australia,Adelaide,Adelaide Oval,"55,000","Australian football, cricket"
+157,Oceania,Australia,Brisbane,Suncorp Stadium,"52,000","Rugby league, rugby union"
+157,Oceania,Australia,Sydney,Sydney Cricket Ground,"48,000","Australian football, cricket, rugby league"
+157,Oceania,Australia,Sydney,Allianz Stadium,"42,000","Football, rugby league, rugby union"
+157,Oceania,Australia,Brisbane,Brisbane Cricket Ground,"42,000","Australian football, cricket"
+157,Oceania,Australia,Geelong,GMHBA Stadium,"36,000",Australian football
+157,Oceania,Australia,Newcastle,McDonald Jones Stadium,"33,000","Football, rugby league"
+157,Oceania,Australia,Melbourne,AAMI Park,"30,000","Football, rugby league, rugby union"
+157,Oceania,Australia,Sydney,CommBank Stadium,"30,000","Football, rugby league, rugby union"
+157,Oceania,Australia,Gold Coast,Cbus Super Stadium,"27,000",Rugby league
+157,Oceania,Australia,Canberra,GIO Stadium Canberra,"25,000","Rugby league, rugby union"
+157,Oceania,Australia,Gold Coast,Metricon Stadium,"25,000",Australian football
+157,Oceania,Australia,Townsville,Queensland Country Bank Stadium,"25,000",Rugby league
+157,Oceania,Australia,Sydney,GIANTS Stadium,"24,000","Australian football, cricket"
+157,Oceania,Australia,Gosford,Central Coast Stadium,"20,000",Football
+157,Oceania,Australia,Perth,HBF Park,"20,000","Football, rugby union"
+157,Oceania,Australia,Adelaide,Coopers Stadium,"17,000",Football
+157,Oceania,Australia,Perth,RAC Arena,"14,000","Basketball, netball"
+157,Oceania,Australia,Melbourne,Rod Laver Arena,"14,000",Tennis
+157,Oceania,Australia,Melbourne,Lakeside Stadium,"12,000",Football
+157,Oceania,Australia,Kippa-Ring,Moreton Daily Stadium,"11,000","Football, rugby league"
+157,Oceania,Australia,Sydney,Ken Rosewall Arena,"10,000",Tennis
+158,Oceania,Fiji,Labasa,Subrail Park,"10,000","Football, rugby union"
+159,Oceania,New Zealand,Auckland,Eden Park,"50,000","Cricket, rugby union"
+159,Oceania,New Zealand,Wellington,Sky Stadium,"34,000","Football, rugby union"
+159,Oceania,New Zealand,Dunedin,Fortsyth Barr Stadium,"30,000","Football, rugby union"
+159,Oceania,New Zealand,Christchurch,Orangetheory Stadium,"18,000",Rugby union
+160,Oceania,Papua New Guinea,Port Moresby,Sir John Guise Stadium,"15,000","Football, rugby league"
+160,Oceania,Papua New Guinea,Port Moresby,Papua New Guinea National Football Stadium,"14,000",Rugby league

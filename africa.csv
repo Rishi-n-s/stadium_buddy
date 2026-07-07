@@ -1,0 +1,203 @@
+id,region,country,location,stadium_name,total_capacity,sport_played
+1,Africa,Algeria,Algiers,Stade du 5-juillet-1962,"64,000",Football
+1,Africa,Algeria,Bir el-Djir,Stade olympique d’Oran,"40,000",Football
+1,Africa,Algeria,Biskra,Stade du 18-février,"35,000",Football
+1,Africa,Algeria,Skikda,Stade du 20-août-1955,"30,000",Football
+1,Africa,Algeria,Bouïra,Stade Rabah-Bitat,"30,000",Football
+1,Africa,Algeria,Relizane,Stade Tahar-Zoughari,"30,000",Football
+1,Africa,Algeria,Sétif,Stade du 8-mai-1945,"25,000",Football
+1,Africa,Algeria,Mascara,Stade de l’Unité africaine,"22,000",Football
+1,Africa,Algeria,Batna,Stade 1er-novembre-1954,"20,000",Football
+1,Africa,Algeria,Béchar,Stade du 20-août-1955,"20,000",Football
+1,Africa,Algeria,Tlemcen,Stade Akid-Lotfi,"18,000",Football
+1,Africa,Algeria,Béjaïa,Stade de l’Unité maghrébine,"18,000",Football
+1,Africa,Algeria,Chlef,Stade olympique de Mohamed-Boumezrag,"18,000",Football
+1,Africa,Algeria,Algiers,Stade Omar-Hamadi,"17,000",Football
+1,Africa,Algeria,Sig,Stade Abdelkrim-Kerroum,"15,000",Football
+1,Africa,Algeria,Tiaret,Stade Ahmed-Kaïd,"14,000",Football
+1,Africa,Algeria,Constantine,Stade Benabdelmalek-Ramdane,"13,000",Football
+1,Africa,Algeria,TÃ©bessa,Stade du 4-mars,"11,000",Football
+1,Africa,Algeria,Algiers,Stade Omar-Benrabah,"11,000",Football
+1,Africa,Algeria,AÃ¯n TÃ©mouchent,Stade Omar-Oucief,"11,000",Football
+1,Africa,Algeria,Mostaganem,Stade Mohamed-Bensaïd,"10,000",Football
+1,Africa,Algeria,Annaba,Stade municipal Colonel-Chabou-Abdelkader,"10,000",Football
+2,Africa,Angola,Benguela,Estádio Nacional de Ombaka,"35,000",Football
+2,Africa,Angola,Lubango,Estádio Nacional da Tundavala,"20,000",Football
+2,Africa,Angola,Cabinda,Estádio Nacional do Chiazi,"20,000",Football
+2,Africa,Angola,Kilamba,Pavilhão Multiusos do Kilamba,"12,000",Basketball
+2,Africa,Angola,Caála,Estádio Mártires da Canhala,"11,000",Football
+3,Africa,Benin,Porto-Novo,Stade Charles de Gaulle,"15,000",Football
+4,Africa,Botswana,Francistown,Obed Itani Chilume Stadium,"26,000",Football
+4,Africa,Botswana,Lobatse,Lobatse Stadium,"20,000",Football
+5,Africa,Burkina Faso,Ouagadougou,Stade du 4-août-1983,"60,000",Football
+6,Africa,Burundi,Gitega,Stade Ingoma,"20,000",Football
+7,Africa,Cabo Verde,Praia,Estádio Nacional de Cabo Verde,"15,000",Football
+8,Africa,Cameroon,Yaoundé,Stade omnisport Paul Biya,"60,000",Football
+8,Africa,Cameroon,Douala,Stade de Japoma,"50,000",Football
+8,Africa,Cameroon,Yaoundé,Stade Ahmadou Ahidjo,"42,000",Football
+8,Africa,Cameroon,Douala,Stade de la Réunification,"39,000",Football
+8,Africa,Cameroon,Garoua,Stade Roumdé Adjia,"30,000",Football
+8,Africa,Cameroon,Limbé,Stade omnisport de Limbé,"20,000",Football
+8,Africa,Cameroon,Bafoussam,Stade omnisports de Bafoussam,"20,000",Football
+9,Africa,Central African Republic,Bangui,Stade Barthélemy Boganda,"50,000",Football
+10,Africa,Chad,N’Djamena,Stade omnisports Idriss Mahamat Ouya,"20,000",Football
+11,Africa,Congo,Brazzaville,Stade municipal de Kintélé,"60,000",Football
+11,Africa,Congo,Ouesso,Stade de Ouesso,"16,000",Football
+11,Africa,Congo,Pointe-Noire,Stade municipal,"13,000",Football
+11,Africa,Congo,Owando,Stade omnisport Marien Ngouabi d’Owando,"13,000",Football
+12,Africa,Côte d’Ivoire,Abidjan,Stade olympique Alassane Ouattara,"60,000",Football
+12,Africa,Côte d’Ivoire,Yamoussoukro,Stade de Yamoussoukro,"20,000",Football
+12,Africa,Côte d’Ivoire,Abidjan,Stade Robert Champroux,"10,000",Football
+13,Africa,Djibouti,Djibouti,Stade El-Hadj Hassan Gouled Aptidon,"20,000",Football
+14,Africa,DR Congo,Lubumbashi,Stade TP Mazembe,"18,000",Football
+14,Africa,DR Congo,Kalemie,Stade Joseph Kabila Kabange,"14,000",Football
+14,Africa,DR Congo,Goma,Stade de l’Unité,"10,000",Football
+14,Africa,DR Congo,Kamina,Stade Joseph Kabila Kabange,"10,000",Football
+14,Africa,DR Congo,Kindu,Stade Joseph Kabila Kabange,"10,000",Football
+15,Africa,Egypt,Borg el-Arab,Borg el-Arab Stadium,"86,000",Football
+15,Africa,Egypt,Cairo,Cairo International Stadium,"74,000",Football
+15,Africa,Egypt,Cairo,30 June Stadium,"30,000",Football
+15,Africa,Egypt,Cairo,Al-Ahly WE al-Salam Stadium,"30,000",Football
+15,Africa,Egypt,Al-Fayoum,Al-Fayoum Stadium,"20,000",Football
+15,Africa,Egypt,Port Said,Al-Masry Club Stadium,"18,000",Football
+15,Africa,Egypt,El-Mansoura,El-Mansoura Stadium,"18,000",Football
+15,Africa,Egypt,Cairo,Main Hall,"16,000",Basketball
+15,Africa,Egypt,New Cairo,Petrosport Stadium,"16,000",Football
+15,Africa,Egypt,Alexandria,Izz al-Din Yacoub Stadium,"15,000",Football
+15,Africa,Egypt,Alexandria,Alexandria Stadium,"13,000",Football
+15,Africa,Egypt,Asyut,Asyut University Stadium,"12,000",Football
+15,Africa,Egypt,El-Gouna,Khaled Bichara Stadium,"12,000",Football
+15,Africa,Egypt,Aswan,Aswan Stadium,"11,000",Football
+15,Africa,Egypt,Asyut,Arba’een Sporting Stadium,"10,000",Football
+16,Africa,Equatorial Guinea,Bata,Estadio de Bata,"35,000",Football
+16,Africa,Equatorial Guinea,Malabo,Estadio de Malabo,"15,000",Football
+16,Africa,Equatorial Guinea,Mongomo,Estadio de Mongomo,"10,000",Football
+17,Africa,Ethiopia,Nekemte,Welega Stadium,"50,000",Football
+17,Africa,Ethiopia,Woldia,Sheikh Mohammed Hussein Ali al-Amoudi Stadium,"25,000",Football
+17,Africa,Ethiopia,Dire Dawa,Dire Dawa Stadium,"18,000",Football
+17,Africa,Ethiopia,Hawassa,Hawassa University Stadium,"15,000",Football
+17,Africa,Ethiopia,Jigjiga,Jigjiga Stadium,"15,000",Football
+18,Africa,Gabon,Libreville,Stade de l’Amitié sino-gabonaise,"40,000",Football
+18,Africa,Gabon,Franceville,Stade de Franceville,"22,000",Football
+18,Africa,Gabon,Port-Gentil,Stade de Port-Gentil,"20,000",Football
+18,Africa,Gabon,Oyem,Stade d’Oyem,"20,000",Football
+19,Africa,Gambia,Bakau,Independence Stadium,"40,000",Football
+20,Africa,Ghana,Accra,Accra Sports Stadium,"40,000",Football
+20,Africa,Ghana,Kumasi,Baba Yara Sports Stadium,"40,000",Football
+20,Africa,Ghana,Obuasi,Len Clay Stadium,"20,000",Football
+20,Africa,Ghana,Cape Coast,Cape Coast Sports Stadium,"15,000",Football
+22,Africa,Guinea-Bissau,Bissau,Estádio Nacional 24 de Setembro,"20,000",Football
+21,Africa,Guinea,Conakry,Stade Général Lansana Conté,"50,000",Football
+23,Africa,Kenya,Nairobi,Kasarani Stadium,"80,000",Football
+23,Africa,Kenya,Narok,William Ole Ntimama Stadium,"20,000",Football
+23,Africa,Kenya,Meru,Kinoru Stadium,"15,000",Football
+23,Africa,Kenya,Nairobi,Nyayo National Stadium,"15,000",Football
+24,Africa,Lesotho,Maseru,Setsoto Stadium,"20,000",Football
+25,Africa,Liberia,Paynesville,Samuel Kanyon Doe Sports Stadium,"22,000",Football
+26,Africa,Libya,Benina,Martyrs of February Stadium,"10,000",Football
+27,Africa,Madagascar,Antananarivo,Kianja Barea Mahamasina,"40,000",Football
+27,Africa,Madagascar,Toamasina,Kianja Barikadimy,"25,000",Football
+28,Africa,Malawi,Blantyre,Kamuzu Stadium,"65,000",Football
+28,Africa,Malawi,Lilongwe,Bingu National Stadium,"41,000",Football
+29,Africa,Mali,Bamako,Stade du 26 mars,"50,000",Football
+29,Africa,Mali,Bamako,Stade Mamadou Konaté,"10,000",Football
+30,Africa,Mauritania,Nouakchott,Stade olympique,"20,000",Football
+30,Africa,Mauritania,Nouadhibou,Stade municipal de Nouadhibou,"10,000",Football
+31,Africa,Mauritius,Port Louis,Anjalay Stadium,"16,000",Football
+32,Africa,Morocco,Rabat,Stade Prince Moulay Abdellah,"53,000",Football
+32,Africa,Morocco,Agadir,Stade Adrar,"45,000",Football
+32,Africa,Morocco,Marrakesh,Grand stade de Marrakech,"45,000",Football
+32,Africa,Morocco,Tangier,Stade Ibn Battuta,"45,000",Football
+32,Africa,Morocco,Casablanca,Stade Mohammed V,"45,000",Football
+32,Africa,Morocco,Fez,Stade du Complexe sportif de Fès,"37,000",Football
+32,Africa,Morocco,Kenitra,Stade municipal,"28,000",Football
+32,Africa,Morocco,Casablanca,Stade Hay Moulay Rachid,"25,000",Football
+32,Africa,Morocco,Oujda,Stade d’Honneur,"19,000",Football
+32,Africa,Morocco,Casablanca,Stade Larbi Zaouli,"16,000",Football
+33,Africa,Mozambique,Maputo,Estádio Nacional do Zimpeto,"42,000",Football
+34,Africa,Namibia,Windhoek,Independence Stadium,"25,000",Football
+34,Africa,Namibia,Windhoek,Hage Geingob Stadium,"10,000",Rugby union
+35,Africa,Niger,Niamey,Stade municipal,"10,000",Football
+35,Africa,Niger,Zinder,Stade municipal Lawandidi,"10,000",Football
+36,Africa,Nigeria,Abuja,Moshood Abiola National Stadium,"60,000",Football
+36,Africa,Nigeria,Port Harcourt,Adokiye Amiesimaka Stadium,"38,000",Football
+36,Africa,Nigeria,Katsina,Muhammadu Dikko Stadium,"35,000",Football
+36,Africa,Nigeria,Uyo,Godswill Akpabio International Stadium,"30,000",Football
+36,Africa,Nigeria,Asaba,Governor Okowa Main Bowl,"22,000",Football
+36,Africa,Nigeria,Osogbo,Osogbo Township Stadium,"20,000",Football
+36,Africa,Nigeria,Kaduna,Ahmadu Bello Stadium,"16,000",Football
+36,Africa,Nigeria,Aba,Enyimba International Stadium,"16,000",Football
+36,Africa,Nigeria,Kano,Sani Abacha Stadium,"16,000",Football
+36,Africa,Nigeria,Eket,Eket Stadium,"15,000",Football
+36,Africa,Nigeria,Jalingo,Jolly Nyame Stadium,"12,000",Football
+36,Africa,Nigeria,Gombe,Pantami Stadium,"12,000",Football
+36,Africa,Nigeria,Benin City,Samuel Ogbemudia Stadium,"12,000",Football
+36,Africa,Nigeria,Calabar,UJ Esuene Stadium,"12,000",Football
+36,Africa,Nigeria,Bauchi,Abubakar Tafawa Balewa Stadium,"11,000",Football
+36,Africa,Nigeria,Ibadan,Adamasingba Stadium,"10,000",Football
+36,Africa,Nigeria,Owerri,Dan Anyiam Stadium,"10,000",Football
+36,Africa,Nigeria,Maiduguri,El-Kanemi Stadium,"10,000",Football
+36,Africa,Nigeria,Kano,Kano Pillars Stadium,"10,000",Football
+36,Africa,Nigeria,Lagos,Mobolaji Johnson Arena,"10,000",Football
+37,Africa,Rwanda,Kigali,Amahoro National Stadium,"30,000",Football
+37,Africa,Rwanda,Kigali,Kigali Stadium,"22,000",Football
+37,Africa,Rwanda,Kigali,BK Arena,"10,000",Basketball
+38,Africa,Senegal,Diamniadio,Stade Abdoulaye Wade,"50,000",Football
+38,Africa,Senegal,Dakar,Stade Demba Diop,"20,000",Football
+38,Africa,Senegal,Diamniadio,Dakar Arena,"15,000",Basketball
+38,Africa,Senegal,Pikine,Stade Alassane Djigo,"10,000",Football
+39,Africa,Seychelles,Victoria,Stad Linite,"10,000",Football
+40,Africa,Somalia,Mogadishu,Muqdisho Stadium,"60,000",Football
+40,Africa,Somalia,Mogadishu,Eng. Yariisow Stadium,"20,000",Football
+41,Africa,South Africa,Johannesburg,FNB Stadium,"94,000",Football
+41,Africa,South Africa,Johannesburg,Emirates Airline Park,"62,000","Football, rugby union"
+41,Africa,South Africa,Cape Town,DHL Stadium,"57,000","Football, rugby union"
+41,Africa,South Africa,Durban,Moses Mabhida Stadium,"56,000",Football
+41,Africa,South Africa,Durban,Hollywoodbets Kings Park,"52,000","Football, rugby union"
+41,Africa,South Africa,Pretoria,Loftus Versfeld Stadium,"51,000","Football, rugby union"
+41,Africa,South Africa,Port Elizabeth,Nelson Mandela Bay Stadium,"46,000","Football, rugby union"
+41,Africa,South Africa,Bloemfontein,Toyota Stadium,"46,000",Rugby union
+41,Africa,South Africa,Phokeng,Royal Bafokeng Stadium,"44,000",Football
+41,Africa,South Africa,Nelspruit,Mbombela Stadium,"40,000","Football, rugby union"
+41,Africa,South Africa,Johannesburg,Orlando Stadium,"37,000",Football
+41,Africa,South Africa,Johannesburg,Rand Stadium,"30,000",Football
+41,Africa,South Africa,Pretoria,Lucas “Masterpieces” Moripe Stadium,"28,000",Football
+41,Africa,South Africa,Ekurhuleni,Vosloorus Stadium,"25,000",Football
+41,Africa,South Africa,Johannesburg,Dobsonville Stadium,"24,000",Football
+41,Africa,South Africa,Bloemfontein,Dr. Rantlai Petrus Molemela Stadium,"22,000",Football
+41,Africa,South Africa,Potchefstroom,Profert Olën Park,"22,000","Football, rugby union"
+41,Africa,South Africa,Giyani,Giyani Stadium,"20,000",Football
+41,Africa,South Africa,Stellenbosch,Danie Craven Stadium,"16,000","Football, rugby union"
+41,Africa,South Africa,Pietermaritzburg,Harry Gwala Stadium,"12,000",Football
+41,Africa,South Africa,Kimberley,Griqua Park,"11,000",Rugby union
+41,Africa,South Africa,Tembisa,Makhulong Stadium,"10,000",Football
+42,Africa,Sudan,Port Sudan,Port Sudan International Stadium,"20,000",Football
+43,Africa,Tanzania,Dar es-Salaam,Tanzania National Main Stadium,"60,000",Football
+43,Africa,Tanzania,Tabora,Ali Hassan Mwinyi Stadium,"35,000",Football
+43,Africa,Tanzania,Mwanza,CCM Kirumba Stadium,"35,000",Football
+43,Africa,Tanzania,Chake-Chake,Gombani Stadium,"30,000",Football
+43,Africa,Tanzania,Dodoma,Jamhuri Stadium,"30,000",Football
+43,Africa,Tanzania,Shinyanga,Kambarage Stadium,"30,000",Football
+43,Africa,Tanzania,Songea,Maji-Maji Stadium,"30,000",Football
+43,Africa,Tanzania,Zanzibar,Amaan Stadium,"20,000",Football
+43,Africa,Tanzania,Morogoro,Jamhuri Stadium,"20,000",Football
+43,Africa,Tanzania,Arusha,Sheikh Amri Abeid Memorial Stadium,"20,000",Football
+43,Africa,Tanzania,Mbeya,Sokoine Stadium,"20,000",Football
+43,Africa,Tanzania,Tanga,Mkwakwani Stadium,"15,000",Football
+43,Africa,Tanzania,Dar es-Salaam,Azam Complex Stadium,"10,000",Football
+44,Africa,Togo,Lomé,Stade de Kégué,"25,000",Football
+44,Africa,Togo,Lomé,Stade omnisport de Lomé,"20,000",Football
+45,Africa,Tunisia,Radès,Stade Olympique Hammadi Agrebi,"60,000",Football
+45,Africa,Tunisia,Sousse,Stade Olympique de Sousse,"28,000",Football
+45,Africa,Tunisia,Sfax,Stade Taïeb Mhiri,"18,000",Football
+45,Africa,Tunisia,Radès,Palais des Sports du 14 Janvier,"17,000",Basketball
+45,Africa,Tunisia,Hammam-Lif,Stade Municipal de Hammam-Lif,"15,000",Football
+46,Africa,Uganda,Kampala,St. Mary’s Stadium,"15,000",Football
+47,Africa,Zambia,Lusaka,Heroes National Stadium,"60,000",Football
+47,Africa,Zambia,Ndola,Levy Mwanawasa Stadium,"49,000",Football
+47,Africa,Zambia,Lusaka,Woodlands Stadium,"10,000",Football
+48,Africa,Zimbabwe,Harare,National Sports Stadium,"80,000",Football
+48,Africa,Zimbabwe,Harare,Rufaro Stadium,"60,000",Football
+48,Africa,Zimbabwe,Bulawayo,Barbourfields Stadium,"40,000",Football
+48,Africa,Zimbabwe,Zvishavane,Mandava Stadium,"15,000",Football
+48,Africa,Zimbabwe,Harare,Harare Sports Club Ground,"10,000",Cricket
