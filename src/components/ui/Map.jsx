@@ -611,31 +611,6 @@ export default function Map({
         </div>
       )}
 
-      {/* Turn-by-Turn Navigation HUD (Only in Outdoor mode when routes are loaded) */}
-      {!isIndoor && directions.length > 0 && (
-        <div className="absolute bottom-4 right-4 z-20 w-72 bg-white/95 border border-gray-300 rounded-xl p-3.5 shadow-lg max-h-56 overflow-y-auto font-sans text-xs text-gray-800 backdrop-blur-md">
-          <div className="flex items-center gap-2 border-b border-gray-200 pb-2 mb-2">
-            <span className="material-symbols-outlined text-[#1a73e8] text-sm animate-pulse">navigation</span>
-            <span className="font-bold tracking-wide uppercase text-[10px] text-gray-500">GPS Turn Navigation</span>
-          </div>
-          <div className="space-y-2">
-            {directions.map((step, idx) => (
-              <div 
-                key={idx} 
-                className={`flex gap-2 items-start transition-all ${
-                  idx === activeStepIndex 
-                    ? "text-[#1a73e8] font-bold bg-blue-50/50 p-1 rounded-md border border-blue-100" 
-                    : "opacity-60 text-gray-600"
-                }`}
-              >
-                <span className="font-mono text-[9px] mt-0.5 bg-gray-100 px-1.5 py-0.5 rounded text-gray-500">{idx + 1}</span>
-                <span className="leading-tight">{step}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
       {/* Indoor Mode HUD label */}
       {isIndoor && (
         <div className="absolute top-16 left-4 z-20 bg-white/95 border border-gray-300 rounded-md px-3 py-1.5 shadow-md font-sans text-xs text-gray-800 flex items-center gap-2 pointer-events-none">

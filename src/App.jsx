@@ -5,6 +5,8 @@ import OrganizerDashboard from "./views/OrganizerDashboard";
 import StaffAlerts from "./views/StaffAlerts";
 import IntroAnimation from "./views/IntroAnimation";
 import LandingPage from "./views/LandingPage";
+import AuthPortal from "./views/AuthPortal";
+import { getCurrentSession, logoutUser } from "./services/authService";
 import { INITIAL_ZONES, updateOccupancy } from "./services/crowdEngine";
 
 
@@ -44,9 +46,25 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [showSimulator, setShowSimulator] = useState(false);
   
-  // Navigation flow state (Intro -> Landing -> Dashboard)
+  // Navigation flow state (Intro -> Auth -> Landing -> Dashboard)
   const [isIntroActive, setIsIntroActive] = useState(true);
+  const [currentUser, setCurrentUser] = useState(null);
   const [selectedStadium, setSelectedStadium] = useState(null);
+
+  useEffect(() => {
+    const checkSession = async () => {
+      const session = await getCurrentSession();
+      setCurrentUser(session);
+    };
+    checkSession();
+  }, []);
+
+  const handleLogout = async () => {
+    await logoutUser();
+    setCurrentUser(null);
+    setSelectedStadium(null);
+    setCurrentView("fan");
+  };
 
   // Simulated operational states
   const [zones, setZones] = useState(INITIAL_ZONES);
@@ -182,6 +200,10 @@ export default function App() {
     return <IntroAnimation onFinish={() => setIsIntroActive(false)} />;
   }
 
+  if (!currentUser) {
+    return <AuthPortal onLoginSuccess={(user) => setCurrentUser(user)} />;
+  }
+
   if (!selectedStadium) {
     return <LandingPage onDeploy={handleDeployStadium} />;
   }
@@ -249,8 +271,8 @@ export default function App() {
             </button>
           </nav>
 
-          {/* Right Action: Simulation Control Switcher */}
-          <div className="flex items-center gap-2">
+          {/* Right Action: Simulation & User Profile Badge */}
+          <div className="flex items-center gap-3">
             <button
               onClick={() => setShowSimulator(!showSimulator)}
               className={`px-3 py-1.5 rounded-full text-xs font-bold font-mono border transition-all flex items-center gap-1.5 ${
@@ -260,8 +282,26 @@ export default function App() {
               }`}
             >
               <span className="material-symbols-outlined text-[16px]">build</span>
-              <span>Simulation</span>
+              <span className="hidden md:inline">Simulation</span>
             </button>
+
+            {/* User Profile Badge & Logout */}
+            {currentUser && (
+              <div className="flex items-center gap-2 bg-surface-container-highest px-3 py-1 rounded-full border border-outline-variant/30 shadow-inner">
+                <span className="text-sm select-none">{currentUser.avatar}</span>
+                <div className="flex flex-col text-left hidden sm:flex leading-none">
+                  <span className="text-[10px] font-bold text-white max-w-[80px] truncate">{currentUser.name}</span>
+                  <span className="text-[8px] font-mono text-outline-variant uppercase">{currentUser.role}</span>
+                </div>
+                <button 
+                  onClick={handleLogout}
+                  title="Log Out"
+                  className="material-symbols-outlined text-[16px] text-outline hover:text-error ml-1 transition-colors cursor-pointer"
+                >
+                  logout
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
