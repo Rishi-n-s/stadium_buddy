@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono:wght@500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#2d3449",
+                    "on-surface": "#dae2fd",
+                    "primary-fixed": "#dde1ff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-primary-container": "#dfe3ff",
+                    "primary": "#b7c4ff",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#004ced",
+                    "error-container": "#93000a",
+                    "on-secondary": "#003915",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "inverse-on-surface": "#283044",
+                    "outline": "#8d90a2",
+                    "on-primary": "#002682",
+                    "secondary": "#4ae176",
+                    "on-tertiary-container": "#ffdfbe",
+                    "outline-variant": "#434656",
+                    "surface": "#0b1326",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-variant": "#2d3449",
+                    "secondary-container": "#00b954",
+                    "on-secondary": "#003915",
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-secondary-container": "#004119",
+                    "surface-container-high": "#222a3d",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "inverse-surface": "#dae2fd",
+                    "tertiary": "#ffb95f",
+                    "surface-dim": "#0b1326",
+                    "on-secondary-fixed-variant": "#005321",
+                    "tertiary-container": "#905a00",
+                    "surface-bright": "#31394d",
+                    "error": "#ffb4ab",
+                    "primary-container": "#0052ff",
+                    "on-primary-fixed": "#001452",
+                    "on-background": "#dae2fd",
+                    "surface-tint": "#b7c4ff",
+                    "background": "#0b1326",
+                    "surface-container-low": "#131b2e",
+                    "surface-container": "#171f33",
+                    "secondary-fixed": "#6bff8f",
+                    "surface-container-lowest": "#060e20",
+                    "on-error": "#690005",
+                    "on-primary-fixed-variant": "#0038b6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "gutter-desktop": "24px",
+                    "margin-mobile": "16px",
+                    "gutter-mobile": "16px",
+                    "margin-desktop": "48px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "data-point": ["JetBrains Mono"],
+                    "display-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "data-point": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(23, 31, 51, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(183, 196, 255, 0.1);
+        }
+        .ai-gradient-border {
+            position: relative;
+            background: #171f33;
+            border-radius: 0.5rem;
+        }
+        .ai-gradient-border::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: 0.5rem;
+            padding: 1px;
+            background: linear-gradient(45deg, #0052ff, #4ae176, #ffb95f);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .shimmer {
+            background: linear-gradient(90deg, rgba(183,196,255,0) 0%, rgba(183,196,255,0.05) 50%, rgba(183,196,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-surface-variant transition-all">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary">
+<img class="w-full h-full object-cover" data-alt="Close up high-resolution professional portrait of a tech-savvy stadium employee in a clean navy uniform. The lighting is crisp and cool-toned, reflecting a high-tech sports facility environment. The background is softly blurred showing architectural glass and steel structures of a modern stadium in deep blue tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCCPTZdlPhfp2wIJeSgg2c9xNJ4lhwuKqVbxtPXe12CME2-f5HjyGOUk-OIncbs3VRHxqKFDVM8dnwSfXB-5M1AjcIE62TvuyeZeV1cowKLvFuYPte12itTAXJ4IuSgobGO9KvgoKCasETZoGSV8qLuZ8TTTXai6aI6jnuLhjzBHOEWnivHBK1124fE2z1zGowcY7dWJtoafJ5OPVTfAozBnnEd4Wxc1az3aTFyWIEaiwL34-WnsvY2Q"/>
+</div>
+<span class="font-display-lg-mobile text-display-lg-mobile font-extrabold text-primary dark:text-primary-fixed-dim">StadiumIQ</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container-highest hover:bg-surface-variant transition-all active:scale-95">
+<span class="font-label-caps text-label-caps text-on-surface-variant">EN</span>
+<span class="material-symbols-outlined text-[18px]">translate</span>
+</button>
+</div>
+</header>
+<main class="flex-grow flex flex-col md:flex-row relative">
+<!-- Sidebar for Desktop -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full z-40 bg-surface-container dark:bg-surface-container-high h-screen w-64 rounded-r-xl border-r border-outline-variant dark:border-surface-variant pt-20">
+<div class="px-6 py-4 mb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Stadium Staff</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Operator Mode</p>
+<div class="mt-2 text-[10px] text-secondary font-bold uppercase tracking-widest">Status: Normal</div>
+</div>
+<div class="flex flex-col gap-1">
+<a class="text-on-surface-variant dark:text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-variant dark:hover:bg-surface-container-highest rounded-full transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</a>
+<a class="bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full mx-2 px-4 py-3 flex items-center gap-3 translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-caps text-label-caps">Wayfinding</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-variant dark:hover:bg-surface-container-highest rounded-full transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">warning</span>
+<span class="font-label-caps text-label-caps">Alerts</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-variant dark:hover:bg-surface-container-highest rounded-full transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-caps text-label-caps">Zones</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-variant dark:hover:bg-surface-container-highest rounded-full transition-colors flex items-center gap-3 mt-auto mb-6" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-grow md:ml-64 p-4 md:p-8 flex flex-col gap-6 max-w-[1440px] mx-auto w-full pb-24 md:pb-8">
+<!-- Real-time Advisory Bubble -->
+<div class="ai-gradient-border p-px overflow-hidden shadow-2xl">
+<div class="bg-surface-container-low px-4 py-3 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse shadow-[0_0_8px_#4ae176]"></div>
+<span class="font-body-md text-on-surface">Zone B is congested, rerouting via North Concourse.</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">close</button>
+</div>
+</div>
+<!-- Main Interactive Canvas -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Map View (Bento Large) -->
+<div class="lg:col-span-8 rounded-xl overflow-hidden glass-panel h-[400px] md:h-[600px] relative group">
+<div class="absolute inset-0 z-0 bg-surface-container-highest" data-location="Lusail Stadium, Doha" style="">
+<img class="w-full h-full object-cover opacity-60" data-alt="A highly detailed 3D architectural map of a modern futuristic sports stadium interior. The view is top-down isometric with glowing blue paths indicating navigation routes. Red-pulsing semi-transparent heat map zones highlight congested areas near the main exits. The aesthetic is clean, technological, and high-contrast, utilizing a dark navy and neon green color palette with soft UI overlays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANFvMwMXXISnRQZsR3qagA_imXMUFkUZeS-FA48OqqdVLwoFhCZOgHt62ke7hCIZTXnibJ6X36p28urFBtfm_peQjluEqqiW7cMFNvmRwfuHRPQs8dYHyvqcj6LhoqZn4Q07ArSYjTh-8OLF1W27_u_VqXZKqCLknd2WqVsSNBDUQXFwZJYZVYWxF6Y1gq-T36CVtUvZ7K9saiW-wKVnqiKpplA41-NSg7gJiuE-lYXKU7362w4LCIcw"/>
+</div>
+<!-- Map Overlays -->
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+<div class="bg-surface-container-high/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">visibility</span>
+<span class="font-label-caps text-label-caps">Avoid Congestion Active</span>
+</div>
+</div>
+<!-- Zoom Controls -->
+<div class="absolute bottom-4 right-4 z-10 flex flex-col gap-2">
+<button class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<!-- Navigation Pulse -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 bg-primary/20 rounded-full animate-ping"></div>
+<div class="w-4 h-4 bg-primary rounded-full border-2 border-white shadow-lg"></div>
+</div>
+</div>
+</div>
+<!-- Chat & Directions (Bento Side) -->
+<div class="lg:col-span-4 flex flex-col gap-6 h-full">
+<!-- AI Chat Box -->
+<div class="flex-grow glass-panel rounded-xl flex flex-col overflow-hidden border border-outline-variant h-[500px]">
+<div class="p-4 border-b border-outline-variant bg-surface-container flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+<span class="font-headline-md text-headline-md text-primary">Fan Assistant</span>
+</div>
+<div class="flex-grow overflow-y-auto p-4 flex flex-col gap-4">
+<!-- User Message -->
+<div class="self-end max-w-[85%] bg-primary-container text-on-primary-container p-3 rounded-xl rounded-tr-none">
+<p class="font-body-md">Where is the nearest exit?</p>
+</div>
+<!-- AI Response -->
+<div class="self-start max-w-[85%] bg-surface-container-high p-3 rounded-xl rounded-tl-none border border-outline-variant relative">
+<div class="absolute -top-3 left-0 flex items-center gap-1">
+<span class="font-label-caps text-[10px] text-primary">AI Navigator</span>
+</div>
+<div class="space-y-4">
+<p class="font-body-md">Nearest exit is **Gate 4**. Here are your step-by-step directions:</p>
+<div class="space-y-3">
+<div class="flex gap-3">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-[12px] flex-shrink-0">1</div>
+<p class="text-sm">Turn right at Section 102 and head towards the North concourse.</p>
+</div>
+<div class="flex gap-3">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-[12px] flex-shrink-0">2</div>
+<p class="text-sm">Pass the merchandise stand and continue straight for 50 meters.</p>
+</div>
+<div class="flex gap-3 opacity-60">
+<div class="w-6 h-6 rounded-full bg-outline text-surface flex items-center justify-center font-bold text-[12px] flex-shrink-0">3</div>
+<p class="text-sm">Gate 4 will be on your left, past the security checkpoint.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Input -->
+<div class="p-4 bg-surface-container-low border-t border-outline-variant">
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-highest border-b border-outline focus:border-primary px-4 py-3 pr-12 rounded-lg text-sm transition-all focus:ring-0" placeholder="Type or ask by voice..." type="text"/>
+<button class="absolute right-2 text-primary hover:text-secondary transition-colors p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+</div>
+<div class="flex gap-2 mt-3 overflow-x-auto pb-1 no-scrollbar">
+<button class="whitespace-nowrap px-3 py-1 rounded-full border border-outline-variant text-[10px] font-label-caps hover:bg-surface-variant">Food & Drink</button>
+<button class="whitespace-nowrap px-3 py-1 rounded-full border border-outline-variant text-[10px] font-label-caps hover:bg-surface-variant">My Seat</button>
+<button class="whitespace-nowrap px-3 py-1 rounded-full border border-outline-variant text-[10px] font-label-caps hover:bg-surface-variant">Restrooms</button>
+</div>
+</div>
+</div>
+<!-- Quick Metrics (Operator Context) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel p-4 rounded-xl border border-outline-variant">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">CONGESTION</span>
+<div class="flex items-end gap-2">
+<span class="font-headline-md text-headline-md text-error">HIGH</span>
+<span class="font-data-point text-data-point text-error/60 mb-1">Zone B</span>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-xl border border-outline-variant">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">ETA TO EXIT</span>
+<div class="flex items-end gap-2">
+<span class="font-headline-md text-headline-md text-secondary">4 MIN</span>
+<span class="font-data-point text-data-point text-secondary/60 mb-1">Active</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe md:hidden bg-surface-container-low/90 dark:bg-surface-container-lowest/90 backdrop-blur-md border-t border-outline-variant/20 dark:border-surface-variant rounded-t-full shadow-lg">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest/50 p-2 rounded-xl transition-all">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-[10px] mt-1">Feed</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim font-bold scale-110 p-2 rounded-xl bg-surface-container-highest/50 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assistant_navigation</span>
+<span class="font-label-caps text-[10px] mt-1">Navigate</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest/50 p-2 rounded-xl transition-all">
+<span class="material-symbols-outlined">notification_important</span>
+<span class="font-label-caps text-[10px] mt-1">Tasks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest/50 p-2 rounded-xl transition-all">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-caps text-[10px] mt-1">Profile</span>
+</button>
+</nav>
+<!-- Floating Action Button (Only on Map/Home) -->
+<button class="fixed bottom-24 right-6 md:right-12 w-14 h-14 bg-primary text-on-primary rounded-xl shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-50 md:hidden">
+<span class="material-symbols-outlined text-[32px]">support_agent</span>
+</button>
+<script>
+        // Simple micro-interaction for the chat input
+        const input = document.querySelector('input');
+        input.addEventListener('focus', () => {
+            input.parentElement.parentElement.classList.add('ring-1', 'ring-primary/30');
+        });
+        input.addEventListener('blur', () => {
+            input.parentElement.parentElement.classList.remove('ring-1', 'ring-primary/30');
+        });
+
+        // Simulating AI "thinking" effect occasionally
+        setInterval(() => {
+            const aiStatus = document.querySelector('.ai-gradient-border');
+            if(aiStatus) {
+                aiStatus.classList.add('shimmer');
+                setTimeout(() => aiStatus.classList.remove('shimmer'), 2000);
+            }
+        }, 5000);
+    </script>
+</body></html>
