@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { findShortestPath, generateDirections, VENUE_NODES } from "../services/navigationEngine";
 import { translate, getDir } from "../services/translationEngine";
+import Map from "../components/ui/Map";
+
 
 // Map relative coordinates to percentage values for SVG overlay
 const MAP_COORDS = {
@@ -25,6 +27,7 @@ export default function Wayfinding({
   const dir = getDir(language);
   const [startNode, setStartNode] = useState("section_102");
   const [endNode, setEndNode] = useState("gate_4");
+  const [mapMode, setMapMode] = useState("indoor"); // "indoor" or "outdoor"
   const [chatInput, setChatInput] = useState("");
   const [chatMessages, setChatMessages] = useState([
     {
@@ -178,160 +181,84 @@ export default function Wayfinding({
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        
-        {/* Map View (Bento Large) */}
+                {/* Map View (Bento Large) */}
         <div className="lg:col-span-8 rounded-xl overflow-hidden glass-panel h-[400px] md:h-[600px] relative group border border-outline-variant bg-surface-container-low flex flex-col justify-end">
           
-          {/* Stadium Map Image */}
-          <div className="absolute inset-0 z-0 bg-surface-container-highest flex items-center justify-center overflow-hidden">
-            <img 
-              style={{ transform: `scale(${zoom / 100})`, transition: "transform 0.2s ease" }}
-              className="w-full h-full object-cover opacity-60 pointer-events-none" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuANFvMwMXXISnRQZsR3qagA_imXMUFkUZeS-FA48OqqdVLwoFhCZOgHt62ke7hCIZTXnibJ6X36p28urFBtfm_peQjluEqqiW7cMFNvmRwfuHRPQs8dYHyvqcj6LhoqZn4Q07ArSYjTh-8OLF1W27_u_VqXZKqCLknd2WqVsSNBDUQXFwZJYZVYWxF6Y1gq-T36CVtUvZ7K9saiW-wKVnqiKpplA41-NSg7gJiuE-lYXKU7362w4LCIcw"
-              alt="Stadium Map Layout"
-            />
-            
-            {/* SVG Navigation Lines Layer */}
-            <svg 
-              className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-              style={{ transform: `scale(${zoom / 100})`, transition: "transform 0.2s ease" }}
-              viewBox="0 0 100 100" 
-              preserveAspectRatio="none"
+          {/* Map mode switcher overlay */}
+          <div className="absolute top-4 left-4 z-30 flex gap-1.5 bg-surface-container/95 border border-outline-variant/60 p-1.5 rounded-lg backdrop-blur-md shadow-lg pointer-events-auto">
+            <button
+              onClick={() => setMapMode("indoor")}
+              className={`px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all ${
+                mapMode === "indoor"
+                  ? "bg-primary-container text-white shadow-sm"
+                  : "text-on-surface-variant hover:text-white"
+              }`}
             >
-              {/* Draw Edges */}
-              {congestedZones.length > 0 ? (
-                // Draw paths with congestion overlays
-                Object.keys(VENUE_NODES).map(key => {
-                  const node = VENUE_NODES[key];
-                  const coord = MAP_COORDS[key];
-                  if (congestedZones.includes(key)) {
-                    return (
-                      <circle 
-                        key={key} 
-                        cx={coord.x} 
-                        cy={coord.y} 
-                        r="3.5" 
-                        className="fill-error/20 stroke-error stroke-[0.8] animate-pulse" 
-                      />
-                    );
-                  }
-                  return null;
-                })
-              ) : null}
-
-              {/* Draw navigation path line */}
-              {path && path.length > 1 && (
-                <polyline
-                  points={path.map(nodeId => `${MAP_COORDS[nodeId].x},${MAP_COORDS[nodeId].y}`).join(" ")}
-                  className="fill-none stroke-secondary stroke-[1.2] stroke-dasharray-[3,3] animate-[dash_10s_linear_infinite]"
-                  style={{
-                    strokeDasharray: "2, 1",
-                    strokeDashoffset: 10,
-                    animation: "dash 1.5s linear infinite"
-                  }}
-                />
-              )}
-            </svg>
-
-            {/* Interactive node marker pins */}
-            {Object.keys(VENUE_NODES).map(key => {
-              const node = VENUE_NODES[key];
-              const coord = MAP_COORDS[key];
-              const isSelected = key === startNode || key === endNode;
-              const isCongested = congestedZones.includes(key);
-
-              return (
-                <button
-                  key={key}
-                  onClick={() => setEndNode(key)}
-                  style={{
-                    left: `${coord.x}%`,
-                    top: `${coord.y}%`,
-                    transform: `translate(-50%, -50%) scale(${zoom / 100})`,
-                    transition: "transform 0.2s ease"
-                  }}
-                  className={`absolute z-20 w-5 h-5 rounded-full flex items-center justify-center border-2 shadow-lg transition-transform active:scale-95 group/pin ${
-                    key === startNode 
-                      ? "bg-primary border-white" 
-                      : key === endNode
-                        ? "bg-secondary border-white animate-bounce"
-                        : isCongested
-                          ? "bg-error border-error-container animate-pulse"
-                          : "bg-surface-bright/80 border-outline hover:border-primary-light"
-                  }`}
-                >
-                  <span className="text-[8px] font-bold select-none text-white font-mono">
-                    {key === startNode ? "S" : key === endNode ? "E" : ""}
-                  </span>
-                  
-                  {/* Tooltip on hover */}
-                  <span className="absolute bottom-6 hidden group-hover/pin:block bg-surface-container border border-outline/30 text-on-surface text-[10px] py-0.5 px-2 rounded whitespace-nowrap z-50">
-                    {node.name} {isCongested ? "(CONGESTED)" : ""}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Map Overlay info */}
-          <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
-            <div className="bg-surface-container-high/85 backdrop-blur-md px-3 py-1.5 rounded-full border border-outline-variant flex items-center gap-2">
-              <span className="material-symbols-outlined text-secondary text-sm">visibility</span>
-              <span className="font-mono text-[10px] font-bold text-on-surface">
-                {routingResult?.isRerouted ? translate("Avoid Congestion Active", language) : translate("Standard Mode", language)}
-              </span>
-            </div>
-          </div>
-
-          {/* Zoom Controls */}
-          <div className="absolute bottom-4 right-4 z-10 flex flex-col gap-2">
-            <button 
-              onClick={() => setZoom(z => Math.min(150, z + 10))}
-              className="w-9 h-9 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center hover:bg-primary-container text-on-surface hover:text-white transition-all shadow-md"
-            >
-              <span className="material-symbols-outlined text-sm">add</span>
+              🏢 Indoor Map
             </button>
-            <button 
-              onClick={() => setZoom(z => Math.max(70, z - 10))}
-              className="w-9 h-9 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center hover:bg-primary-container text-on-surface hover:text-white transition-all shadow-md"
+            <button
+              onClick={() => setMapMode("outdoor")}
+              className={`px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all flex items-center gap-1 ${
+                mapMode === "outdoor"
+                  ? "bg-secondary-container text-white shadow-sm"
+                  : "text-on-surface-variant hover:text-white"
+              }`}
             >
-              <span className="material-symbols-outlined text-sm">remove</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+              🌐 Outdoor GPS Tracker
             </button>
           </div>
-          
-          {/* Quick Route Switcher (Bottom of Map) */}
-          <div className="absolute bottom-4 left-4 z-10 bg-surface-container-high/90 backdrop-blur-md p-3 rounded-xl border border-outline-variant/50 max-w-xs shadow-lg">
-            <div className="flex flex-col gap-1.5 text-xs text-on-surface">
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                <span className="text-[10px] text-on-surface-variant font-mono">FROM:</span>
-                <select 
-                  value={startNode} 
-                  onChange={(e) => setStartNode(e.target.value)} 
-                  className="bg-transparent border-none p-0 focus:ring-0 text-xs font-bold text-on-surface cursor-pointer focus:outline-none"
-                >
-                  {Object.keys(VENUE_NODES).map(key => (
-                    <option key={key} value={key} className="bg-surface-container-high">{VENUE_NODES[key].name}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="flex items-center gap-2 border-t border-outline-variant/30 pt-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                <span className="text-[10px] text-on-surface-variant font-mono">TO:</span>
-                <select 
-                  value={endNode} 
-                  onChange={(e) => setEndNode(e.target.value)} 
-                  className="bg-transparent border-none p-0 focus:ring-0 text-xs font-bold text-on-surface cursor-pointer focus:outline-none"
-                >
-                  {Object.keys(VENUE_NODES).map(key => (
-                    <option key={key} value={key} className="bg-surface-container-high">{VENUE_NODES[key].name}</option>
-                  ))}
-                </select>
+
+          {mapMode === "indoor" ? (
+            <div className="absolute inset-0 z-0 bg-surface-container-lowest">
+              <Map 
+                isIndoor={true}
+                selectedStadium={selectedStadium}
+                startNode={startNode}
+                endNode={endNode}
+                path={path}
+                congestedZones={congestedZones}
+                onNodeSelect={setEndNode}
+              />
+              
+              {/* Quick Route Switcher (Bottom of Map) */}
+              <div className="absolute bottom-4 left-4 z-10 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-gray-300 max-w-xs shadow-lg text-gray-800">
+                <div className="flex flex-col gap-1.5 text-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1a73e8]" />
+                    <span className="text-[10px] text-gray-500 font-mono">FROM:</span>
+                    <select 
+                      value={startNode} 
+                      onChange={(e) => setStartNode(e.target.value)} 
+                      className="bg-transparent border-none p-0 focus:ring-0 text-xs font-bold text-gray-800 cursor-pointer focus:outline-none"
+                    >
+                      {Object.keys(VENUE_NODES).map(key => (
+                        <option key={key} value={key} className="bg-white">{VENUE_NODES[key].name}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="flex items-center gap-2 border-t border-gray-200 pt-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ea4335]" />
+                    <span className="text-[10px] text-gray-500 font-mono">TO:</span>
+                    <select 
+                      value={endNode} 
+                      onChange={(e) => setEndNode(e.target.value)} 
+                      className="bg-transparent border-none p-0 focus:ring-0 text-xs font-bold text-gray-800 cursor-pointer focus:outline-none"
+                    >
+                      {Object.keys(VENUE_NODES).map(key => (
+                        <option key={key} value={key} className="bg-white">{VENUE_NODES[key].name}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="absolute inset-0 z-0 bg-surface-container-lowest">
+              <Map selectedStadium={selectedStadium} darkMode={true} />
+            </div>
+          )}
         </div>
-
         {/* Chat & Directions (Bento Side) */}
         <div className="lg:col-span-4 flex flex-col gap-4">
           

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { queryCopilot, OPERATIONAL_KNOWLEDGE } from "../services/copilotEngine";
 import { getAdvisories } from "../services/crowdEngine";
+import Map from "../components/ui/Map";
+
 
 export default function OrganizerDashboard({
   zones,
@@ -360,6 +362,17 @@ export default function OrganizerDashboard({
             ) : (
               <p className="text-sm text-on-surface-variant italic">All stadium operations running optimal. No alerts active.</p>
             )}
+          </div>
+
+          {/* Live Dispatch GPS Map */}
+          <div className="p-5 border border-outline-variant rounded-xl bg-surface-container shadow-lg flex flex-col h-[280px]">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+              <h3 className="font-mono text-xs font-bold text-on-surface-variant uppercase tracking-wider">Ground Dispatch GPS Map</h3>
+            </div>
+            <div className="flex-grow rounded-lg overflow-hidden border border-outline-variant/30 relative">
+              <Map selectedStadium={selectedStadium} darkMode={true} />
+            </div>
           </div>
 
           {/* Upcoming Schedule Card */}
