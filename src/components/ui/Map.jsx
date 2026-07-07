@@ -168,6 +168,8 @@ export default function Map({
       style: googleMapsStyle,
       center: coords,
       zoom: isIndoor ? 17.5 : (is3D ? 16 : 15), // Zoom in super close for indoor view
+      minZoom: 3, // Prevent zooming out to repeating global layouts
+      maxZoom: 20, // Prevent zooming in past raster limits
       pitch: isIndoor ? 25 : (is3D ? 60 : 0),
       bearing: isIndoor ? -15 : (is3D ? 45 : 0)
     });
@@ -436,7 +438,7 @@ export default function Map({
       
       {/* Google Maps Style Panel (Only visible in Outdoor mode since Indoor is locked to Satellite) */}
       {!isIndoor && (
-        <div className="absolute top-4 left-4 z-10 flex gap-2">
+        <div className="absolute top-16 left-4 z-20 flex gap-2">
           <div className="flex bg-white border border-gray-300 rounded-md overflow-hidden shadow-md font-sans text-xs text-gray-800">
             <button
               onClick={() => {
@@ -493,7 +495,7 @@ export default function Map({
 
       {/* Indoor Mode HUD label */}
       {isIndoor && (
-        <div className="absolute top-4 left-4 z-10 bg-white/95 border border-gray-300 rounded-md px-3 py-1.5 shadow-md font-sans text-xs text-gray-800 flex items-center gap-2 pointer-events-none">
+        <div className="absolute top-16 left-4 z-20 bg-white/95 border border-gray-300 rounded-md px-3 py-1.5 shadow-md font-sans text-xs text-gray-800 flex items-center gap-2 pointer-events-none">
           <span className="material-symbols-outlined text-green-600 text-xs animate-pulse">satellite_alt</span>
           <span className="font-bold text-[10px] tracking-wide uppercase">Google Satellite Indoor Overlay</span>
         </div>
