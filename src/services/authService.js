@@ -35,12 +35,31 @@ const initDb = () => {
   }
 };
 
-// 1. Sign Up / Register
-// Note: We intentionally bypass supabase.auth.signUp() here because it sends a
-// confirmation email on every registration attempt, which quickly hits Supabase's
-// free-tier rate limit (3 emails/hour). All user accounts are persisted in
-// LocalStorage and can still log in via Supabase session if needed.
 export const registerUser = async (name, email, password, role = "fan", avatar = "⚽") => {
+  if (isSupabaseConfigured) {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          name,
+          role,
+          avatar
+        }
+      }
+    });
+
+    if (error) return { success: false, message: error.message };
+    
+    // Supabase will automatically send the confirmation email here if enabled in dashboard
+    return { 
+      success: true, 
+      user: data.user, 
+      message: "Check your email to confirm your account!" 
+    };
+  }
+
+  // Fallback to LocalStorage DB if no Supabase
   initDb();
   const users = JSON.parse(localStorage.getItem(USER_DB_KEY));
   const exists = users.some(u => u.email.toLowerCase() === email.toLowerCase());

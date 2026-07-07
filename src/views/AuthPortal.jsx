@@ -129,10 +129,16 @@ export default function AuthPortal({ onLoginSuccess }) {
 
     const res = await registerUser(name, email, password, role, avatar);
     if (res.success) {
-      setSuccess("Account registered successfully! Redirecting...");
-      setTimeout(() => {
-        onLoginSuccess(res.user);
-      }, 800);
+      if (res.message) {
+        // We have a custom message (e.g. Supabase email confirmation)
+        setSuccess(res.message);
+        // Do NOT log them in automatically yet, they need to check their email
+      } else {
+        setSuccess("Account registered successfully! Redirecting...");
+        setTimeout(() => {
+          onLoginSuccess(res.user);
+        }, 800);
+      }
     } else {
       setError(res.message);
     }
