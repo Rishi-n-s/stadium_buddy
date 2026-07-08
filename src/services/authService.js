@@ -1,6 +1,6 @@
 import { supabase, isSupabaseConfigured } from "./supabaseClient";
 
-export const registerUser = async (username, email, password) => {
+export const registerUser = async (username, email, password, role = "guest") => {
   if (!isSupabaseConfigured) {
     return { success: false, message: "Supabase is not configured." };
   }
@@ -11,6 +11,7 @@ export const registerUser = async (username, email, password) => {
     options: {
       data: {
         username: username, // Pass username in metadata so trigger can pick it up
+        role: role,         // Pass role in metadata
       }
     }
   });

