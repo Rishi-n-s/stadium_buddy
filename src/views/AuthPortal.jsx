@@ -74,12 +74,17 @@ const validateEmail = (email) => {
 export default function AuthPortal({ onLoginSuccess }) {
   const [isRegisterMode, setIsRegisterMode] = useState(false);
   
-  // Input fields
+  // Input fields for signup
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("fan");
   const [avatar, setAvatar] = useState("⚽");
+
+  // Input fields for login
+  const [loginUsername, setLoginUsername] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -89,12 +94,12 @@ export default function AuthPortal({ onLoginSuccess }) {
     setError("");
     setSuccess("");
 
-    if (!email || !password) {
-      setError("Please enter both email and password");
+    if (!loginUsername || !loginEmail || !loginPassword) {
+      setError("Please enter your username, email, and password");
       return;
     }
 
-    const res = await loginUser(email, password);
+    const res = await loginUser(loginUsername, loginEmail, loginPassword);
     if (res.success) {
       setSuccess("Welcome back! Redirecting...");
       setTimeout(() => {
@@ -145,15 +150,13 @@ export default function AuthPortal({ onLoginSuccess }) {
   };
 
 
-  // Login as demo user helper
-  const handleQuickLogin = async (demoEmail) => {
-    const res = await loginUser(demoEmail, "password123");
-    if (res.success) {
-      setSuccess(`Logged in as ${res.user.name}!`);
-      setTimeout(() => {
-        onLoginSuccess(res.user);
-      }, 800);
-    }
+  // Fill form with demo user credentials instead of auto-submitting
+  const handleQuickLogin = (demoEmail, demoPassword = "password123") => {
+    setIsRegisterMode(false);
+    setEmail(demoEmail);
+    setPassword(demoPassword);
+    setError("");
+    setSuccess("Credentials autofilled. Click 'Let's go!' to sign in.");
   };
 
   return (
@@ -216,20 +219,29 @@ export default function AuthPortal({ onLoginSuccess }) {
                 <form className="flip-card__form" onSubmit={handleLogin}>
                   <input 
                     className="flip-card__input" 
-                    name="email" 
-                    placeholder="Email" 
-                    type="email" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    name="loginUsername" 
+                    placeholder="Username" 
+                    type="text" 
+                    value={loginUsername}
+                    onChange={(e) => setLoginUsername(e.target.value)}
                     required
                   />
                   <input 
                     className="flip-card__input" 
-                    name="password" 
+                    name="loginEmail" 
+                    placeholder="Email" 
+                    type="email" 
+                    value={loginEmail}
+                    onChange={(e) => setLoginEmail(e.target.value)}
+                    required
+                  />
+                  <input 
+                    className="flip-card__input" 
+                    name="loginPassword" 
                     placeholder="Password" 
                     type="password" 
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={loginPassword}
+                    onChange={(e) => setLoginPassword(e.target.value)}
                     required
                   />
                   <button type="submit" className="flip-card__btn">Let's go!</button>
@@ -277,6 +289,7 @@ export default function AuthPortal({ onLoginSuccess }) {
                       <option value="fan">Fan View</option>
                       <option value="staff">Field Staff</option>
                       <option value="organizer">Director</option>
+                      <option value="admin">Admin</option>
                     </select>
 
                     <select 
@@ -297,32 +310,7 @@ export default function AuthPortal({ onLoginSuccess }) {
           </div>
         </StyledWrapper>
 
-        {/* Pre-seeded demo credentials quick panel */}
-        <div className="mt-8 border-t border-outline-variant/20 pt-6">
-          <div className="text-[9px] font-mono text-outline uppercase tracking-widest text-center mb-3">
-            🔐 Pre-Configured Developer Accounts
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            <button
-              onClick={() => handleQuickLogin("admin@stadiumiq.com")}
-              className="bg-primary/10 border border-primary/20 hover:border-primary hover:bg-primary/20 text-primary-light font-mono text-[9px] font-bold py-1.5 px-1 rounded transition-all"
-            >
-              ADMIN
-            </button>
-            <button
-              onClick={() => handleQuickLogin("staff@stadiumiq.com")}
-              className="bg-secondary/10 border border-secondary/20 hover:border-secondary hover:bg-secondary/20 text-secondary font-mono text-[9px] font-bold py-1.5 px-1 rounded transition-all"
-            >
-              STAFF
-            </button>
-            <button
-              onClick={() => handleQuickLogin("fan@stadiumiq.com")}
-              className="bg-outline-variant/10 border border-outline-variant/20 hover:border-outline hover:bg-outline-variant/20 text-on-surface font-mono text-[9px] font-bold py-1.5 px-1 rounded transition-all"
-            >
-              GUEST FAN
-            </button>
-          </div>
-        </div>
+
 
         {/* Service status info */}
         <div className="mt-6 text-center">

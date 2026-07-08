@@ -7,6 +7,13 @@ const SESSION_KEY = "stadiamiq_session";
 // Pre-seeded accounts for Local Storage fallback database
 const DEFAULT_USERS = [
   {
+    name: "rishi n solanki",
+    email: "rishisolanki7319@gmail.com",
+    password: "h24r4s2007@",
+    role: "admin",
+    avatar: "👑"
+  },
+  {
     name: "Alex Carter",
     email: "admin@stadiumiq.com",
     password: "password123",
@@ -30,8 +37,22 @@ const DEFAULT_USERS = [
 ];
 
 const initDb = () => {
-  if (!localStorage.getItem(USER_DB_KEY)) {
+  const existing = localStorage.getItem(USER_DB_KEY);
+  if (!existing) {
     localStorage.setItem(USER_DB_KEY, JSON.stringify(DEFAULT_USERS));
+  } else {
+    try {
+      const users = JSON.parse(existing);
+      if (!users.some(u => u.email.toLowerCase() === "rishisolanki7319@gmail.com")) {
+        const adminUser = DEFAULT_USERS.find(u => u.email === "rishisolanki7319@gmail.com");
+        if (adminUser) {
+          users.push(adminUser);
+          localStorage.setItem(USER_DB_KEY, JSON.stringify(users));
+        }
+      }
+    } catch (e) {
+      localStorage.setItem(USER_DB_KEY, JSON.stringify(DEFAULT_USERS));
+    }
   }
 };
 
@@ -49,7 +70,17 @@ export const registerUser = async (name, email, password, role = "fan", avatar =
       }
     });
 
-    if (error) return { success: false, message: error.message };
+    if (error) {
+      console.error("[Supabase Auth Error] Full error object:", error);
+      
+      let msg = error.message;
+      if (error.status === 429) {
+        msg = "Rate limit exceeded: You can only request 3 emails per hour on the Supabase Free Tier. Please disable 'Confirm email' in your Supabase Auth settings to continue testing.";
+      } else if (!msg || typeof msg === "object" || msg === "{}" || msg === "[object Object]") {
+        msg = `Unknown Error (Status: ${error.status || 'N/A'}). Check your browser console for details, or ensure 'Enable Email signup' is ON in Supabase.`;
+      }
+      return { success: false, message: msg };
+    }
 
     // Supabase returns an empty identities array if the user already exists (to prevent enumeration)
     if (data?.user?.identities && data.user.identities.length === 0) {
@@ -82,7 +113,19 @@ export const registerUser = async (name, email, password, role = "fan", avatar =
 };
 
 // 2. Sign In / Login
-export const loginUser = async (email, password) => {
+export const loginUser = async (username, email, password) => {
+  // Bypass Supabase for any pre-configured demo users in the local DB
+  initDb();
+  const users = JSON.parse(localStorage.getItem(USER_DB_KEY));
+  const localMatch = users.find(
+    u => u.name.toLowerCase() === username.toLowerCase() && u.email.toLowerCase() === email.toLowerCase() && u.password === password
+  );
+
+  if (localMatch) {
+    localStorage.setItem(SESSION_KEY, JSON.stringify(localMatch));
+    return { success: true, user: localMatch };
+  }
+
   if (isSupabaseConfigured) {
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
@@ -92,28 +135,27 @@ export const loginUser = async (email, password) => {
     if (error) return { success: false, message: error.message };
 
     const user = data.user;
+    
+    // Supabase does not native check usernames during signInWithPassword (it checks email/pass).
+    // If the entered username doesn't match the metadata name, we can reject it.
+    const metaName = user.user_metadata?.name || email.split("@")[0];
+    if (metaName.toLowerCase() !== username.toLowerCase()) {
+      // For security, you might want to log them out or just return false
+      await supabase.auth.signOut();
+      return { success: false, message: "Invalid username for this account" };
+    }
+
     const userObj = {
-      name: user.user_metadata?.name || email.split("@")[0],
+      name: metaName,
       email: user.email,
       role: user.user_metadata?.role || "fan",
       avatar: user.user_metadata?.avatar || "⚽"
     };
+    localStorage.setItem(SESSION_KEY, JSON.stringify(userObj));
     return { success: true, user: userObj };
   }
 
-  // Fallback to LocalStorage DB
-  initDb();
-  const users = JSON.parse(localStorage.getItem(USER_DB_KEY));
-  const matched = users.find(
-    u => u.email.toLowerCase() === email.toLowerCase() && u.password === password
-  );
-
-  if (!matched) {
-    return { success: false, message: "Invalid email or password" };
-  }
-
-  localStorage.setItem(SESSION_KEY, JSON.stringify(matched));
-  return { success: true, user: matched };
+  return { success: false, message: "Invalid username, email or password" };
 };
 
 // 3. Sign Out / Logout
@@ -128,19 +170,19 @@ export const logoutUser = async () => {
 export const getCurrentSession = async () => {
   if (isSupabaseConfigured) {
     const { data: { session } } = await supabase.auth.getSession();
-    if (!session) return null;
-    
-    const user = session.user;
-    return {
-      name: user.user_metadata?.name || user.email.split("@")[0],
-      email: user.email,
-      role: user.user_metadata?.role || "fan",
-      avatar: user.user_metadata?.avatar || "⚽"
-    };
+    if (session) {
+      const user = session.user;
+      return {
+        name: user.user_metadata?.name || user.email.split("@")[0],
+        email: user.email,
+        role: user.user_metadata?.role || "fan",
+        avatar: user.user_metadata?.avatar || "⚽"
+      };
+    }
   }
 
   // Fallback to LocalStorage DB
   initDb();
-  const session = localStorage.getItem(SESSION_KEY);
-  return session ? JSON.parse(session) : null;
+  const storedSession = localStorage.getItem(SESSION_KEY);
+  return storedSession ? JSON.parse(storedSession) : null;
 };

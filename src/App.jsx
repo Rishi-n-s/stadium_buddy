@@ -55,6 +55,15 @@ export default function App() {
     const checkSession = async () => {
       const session = await getCurrentSession();
       setCurrentUser(session);
+      if (session) {
+        if (session.role === 'admin' || session.role === 'organizer') {
+          setCurrentView('organizer');
+        } else if (session.role === 'staff') {
+          setCurrentView('staff');
+        } else {
+          setCurrentView('fan');
+        }
+      }
     };
     checkSession();
   }, []);
@@ -260,15 +269,19 @@ export default function App() {
                 <span className="material-symbols-outlined text-[15px] sm:text-[16px]">home</span>
                 <span className="hidden md:inline">Home</span>
               </button>
-              <button 
-                onClick={() => setCurrentView("staff")} 
-                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
-                  currentView === "staff" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
-                }`}
-              >
-                <span className="material-symbols-outlined text-[15px] sm:text-[16px]">notifications</span>
-                <span className="hidden md:inline">Staff Alerts</span>
-              </button>
+              
+              {["staff", "organizer", "admin"].includes(currentUser?.role) && (
+                <button 
+                  onClick={() => setCurrentView("staff")} 
+                  className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
+                    currentView === "staff" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-[15px] sm:text-[16px]">notifications</span>
+                  <span className="hidden md:inline">Staff Alerts</span>
+                </button>
+              )}
+
               <button 
                 onClick={() => setCurrentView("wayfinding")} 
                 className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
@@ -278,28 +291,33 @@ export default function App() {
                 <span className="material-symbols-outlined text-[15px] sm:text-[16px]">explore</span>
                 <span className="hidden md:inline">Wayfinding</span>
               </button>
-              <button 
-                onClick={() => setCurrentView("organizer")} 
-                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
-                  currentView === "organizer" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
-                }`}
-              >
-                <span className="material-symbols-outlined text-[15px] sm:text-[16px]">dashboard</span>
-                <span className="hidden md:inline">Dashboard</span>
-              </button>
+
+              {["organizer", "admin"].includes(currentUser?.role) && (
+                <button 
+                  onClick={() => setCurrentView("organizer")} 
+                  className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
+                    currentView === "organizer" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-[15px] sm:text-[16px]">dashboard</span>
+                  <span className="hidden md:inline">Dashboard</span>
+                </button>
+              )}
             </nav>
 
-            <button
-              onClick={() => setShowSimulator(!showSimulator)}
-              className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono border transition-all flex items-center gap-1 sm:gap-1.5 ${
-                showSimulator 
-                  ? "bg-[#1a73e8] border-[#1a73e8] text-white shadow-md" 
-                  : "bg-surface-container hover:bg-surface-container-high border-outline-variant text-on-surface-variant"
-              }`}
-            >
-              <span className="material-symbols-outlined text-[15px] sm:text-[16px]">build</span>
-              <span className="hidden md:inline">Simulation</span>
-            </button>
+            {currentUser?.role === "admin" && (
+              <button
+                onClick={() => setShowSimulator(!showSimulator)}
+                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono border transition-all flex items-center gap-1 sm:gap-1.5 ${
+                  showSimulator 
+                    ? "bg-[#1a73e8] border-[#1a73e8] text-white shadow-md" 
+                    : "bg-surface-container hover:bg-surface-container-high border-outline-variant text-on-surface-variant"
+                }`}
+              >
+                <span className="material-symbols-outlined text-[15px] sm:text-[16px]">build</span>
+                <span className="hidden md:inline">Simulation</span>
+              </button>
+            )}
           </div>
 
           {/* Desktop User Profile Badge & Logout */}
