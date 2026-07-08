@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { translate, getDir } from "../services/translationEngine";
+import { LANGUAGES, translate, getDir } from "../services/translationEngine";
 
 export default function FanHome({
   language,
@@ -55,11 +55,11 @@ export default function FanHome({
             onChange={(e) => setLanguage(e.target.value)}
             className="bg-surface-container-highest border border-outline/30 text-on-surface text-xs rounded-lg px-2 py-1 focus:outline-none"
           >
-            <option value="en">EN</option>
-            <option value="ar">AR</option>
-            <option value="ur">UR</option>
-            <option value="es">ES</option>
-            <option value="fr">FR</option>
+            {Object.values(LANGUAGES).map((lang) => (
+              <option key={lang.code} value={lang.code}>
+                {lang.code.toUpperCase()}
+              </option>
+            ))}
           </select>
 
           <button
