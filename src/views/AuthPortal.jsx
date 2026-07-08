@@ -2,87 +2,33 @@ import React, { useState } from "react";
 import { loginUser, registerUser } from "../services/authService";
 import styled from "styled-components";
 
-const AVATARS = ["🤖", "⚽", "🏃‍♂️", "👮‍♂️", "🍿", "🎟️", "🏟️", "🍔"];
-
-// Blocklist of known disposable / fake email domains
 const BLOCKED_EMAIL_DOMAINS = new Set([
-  "mailinator.com", "guerrillamail.com", "guerrillamail.net", "guerrillamail.org",
-  "guerrillamail.biz", "guerrillamail.de", "guerrillamail.info",
-  "sharklasers.com", "guerrillamailblock.com", "grr.la", "guerrillamail.com",
-  "spam4.me", "yopmail.com", "yopmail.fr", "cool.fr.nf", "jetable.fr.nf",
-  "nospam.ze.tc", "nomail.xl.cx", "mega.zik.dj", "speed.1s.fr",
-  "courriel.fr.nf", "moncourrier.fr.nf", "monemail.fr.nf", "monmail.fr.nf",
-  "trashmail.at", "trashmail.com", "trashmail.io", "trashmail.me", "trashmail.net",
-  "throwam.com", "throwam.net", "dispostable.com", "spamgourmet.com",
-  "spamgourmet.net", "spamgourmet.org", "10minutemail.com", "10minutemail.net",
-  "10minutemail.org", "10minutemail.de", "10minutemail.ru", "10minutemail.co.uk",
-  "tempmail.com", "tempmail.net", "tempmail.org", "temp-mail.org", "temp-mail.ru",
-  "fakeinbox.com", "fakeinbox.net", "fakemail.fr", "getonemail.com",
-  "maildrop.cc", "mailnull.com", "mailnull.net", "mailnesia.com",
-  "discard.email", "discardmail.com", "discardmail.de",
-  "getnada.com", "nada.email", "nadamail.com",
-  "mohmal.com", "mohmal.im", "mohmal.tech",
-  "throwam.com", "spamhereplease.com", "spamherelots.com",
-  "binkmail.com", "bobmail.info", "chammy.info", "devnullmail.com",
-  "letthemeatspam.com", "mailinspector.com", "mailme.gq", "mrvix.com",
-  "notmailinator.com", "nowmymail.com", "ownmail.net", "pecinan.com",
-  "pecinan.net", "pecinan.org", "proxymail.eu", "randomail.net",
-  "rklips.com", "rmqkr.net", "safetymail.info", "sandelf.de",
-  "sharedmailbox.org", "skeefmail.com", "sl-informa.com", "spaml.de",
-  "spaml.com", "speed.1s.fr", "spoofmail.de", "tempalias.com",
-  "tempe-mail.com", "temporaryemail.net", "temporaryforwarding.com",
-  "thanksnospam.info", "throwam.com", "tittbit.in", "tmailinator.com",
-  "trbvm.com", "uggsrock.com", "veryrealemail.com", "wetrainbayarea.com",
-  "weg-werf-email.de", "wegwerf-email-adresse.de", "wegwerfadresse.de",
-  "wegwerfemail.de", "willhackforfood.biz", "wkzbxist.gq",
-  "xagloo.co", "xagloo.com", "xemaps.com", "xents.com", "xmaily.com",
-  "yomail.info", "yopmail.pp.ua", "yopmail.com",
-  "zippymail.info", "zoemail.net", "zoemail.org",
-  "example.com", "test.com", "fake.com", "invalid.com", "noemail.com",
-  "noreply.com", "nobody.com", "noone.com", "nobody.net",
+  "mailinator.com", "guerrillamail.com", "yopmail.com", "tempmail.com", "10minutemail.com"
 ]);
 
-// Validate email format and domain
 const validateEmail = (email) => {
-  // RFC 5322 simplified format check
   const formatRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
-  if (!formatRegex.test(email)) {
-    return "Please enter a valid email address.";
-  }
+  if (!formatRegex.test(email)) return "Please enter a valid email address.";
 
-  // Check for obviously sequential/dummy patterns like test@test.com, a@b.co
-  const [localPart, domain] = email.toLowerCase().split("@");
-
+  const domain = email.toLowerCase().split("@")[1];
   if (BLOCKED_EMAIL_DOMAINS.has(domain)) {
-    return "Disposable or temporary email addresses are not allowed. Please use a real email.";
+    return "Disposable email addresses are not allowed.";
   }
-
-  // Catch suspiciously short local parts (e.g. "a@b.com")
-  if (localPart.length < 3) {
-    return "Please use a complete email address.";
-  }
-
-  // Flag obvious test/fake patterns in local part
-  const fakeLocalPatterns = /^(test|fake|noreply|no-reply|admin|null|undefined|anonymous|nobody|noone|mailinator|trash|spam|discard|temp|dummy|user123|user1|user\d+|asdf|qwerty|abcd|1234|xxx)$/i;
-  if (fakeLocalPatterns.test(localPart)) {
-    return "Please use your real email address to register.";
-  }
-
-  return null; // valid
+  return null;
 };
 
 export default function AuthPortal({ onLoginSuccess }) {
   const [isRegisterMode, setIsRegisterMode] = useState(false);
   
-  // Input fields
-  const [name, setName] = useState("");
+  // Input fields for signup
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("fan");
-  const [avatar, setAvatar] = useState("⚽");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [isAwaitingEmail, setIsAwaitingEmail] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -97,6 +43,7 @@ export default function AuthPortal({ onLoginSuccess }) {
     const res = await loginUser(email, password);
     if (res.success) {
       setSuccess("Welcome back! Redirecting...");
+      // For login, onLoginSuccess receives the raw user. App.jsx checks the session.
       setTimeout(() => {
         onLoginSuccess(res.user);
       }, 800);
@@ -110,15 +57,13 @@ export default function AuthPortal({ onLoginSuccess }) {
     setError("");
     setSuccess("");
 
-    if (!name || !email || !password) {
+    if (!username || !email || !password || !confirmPassword) {
       setError("All fields are required");
       return;
     }
 
-    // Validate email before anything else
-    const emailError = validateEmail(email);
-    if (emailError) {
-      setError(emailError);
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
       return;
     }
 
@@ -127,32 +72,24 @@ export default function AuthPortal({ onLoginSuccess }) {
       return;
     }
 
-    const res = await registerUser(name, email, password, role, avatar);
+    const emailError = validateEmail(email);
+    if (emailError) {
+      setError(emailError);
+      return;
+    }
+
+    const res = await registerUser(username, email, password);
     if (res.success) {
-      if (res.message) {
-        // We have a custom message (e.g. Supabase email confirmation)
-        setSuccess(res.message);
-        // Do NOT log them in automatically yet, they need to check their email
-      } else {
-        setSuccess("Account registered successfully! Redirecting...");
-        setTimeout(() => {
-          onLoginSuccess(res.user);
-        }, 800);
-      }
+      setSuccess(res.message); // "Check your email to confirm your account!"
+      setIsAwaitingEmail(true);
+      // Automatically switch to login mode after a delay
+      setTimeout(() => {
+        setIsRegisterMode(false);
+        setPassword("");
+        setConfirmPassword("");
+      }, 3000);
     } else {
       setError(res.message);
-    }
-  };
-
-
-  // Login as demo user helper
-  const handleQuickLogin = async (demoEmail) => {
-    const res = await loginUser(demoEmail, "password123");
-    if (res.success) {
-      setSuccess(`Logged in as ${res.user.name}!`);
-      setTimeout(() => {
-        onLoginSuccess(res.user);
-      }, 800);
     }
   };
 
@@ -171,7 +108,7 @@ export default function AuthPortal({ onLoginSuccess }) {
             <span className="material-symbols-outlined text-primary text-3xl font-extrabold" style={{ fontVariationSettings: "'FILL' 1" }}>sports_stadium</span>
             <span className="text-xl font-extrabold tracking-widest bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">STADIAMIQ</span>
           </div>
-          <p className="text-[10px] text-on-surface-variant font-mono uppercase tracking-[0.25em]">Cloud Authentication Service</p>
+          <p className="text-[10px] text-on-surface-variant font-mono uppercase tracking-[0.25em]">Cloud Authentication</p>
         </div>
 
         {/* Error / Success Alerts */}
@@ -183,9 +120,15 @@ export default function AuthPortal({ onLoginSuccess }) {
         )}
         {success && (
           <div className="bg-secondary-container/20 border border-secondary/30 text-secondary-light text-xs font-mono p-3 rounded-lg mb-4 flex items-center gap-2">
-            <span className="material-symbols-outlined text-sm animate-spin">sync</span>
+            <span className="material-symbols-outlined text-sm">check_circle</span>
             <span>{success}</span>
           </div>
+        )}
+
+        {isAwaitingEmail && (
+           <div className="bg-primary-container/20 border border-primary/30 text-primary-light text-xs font-mono p-3 rounded-lg mb-4 text-center">
+             Please check your inbox (and spam folder) for a confirmation link. You must click the link before you can log in.
+           </div>
         )}
 
         {/* Flip-card Wrapper */}
@@ -200,6 +143,7 @@ export default function AuthPortal({ onLoginSuccess }) {
                 setIsRegisterMode(e.target.checked);
                 setError("");
                 setSuccess("");
+                setIsAwaitingEmail(false);
               }}
             />
             <div className="card-switch">
@@ -242,10 +186,10 @@ export default function AuthPortal({ onLoginSuccess }) {
                 <form className="flip-card__form" onSubmit={handleRegister}>
                   <input 
                     className="flip-card__input" 
-                    placeholder="Name" 
+                    placeholder="Username" 
                     type="text" 
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     required
                   />
                   <input 
@@ -260,78 +204,28 @@ export default function AuthPortal({ onLoginSuccess }) {
                   <input 
                     className="flip-card__input" 
                     name="password" 
-                    placeholder="Password" 
+                    placeholder="Password (min 6 chars)" 
                     type="password" 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
-                  
-                  {/* Role & Avatar dropdowns */}
-                  <div className="flex gap-2 w-[240px] max-w-full justify-between">
-                    <select 
-                      className="flip-card__select"
-                      value={role}
-                      onChange={(e) => setRole(e.target.value)}
-                    >
-                      <option value="fan">Fan View</option>
-                      <option value="staff">Field Staff</option>
-                      <option value="organizer">Director</option>
-                    </select>
+                  <input 
+                    className="flip-card__input" 
+                    name="confirmPassword" 
+                    placeholder="Confirm Password" 
+                    type="password" 
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
+                  />
 
-                    <select 
-                      className="flip-card__select"
-                      value={avatar}
-                      onChange={(e) => setAvatar(e.target.value)}
-                    >
-                      {AVATARS.map((av) => (
-                        <option key={av} value={av}>{av} Icon</option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <button type="submit" className="flip-card__btn">Confirm!</button>
+                  <button type="submit" className="flip-card__btn">Sign Up!</button>
                 </form>
               </div>
             </div>
           </div>
         </StyledWrapper>
-        {/* Pre-seeded demo credentials quick panel */}
-        <div className="mt-8 border-t border-outline-variant/20 pt-6">
-          <div className="text-[9px] font-mono text-outline uppercase tracking-widest text-center mb-3">
-            🔐 Pre-Configured Developer Accounts
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            <button
-              onClick={() => handleQuickLogin("admin@stadiumiq.com")}
-              className="bg-primary/10 border border-primary/20 hover:border-primary hover:bg-primary/20 text-primary-light font-mono text-[9px] font-bold py-1.5 px-1 rounded transition-all"
-            >
-              ADMIN
-            </button>
-            <button
-              onClick={() => handleQuickLogin("staff@stadiumiq.com")}
-              className="bg-secondary/10 border border-secondary/20 hover:border-secondary hover:bg-secondary/20 text-secondary font-mono text-[9px] font-bold py-1.5 px-1 rounded transition-all"
-            >
-              STAFF
-            </button>
-            <button
-              onClick={() => handleQuickLogin("fan@stadiumiq.com")}
-              className="bg-outline-variant/10 border border-outline-variant/20 hover:border-outline hover:bg-outline-variant/20 text-on-surface font-mono text-[9px] font-bold py-1.5 px-1 rounded transition-all"
-            >
-              GUEST FAN
-            </button>
-          </div>
-        </div>
-
-
-        {/* Service status info */}
-        <div className="mt-6 text-center">
-          <span className="inline-flex items-center gap-1.5 text-[9px] font-mono text-on-surface-variant/40 bg-surface-container-low px-2 py-0.5 rounded border border-outline-variant/10">
-            <span className="w-1 h-1 rounded-full bg-secondary" />
-            Database engine local persistence (localStorage DB)
-          </span>
-        </div>
-
       </div>
     </div>
   );
@@ -364,7 +258,6 @@ const StyledWrapper = styled.div`
     height: 40px;
   }
 
-  /* switch card */
   .switch {
     position: relative;
     display: flex;
@@ -453,8 +346,6 @@ const StyledWrapper = styled.div`
     text-decoration: underline;
   }
 
-  /* card */ 
-
   .flip-card__inner {
     width: 290px;
     max-width: 100%;
@@ -531,31 +422,6 @@ const StyledWrapper = styled.div`
     border: 2px solid var(--input-focus);
   }
 
-  .flip-card__select {
-    width: 116px;
-    max-width: calc(50% - 4px);
-    height: 40px;
-    border-radius: 5px;
-    border: 2px solid var(--main-color);
-    background-color: var(--bg-color);
-    box-shadow: 4px 4px var(--main-color);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--font-color);
-    padding: 5px 10px;
-    outline: none;
-    cursor: pointer;
-  }
-
-  .flip-card__select:focus {
-    border: 2px solid var(--input-focus);
-  }
-
-  .flip-card__btn:active {
-    box-shadow: 0px 0px var(--main-color);
-    transform: translate(3px, 3px);
-  }
-
   .flip-card__btn {
     margin: 15px 0 10px 0;
     width: 116px;
@@ -570,5 +436,10 @@ const StyledWrapper = styled.div`
     color: var(--font-color);
     cursor: pointer;
     transition: transform 0.1s, box-shadow 0.1s;
+  }
+
+  .flip-card__btn:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
   }
 `;

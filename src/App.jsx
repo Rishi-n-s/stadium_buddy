@@ -46,8 +46,9 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [showSimulator, setShowSimulator] = useState(false);
   
-  // Navigation flow state (Intro -> Auth -> Landing -> Dashboard)
+  // Navigation flow state (Intro -> Landing -> Dashboard)
   const [isIntroActive, setIsIntroActive] = useState(true);
+  
   const [currentUser, setCurrentUser] = useState(null);
   const [selectedStadium, setSelectedStadium] = useState(null);
 
