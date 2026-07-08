@@ -37,22 +37,8 @@ const DEFAULT_USERS = [
 ];
 
 const initDb = () => {
-  const existing = localStorage.getItem(USER_DB_KEY);
-  if (!existing) {
+  if (!localStorage.getItem(USER_DB_KEY)) {
     localStorage.setItem(USER_DB_KEY, JSON.stringify(DEFAULT_USERS));
-  } else {
-    try {
-      const users = JSON.parse(existing);
-      if (!users.some(u => u.email.toLowerCase() === "rishisolanki7319@gmail.com")) {
-        const adminUser = DEFAULT_USERS.find(u => u.email === "rishisolanki7319@gmail.com");
-        if (adminUser) {
-          users.push(adminUser);
-          localStorage.setItem(USER_DB_KEY, JSON.stringify(users));
-        }
-      }
-    } catch (e) {
-      localStorage.setItem(USER_DB_KEY, JSON.stringify(DEFAULT_USERS));
-    }
   }
 };
 
@@ -113,19 +99,7 @@ export const registerUser = async (name, email, password, role = "fan", avatar =
 };
 
 // 2. Sign In / Login
-export const loginUser = async (username, email, password) => {
-  // Bypass Supabase for any pre-configured demo users in the local DB
-  initDb();
-  const users = JSON.parse(localStorage.getItem(USER_DB_KEY));
-  const localMatch = users.find(
-    u => u.name.toLowerCase() === username.toLowerCase() && u.email.toLowerCase() === email.toLowerCase() && u.password === password
-  );
-
-  if (localMatch) {
-    localStorage.setItem(SESSION_KEY, JSON.stringify(localMatch));
-    return { success: true, user: localMatch };
-  }
-
+export const loginUser = async (email, password) => {
   if (isSupabaseConfigured) {
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
@@ -135,27 +109,28 @@ export const loginUser = async (username, email, password) => {
     if (error) return { success: false, message: error.message };
 
     const user = data.user;
-    
-    // Supabase does not native check usernames during signInWithPassword (it checks email/pass).
-    // If the entered username doesn't match the metadata name, we can reject it.
-    const metaName = user.user_metadata?.name || email.split("@")[0];
-    if (metaName.toLowerCase() !== username.toLowerCase()) {
-      // For security, you might want to log them out or just return false
-      await supabase.auth.signOut();
-      return { success: false, message: "Invalid username for this account" };
-    }
-
     const userObj = {
-      name: metaName,
+      name: user.user_metadata?.name || email.split("@")[0],
       email: user.email,
       role: user.user_metadata?.role || "fan",
       avatar: user.user_metadata?.avatar || "⚽"
     };
-    localStorage.setItem(SESSION_KEY, JSON.stringify(userObj));
     return { success: true, user: userObj };
   }
 
-  return { success: false, message: "Invalid username, email or password" };
+  // Fallback to LocalStorage DB
+  initDb();
+  const users = JSON.parse(localStorage.getItem(USER_DB_KEY));
+  const matched = users.find(
+    u => u.email.toLowerCase() === email.toLowerCase() && u.password === password
+  );
+
+  if (!matched) {
+    return { success: false, message: "Invalid email or password" };
+  }
+
+  localStorage.setItem(SESSION_KEY, JSON.stringify(matched));
+  return { success: true, user: matched };
 };
 
 // 3. Sign Out / Logout
@@ -170,19 +145,19 @@ export const logoutUser = async () => {
 export const getCurrentSession = async () => {
   if (isSupabaseConfigured) {
     const { data: { session } } = await supabase.auth.getSession();
-    if (session) {
-      const user = session.user;
-      return {
-        name: user.user_metadata?.name || user.email.split("@")[0],
-        email: user.email,
-        role: user.user_metadata?.role || "fan",
-        avatar: user.user_metadata?.avatar || "⚽"
-      };
-    }
+    if (!session) return null;
+    
+    const user = session.user;
+    return {
+      name: user.user_metadata?.name || user.email.split("@")[0],
+      email: user.email,
+      role: user.user_metadata?.role || "fan",
+      avatar: user.user_metadata?.avatar || "⚽"
+    };
   }
 
   // Fallback to LocalStorage DB
   initDb();
-  const storedSession = localStorage.getItem(SESSION_KEY);
-  return storedSession ? JSON.parse(storedSession) : null;
+  const session = localStorage.getItem(SESSION_KEY);
+  return session ? JSON.parse(session) : null;
 };
