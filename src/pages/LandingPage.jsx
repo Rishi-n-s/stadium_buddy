@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { STADIUMS } from "../data/stadiums";
 
+import Button from '../components/ui/Button';
+
 // List of popular stadiums for quick-select chips
 const FEATURED_STADIUMS = [
   { stadium: "Wembley Stadium", city: "London", country: "England", capacity: 90000, hometeams: "England", confederation: "UEFA" },
@@ -166,9 +168,9 @@ export default function LandingPage({ onDeploy }) {
                 className="bg-transparent border-none text-on-surface text-sm w-full outline-none focus:ring-0 placeholder-on-surface-variant/50"
               />
               {searchQuery && (
-                <button onClick={() => setSearchQuery("")} className="material-symbols-outlined text-outline-variant hover:text-white text-lg">
+                <Button onClick={() => setSearchQuery("")} className="material-symbols-outlined text-outline-variant hover:text-white text-lg">
                   close
-                </button>
+                </Button>
               )}
             </div>
 
@@ -184,7 +186,7 @@ export default function LandingPage({ onDeploy }) {
                     </div>
                     <div className="divide-y divide-outline-variant/10">
                       {filteredStadiums.map((s, idx) => (
-                        <button
+                        <Button
                           key={idx}
                           onClick={() => handleSelectStadium(s)}
                           className="w-full text-left px-5 py-2.5 hover:bg-primary-container/20 flex justify-between items-center transition-colors group"
@@ -203,7 +205,7 @@ export default function LandingPage({ onDeploy }) {
                               arrow_forward
                             </span>
                           </div>
-                        </button>
+                        </Button>
                       ))}
                     </div>
                   </div>
@@ -218,7 +220,7 @@ export default function LandingPage({ onDeploy }) {
                     </div>
                     <div className="divide-y divide-outline-variant/10">
                       {globalResults.map((s, idx) => (
-                        <button
+                        <Button
                           key={idx}
                           onClick={() => handleSelectStadium(s)}
                           className="w-full text-left px-5 py-2.5 hover:bg-secondary-container/20 flex justify-between items-center transition-colors group"
@@ -237,7 +239,7 @@ export default function LandingPage({ onDeploy }) {
                               arrow_forward
                             </span>
                           </div>
-                        </button>
+                        </Button>
                       ))}
                     </div>
                   </div>
@@ -265,7 +267,7 @@ export default function LandingPage({ onDeploy }) {
             <span className="text-[10px] text-outline font-mono uppercase mr-1">Popular:</span>
             {FEATURED_STADIUMS.map((item, idx) => {
               return (
-                <button
+                <Button
                   key={idx}
                   onClick={() => handleSelectStadium(item)}
                   className={`px-3 py-1 rounded-full text-xs font-semibold border transition-all ${
@@ -275,7 +277,7 @@ export default function LandingPage({ onDeploy }) {
                   }`}
                 >
                   {item.stadium}
-                </button>
+                </Button>
               );
             })}
           </div>
@@ -366,13 +368,13 @@ export default function LandingPage({ onDeploy }) {
               </div>
 
               {/* Action Button */}
-              <button
+              <Button
                 onClick={handleDeployClick}
                 className="w-full py-4 bg-primary-container hover:brightness-110 active:scale-95 text-white rounded-xl font-mono text-sm font-bold tracking-wider transition-all duration-200 flex justify-center items-center gap-2 shadow-lg shadow-primary-container/25"
               >
                 <span className="material-symbols-outlined text-sm">bolt</span>
                 DEPLOY STADIUMIQ LAYER
-              </button>
+              </Button>
             </div>
           )}
         </div>

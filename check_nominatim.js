@@ -1,1 +1,0 @@
-fetch('https://nominatim.openstreetmap.org/search?q=Rajiv+Gandhi+International+Cricket+Stadium,+Uppal,+Hyderabad,+India&format=json&limit=3',{headers:{'User-Agent':'test'}}).then(r=>r.json()).then(console.log)

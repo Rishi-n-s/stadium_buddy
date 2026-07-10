@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { loginUser, registerUser } from "../services/authService";
 import styled from "styled-components";
 
+import Button from '../components/ui/Button';
+
 const BLOCKED_EMAIL_DOMAINS = new Set([
   "mailinator.com", "guerrillamail.com", "yopmail.com", "tempmail.com", "10minutemail.com"
 ]);
@@ -113,40 +115,38 @@ export default function AuthPortal({ onLoginSuccess }) {
   };
 
   return (
-    <div className="min-h-screen bg-surface text-on-surface flex items-center justify-center relative overflow-hidden px-4 py-8">
-      {/* Dynamic blurred neon background lights */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/20 blur-[120px] animate-pulse pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-secondary/20 blur-[120px] animate-pulse pointer-events-none" />
-
-      {/* Main glass container */}
-      <div className="w-full max-w-md bg-surface-container-high/65 backdrop-blur-xl border border-outline-variant/30 px-4 py-8 sm:p-8 rounded-2xl shadow-2xl relative z-10">
+    <div className="min-h-screen bg-surface text-on-surface flex items-center justify-center relative overflow-hidden px-4 py-8 mesh-pattern">
+      {/* Main high-tech container */}
+      <div className="w-full max-w-md bg-surface-container border-4 border-black px-4 py-8 sm:p-8 hard-shadow-lg relative z-10">
         
         {/* Logo and Brand */}
-        <div className="flex flex-col items-center mb-6">
-          <div className="flex items-center gap-2 mb-1.5">
-            <span className="material-symbols-outlined text-primary text-3xl font-extrabold" style={{ fontVariationSettings: "'FILL' 1" }}>sports_stadium</span>
-            <span className="text-xl font-extrabold tracking-widest bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">STADIAMIQ</span>
+        <div className="flex flex-col items-center mb-8">
+          <div className="bg-primary px-4 py-2 skew-x-negative-12 border-2 border-black hard-shadow mb-4">
+             <span className="material-symbols-outlined text-white text-4xl skew-x-positive-12" style={{ fontVariationSettings: "'FILL' 1" }}>sports_stadium</span>
           </div>
-          <p className="text-[10px] text-on-surface-variant font-mono uppercase tracking-[0.25em]">Cloud Authentication</p>
+          <h1 className="text-display-md font-display-md italic uppercase text-on-surface mb-2">
+            STADIUM<span className="text-secondary-fixed">IQ</span>
+          </h1>
+          <p className="text-label-caps font-label-caps text-black bg-secondary-fixed px-3 py-1 border-2 border-black skew-x-negative-12">CLOUD AUTHENTICATION</p>
         </div>
 
         {/* Error / Success Alerts */}
         {error && (
-          <div className="bg-error-container/20 border border-error/30 text-error text-xs font-mono p-3 rounded-lg mb-4 flex items-center gap-2 animate-shake">
-            <span className="material-symbols-outlined text-sm">error</span>
-            <span>{error}</span>
+          <div className="bg-error border-2 border-black text-white text-label-caps font-label-caps px-4 py-2 skew-x-negative-12 hard-shadow mb-6 flex items-center gap-2 animate-shake">
+            <span className="material-symbols-outlined text-sm skew-x-positive-12">error</span>
+            <span className="skew-x-positive-12">{error}</span>
           </div>
         )}
         {success && (
-          <div className="bg-secondary-container/20 border border-secondary/30 text-secondary-light text-xs font-mono p-3 rounded-lg mb-4 flex items-center gap-2">
-            <span className="material-symbols-outlined text-sm">check_circle</span>
-            <span>{success}</span>
+          <div className="bg-secondary-fixed border-2 border-black text-black text-label-caps font-label-caps px-4 py-2 skew-x-negative-12 hard-shadow mb-6 flex items-center gap-2">
+            <span className="material-symbols-outlined text-sm skew-x-positive-12">check_circle</span>
+            <span className="skew-x-positive-12">{success}</span>
           </div>
         )}
 
         {isAwaitingEmail && (
-           <div className="bg-primary-container/20 border border-primary/30 text-primary-light text-xs font-mono p-3 rounded-lg mb-4 text-center">
-             Please check your inbox (and spam folder) for a confirmation link. You must click the link before you can log in.
+           <div className="bg-primary border-2 border-black text-white text-label-caps font-label-caps px-4 py-3 skew-x-negative-12 hard-shadow mb-6 text-center">
+             <span className="skew-x-positive-12 block">Please check your inbox (and spam folder) for a confirmation link. You must click the link before you can log in.</span>
            </div>
         )}
 
@@ -195,7 +195,7 @@ export default function AuthPortal({ onLoginSuccess }) {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
-                  <button type="submit" className="flip-card__btn">Let's go!</button>
+                  <Button type="submit" className="flip-card__btn">Let's go!</Button>
                 </form>
               </div>
 
@@ -249,7 +249,7 @@ export default function AuthPortal({ onLoginSuccess }) {
                     <option value="staff">Field Staff</option>
                   </select>
 
-                  <button type="submit" className="flip-card__btn">Sign Up!</button>
+                  <Button type="submit" className="flip-card__btn">Sign Up!</Button>
                 </form>
               </div>
             </div>
@@ -268,11 +268,12 @@ const StyledWrapper = styled.div`
 
   .wrapper {
     --input-focus: #b7c4ff;
-    --font-color: #dae2fd;
-    --font-color-sub: #8d90a2;
-    --bg-color: #171f33;
-    --bg-color-alt: #222a3d;
-    --main-color: #b7c4ff;
+    --font-color: #e5e2e3;
+    --font-color-sub: #c3c5d9;
+    --bg-color: #131314;
+    --bg-color-alt: #1c1b1c;
+    --main-color: #000000;
+    --accent-color: #ffffff;
     
     display: flex;
     flex-direction: column;
@@ -403,7 +404,6 @@ const StyledWrapper = styled.div`
     backface-visibility: hidden;
     background: var(--bg-color-alt);
     gap: 15px;
-    border-radius: 5px;
     border: 2px solid var(--main-color);
     box-shadow: 4px 4px var(--main-color);
   }
@@ -424,14 +424,15 @@ const StyledWrapper = styled.div`
     font-size: 25px;
     font-weight: 900;
     text-align: center;
-    color: var(--main-color);
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-style: italic;
   }
 
   .flip-card__input {
     width: 240px;
     max-width: 100%;
     height: 40px;
-    border-radius: 5px;
     border: 2px solid var(--main-color);
     background-color: var(--bg-color);
     box-shadow: 4px 4px var(--main-color);
@@ -440,6 +441,8 @@ const StyledWrapper = styled.div`
     color: var(--font-color);
     padding: 5px 10px;
     outline: none;
+    font-family: 'Archivo Narrow', sans-serif;
+    text-transform: uppercase;
   }
 
   .flip-card__input::placeholder {
@@ -456,15 +459,17 @@ const StyledWrapper = styled.div`
     width: 116px;
     max-width: 100%;
     height: 40px;
-    border-radius: 5px;
     border: 2px solid var(--main-color);
-    background-color: var(--bg-color);
+    background-color: #b7c4ff;
     box-shadow: 4px 4px var(--main-color);
     font-size: 17px;
     font-weight: 600;
-    color: var(--font-color);
+    color: var(--main-color);
     cursor: pointer;
     transition: transform 0.1s, box-shadow 0.1s;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
   }
 
   .flip-card__btn:active {

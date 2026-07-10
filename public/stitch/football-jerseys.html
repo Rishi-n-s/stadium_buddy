@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARENA PRIME | Elite Football Kits</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:wght@400;700&family=Space+Grotesk:wght@300;400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&family=Archivo+Narrow:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for a premium look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3f4945;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94d3c0;
+        }
+
+        /* Shear effect for buttons */
+        .btn-shear:hover {
+            transform: skewX(-6deg) translateX(4px);
+            transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+
+        /* Ambient Glow for Active States */
+        .winning-glow:active {
+            box-shadow: inset 0 0 12px 2px rgba(255, 225, 109, 0.3);
+        }
+
+        .diagonal-accent {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-primary": "#29695a",
+                      "on-primary-fixed-variant": "#065042",
+                      "on-primary": "#00382d",
+                      "tertiary": "#c6c6c7",
+                      "tertiary-fixed": "#e2e2e2",
+                      "secondary-fixed-dim": "#e9c400",
+                      "primary-container": "#004d3f",
+                      "outline-variant": "#3f4945",
+                      "surface-tint": "#94d3c0",
+                      "on-tertiary-container": "#b0b1b1",
+                      "on-secondary": "#3a3000",
+                      "primary-fixed": "#aff0dc",
+                      "on-primary-container": "#7ebdaa",
+                      "error-container": "#93000a",
+                      "inverse-on-surface": "#313030",
+                      "on-surface": "#e5e2e1",
+                      "on-background": "#e5e2e1",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "surface-dim": "#131313",
+                      "error": "#ffb4ab",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-container-low": "#1c1b1b",
+                      "on-primary-fixed": "#002019",
+                      "on-error-container": "#ffdad6",
+                      "surface": "#131313",
+                      "on-secondary-container": "#725f00",
+                      "on-secondary-fixed": "#221b00",
+                      "background": "#131313",
+                      "primary-fixed-dim": "#94d3c0",
+                      "outline": "#89938f",
+                      "on-secondary-fixed-variant": "#544600",
+                      "surface-container": "#201f1f",
+                      "surface-variant": "#353534",
+                      "secondary-container": "#ffdb3c",
+                      "on-surface-variant": "#bfc9c4",
+                      "secondary-fixed": "#ffe16d",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "surface-container-lowest": "#0e0e0e",
+                      "secondary": "#fff9ef",
+                      "surface-container-highest": "#353534",
+                      "primary": "#94d3c0",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-tertiary": "#2f3131",
+                      "tertiary-container": "#424444",
+                      "surface-bright": "#393939"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "48px",
+                      "gutter": "16px",
+                      "base": "4px",
+                      "section-gap": "80px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Archivo Narrow"],
+                      "headline-lg-mobile": ["Anton"],
+                      "headline-lg": ["Anton"],
+                      "headline-xl": ["Anton"],
+                      "headline-md": ["Anton"],
+                      "price-display": ["Space Grotesk"],
+                      "body-md": ["Archivo Narrow"],
+                      "label-caps": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                      "headline-xl": ["80px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                      "price-display": ["20px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-white/10 flex justify-between items-center px-4 md:px-margin-desktop h-16">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95" data-icon="menu">menu</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-md md:text-headline-md text-primary tracking-widest">ARENA PRIME</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="#">KITS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">TRAINING</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">ACCESSORIES</a>
+</nav>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95" data-icon="shopping_bag">shopping_bag</button>
+</div>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section Title -->
+<section class="px-margin-mobile md:px-margin-desktop mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-label-caps text-label-caps text-secondary-fixed mb-2 block tracking-[0.3em]">AUTHENTIC GEAR</span>
+<h2 class="font-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-headline-lg-mobile uppercase italic">CHAMPIONS' THREADS</h2>
+</div>
+<div class="flex gap-4 mb-2">
+<button class="font-label-caps text-label-caps bg-surface-container-high px-4 py-2 flex items-center gap-2 border border-white/5 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]" data-icon="tune">tune</span> FILTERS
+                    </button>
+<button class="font-label-caps text-label-caps bg-surface-container-high px-4 py-2 flex items-center gap-2 border border-white/5 active:scale-95 transition-transform">
+                        SORT <span class="material-symbols-outlined text-[16px]" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Filter Bar -->
+<section class="px-margin-mobile md:px-margin-desktop mb-8 overflow-x-auto no-scrollbar">
+<div class="flex gap-3 min-w-max pb-4">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2 rounded-full">ALL KITS</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-6 py-2 rounded-full border border-white/5 hover:border-primary/50 transition-colors">PREMIER LEAGUE</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-6 py-2 rounded-full border border-white/5 hover:border-primary/50 transition-colors">LA LIGA</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-6 py-2 rounded-full border border-white/5 hover:border-primary/50 transition-colors">SERIE A</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-6 py-2 rounded-full border border-white/5 hover:border-primary/50 transition-colors">NATIONAL TEAMS</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-6 py-2 rounded-full border border-white/5 hover:border-primary/50 transition-colors">NIKE</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-6 py-2 rounded-full border border-white/5 hover:border-primary/50 transition-colors">ADIDAS</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-6 py-2 rounded-full border border-white/5 hover:border-primary/50 transition-colors">PUMA</button>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1: Man City -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-white/10 overflow-hidden cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up professional product shot of the Manchester City home football jersey in sky blue, featuring intricate honeycomb patterns. The shirt is displayed in a high-octane stadium-lit photography style with sharp shadows and vibrant highlights. The material texture of the authentic match-day kit is clearly visible against a dark, moody background of deep greens and blacks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMRuh1N6Iou9WG409i-5ZpwKCoKCf5ahovJrfYHBdMMymTrFX9l7_tBlSJIe-uIVmhVtpBA09RHhfiU4SoY6yboSLv3k85gyo72F7AAYieanXtf4HKRCJ6UbpoZLdufIOYDU6YJXuZqERECYMKdD8AAYyDinBpX0qOJ1rqyu_BigxaM6ZdjvIX_xq7IRMnG2xnNqe7sMSvvdbIrn27cJviMwxZtxCC1ODTGnKmCznHRsOKBWr-GCWD"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 tracking-tighter">NEW ARRIVAL</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps px-2 py-1 tracking-tighter">PRO FIT</span>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity active:scale-90">
+<span class="material-symbols-outlined text-white" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-2 bg-gradient-to-t from-black/40 to-transparent">
+<p class="font-label-caps text-label-caps text-outline uppercase">Premier League</p>
+<h3 class="font-body-lg text-body-lg uppercase font-bold tracking-tight">MANCHESTER CITY HOME 24/25</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-price-display text-price-display text-secondary-fixed">$140.00</span>
+<button class="material-symbols-outlined text-primary" data-icon="add_shopping_cart">add_shopping_cart</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2: Arsenal -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-white/10 overflow-hidden cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A premium commercial shot of the Arsenal FC home jersey, iconic red torso with crisp white sleeves and gold Adidas stripes. The jersey is presented on a minimalist mannequin with high-contrast stadium lighting that creates a prestigious and elite atmosphere. The background is a dark, textured concrete grey reflecting a modern urban sports aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdigZHswsOLgRtGjnx_Zy8leQCRdrpL88fbC5hD0PJgz6IEME-8_mDKOBgYPijw6D2_vQMb4npc-biA6X5HJuCy_Cq8KmBTDdKJd0VgpSWAYPJ7X9rdvNf48DpnwXPofckN21x4hpDBHe82U2J6WR8zq16e_4UZ18_zuzAGFPGehCKEY9IyrjJ60xvp3gKmx85uiWgIRX5S9DNdCeNcrU6Rm6aZS-6KP3HbQgA8_xAj30wAZcyTVW4"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps px-2 py-1 tracking-tighter">PRO FIT</span>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity active:scale-90">
+<span class="material-symbols-outlined text-white" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<p class="font-label-caps text-label-caps text-outline uppercase">Premier League</p>
+<h3 class="font-body-lg text-body-lg uppercase font-bold tracking-tight">ARSENAL AUTHENTIC HOME</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-price-display text-price-display text-secondary-fixed">$135.00</span>
+<button class="material-symbols-outlined text-primary" data-icon="add_shopping_cart">add_shopping_cart</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3: Argentina -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-white/10 overflow-hidden cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Authentic Argentina national football team home jersey featuring the iconic sky blue and white vertical stripes with three gold stars and the World Cup winner's badge. Professional product photography with elite studio lighting, emphasizing the fabric quality and the prestigious gold accents. The environment is dark and atmospheric, focused solely on the trophy-winning garment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY3rg1DBtWV7yD93x-vVhIm4p4p0Mcve3OJArrfuzWgxOgbEYTxNoh24Trj7A53GZu2ljcJDWBU7kfB6a7ZbcEUQQ7bnzjHaPFNs-0GJl1n-vNF8NpRIj1JVnRhnNg1pT3pRceRqzGPGHI-nErMP7k180_O_GY29XES-XUgrufjWgbZRANdcjOcF4-QAAI4KC1WSGD0a2NL4USgNAH9ifaP1OMMklo-2Y93ynrJhgPsPQqR61lhOYQ"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 tracking-tighter">LIMITED EDITION</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps px-2 py-1 tracking-tighter">PRO FIT</span>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity active:scale-90">
+<span class="material-symbols-outlined text-white" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<p class="font-label-caps text-label-caps text-outline uppercase">CONMEBOL</p>
+<h3 class="font-body-lg text-body-lg uppercase font-bold tracking-tight">ARGENTINA 3-STAR CHAMPIONS</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-price-display text-price-display text-secondary-fixed">$160.00</span>
+<button class="material-symbols-outlined text-primary" data-icon="add_shopping_cart">add_shopping_cart</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4: Real Madrid -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-white/10 overflow-hidden cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Elite Real Madrid home jersey in pristine white with subtle houndstooth patterns and golden Adidas stripes. The image is captured in a high-fashion sports photography style, featuring dramatic lighting that emphasizes the regal and successful identity of the club. The background is a clean, dark aesthetic with a hint of stadium green in the ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_GjGwwxIdhP5cEMnvv1-tlP0uWjl9GRASBTZqvUP6kupYp1WUkKimFkq3KIeVb9gEubXhQwakWk6qX9rDyOf1Y1IQv5HVllHx4WWR2OFvqSmqj7UysrWCu__3WjrjONMrgcY-eBGAO645n8oYvWkgNi20JaplRdjJfM9ltKHupz45p7PMhOlTITsHQbwI6a-S8ypIhKIlKF4qivVBl4l2xOdY9pYy6-BHyr72p1wbgfZ4l2GzREg4"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps px-2 py-1 tracking-tighter">PRO FIT</span>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity active:scale-90">
+<span class="material-symbols-outlined text-white" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<p class="font-label-caps text-label-caps text-outline uppercase">La Liga</p>
+<h3 class="font-body-lg text-body-lg uppercase font-bold tracking-tight">REAL MADRID HOME AUTHENTIC</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-price-display text-price-display text-secondary-fixed">$145.00</span>
+<button class="material-symbols-outlined text-primary" data-icon="add_shopping_cart">add_shopping_cart</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5: Inter Milan -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-white/10 overflow-hidden cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dramatic product shot of the Inter Milan home kit, featuring bold blue and black vertical stripes with high-gloss metallic team crest. The lighting is moody and cinematic, highlighting the moisture-wicking technology and premium stitch work. The setting evokes a sense of intensity and competitive power with deep shadows and neon blue rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJB_-gJgGeCAGbv7ezHePRJ-l6th6tB-us5mW3-VOzTaKttf1fJ3JxS_K6eaqbj68pBnCbpbGuCGMADPGlMXrNfop0_PD0z8ZHEYV4AHfyvvjX2lN_zzG7LR-yYRC8hwOOrQKV4JLXcCo5ks4Si3ZEOYqO3gVz2_AUqj8jyBD-HfL2-LZE6RNDWTB9FkaKgySR8aTAaVOJJnXlm_Xijp5aaotiUR0AQnSwM-fSsRWur3Pe7CXDFyQB"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps px-2 py-1 tracking-tighter">PRO FIT</span>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity active:scale-90">
+<span class="material-symbols-outlined text-white" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<p class="font-label-caps text-label-caps text-outline uppercase">Serie A</p>
+<h3 class="font-body-lg text-body-lg uppercase font-bold tracking-tight">INTER MILAN HOME MATCH JERSEY</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-price-display text-price-display text-secondary-fixed">$130.00</span>
+<button class="material-symbols-outlined text-primary" data-icon="add_shopping_cart">add_shopping_cart</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6: France -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-white/10 overflow-hidden cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek studio photography session featuring the France national team away jersey in white with intricate historical graphics. The lighting is bright and clean, emphasizing the high-contrast red and blue details. The composition is dynamic, showing the jersey draped elegantly to reveal its breathable texture and technical design for elite athletes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdEZgWy5YzCkNRF4CbllAqGgtroXeazxgDE70SdcZ8fd3PF3SPd-zgakQDgYC78RfnKAu2RmcyoBp7uaCLiHzqVV1pJ4sPLn3yPFl9mLyK3y84HupUbOSLmsQGaERnz3Zx4jTBnmEpq5XFZAy_3GVO_bv0ZeJMP0T_6fPBlEM8agtfopP2rkCx-gn2IV8HWBm9i03EHqw9L2uDTBBQjaDKx-lplRdnHueM44DbJyIFiblex5fR6iYS"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 tracking-tighter">NEW RELEASE</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps px-2 py-1 tracking-tighter">PRO FIT</span>
+</div>
+<button class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity active:scale-90">
+<span class="material-symbols-outlined text-white" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<p class="font-label-caps text-label-caps text-outline uppercase">UEFA National</p>
+<h3 class="font-body-lg text-body-lg uppercase font-bold tracking-tight">FRANCE AWAY STADIUM VAPOR</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-price-display text-price-display text-secondary-fixed">$150.00</span>
+<button class="material-symbols-outlined text-primary" data-icon="add_shopping_cart">add_shopping_cart</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Promotion Section -->
+<section class="mt-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="relative h-[400px] flex items-center overflow-hidden border border-white/10">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-50" data-alt="Wide angle high-definition cinematic stadium interior at night with floodlights beaming down, creating a dramatic atmosphere of anticipation and championship glory. The grass is pristine green and the stands are filled with the hazy glow of an elite sporting event. The overall color grading is dark and prestigious with Trophy Gold and Stadium Green highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBblxsXjJdD6YaK8CH6yBWV2v6a8Lcd5xavnvNfiogN9CFWDYoMjT67m8aisGrY4JaZYwxGG5DmgvgdW3ZTaKuWCWqUjbhQWlsV3-i9KoK7ekdUiDNO7uexm4eSgSTnPbMCElSrhyhHxjAkIHwRUzFAXyYtldfip4zpFAMO_ZKFE1xWt0DvxOIVbVYQ6tyDOuyvQz1IP5TDqZEo_M89-pexznYiXcZL4uwJJX43KD97YPtsR4qZElge"/>
+</div>
+<div class="relative z-10 px-8 md:px-16 max-w-2xl">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.4em] mb-4 block">LIMITED RELEASE</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile uppercase mb-6">CHAMPIONSHIP COLLECTION</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-md">Exclusive gear designed for the world's most elite performers. Engineered with Pro-Vapor tech for maximum breathability under stadium lights.</p>
+<button class="btn-shear bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps px-10 py-4 diagonal-accent uppercase winning-glow">SHOP THE COLLECTION</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/5 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_10px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 px-4 pb-safe">
+<div class="flex flex-col items-center justify-center text-secondary-fixed bg-primary-container/20 rounded-full p-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+</nav>
+<!-- Custom Footer (Desktop) -->
+<footer class="hidden md:block bg-surface-container-low border-t border-white/5 py-16 px-margin-desktop">
+<div class="grid grid-cols-4 gap-gutter">
+<div class="col-span-1">
+<h4 class="font-headline-md text-headline-md text-primary tracking-widest mb-6">ARENA PRIME</h4>
+<p class="font-body-md text-body-md text-outline">The ultimate destination for elite football kits and high-performance sports apparel. Engineered for those who demand excellence.</p>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-secondary-fixed mb-6 uppercase">SHOP</h5>
+<ul class="flex flex-col gap-3 font-body-md text-body-md text-on-surface-variant">
+<li class="hover:text-primary transition-colors cursor-pointer">Premier League</li>
+<li class="hover:text-primary transition-colors cursor-pointer">La Liga</li>
+<li class="hover:text-primary transition-colors cursor-pointer">International</li>
+<li class="hover:text-primary transition-colors cursor-pointer">Limited Editions</li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-secondary-fixed mb-6 uppercase">SUPPORT</h5>
+<ul class="flex flex-col gap-3 font-body-md text-body-md text-on-surface-variant">
+<li class="hover:text-primary transition-colors cursor-pointer">Order Tracking</li>
+<li class="hover:text-primary transition-colors cursor-pointer">Returns Policy</li>
+<li class="hover:text-primary transition-colors cursor-pointer">Sizing Guide</li>
+<li class="hover:text-primary transition-colors cursor-pointer">Member Benefits</li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-secondary-fixed mb-6 uppercase">STAY ELITE</h5>
+<p class="font-body-md text-body-md text-outline mb-4">Join our inner circle for early access to limited edition drops.</p>
+<div class="flex">
+<input class="bg-background border border-white/10 px-4 py-2 font-label-caps text-label-caps w-full focus:outline-none focus:border-primary transition-colors" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="bg-primary text-on-primary px-4 hover:opacity-90 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-white/5 flex justify-between items-center font-label-caps text-[10px] text-outline tracking-widest uppercase">
+<p>© 2024 ARENA PRIME PERFORMANCE. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<span class="hover:text-on-surface cursor-pointer">Privacy Policy</span>
+<span class="hover:text-on-surface cursor-pointer">Terms of Service</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for product cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Add any extra hover logic here if needed beyond CSS
+            });
+        });
+    </script>
+</body></html>

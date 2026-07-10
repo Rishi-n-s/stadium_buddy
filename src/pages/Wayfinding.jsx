@@ -4,6 +4,8 @@ import { LANGUAGES, translate, getDir } from "../services/translationEngine";
 import Map from "../components/ui/Map";
 import LocationConsentModal from "../components/ui/LocationConsentModal";
 import { hasLocationConsent } from "../services/locationBroadcast";
+import Button from '../components/ui/Button';
+
 // Map relative coordinates to percentage values for SVG overlay
 const MAP_COORDS = {
   gate_4: { x: 20, y: 78 },
@@ -24,7 +26,8 @@ export default function Wayfinding(props) {
     setLanguage,
     congestedZones = [],
     onSimulateCongestion,
-    selectedStadium
+    selectedStadium,
+    onNavigateHome
   } = props || {};
   const dir = getDir(language);
   const [startNode, setStartNode] = useState("section_102");
@@ -137,18 +140,21 @@ export default function Wayfinding(props) {
   return (
     <div dir={dir} className="w-full max-w-[1440px] mx-auto p-4 md:p-8">
       {/* Top Header */}
-      <header className="flex justify-between items-center pb-6 border-b border-outline-variant/30 mb-6">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full overflow-hidden border border-primary/20 bg-surface-container-high">
-            <span className="material-symbols-outlined text-primary text-xl flex items-center justify-center h-full">explore</span>
+        <header className="flex justify-between items-center pb-6 border-b border-outline-variant/30 mb-6">
+          <div className="flex items-center gap-3">
+            <Button onClick={onNavigateHome} className="material-symbols-outlined hover:bg-surface-bright transition-colors p-2" title="Back to Hub">
+              arrow_back
+            </Button>
+            <div className="w-8 h-8 rounded-full overflow-hidden border border-primary/20 bg-surface-container-high">
+              <span className="material-symbols-outlined text-primary text-xl flex items-center justify-center h-full">explore</span>
+            </div>
+            <div>
+              <h1 className="text-xl font-extrabold text-primary">StadiumIQ</h1>
+              <p className="text-[10px] text-on-surface-variant font-mono uppercase tracking-widest">
+                {selectedStadium ? selectedStadium.stadium : "AI Wayfinding"}
+              </p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-xl font-extrabold text-primary-light">StadiumIQ</h1>
-            <p className="text-[10px] text-on-surface-variant font-mono uppercase">
-              {selectedStadium ? selectedStadium.stadium : "AI Wayfinding"}
-            </p>
-          </div>
-        </div>
 
         <div className="flex items-center gap-2">
           {/* Language Selector */}
@@ -167,7 +173,7 @@ export default function Wayfinding(props) {
       </header>
 
       {/* Real-time Advisory Banner */}
-      <div className="relative mb-6 overflow-hidden rounded-xl border border-primary/20 bg-surface-container-low shadow-lg">
+      <div className="relative mb-6 overflow-hidden rounded-xl border border-primary/20 bg-surface-container-low shadow-lg glass-overlay mechanical-border">
         {routingResult?.isRerouted && (
           <div className="absolute inset-0 opacity-10 bg-gradient-to-r from-transparent via-secondary/20 to-transparent animate-[pulse_3s_infinite]" />
         )}
@@ -185,28 +191,28 @@ export default function Wayfinding(props) {
 
       {/* === MOBILE: Controls stacked above/below map === */}
       {/* Indoor/Outdoor Mode Switcher — always above map */}
-      <div className="flex gap-1.5 bg-surface-container/95 border border-outline-variant/60 p-1.5 rounded-lg backdrop-blur-md shadow-md mb-2 lg:hidden">
-          <button
+      <div className="flex gap-1.5 bg-surface-container/95 border border-outline-variant/60 p-1.5 rounded-lg backdrop-blur-md shadow-md mb-2 lg:hidden mechanical-border">
+          <Button
             onClick={() => setMapMode("indoor")}
             className={`flex-1 px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all ${
               mapMode === "indoor"
-                ? "bg-primary-container text-white shadow-sm"
+                ? "bg-primary-container text-white shadow-sm tactile-button"
                 : "text-on-surface-variant hover:text-white"
             }`}
           >
             🏢 Indoor Map
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={() => setMapMode("outdoor")}
             className={`flex-1 px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all flex items-center justify-center gap-1 ${
               mapMode === "outdoor"
-                ? "bg-secondary-container text-white shadow-sm"
+                ? "bg-secondary-container text-white shadow-sm tactile-button"
                 : "text-on-surface-variant hover:text-white"
             }`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
             🌐 Outdoor GPS
-          </button>
+          </Button>
         </div>
 
         {/* Route selector (mobile) — above map, compact */}
@@ -243,31 +249,31 @@ export default function Wayfinding(props) {
 
         {/* Map container — clean, no internal overlays on mobile */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div className="lg:col-span-8 rounded-xl overflow-hidden glass-panel h-[350px] sm:h-[420px] md:h-[520px] lg:h-[600px] relative group border border-outline-variant bg-surface-container-low">
+        <div className="lg:col-span-8 rounded-xl overflow-hidden glass-overlay mechanical-border h-[50vh] md:h-[60vh] min-h-[400px] relative group bg-surface-container-low">
           
           {/* Indoor/Outdoor switcher — desktop only, inside map */}
-          <div className="hidden lg:flex absolute top-4 left-4 z-30 gap-1.5 bg-surface-container/95 border border-outline-variant/60 p-1.5 rounded-lg backdrop-blur-md shadow-lg pointer-events-auto">
-            <button
+          <div className="hidden lg:flex absolute top-4 left-4 z-30 gap-1.5 bg-surface-container/95 border border-outline-variant/60 p-1.5 rounded-lg backdrop-blur-md shadow-lg pointer-events-auto mechanical-border">
+            <Button
               onClick={() => setMapMode("indoor")}
               className={`px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all ${
                 mapMode === "indoor"
-                  ? "bg-primary-container text-white shadow-sm"
+                  ? "bg-primary-container text-white shadow-sm tactile-button"
                   : "text-on-surface-variant hover:text-white"
               }`}
             >
               🏢 Indoor Map
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setMapMode("outdoor")}
               className={`px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all flex items-center gap-1 ${
                 mapMode === "outdoor"
-                  ? "bg-secondary-container text-white shadow-sm"
+                  ? "bg-secondary-container text-white shadow-sm tactile-button"
                   : "text-on-surface-variant hover:text-white"
               }`}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
               🌐 Outdoor GPS Tracker
-            </button>
+            </Button>
           </div>
 
           {mapMode === "indoor" ? (
@@ -334,88 +340,10 @@ export default function Wayfinding(props) {
         {/* Chat & Directions (Bento Side) */}
         <div className="lg:col-span-4 flex flex-col gap-4">
           
-          {/* AI Chat Box */}
-          <div className="flex-grow glass-panel rounded-xl flex flex-col overflow-hidden border border-outline-variant h-[430px] bg-surface-container-low">
-            <div className="p-4 border-b border-outline-variant bg-surface-container flex items-center gap-3">
-              <span className="material-symbols-outlined text-primary text-xl">smart_toy</span>
-              <span className="text-sm font-bold text-primary-light">
-                {translate("Fan Assistant", language)}
-              </span>
-            </div>
-            
-            {/* Messages Thread */}
-            <div className="flex-grow overflow-y-auto p-4 flex flex-col gap-4">
-              {chatMessages.map((msg, index) => (
-                <div 
-                  key={index}
-                  className={`flex flex-col max-w-[85%] ${msg.sender === "user" ? "self-end" : "self-start"}`}
-                >
-                  {msg.sender === "ai" && (
-                    <span className="text-[10px] text-primary font-mono mb-1">{translate("AI Navigator", language)}</span>
-                  )}
-                  
-                  <div className={`p-3 rounded-xl ${
-                    msg.sender === "user" 
-                      ? "bg-primary-container text-white rounded-tr-none" 
-                      : "bg-surface-container-high text-on-surface rounded-tl-none border border-outline-variant"
-                  }`}>
-                    <p className="text-sm leading-relaxed">{translate(msg.text, language)}</p>
-                    
-                    {/* Navigation Steps */}
-                    {msg.steps && msg.steps.length > 0 && (
-                      <div className="mt-3 space-y-2 border-t border-outline-variant/40 pt-2 text-xs">
-                        {msg.steps.map((step, idx) => (
-                          <div key={idx} className="flex gap-2.5 items-start">
-                            <span className="w-4 h-4 rounded-full bg-primary text-on-primary-fixed font-bold text-[9px] flex items-center justify-center flex-shrink-0 mt-0.5">
-                              {idx + 1}
-                            </span>
-                            <span className="text-[11px] text-on-surface/90">{translate(step, language)}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Chat Input */}
-            <div className="p-3 bg-surface-container-low border-t border-outline-variant">
-              <div className="relative flex items-center">
-                <input
-                  type="text"
-                  value={chatInput}
-                  onChange={(e) => setChatInput(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-                  className="w-full bg-surface-container-highest border border-outline/30 focus:border-primary-light focus:ring-0 px-4 py-2.5 pr-10 rounded-lg text-xs transition-all text-on-surface focus:outline-none"
-                  placeholder={translate("Type or ask by voice...", language)}
-                />
-                <button 
-                  onClick={() => handleSendMessage()}
-                  className="absolute right-2 text-primary hover:text-secondary transition-colors p-2"
-                >
-                  <span className="material-symbols-outlined text-[18px]">send</span>
-                </button>
-              </div>
-
-              {/* Suggestions */}
-              <div className="flex gap-1.5 mt-2.5 overflow-x-auto pb-1 scrollbar-hide">
-                {["Food & Drink", "My Seat", "Restrooms"].map((topic) => (
-                  <button
-                    key={topic}
-                    onClick={() => handleQuickPrompt(topic)}
-                    className="whitespace-nowrap px-2.5 py-1 rounded-full border border-outline-variant/60 text-[9px] font-mono hover:bg-surface-variant text-on-surface-variant transition-all hover:text-on-surface"
-                  >
-                    {translate(topic, language)}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
 
           {/* Quick Metrics Widget */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="glass-panel p-4 rounded-xl border border-outline-variant bg-surface-container-low">
+            <div className="glass-overlay mechanical-border p-4 rounded-xl">
               <span className="font-mono text-[10px] text-on-surface-variant block mb-1 uppercase tracking-wider">
                 {translate("CONGESTION", language)}
               </span>
@@ -428,7 +356,7 @@ export default function Wayfinding(props) {
                 </span>
               </div>
             </div>
-            <div className="glass-panel p-4 rounded-xl border border-outline-variant bg-surface-container-low">
+            <div className="glass-overlay mechanical-border p-4 rounded-xl">
               <span className="font-mono text-[10px] text-on-surface-variant block mb-1 uppercase tracking-wider">
                 {translate("ETA TO EXIT", language)}
               </span>

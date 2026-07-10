@@ -119,4 +119,63 @@
   }
 }
 
+@layer utilities {
+  .carbon-texture {
+      background-color: #1a1a1a;
+      background-image: linear-gradient(45deg, #111 25%, transparent 25%), 
+                        linear-gradient(-45deg, #111 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #111 75%), 
+                        linear-gradient(-45deg, transparent 75%, #111 75%);
+      background-size: 4px 4px;
+  }
 
+  .mesh-bg {
+      background-color: #131313;
+      background-image: radial-gradient(#222 1px, transparent 0);
+      background-size: 8px 8px;
+  }
+
+  .brushed-metal {
+      background: linear-gradient(180deg, #444 0%, #222 100%);
+      position: relative;
+      overflow: hidden;
+  }
+  .brushed-metal::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 3px, transparent 4px);
+      pointer-events: none;
+  }
+
+  .glass-overlay {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .tactile-button {
+      box-shadow: 0 4px 0 0 #002682, 0 8px 15px rgba(0,0,0,0.5);
+      transition: all 0.1s ease;
+  }
+  .tactile-button:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 0 #002682, inset 0 2px 4px rgba(0,0,0,0.8);
+  }
+
+  .led-segment {
+      width: 6px;
+      height: 12px;
+      background: #333;
+      border-radius: 1px;
+  }
+  .led-active {
+      background: #c3f400;
+      box-shadow: 0 0 8px #c3f400;
+  }
+
+  .mechanical-border {
+      border: 1px solid #434656;
+      box-shadow: inset 1px 1px 0 rgba(255,255,255,0.1), 1px 1px 0 rgba(0,0,0,0.5);
+  }
+}

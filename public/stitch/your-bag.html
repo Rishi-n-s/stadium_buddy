@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARENA PRIME | Shopping Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:wght@400;700&family=Space+Grotesk:wght@300;400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&family=Archivo+Narrow:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-primary": "#29695a",
+                    "on-primary-fixed-variant": "#065042",
+                    "on-primary": "#00382d",
+                    "tertiary": "#c6c6c7",
+                    "tertiary-fixed": "#e2e2e2",
+                    "secondary-fixed-dim": "#e9c400",
+                    "primary-container": "#004d3f",
+                    "outline-variant": "#3f4945",
+                    "surface-tint": "#94d3c0",
+                    "on-tertiary-container": "#b0b1b1",
+                    "on-secondary": "#3a3000",
+                    "primary-fixed": "#aff0dc",
+                    "on-primary-container": "#7ebdaa",
+                    "error-container": "#93000a",
+                    "inverse-on-surface": "#313030",
+                    "on-surface": "#e5e2e1",
+                    "on-background": "#e5e2e1",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "surface-dim": "#131313",
+                    "error": "#ffb4ab",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "on-primary-fixed": "#002019",
+                    "on-error-container": "#ffdad6",
+                    "surface": "#131313",
+                    "on-secondary-container": "#725f00",
+                    "on-secondary-fixed": "#221b00",
+                    "background": "#131313",
+                    "primary-fixed-dim": "#94d3c0",
+                    "outline": "#89938f",
+                    "on-secondary-fixed-variant": "#544600",
+                    "surface-container": "#201f1f",
+                    "surface-variant": "#353534",
+                    "secondary-container": "#ffdb3c",
+                    "on-surface-variant": "#bfc9c4",
+                    "secondary-fixed": "#ffe16d",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary": "#fff9ef",
+                    "surface-container-highest": "#353534",
+                    "primary": "#94d3c0",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-tertiary": "#2f3131",
+                    "tertiary-container": "#424444",
+                    "surface-bright": "#393939"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "48px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "section-gap": "80px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Archivo Narrow"],
+                    "headline-lg-mobile": ["Anton"],
+                    "headline-lg": ["Anton"],
+                    "headline-xl": ["Anton"],
+                    "headline-md": ["Anton"],
+                    "price-display": ["Space Grotesk"],
+                    "body-md": ["Archivo Narrow"],
+                    "label-caps": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-xl": ["80px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "price-display": ["20px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shear-hover {
+            transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+        .shear-hover:hover {
+            transform: skewX(-5deg) translateX(4px);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #004d3f;
+            border-radius: 10px;
+        }
+        .active-nav-bg {
+            background: rgba(148, 211, 192, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-white/10 flex justify-between items-center px-margin-mobile h-16 md:px-margin-desktop">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:text-headline-md text-primary tracking-widest">ARENA PRIME</h1>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold px-1.5 py-0.5 rounded-full">2</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen">
+<div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-gutter">
+<!-- Left Side: Cart Items -->
+<div class="lg:col-span-8">
+<div class="flex items-end justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">YOUR ARENA</h2>
+<p class="font-label-caps text-label-caps text-outline mb-2">2 ITEMS SELECTED</p>
+</div>
+<div class="space-y-6">
+<!-- Item 1: Brazil Kit -->
+<div class="bg-surface-container-low p-4 flex gap-4 md:gap-6 group border border-white/5 hover:border-primary/20 transition-all">
+<div class="w-24 h-32 md:w-40 md:h-52 overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-contrast cinematic shot of the official Brazil Home Kit jersey displayed against a dark stadium locker room background. The vibrant yellow fabric and green detailing pop against the low-key lighting. The style is premium sports photography with sharp focus on the fabric texture and national crest, maintaining a dark and competitive elite atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdTbS4q490c62oVjOe2H0Tq12VsGJvdn8Mc8y6KMqB9PBHCUJ0NIMq-Dm-WjaZlWEPAN9kIkMWfK4ivuXgyho3Cerfl8AxlIJrrt550c8eFETIvCO3ZJZ_-DGqh1KArp6zPr6I3tNj2XCxM7AWvoX2gkvAcuBJD0MaP0OFnzwsjJ0payjPyODmQn9AqHUTh4ZCzeluxtXRsnsphtLAKBKWadpJo9B-WNZND6ArpcxGo57hZ_2GxLkt"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-caps text-[10px] text-primary-fixed mb-1 block">NATIONAL TEAM</span>
+<h3 class="font-headline-md text-headline-md leading-none text-on-surface">BRAZIL HOME KIT</h3>
+<p class="font-body-md text-on-surface-variant mt-1">SIZE: XL | PLAYER VERSION</p>
+</div>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex items-center border border-white/10 rounded-lg bg-surface-container-lowest">
+<button class="px-3 py-2 text-on-surface-variant hover:text-primary transition-colors">-</button>
+<span class="px-4 py-2 font-price-display text-primary">01</span>
+<button class="px-3 py-2 text-on-surface-variant hover:text-primary transition-colors">+</button>
+</div>
+<span class="font-price-display text-price-display text-secondary-fixed">$125.00</span>
+</div>
+</div>
+</div>
+<!-- Item 2: Mumbai Indians Jersey -->
+<div class="bg-surface-container-low p-4 flex gap-4 md:gap-6 group border border-white/5 hover:border-primary/20 transition-all">
+<div class="w-24 h-32 md:w-40 md:h-52 overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close-up professional product shot of the Mumbai Indians cricket jersey featuring rich blue and gold patterns. The lighting is dramatic and moody, reflecting off the metallic gold accents of the jersey. Set in a high-end sports retail environment with dark wood and industrial metal textures, emphasizing the elite championship gear aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6NOIMZhTH2Ma_kbL3OYVmYrSITLHX3FY-yhcxUHX-yzc-hS5qedG5ArgQ6jDRzgVLYEvh2iz5kD5Dsss6wjfM6uicoO1-aMSXluCn0GPZ2T01PMJyDlY2T2h1CvMLL9oIjrtHBgh6F2hmWXrS_YzTn-lz3ga_pJdr1ReQTjJSRq3BvEyo4r7n88H2lptBWiWyXQdNVHF4fxy8_SdoGMX8VRgOrGKhTrsm6Yij1dd0wQQBaYtp8Plw"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-caps text-[10px] text-primary-fixed mb-1 block">IPL ELITE</span>
+<h3 class="font-headline-md text-headline-md leading-none text-on-surface">MUMBAI INDIANS</h3>
+<p class="font-body-md text-on-surface-variant mt-1">SIZE: L | 2024 JERSEY</p>
+</div>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex items-center border border-white/10 rounded-lg bg-surface-container-lowest">
+<button class="px-3 py-2 text-on-surface-variant hover:text-primary transition-colors">-</button>
+<span class="px-4 py-2 font-price-display text-primary">01</span>
+<button class="px-3 py-2 text-on-surface-variant hover:text-primary transition-colors">+</button>
+</div>
+<span class="font-price-display text-price-display text-secondary-fixed">$85.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Suggested Add-ons (Bento Fragment) -->
+<div class="mt-section-gap">
+<h4 class="font-label-caps text-label-caps text-outline mb-6">COMPLETE THE KIT</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-high p-4 flex flex-col items-center text-center border border-white/5">
+<div class="w-16 h-16 mb-3">
+<img class="w-full h-full object-contain" data-alt="Premium sleek sports sweatbands in black with a glowing gold trophy logo, shot in high contrast against a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV_15bRsBAAqlrVGR0aLTQt1jsXi0nX5ed9DIl884m0x0pJeNzHffsax3K8SIUtDV98Ed0KGAYD2x8ZOVa4Bgemz9fnJDCGnNZ9M-7TY27x05aWzLt7BKQXcHH-ML4R8B9TJ-L42NNN0YXUOgqgtL8iypHLRwL4j3ooE_jxROK4GWzFnj_6D0nDz6KEyF_iBtJXvUYqQJXAelZnC7UV8vXU9Qx9uxPPuF8ySlJwen2tWa0uqhwV33b"/>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface">ELITE BANDS</span>
+<span class="font-price-display text-primary text-sm mt-1">$15</span>
+</div>
+<div class="bg-surface-container-high p-4 flex flex-col items-center text-center border border-white/5">
+<div class="w-16 h-16 mb-3">
+<img class="w-full h-full object-contain" data-alt="High-performance technical sports socks in stadium green, detailed fabric weave visible under intense focused spotlighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeHrnTuY-ExFeo6GkHiVi_hKEph9T6W4KzFnuz43lUlolXv6bNy9c8TblQNzpYznC2pvgI0bhIewYyq07frB79tUWLXcrOm1Jr08yJlYd4GCq1ZT9AVZBbm1jevBM0lm-Js-WuOqJxWeQslQMQDDRIMSygSyjNcy7CmkeqxChej_f0yXK5Hg7gjwJ5milHbyykiV6xtLHOlb0ksjFDeNsWP8RIqOj6RUx8ArNorMSYEKKUkiGFyVjf"/>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface">PRO SOCKS</span>
+<span class="font-price-display text-primary text-sm mt-1">$22</span>
+</div>
+<div class="hidden md:flex bg-surface-container-high p-4 flex-col items-center text-center border border-white/5">
+<div class="w-16 h-16 mb-3">
+<img class="w-full h-full object-contain" data-alt="Minimalist black water bottle with stadium green lid and ARENA PRIME branding, matte finish, dramatic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkBcPHeQnwo50TlATn4U3zAE2SVsiA4qiFdh5B9CSRZveTKmcxNDHPtf7FA0MMDi-XK03GdgGS4DYl0AohplVgQWzrdW5MQDLIYSi09TfAEqfky6HWbGCfLZK6sxqYgXtFeK__5KBalbbPZgTCe0RP19aM9twy6kLpRAzsgQvNgkRYFiK5O_5sJ5KtCpqF0QsWjg7bD2NU1NR6yShWiaCFWo6K3rEHM6DSYhUazQuH_j8G-FZaYRMT"/>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface">STEEL FLASK</span>
+<span class="font-price-display text-primary text-sm mt-1">$45</span>
+</div>
+<div class="hidden md:flex bg-surface-container-high p-4 flex-col items-center text-center border border-white/5">
+<div class="w-16 h-16 mb-3">
+<img class="w-full h-full object-contain" data-alt="Small metallic gold championship pin badge set against a dark velvet texture, sharp focus on the intricate design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCMnSXhVjVKrVQAYxibGwtx9Q1wojAdjKfy59SvAA6wTTcapFwI_P8QQuqUHV309Vk8d2Spy8AhhxxaAgO0nArz8UFXyaDPklxwyb3j9p3UbFGj69ITXU7Spc3aA551I98K_sA9h-9-apC6WDdj5rsxdzmUIJefvmPAKrWQpRJHYNHt9gIOblQ75Rh5eh2T7bhUMh4mV3tgr0AVRLAsfsjYCs47Avt0kHQsjTUTfZzW6iDu8tqCHZV"/>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface">LOGO PIN</span>
+<span class="font-price-display text-primary text-sm mt-1">$12</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Order Summary -->
+<aside class="lg:col-span-4 mt-12 lg:mt-0">
+<div class="bg-surface-container p-6 md:p-8 rounded-xl sticky top-24 border border-white/10 shadow-2xl">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-8 border-b border-white/5 pb-4">SUMMARY</h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between">
+<span class="font-body-md text-on-surface-variant">SUBTOTAL</span>
+<span class="font-price-display text-on-surface">$210.00</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-on-surface-variant">SHIPPING (STANDARD)</span>
+<span class="font-price-display text-on-surface">$12.00</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-on-surface-variant">TAX ESTIMATE</span>
+<span class="font-price-display text-on-surface">$16.80</span>
+</div>
+<div class="pt-4 border-t border-white/10 flex justify-between">
+<span class="font-headline-md text-headline-md text-primary">TOTAL</span>
+<span class="font-headline-md text-headline-md text-secondary-fixed-dim">$238.80</span>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="mb-8">
+<label class="font-label-caps text-outline mb-2 block">PROMOTION CODE</label>
+<div class="flex gap-2">
+<input class="flex-grow bg-surface-container-lowest border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary-fixed text-on-surface font-label-caps placeholder:text-surface-variant uppercase" placeholder="CHAMPION20" type="text"/>
+<button class="bg-surface-container-highest px-6 py-3 font-label-caps text-on-surface hover:bg-surface-bright transition-colors rounded-lg">APPLY</button>
+</div>
+</div>
+<!-- Checkout Button -->
+<button class="w-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-headline-md py-4 rounded-lg shear-hover flex items-center justify-center gap-2 group">
+                        CHECKOUT NOW
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<div class="mt-8 pt-8 border-t border-white/5">
+<p class="font-label-caps text-[10px] text-outline text-center mb-4">ACCEPTED CURRENCIES</p>
+<div class="flex justify-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined">payments</span>
+<span class="material-symbols-outlined">credit_card</span>
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="material-symbols-outlined">currency_bitcoin</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Navigation Shell (Bottom Bar) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/5 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_10px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 px-margin-mobile pb-safe md:hidden">
+<a class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed bg-primary-container/20 rounded-full p-2 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</nav>
+<!-- Checkout Success Overlay (Hidden by Default) -->
+<div class="fixed inset-0 z-[100] bg-background/90 backdrop-blur-xl flex items-center justify-center p-6 hidden" id="checkout-modal">
+<div class="max-w-md w-full bg-surface-container p-8 border border-primary/30 rounded-2xl text-center">
+<div class="w-20 h-20 bg-primary-container text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface mb-2">VICTORY SECURED</h2>
+<p class="font-body-lg text-on-surface-variant mb-8">Your elite gear is being prepared for dispatch. Prepare for dominance.</p>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-4 rounded-lg shear-hover" onclick="toggleModal()">
+                BACK TO ARENA
+            </button>
+</div>
+</div>
+<script>
+        function toggleModal() {
+            const modal = document.getElementById('checkout-modal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                // Confetti or visual effect trigger would go here
+            }
+        }
+
+        // Apply visual interaction to checkout button
+        const checkoutBtn = document.querySelector('button.bg-secondary-fixed');
+        if(checkoutBtn) {
+            checkoutBtn.addEventListener('click', toggleModal);
+        }
+    </script>
+</body></html>

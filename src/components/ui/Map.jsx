@@ -4,6 +4,8 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { startTracking, stopTracking, GPS_STATUS } from "../../services/locationService";
 import { connect, disconnect, sendLocation, BROADCAST_STATUS, hasLocationConsent, subscribeToUsers, subscribeToStatus } from "../../services/locationBroadcast";
 
+import Button from './/Button';
+
 // Popular stadiums geocoding dictionary
 const POPULAR_STADIUMS_COORDS = {
   "wembley stadium": [-0.2797, 51.5560],
@@ -832,7 +834,7 @@ export default function StadiumMap({
       {!isIndoor && (
         <div className="hidden md:flex absolute top-16 left-4 z-20 flex-wrap gap-1.5 max-w-[calc(100%-32px)]">
           <div className="flex bg-white border border-gray-300 rounded-md overflow-hidden shadow-md font-sans text-xs text-gray-800">
-            <button
+            <Button
               onClick={() => {
                 setMapType("roadmap");
                 setIs3D(false);
@@ -840,8 +842,8 @@ export default function StadiumMap({
               className={`px-2.5 py-1.5 font-semibold ${mapType === "roadmap" && !is3D ? "bg-[#1a73e8] text-white" : "bg-white hover:bg-gray-100"}`}
             >
               Map
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => {
                 setMapType("satellite");
                 setIs3D(false);
@@ -849,8 +851,8 @@ export default function StadiumMap({
               className={`px-2.5 py-1.5 font-semibold border-l border-r border-gray-300 ${mapType === "satellite" && !is3D ? "bg-[#1a73e8] text-white" : "bg-white hover:bg-gray-100"}`}
             >
               Satellite
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => {
                 setMapType("terrain");
                 setIs3D(false);
@@ -858,10 +860,10 @@ export default function StadiumMap({
               className={`px-2.5 py-1.5 font-semibold ${mapType === "terrain" && !is3D ? "bg-[#1a73e8] text-white" : "bg-white hover:bg-gray-100"}`}
             >
               Terrain
-            </button>
+            </Button>
           </div>
 
-          <button
+          <Button
             onClick={() => {
               const next3D = !is3D;
               setIs3D(next3D);
@@ -881,7 +883,7 @@ export default function StadiumMap({
               {is3D ? "map" : "3d_rotation"}
             </span>
             <span>{is3D ? "Common 2D View" : "3D Orbit View"}</span>
-          </button>
+          </Button>
         </div>
       )}
 

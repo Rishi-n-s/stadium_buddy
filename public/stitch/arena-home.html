@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARENA PRIME | Elite Sports Gear</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:wght@400;700&family=Space+Grotesk:wght@300;400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&family=Archivo+Narrow:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for horizontal lists */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Sheer hover effect for buttons */
+        .btn-shear:hover {
+            transform: skewX(-6deg) translateX(4px);
+        }
+        
+        /* Stadium Glow */
+        .stadium-glow {
+            box-shadow: inset 0 0 15px rgba(148, 211, 192, 0.1), 0 0 30px rgba(0, 77, 63, 0.2);
+        }
+
+        /* Diagonal Accent */
+        .diagonal-bg {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-primary": "#29695a",
+                      "on-primary-fixed-variant": "#065042",
+                      "on-primary": "#00382d",
+                      "tertiary": "#c6c6c7",
+                      "tertiary-fixed": "#e2e2e2",
+                      "secondary-fixed-dim": "#e9c400",
+                      "primary-container": "#004d3f",
+                      "outline-variant": "#3f4945",
+                      "surface-tint": "#94d3c0",
+                      "on-tertiary-container": "#b0b1b1",
+                      "on-secondary": "#3a3000",
+                      "primary-fixed": "#aff0dc",
+                      "on-primary-container": "#7ebdaa",
+                      "error-container": "#93000a",
+                      "inverse-on-surface": "#313030",
+                      "on-surface": "#e5e2e1",
+                      "on-background": "#e5e2e1",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "surface-dim": "#131313",
+                      "error": "#ffb4ab",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-container-low": "#1c1b1b",
+                      "on-primary-fixed": "#002019",
+                      "on-error-container": "#ffdad6",
+                      "surface": "#131313",
+                      "on-secondary-container": "#725f00",
+                      "on-secondary-fixed": "#221b00",
+                      "background": "#131313",
+                      "primary-fixed-dim": "#94d3c0",
+                      "outline": "#89938f",
+                      "on-secondary-fixed-variant": "#544600",
+                      "surface-container": "#201f1f",
+                      "surface-variant": "#353534",
+                      "secondary-container": "#ffdb3c",
+                      "on-surface-variant": "#bfc9c4",
+                      "secondary-fixed": "#ffe16d",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "surface-container-lowest": "#0e0e0e",
+                      "secondary": "#fff9ef",
+                      "surface-container-highest": "#353534",
+                      "primary": "#94d3c0",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-tertiary": "#2f3131",
+                      "tertiary-container": "#424444",
+                      "surface-bright": "#393939"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "48px",
+                      "gutter": "16px",
+                      "base": "4px",
+                      "section-gap": "80px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Archivo Narrow"],
+                      "headline-lg-mobile": ["Anton"],
+                      "headline-lg": ["Anton"],
+                      "headline-xl": ["Anton"],
+                      "headline-md": ["Anton"],
+                      "price-display": ["Space Grotesk"],
+                      "body-md": ["Archivo Narrow"],
+                      "label-caps": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                      "headline-xl": ["80px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                      "price-display": ["20px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-white/10 flex justify-between items-center px-4 md:px-12 h-16">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:text-headline-md text-primary tracking-widest">ARENA PRIME</h1>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</header>
+<main class="pt-16 pb-24 overflow-hidden">
+<!-- Hero Carousel Section -->
+<section class="relative w-full h-[618px] md:h-[751px] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, high-contrast action shot of a professional football player wearing a sleek, matte-finish black and gold limited edition jersey. The athlete is mid-stride under intense stadium floodlights that cast dramatic shadows. The background is a dark, moody arena filled with a faint mist, capturing a prestigious and elite atmosphere with deep emerald and trophy gold accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgTTmPg4BBcECycTjniU7bvqtR8nSZ92cAE15ps_-pVBpxojuDfz7EP41lbwSN_rFpgLI2o-aBSvk5I8UaSvZPkm5efwra2dTpb9Kdz2TVwhfxO0ruLTklYurUlRhJd0F0wld-ofI9Xq-nu1LilfUjPtJKopvE3hAC45dCJLFr3JBYA26xMKxUpJJiMyL8YuRjVya0BTonJlTuGuoZDxzsJM_5gxpdLQbl1FohnWeofVhYQ3yUxOf9')">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative h-full flex flex-col justify-end px-margin-mobile md:px-margin-desktop pb-12 md:pb-24 max-w-7xl mx-auto">
+<span class="bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-4 py-1 self-start mb-4 uppercase tracking-[0.2em] rounded-sm">
+                    Exclusive Drop
+                </span>
+<h2 class="font-headline-xl text-[56px] md:text-headline-xl text-on-surface mb-6 max-w-3xl uppercase leading-[0.9]">
+                    LIMITED EDITION<br/><span class="text-primary">CHAMPIONS KIT</span>
+</h2>
+<button class="btn-shear group bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps py-4 px-10 self-start flex items-center gap-3 transition-all duration-300 shadow-[0_0_20px_rgba(255,225,109,0.2)]">
+                    SHOP THE COLLECTION
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Page Indicators -->
+<div class="absolute right-margin-mobile md:right-margin-desktop bottom-1/2 translate-y-1/2 flex flex-col gap-4">
+<div class="w-1 h-12 bg-primary"></div>
+<div class="w-1 h-8 bg-white/20"></div>
+<div class="w-1 h-8 bg-white/20"></div>
+</div>
+</section>
+<!-- Trending Now - Horizontal Scroll -->
+<section class="mt-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-8">
+<h3 class="font-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-tight">Trending Now</h3>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary/30 pb-1 hover:border-primary transition-all" href="#">View All</a>
+</div>
+<div class="flex gap-gutter overflow-x-auto no-scrollbar snap-x pb-4">
+<!-- Card 1: Real Madrid -->
+<div class="flex-shrink-0 w-[280px] md:w-[320px] snap-start group">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-quality product shot of the Real Madrid home jersey featuring crisp white fabric and classic purple accents. The jersey is displayed on a high-end textured mannequin in a professional studio setting with sharp, directional lighting. The aesthetic is clean, corporate, and modern, emphasizing the premium quality of the athletic fabric and intricate stitching." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM1zV_OXV_pFlgKEDFrNv-KfmvJ8Bk3v9YFJ_lFQvYr6gFW7GVN4MGE3031qIWQJmkoeVhvYElp0lS2K6G4VjESBnZh5Eumur8wZOUjlXiSyyFjd1_cCtpm445n6Zoa7LcGaafdG4M0biAoIERNoEWf3996NkFv8Ozdqc1FvS9MRztZTUO-bb8Vjff_BaK6zinhgxYOcQke2s0inzMB5K7ntpT9Xj9pheu_f1iL5lLv4dYG3mYwvN8"/>
+<div class="absolute top-4 left-4 bg-primary-container/90 backdrop-blur-sm text-primary font-label-caps text-[10px] px-2 py-0.5 rounded-sm">TOP SELLER</div>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface uppercase">Real Madrid Home 24/25</h4>
+<p class="font-price-display text-price-display text-secondary-fixed mt-1">$120.00</p>
+</div>
+<!-- Card 2: India Cricket -->
+<div class="flex-shrink-0 w-[280px] md:w-[320px] snap-start group">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A dynamic action shot of the Indian Cricket Team jersey, highlighting its vibrant blue hue and saffron orange detailing. The jersey is worn by a player during a powerful batting follow-through, with water droplets and dust captured mid-air. The lighting is bright and intense, simulating a high-octane stadium atmosphere with deep teal and gold color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMRMjBeZtjUAMbc5B__Pxs9IqAsGNGLbpRj2cncKU5uYyyPNWwWadAXZb9NNM_DcPZdyFt7u3VWWJb2AYf9e7Wx-VavkaovDX2RSi-MjBHC3IMSiiNHs8X2zsBTzvTxlrTmqjyhxlYt1syjeMGuB7VQcGUdrDwt36y2igq4hmybhPLMVgBF6-JRa0w6XtRdi3VorUIyy06DRhdUbPrbkGoOM2s2-Rghzt3mhTi5NLjupUplmZMXbdH"/>
+<div class="absolute top-4 left-4 bg-secondary-container/90 backdrop-blur-sm text-on-secondary-container font-label-caps text-[10px] px-2 py-0.5 rounded-sm">NEW ARRIVAL</div>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface uppercase">India Cricket Official</h4>
+<p class="font-price-display text-price-display text-secondary-fixed mt-1">$85.00</p>
+</div>
+<!-- Card 3: Brazil -->
+<div class="flex-shrink-0 w-[280px] md:w-[320px] snap-start group">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A stunning studio photograph of the Brazil national football kit in its iconic canary yellow and green. The lighting is high-contrast, creating deep shadows that emphasize the texture of the breathable fabric. The background is a minimalist dark gray, giving the jersey a prestigious, high-end collector's item feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTktWNmSQs2XyQPwARx27nqWvnY6YaqpC_icHfEo68ASQY_vL6QwPibPdDSHafbhBciYDM4XhUsHe-d07FLdbzzKFc15gAGRFQi6Guacvo2VlL7ky9V4t0hDAfsQoCnsffP1qRU1FSk4IfUaPSaE36xCwVDNkkLTSB6jwiTV8qrMOrne4ERi4cqf_tlkcVr-KpjfqEbmwPsLB4VxDfAnw9n3It6QmDFFTwqikydIbyzzOz6ShnNAF_"/>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface uppercase">Brazil Authentic Away</h4>
+<p class="font-price-display text-price-display text-secondary-fixed mt-1">$110.00</p>
+</div>
+</div>
+</section>
+<!-- Category Bento Grid -->
+<section class="mt-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Football Kits -->
+<div class="relative group h-[500px] overflow-hidden border border-white/5">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A wide-angle landscape shot of a pristine football pitch at twilight, with the grass glowing under bright stadium lights. In the foreground, an array of premium football jerseys from top European clubs are elegantly arranged. The color palette is dominated by deep blacks, stadium greens, and electric whites, reflecting a professional and elite sports environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoeKYOR4nHpsI5Mx6WdmKCcM_AhLr9_n6FdcO95SdVzqtnDuYJm_V3Spq7VlTdLaYLuMmd0RgneWlkIZoP2uy_gWq-o5v0djLTbGKJPuWio7jQVTmGn95Rtlv7o94AfO1dW7SIYs1UQBSq6Aw04IsltksSMR_VRVN2Iwd4SPvxYksbs5fn2mYQLDu0Omf4qhvatl9BOlCyl3YywfCHG_5UIT6QwqR8CwINa2wu_LSwxrr6XBQs7sND"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-xl text-headline-lg md:text-headline-xl text-on-surface uppercase mb-4">Football<br/>Kits</h3>
+<button class="bg-white/10 backdrop-blur-md text-on-surface border border-white/20 font-label-caps text-label-caps py-3 px-8 hover:bg-primary hover:text-on-primary transition-all">Explore Gear</button>
+</div>
+</div>
+<!-- Cricket Kits -->
+<div class="relative group h-[500px] overflow-hidden border border-white/5">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="An intense, close-up shot of professional cricket equipment including a high-end willow bat, a red leather ball with white stitching, and a team jersey with intricate patterns. The setting is a locker room with dark wood and metal finishes, illuminated by a single overhead warm spotlight. The mood is focused and competitive, utilizing a palette of rich mahogany, charcoal, and gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnkGq2rLueCPDXG0iM7kgqUXeScv0KxgfqWWq--hFyyVHBToDz6BXwtNaDvYsc7jiQPegfi21YI9KcOzzDiWh8ENZkvSg-1sD7ba4bclLbAuBYRurJ9FhLph44XRb-ccfd_lCsl4GBULn4buWrghMF-FgxaMbVuI5A98T0y1TICNtfn-8uzKKT4enlWl59ibr2nQDIVf4FjqKjcf4Jzaes9Twc3Ur4H-P8oifPOWlKFGAuGIxrKetk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-xl text-headline-lg md:text-headline-xl text-on-surface uppercase mb-4">Cricket<br/>Kits</h3>
+<button class="bg-white/10 backdrop-blur-md text-on-surface border border-white/20 font-label-caps text-label-caps py-3 px-8 hover:bg-primary hover:text-on-primary transition-all">Go Pro</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Membership/Loyalty Teaser -->
+<section class="mt-section-gap px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="max-w-7xl mx-auto bg-surface-container-low border border-white/5 p-8 md:p-16 relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+<div>
+<span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block">Arena Prime Elite</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase leading-none mb-4">Unlock the Locker Room</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Join the elite rank. Get early access to limited edition drops, championship gear, and exclusive member-only events.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps py-4 px-12 uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">Become a Member</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Shell (Bottom Nav for Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/5 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_10px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 px-4 pb-safe">
+<button class="flex flex-col items-center justify-center text-secondary-fixed bg-primary-container/20 rounded-full p-2 transition-transform active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+<!-- Navigation Drawer (Desktop Hidden Sidebar / Triggered by Menu) -->
+<!-- Note: Implementation simplified for single page display -->
+<div class="fixed inset-y-0 left-0 z-50 w-[280px] bg-surface-dim shadow-xl -translate-x-full transition-transform duration-300 md:hidden" id="drawer">
+<div class="flex flex-col h-full py-8">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-secondary-fixed">ELITE MEMBER</p>
+<p class="font-body-lg text-body-lg text-on-surface">PRO STATUS</p>
+</div>
+</div>
+<nav class="divide-y divide-white/5">
+<a class="flex items-center gap-4 px-6 py-4 hover:bg-surface-container-high transition-colors text-on-surface" href="#">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="font-body-lg text-body-lg">Football Kits</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 hover:bg-surface-container-high transition-colors text-on-surface" href="#">
+<span class="material-symbols-outlined">sports_cricket</span>
+<span class="font-body-lg text-body-lg">Cricket Kits</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 hover:bg-surface-container-high transition-colors text-on-surface" href="#">
+<span class="material-symbols-outlined">stars</span>
+<span class="font-body-lg text-body-lg">Limited Edition</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 hover:bg-surface-container-high transition-colors text-on-surface" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="font-body-lg text-body-lg">Championship Gear</span>
+</a>
+<a class="mt-auto flex items-center gap-4 px-6 py-4 hover:bg-surface-container-high transition-colors text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-body-lg text-body-lg">Support</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Overlay for Drawer -->
+<div class="fixed inset-0 bg-black/60 z-40 hidden backdrop-blur-sm" id="overlay"></div>
+<script>
+        // Simple Interaction logic for Drawer
+        const menuBtn = document.querySelector('header button:first-child');
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('overlay');
+
+        menuBtn.addEventListener('click', () => {
+            drawer.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            drawer.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        });
+
+        // Sticky Header behavior
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            
+            if (currentScroll > 100) {
+                header.classList.add('bg-background/95', 'backdrop-blur-md', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-background/95', 'backdrop-blur-md', 'shadow-lg');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>

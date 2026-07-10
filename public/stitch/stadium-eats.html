@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Arena Prime | Stadium Eats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:wght@400;700&amp;family=Space+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#424444",
+                    "on-background": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "surface-dim": "#131313",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary-container": "#b0b1b1",
+                    "secondary-fixed": "#ffe16d",
+                    "primary-fixed-dim": "#94d3c0",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary": "#3a3000",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-container": "#201f1f",
+                    "on-surface-variant": "#bfc9c4",
+                    "surface-container-lowest": "#0e0e0e",
+                    "tertiary": "#c6c6c7",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-bright": "#393939",
+                    "surface": "#131313",
+                    "secondary-container": "#ffdb3c",
+                    "inverse-on-surface": "#313030",
+                    "primary-container": "#004d3f",
+                    "on-secondary-container": "#725f00",
+                    "secondary-fixed-dim": "#e9c400",
+                    "outline-variant": "#3f4945",
+                    "on-surface": "#e5e2e1",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-primary-container": "#7ebdaa",
+                    "on-primary": "#00382d",
+                    "outline": "#89938f",
+                    "error": "#ffb4ab",
+                    "primary": "#94d3c0",
+                    "on-tertiary": "#2f3131",
+                    "on-primary-fixed-variant": "#065042",
+                    "inverse-primary": "#29695a",
+                    "on-secondary-fixed-variant": "#544600",
+                    "on-error-container": "#ffdad6",
+                    "background": "#131313",
+                    "surface-variant": "#353534",
+                    "secondary": "#fff9ef",
+                    "on-primary-fixed": "#002019",
+                    "surface-tint": "#94d3c0",
+                    "surface-container-highest": "#353534",
+                    "surface-container-low": "#1c1b1b",
+                    "primary-fixed": "#aff0dc",
+                    "on-secondary-fixed": "#221b00",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "section-gap": "80px",
+                    "margin-desktop": "48px",
+                    "base": "4px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "price-display": ["Space Grotesk"],
+                    "body-lg": ["Archivo Narrow"],
+                    "headline-md": ["Anton"],
+                    "body-md": ["Archivo Narrow"],
+                    "label-caps": ["Space Grotesk"],
+                    "headline-xl": ["Anton"],
+                    "headline-lg-mobile": ["Anton"],
+                    "headline-lg": ["Anton"]
+            },
+            "fontSize": {
+                    "price-display": ["20px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-xl": ["80px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .shear-hover:hover {
+            transform: skewX(-5deg) translateX(4px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .stadium-glow {
+            box-shadow: inset 0 0 4px rgba(255, 225, 109, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-white/10 flex justify-between items-center px-margin-mobile h-16">
+<button class="active:scale-95 transition-transform hover:opacity-80 transition-opacity text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-widest">ARENA PRIME</h1>
+<button class="active:scale-95 transition-transform hover:opacity-80 transition-opacity text-primary relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary-fixed text-on-secondary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</header>
+<main class="pt-20 pb-40 px-margin-mobile max-w-md mx-auto">
+<!-- Hero Section & Toggle -->
+<section class="mb-8">
+<div class="flex justify-between items-end mb-6">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background tracking-tighter">STADIUM EATS</h2>
+<div class="bg-surface-container-high rounded-full p-1 flex items-center">
+<span class="text-[10px] font-bold px-3 py-1 bg-secondary-fixed text-on-secondary rounded-full uppercase">Seat Delivery</span>
+</div>
+</div>
+<div class="relative w-full h-40 rounded-xl overflow-hidden mb-6 group border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A high-intensity, cinematic close-up of a premium double cheeseburger with melting cheddar, crispy bacon, and fresh lettuce, shot in a dark stadium environment with dramatic stadium floodlighting. The background is a blurred night-time football arena with hints of Arena Prime's stadium green and trophy gold highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZzNZBqy_tcOPSbgBuZZOFsAe4gI4iPv_Wavs0TX8e7mQK2RENSDaP6tPYmXG3ORPnbIkusJ-uh24LA3t45PN3tNrkrPj8y_e8Sbqi6uli106n_aUvKFm3Fr2T3qcck1DmAtV_Lzza3obhVCSKYb_KgLP8txysJwFWjZ7kd1FM9hGOY7yjvnI3f_G2xtv5X8wzQz2Xsqgh0fX-5x7imIu0oA4t397rtZEy5owR4cDDGFhr1GH9Stca')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary-container text-on-primary-container px-2 py-0.5 font-label-caps text-label-caps mb-1 block w-fit">MATCH DAY SPECIAL</span>
+<h3 class="font-headline-md text-headline-md text-white">THE ALL-STAR COMBO</h3>
+</div>
+</div>
+</section>
+<!-- Horizontal Categories -->
+<nav class="flex gap-4 overflow-x-auto no-scrollbar mb-8 -mx-margin-mobile px-margin-mobile">
+<button class="flex-shrink-0 px-6 py-2 bg-secondary-fixed text-on-secondary font-label-caps text-label-caps rounded-full border border-secondary-fixed">COMBOS</button>
+<button class="flex-shrink-0 px-6 py-2 bg-surface-container text-on-surface-variant font-label-caps text-label-caps rounded-full border border-white/5">MAIN ARENA</button>
+<button class="flex-shrink-0 px-6 py-2 bg-surface-container text-on-surface-variant font-label-caps text-label-caps rounded-full border border-white/5">SNACKS</button>
+<button class="flex-shrink-0 px-6 py-2 bg-surface-container text-on-surface-variant font-label-caps text-label-caps rounded-full border border-white/5">HYDRATION</button>
+</nav>
+<!-- Food Grid (Bento Style) -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Item 1 -->
+<div class="bg-surface-container p-3 rounded-xl border border-white/10 stadium-glow flex flex-col h-full">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden mb-3">
+<img class="w-full h-full object-cover" data-alt="Close-up gourmet burger with perfectly seared wagyu beef, melted sharp cheddar, and caramelized onions on a brioche bun, positioned against a dark textured background with dramatic gold accent lighting consistent with elite sports branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF1lLoE8qYfpLGxMC6jFuslvre8t26NPdkwj-xvJVq6hRenhNwweusAx53HsYa4MEubdwOPyJYem9H2NwjnWM2dPzHiMN9BRCBwqvMUB7ipmoulbUa1TwEjKq0h_E0XW_J3J3KAUIsf3c2JAnFUlvY6a67Pi-8Fb8Yq5Mt2wrqiG4mXox6AdNAnlrpQ1zEg4nJyj8kR8g-ygBnOuskSe37PRydSgP-9AQD4clCvfqs9YHXTRTGQFBv"/>
+<span class="absolute top-2 left-2 bg-white text-black text-[9px] font-bold px-1.5 py-0.5 rounded-sm">POPULAR</span>
+</div>
+<h4 class="font-body-lg text-body-lg font-bold leading-tight mb-1 text-on-background uppercase">The Champion Burger</h4>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-price-display text-price-display text-secondary-fixed">$15.00</span>
+<button class="w-8 h-8 bg-secondary-fixed text-on-secondary rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-lg shadow-secondary-fixed/20">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container p-3 rounded-xl border border-white/10 stadium-glow flex flex-col h-full">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden mb-3">
+<img class="w-full h-full object-cover" data-alt="A premium stadium hot dog served in a toasted artisan bun, topped with spicy mustard and chopped onions, presented with sharp, high-contrast lighting against a dark, moody stadium background with neon green Arena Prime accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOUWKocVgm8_9yyvsuQUPCxPSwDYcxSboGPTZnC8tTdEMTwANcPx4fuVq3sVpstmdguswj6GCpFUONmTkfdpFokkaTAy_rISD6eOv4kSjLaLPgsANO-8VL4JZuCgALOitVpfa_d362jROttWQPVOQOIkE6at0Jk_on-W-j_DUzUihlZGfyyLvw4GiCgYZtGtkwasfvaIHY6N5EW-3fDDRvuLMrhYcX-KtOuirN2wffiFFdUFan5q_B"/>
+</div>
+<h4 class="font-body-lg text-body-lg font-bold leading-tight mb-1 text-on-background uppercase">Arena Hot Dog</h4>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-price-display text-price-display text-secondary-fixed">$12.00</span>
+<button class="w-8 h-8 bg-secondary-fixed text-on-secondary rounded-full flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container p-3 rounded-xl border border-white/10 stadium-glow flex flex-col h-full">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden mb-3">
+<img class="w-full h-full object-cover" data-alt="A large tray of loaded nachos with jalapeños, thick melted cheese sauce, and seasoned ground beef, captured with high-speed commercial food photography style, high contrast, and dark athletic atmosphere with gold highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3S0Bnsj7NhisX487jv8VwKLnfOsuDoVEK6A-np_VdlLmOyAA8Xe2Lu-xwgXgvEsobxN8F6sjIb2aeArRHZ0xseXfJ2ySxaXbbkhwHlmZpMxRo4UjJYQtL3olXDAHnU2zzBYxR4r_lJvXMG9SkzGKFghh4JrSJ9C_q7nOh_p4VHicdeAAiIiCUPiMP5RtpIc-uuGKx-tLbpLwhqbZh4WiOujkf-5xT45heHMArZXfGBO-Qz3R8jcuP"/>
+</div>
+<h4 class="font-body-lg text-body-lg font-bold leading-tight mb-1 text-on-background uppercase">Load-up Nachos</h4>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-price-display text-price-display text-secondary-fixed">$10.00</span>
+<button class="w-8 h-8 bg-secondary-fixed text-on-secondary rounded-full flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container p-3 rounded-xl border border-white/10 stadium-glow flex flex-col h-full">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden mb-3">
+<img class="w-full h-full object-cover" data-alt="A sleek bottle of premium performance hydration drink with water droplets, glowing neon green liquid, set against a dark carbon fiber texture and atmospheric stadium spotlights, emphasizing high-octane sports performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAta6A85WtyeGnTg5hfOqYqT-BcXJhqXT6YHYwiJLuV4ZfrBCbzSZOmrIekYzsLOBb5EWmPWIs0g67FStjX1wHT9lbJICW0t4XmmYetGnNyJ7B0mPEWkzsvL6ikFoebXobaDv1Yo3nugyNRQtuDnvnUuD0Snm23_Q3KNK4SAzkO2npFJow30t7Z3aZ2GjBI7M_SDJIaOG_w0FOhPe1rMYUak5o3jfVl4dIMghRWb3fHLtVOETTld6-U"/>
+<span class="absolute top-2 left-2 bg-primary text-on-primary text-[9px] font-bold px-1.5 py-0.5 rounded-sm">ELECTROLYTES</span>
+</div>
+<h4 class="font-body-lg text-body-lg font-bold leading-tight mb-1 text-on-background uppercase">Prime Hydration</h4>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-price-display text-price-display text-secondary-fixed">$6.00</span>
+<button class="w-8 h-8 bg-secondary-fixed text-on-secondary rounded-full flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Additional Section -->
+<section class="mt-12 mb-8">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">FAN FAVORITES</h3>
+<div class="flex items-center gap-4 bg-surface-container p-4 rounded-xl border border-white/10 mb-4">
+<div class="w-20 h-20 bg-surface-bright rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Oversized soft stadium pretzel dusted with sea salt, accompanied by a small container of warm cheese dip, shot in a professional food studio with dark, moody lighting and gold rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNFG2mJVG3O9IkJNxkiSX1by234iuU-Iypbfht2MeLQyM5rYYOGIKJmE05ksYtbOExfwXjqKqZyeON67Wow4DupQoP8lkgKOBlZIyX6x08jCf09B7e3Ran3hZ_zC3VuFpS9AaUApBN63INTXBmzDITZgnKY1Vig1Lo5jsOBCZuug4TRiiOzusd4OssZKBwnXK4eD4KCOoxVHoB8P4MZ9R21vlIMMBYJ1v2YXFFAH4l5ly2KVjElQvl"/>
+</div>
+<div class="flex-grow">
+<h5 class="font-bold uppercase">MVP Giant Pretzel</h5>
+<p class="text-xs text-outline mb-2">Salted with craft cheese dip</p>
+<span class="font-price-display text-price-display text-secondary-fixed">$8.50</span>
+</div>
+<button class="w-10 h-10 bg-surface-container-high text-primary border border-primary/20 rounded-full flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Floating View Order Bar -->
+<div class="fixed bottom-24 left-margin-mobile right-margin-mobile z-50">
+<button class="w-full bg-secondary-fixed text-on-secondary h-14 rounded-xl flex items-center justify-between px-6 shadow-2xl active:scale-[0.98] transition-transform shear-hover overflow-hidden relative" onclick="toggleBag()">
+<div class="flex items-center gap-3">
+<span class="bg-on-secondary text-secondary-fixed px-2 py-1 rounded text-[10px] font-bold">2 ITEMS</span>
+<span class="font-label-caps text-label-caps font-bold">VIEW ORDER</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-price-display text-price-display">$27.00</span>
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</div>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest/95 backdrop-blur-md border-t border-white/5 shadow-[0_-4px_10px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 px-margin-mobile pb-safe">
+<button class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary-fixed bg-primary-container/20 rounded-full p-2 hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline p-2 hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+<script>
+        function toggleBag() {
+            // Logic for showing cart/bag would go here
+            console.log('Opening order details...');
+        }
+
+        // Simple scroll interaction for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('bg-background/95', 'backdrop-blur-sm');
+            } else {
+                header.classList.remove('bg-background/95', 'backdrop-blur-sm');
+            }
+        });
+
+        // Add to cart micro-interaction
+        document.querySelectorAll('button').forEach(btn => {
+            if (btn.innerText.includes('add')) {
+                btn.addEventListener('click', function(e) {
+                    const ripple = document.createElement('div');
+                    ripple.className = 'absolute inset-0 bg-white/20 rounded-full animate-ping';
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 500);
+                });
+            }
+        });
+    </script>
+</body></html>

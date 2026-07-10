@@ -7,6 +7,8 @@
 import React, { useState } from "react";
 import { grantLocationConsent, revokeLocationConsent, hasLocationConsent } from "../../services/locationBroadcast";
 
+import Button from './/Button';
+
 export default function LocationConsentModal({ onConsent, onDecline, userName = "You" }) {
   const [loading, setLoading] = useState(false);
 
@@ -84,13 +86,13 @@ export default function LocationConsentModal({ onConsent, onDecline, userName = 
 
         {/* Actions */}
         <div className="px-6 pb-6 flex flex-col sm:flex-row gap-3">
-          <button
+          <Button
             onClick={handleDecline}
             className="flex-1 py-2.5 border border-outline-variant text-on-surface-variant hover:bg-surface-container-highest text-sm font-semibold rounded-xl transition-all"
           >
             Use Offline Mode
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={handleAllow}
             disabled={loading}
             className="flex-1 py-2.5 bg-primary hover:brightness-110 text-white text-sm font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20 disabled:opacity-60"
@@ -101,7 +103,7 @@ export default function LocationConsentModal({ onConsent, onDecline, userName = 
               <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>my_location</span>
             )}
             Allow Live Tracking
-          </button>
+          </Button>
         </div>
       </div>
     </div>

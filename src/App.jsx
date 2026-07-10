@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import FanHome from "./views/FanHome";
-import Wayfinding from "./views/Wayfinding";
-import OrganizerDashboard from "./views/OrganizerDashboard";
-import StaffAlerts from "./views/StaffAlerts";
-import IntroAnimation from "./views/IntroAnimation";
-import LandingPage from "./views/LandingPage";
-import AuthPortal from "./views/AuthPortal";
+import FanHome from "./pages/FanHome";
+import ArenaHome from "./pages/ArenaHome";
+import Wayfinding from "./pages/Wayfinding";
+import OrganizerDashboard from "./pages/OrganizerDashboard";
+import StaffAlerts from "./pages/StaffAlerts";
+import LandingPage from "./pages/LandingPage";
+import AuthPortal from "./pages/AuthPortal";
+import MatchDayOffer from "./pages/MatchDayOffer";
 import { getCurrentSession, logoutUser } from "./services/authService";
 import { INITIAL_ZONES, updateOccupancy } from "./services/crowdEngine";
-
+import Button from './components/ui/Button';
+import GlobalChatBot from './components/ui/GlobalChatBot';
 
 const INITIAL_ALERTS = [
   {
@@ -45,10 +47,8 @@ export default function App() {
   const [language, setLanguage] = useState("en");
   const [darkMode, setDarkMode] = useState(true);
   const [showSimulator, setShowSimulator] = useState(false);
-  
-  // Navigation flow state (Intro -> Landing -> Dashboard)
-  const [isIntroActive, setIsIntroActive] = useState(true);
-  
+
+  // Navigation flow state (Landing -> Dashboard)
   const [currentUser, setCurrentUser] = useState(null);
   const [selectedStadium, setSelectedStadium] = useState(null);
 
@@ -81,7 +81,7 @@ export default function App() {
   const handleLogout = async () => {
     // Clear special developer admin session if it exists
     localStorage.removeItem("dev_admin_session");
-    
+
     await logoutUser();
     setCurrentUser(null);
     setSelectedStadium(null);
@@ -92,13 +92,19 @@ export default function App() {
   const [zones, setZones] = useState(INITIAL_ZONES);
   const [alerts, setAlerts] = useState(INITIAL_ALERTS);
   const [congestedZones, setCongestedZones] = useState(["gate_4"]); // Start with gate_4 blocked due to the starting critical spill alert
+  const [systemToast, setSystemToast] = useState(null);
+
+  const showToast = (msg) => {
+    setSystemToast(msg);
+    setTimeout(() => setSystemToast(null), 4500);
+  };
 
   const handleDeployStadium = (stadium) => {
     setSelectedStadium(stadium);
     // Dynamically scale zones based on the selected stadium's capacity
     const totalBaseCap = 65500; // sum of initial capacities (15000+12500+8000+10000+20000)
     const ratio = stadium.capacity / totalBaseCap;
-    
+
     setZones(prev => {
       const updated = {};
       Object.keys(INITIAL_ZONES).forEach(key => {
@@ -159,7 +165,7 @@ export default function App() {
           trend: -3.0
         }
       }));
-      alert("Overflow Gate 3B opened. Diverting North Gate crowd flow.");
+      showToast("Overflow Gate 3B opened. Diverting North Gate crowd flow.");
     } else if (advisoryId === "adv-2") {
       // Resolve East Stand turnstiles congestion
       setZones(prev => ({
@@ -170,57 +176,86 @@ export default function App() {
           trend: -1.5
         }
       }));
-      alert("Extra turnstiles opened at East Stand. Entry queue cleared.");
+      showToast("Extra turnstiles opened at East Stand. Entry queue cleared.");
     }
   };
 
-  // Simulation controls trigger
-  const triggerGate4Spill = () => {
-    const exists = alerts.some(a => a.zoneId === "gate_4" && a.title.includes("Spill"));
-    if (exists) {
-      alert("Gate 4 Spill incident is already active!");
-      return;
-    }
-    const newSpill = {
-      id: `alert-${Date.now()}`,
+  // ----------------------------------------------------
+  // ADVANCED SIMULATION ENGINE (Dynamic Scenarios)
+  // ----------------------------------------------------
+
+  const triggerMatchEnd = () => {
+    // Spikes density at exits, empties seating areas
+    setZones(prev => ({
+      ...prev,
+      east_stand: { ...prev.east_stand, current: 0, trend: -20.0 }, // Empties instantly
+      north_gate: { ...prev.north_gate, current: Math.round(prev.north_gate.capacity * 0.98), trend: 15.0 }, // Massive surge
+      south_gate: { ...prev.south_gate, current: Math.round(prev.south_gate.capacity * 0.95), trend: 12.0 }
+    }));
+
+    const exodusAlert = {
+      id: `alert-exodus-${Date.now()}`,
       severity: "CRITICAL",
-      zoneId: "gate_4",
-      title: "Spill at Gate 4",
-      description: "Large liquid spill near escalator. High slip risk during egress.",
-      instruction: "Redirect fans to Gate 5. Request custodial dispatch to Z-402 immediately.",
+      zoneId: "north_gate",
+      title: "Match Ended: Mass Exodus",
+      description: "Severe surge detected at all primary exits. Seating areas emptying rapidly.",
+      instruction: "Deploy crowd control barriers at North and South Plazas immediately.",
       status: "active"
     };
-    setAlerts(prev => [newSpill, ...prev]);
-    alert("Simulation: Emergency Spill triggered at Gate 4. Wayfinding routes will detour through Gate 5!");
+
+    setAlerts(prev => [exodusAlert, ...prev.filter(a => a.id !== exodusAlert.id)]);
+    showToast("Simulation: Match End triggered. Exit queues surging!");
   };
 
-  const triggerMerchandiseRush = () => {
-    const exists = alerts.some(a => a.zoneId === "merchandise_stand" && a.title.includes("Congestion"));
-    if (exists) {
-      alert("Merchandise Stand Rush is already active!");
-      return;
-    }
-    const newRush = {
-      id: `alert-${Date.now()}`,
-      severity: "MODERATE",
-      zoneId: "merchandise_stand",
-      title: "Merchandise Stand Rush",
-      description: "Unusually high density detected near Merchandise Stand 3.",
-      instruction: "Open auxiliary queue rope-line. Advise fans of shorter lines at North Stand.",
+  const triggerWeatherEmergency = () => {
+    // Empties outdoor zones, spikes indoor concourses
+    setZones(prev => ({
+      ...prev,
+      east_stand: { ...prev.east_stand, current: 0, trend: -30.0 },
+      concourse_b: { ...prev.concourse_b, current: Math.round(prev.concourse_b.capacity * 1.1), trend: 25.0 } // 110% capacity
+    }));
+
+    const weatherAlert = {
+      id: `alert-weather-${Date.now()}`,
+      severity: "CRITICAL",
+      zoneId: "concourse_b",
+      title: "Severe Weather: Lightning",
+      description: "Lightning detected within 8 miles. Fans rushing indoor concourses.",
+      instruction: "Initiate Shelter-in-Place protocol. Dispatch medical standby to Concourse B.",
       status: "active"
     };
-    setAlerts(prev => [newRush, ...prev]);
-    alert("Simulation: Merchandise rush triggered. Wayfinding routes will avoid the central retail area!");
+
+    setAlerts(prev => [weatherAlert, ...prev.filter(a => a.id !== weatherAlert.id)]);
+    showToast("Simulation: Severe Weather triggered. Outdoor zones evacuated to concourses!");
+  };
+
+  const triggerVIPLockdown = () => {
+    // Locks down specific pathways by dropping capacity to 0 (forcing wayfinding detours)
+    setZones(prev => ({
+      ...prev,
+      gate_4: { ...prev.gate_4, current: prev.gate_4.capacity, capacity: 1, trend: 0 }, // Artificial choke
+      south_gate: { ...prev.south_gate, current: prev.south_gate.capacity, capacity: 1, trend: 0 }
+    }));
+
+    const vipAlert = {
+      id: `alert-vip-${Date.now()}`,
+      severity: "MODERATE",
+      zoneId: "gate_4",
+      title: "VIP Security Lockdown",
+      description: "High-security movement in progress. Gate 4 and South Gate locked.",
+      instruction: "Reroute all fan traffic away from southern perimeter.",
+      status: "active"
+    };
+
+    setAlerts(prev => [vipAlert, ...prev.filter(a => a.id !== vipAlert.id)]);
+    showToast("Simulation: VIP Lockdown active. Southern routes completely blocked!");
   };
 
   const resetAllIncidents = () => {
     setAlerts([]);
-    alert("Simulation: All active incident logs cleared and network status reset.");
+    showToast("Simulation: All active incident logs cleared and network status reset.");
   };
 
-  if (isIntroActive) {
-    return <IntroAnimation onFinish={() => setIsIntroActive(false)} />;
-  }
 
   if (!currentUser) {
     return <AuthPortal onLoginSuccess={(user) => setCurrentUser(user)} />;
@@ -231,160 +266,118 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-surface text-on-surface">
-      {/* UNIFIED PREMIUM TOP NAVIGATION HEADER */}
-      <header className="bg-surface-container-high/95 backdrop-blur-md border-b border-outline-variant/30 sticky top-0 z-[100] shadow-md">
-        <div className="max-w-[1440px] mx-auto px-4 py-2.5 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4">
-          {/* Logo & Selected Stadium (And mobile profile badge) */}
-          <div className="flex items-center justify-between w-full md:w-auto gap-3">
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="flex items-center gap-1.5 cursor-default">
-                <span className="material-symbols-outlined text-primary text-xl font-extrabold" style={{ fontVariationSettings: "'FILL' 1" }}>sports_stadium</span>
-                <span className="text-sm font-extrabold tracking-wider bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">STADIAMIQ</span>
-              </div>
-              <span className="text-outline/20">|</span>
-              <button 
-                onClick={() => setSelectedStadium(null)}
-                title="Click to Switch Stadium"
-                className="flex items-center gap-1.5 text-[10px] sm:text-xs text-on-surface-variant hover:text-white font-mono bg-surface-container-highest hover:bg-surface-container-low px-2.5 py-1 rounded-full border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer shadow-sm group"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary group-hover:bg-primary-light animate-pulse" />
-                <span className="truncate max-w-[80px] sm:max-w-none">{selectedStadium.stadium.toUpperCase()}</span>
-                <span className="material-symbols-outlined text-[12px] opacity-60 group-hover:opacity-100 transition-opacity">swap_horiz</span>
-              </button>
-            </div>
-
-            {/* Mobile Profile & Logout */}
-            {currentUser && (
-              <div className="flex md:hidden items-center gap-2 bg-surface-container-highest px-2.5 py-1 rounded-full border border-outline-variant/30 shadow-inner">
-                <span className="text-sm select-none">{currentUser.avatar}</span>
-                <button 
-                  onClick={handleLogout}
-                  title="Log Out"
-                  className="material-symbols-outlined text-[16px] text-outline hover:text-error ml-1 transition-colors cursor-pointer"
-                >
-                  logout
-                </button>
-              </div>
+    <div className="min-h-screen flex flex-col bg-background text-on-background mesh-bg font-body-md selection:bg-primary selection:text-on-primary">
+      {/* UNIFIED PREMIUM TOP NAVIGATION HEADER (High-Tech Athletic) */}
+      <header className="bg-surface-variant flex flex-wrap justify-between items-center w-full px-4 md:px-margin-desktop py-4 max-w-full sticky z-[100] gap-y-2 border-b border-outline-variant bg-gradient-to-b from-white/10 to-transparent shadow-[0_1px_0_0_rgba(255,255,255,0.1)_inset]">
+        <div className="flex items-center gap-4">
+          <Button
+            onClick={() => setSelectedStadium(null)}
+            className="material-symbols-outlined hover:bg-surface-bright transition-colors p-2"
+          >
+            menu
+          </Button>
+          <div className="flex flex-col">
+            <h1 className="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg italic tracking-tighter text-primary flex items-center gap-2 leading-none">
+              STADIUMIQ
+            </h1>
+            {selectedStadium && (
+              <span className="text-[10px] font-mono text-outline-variant uppercase">
+                {selectedStadium.stadium}
+              </span>
             )}
           </div>
+        </div>
 
-          {/* Bottom Row on Mobile / Nav + Simulation actions */}
-          <div className="flex items-center justify-between md:justify-center w-full md:w-auto gap-3 md:gap-4 border-t border-outline-variant/20 pt-2.5 md:pt-0 md:border-none">
-            {/* Center Navigation Tabs */}
-            <nav className="flex items-center bg-surface-container-lowest/80 border border-outline-variant/50 p-0.5 sm:p-1 rounded-full shadow-sm">
-              <button 
-                onClick={() => setCurrentView("fan")} 
-                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
-                  currentView === "fan" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
-                }`}
-              >
-                <span className="material-symbols-outlined text-[15px] sm:text-[16px]">home</span>
-                <span className="hidden md:inline">Home</span>
-              </button>
-              
-              {["staff", "organizer", "admin"].includes(currentUser?.role) && (
-                <button 
-                  onClick={() => setCurrentView("staff")} 
-                  className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
-                    currentView === "staff" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
-                  }`}
-                >
-                  <span className="material-symbols-outlined text-[15px] sm:text-[16px]">notifications</span>
-                  <span className="hidden md:inline">Staff Alerts</span>
-                </button>
-              )}
+        <nav className="hidden md:flex gap-8 items-center">
+          <Button
+            onClick={() => setCurrentView("fan")}
+            className={`text-label-caps font-label-caps px-4 py-2 transition-all rounded-lg ${currentView === "fan" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-white"}`}
+          >
+            HUB
+          </Button>
+          {["staff", "organizer", "admin"].includes(currentUser?.role) && (
+            <Button
+              onClick={() => setCurrentView("staff")}
+              className={`text-label-caps font-label-caps px-4 py-2 transition-all rounded-lg ${currentView === "staff" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-white"}`}
+            >
+              ALERTS
+            </Button>
+          )}
+          <Button
+            onClick={() => setCurrentView("wayfinding")}
+            className={`text-label-caps font-label-caps px-4 py-2 transition-all rounded-lg ${currentView === "wayfinding" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-white"}`}
+          >
+            MAP
+          </Button>
+          {["organizer", "admin"].includes(currentUser?.role) && (
+            <Button
+              onClick={() => setCurrentView("organizer")}
+              className={`text-label-caps font-label-caps px-4 py-2 transition-all rounded-lg ${currentView === "organizer" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-white"}`}
+            >
+              DASHBOARD
+            </Button>
+          )}
+          {currentUser?.role === "admin" && (
+            <Button
+              onClick={() => setShowSimulator(!showSimulator)}
+              className={`text-label-caps font-label-caps px-4 py-2 transition-all rounded-lg ${showSimulator ? "bg-error text-on-error tactile-button" : "text-on-surface-variant hover:text-white"}`}
+            >
+              SIMULATOR
+            </Button>
+          )}
+        </nav>
 
-              <button 
-                onClick={() => setCurrentView("wayfinding")} 
-                className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
-                  currentView === "wayfinding" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
-                }`}
-              >
-                <span className="material-symbols-outlined text-[15px] sm:text-[16px]">explore</span>
-                <span className="hidden md:inline">Wayfinding</span>
-              </button>
-
-              {["organizer", "admin"].includes(currentUser?.role) && (
-                <button 
-                  onClick={() => setCurrentView("organizer")} 
-                  className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono transition-all flex items-center gap-1 sm:gap-1.5 ${
-                    currentView === "organizer" ? "bg-primary-container text-white shadow-sm" : "text-on-surface-variant hover:text-white"
-                  }`}
-                >
-                  <span className="material-symbols-outlined text-[15px] sm:text-[16px]">dashboard</span>
-                  <span className="hidden md:inline">Dashboard</span>
-                </button>
-              )}
-            </nav>
-
-            {currentUser?.role === "admin" && (
-              <button
-                onClick={() => setShowSimulator(!showSimulator)}
-                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-mono border transition-all flex items-center gap-1 sm:gap-1.5 ${
-                  showSimulator 
-                    ? "bg-[#1a73e8] border-[#1a73e8] text-white shadow-md" 
-                    : "bg-surface-container hover:bg-surface-container-high border-outline-variant text-on-surface-variant"
-                }`}
-              >
-                <span className="material-symbols-outlined text-[15px] sm:text-[16px]">build</span>
-                <span className="hidden md:inline">Simulation</span>
-              </button>
-            )}
-          </div>
-
-          {/* Desktop User Profile Badge & Logout */}
+        <div className="flex items-center gap-4">
           {currentUser && (
-            <div className="hidden md:flex items-center gap-2 bg-surface-container-highest px-3 py-1 rounded-full border border-outline-variant/30 shadow-inner">
-              <span className="text-sm select-none">{currentUser.avatar}</span>
-              <div className="flex flex-col text-left leading-none">
-                <span className="text-[10px] font-bold text-white max-w-[80px] truncate">{currentUser.name}</span>
-                <span className="text-[8px] font-mono text-outline-variant uppercase">{currentUser.role}</span>
+            <>
+              <div className="w-10 h-10 rounded-full border-2 border-primary overflow-hidden hidden sm:block">
+                <div className="w-full h-full bg-surface-container flex items-center justify-center text-sm font-bold text-on-surface">
+                  {currentUser.avatar}
+                </div>
               </div>
-              <button 
+              <Button
                 onClick={handleLogout}
+                className="material-symbols-outlined hover:bg-surface-bright transition-colors p-2 text-outline"
                 title="Log Out"
-                className="material-symbols-outlined text-[16px] text-outline hover:text-error ml-1 transition-colors cursor-pointer"
               >
                 logout
-              </button>
-            </div>
+              </Button>
+            </>
           )}
         </div>
 
         {/* Simulation Sub-drawer */}
         {showSimulator && (
-          <div className="bg-surface-container-highest/95 border-t border-outline-variant/40 px-4 py-2.5 transition-all">
-            <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div className="absolute top-full left-0 w-full bg-surface-container-highest/95 border-t border-outline-variant/40 px-4 py-2.5 transition-all">
+            <div className="w-full max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div className="text-[10px] font-mono text-outline uppercase tracking-wider">
                 🛠️ Active Stadium Simulation Variables
               </div>
               <div className="flex flex-wrap items-center gap-2">
-                <button
-                  onClick={() => setSelectedStadium(null)}
-                  className="bg-surface-container-low hover:bg-surface-container text-primary-light border border-primary/30 text-[10px] font-mono font-bold px-2.5 py-1.5 rounded transition-all"
-                >
-                  🏟️ SWITCH STADIUM
-                </button>
-                <span className="text-[10px] font-mono text-on-surface-variant/30">|</span>
-                <button
-                  onClick={triggerGate4Spill}
+                <Button
+                  onClick={triggerMatchEnd}
                   className="bg-error-container hover:brightness-110 text-on-error-container border border-error/20 text-[10px] font-mono font-bold px-2.5 py-1.5 rounded transition-all"
                 >
-                  ⚡ GATE 4 SPILL
-                </button>
-                <button
-                  onClick={triggerMerchandiseRush}
+                  🏁 MATCH END EXODUS
+                </Button>
+                <Button
+                  onClick={triggerWeatherEmergency}
                   className="bg-tertiary-container hover:brightness-110 text-on-tertiary-container border border-tertiary/20 text-[10px] font-mono font-bold px-2.5 py-1.5 rounded transition-all"
                 >
-                  ⚡ MERCH RUSH
-                </button>
-                <button
+                  ⛈️ SEVERE WEATHER
+                </Button>
+                <Button
+                  onClick={triggerVIPLockdown}
+                  className="bg-primary/20 hover:bg-primary/30 text-primary-light border border-primary/40 text-[10px] font-mono font-bold px-2.5 py-1.5 rounded transition-all"
+                >
+                  🚨 VIP LOCKDOWN
+                </Button>
+                <Button
                   onClick={resetAllIncidents}
                   className="bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant text-[10px] font-mono font-bold px-2.5 py-1.5 rounded transition-all"
                 >
                   ♻️ RESET ALL
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -401,6 +394,8 @@ export default function App() {
             setDarkMode={setDarkMode}
             zones={zones}
             onNavigateToWayfinding={() => setCurrentView("wayfinding")}
+            onNavigateToOffer={() => setCurrentView("offer")}
+            onNavigateToArena={() => setCurrentView("arena")}
             selectedStadium={selectedStadium}
           />
         )}
@@ -410,15 +405,16 @@ export default function App() {
             language={language}
             setLanguage={setLanguage}
             congestedZones={congestedZones}
-            onSimulateCongestion={triggerGate4Spill}
+            onSimulateCongestion={triggerVIPLockdown}
             selectedStadium={selectedStadium}
+            onNavigateHome={() => setCurrentView("fan")}
           />
         )}
         {currentView === "organizer" && (
           <OrganizerDashboard
             zones={zones}
             onExecuteAdvisoryAction={handleExecuteAdvisoryAction}
-            onSimulateSpill={triggerGate4Spill}
+            onSimulateSpill={triggerMatchEnd} // Keeping the prop name for compatibility, but triggering a dynamic event instead
             selectedStadium={selectedStadium}
           />
         )}
@@ -430,12 +426,76 @@ export default function App() {
             selectedStadium={selectedStadium}
           />
         )}
+        {currentView === "offer" && (
+          <MatchDayOffer onBack={() => setCurrentView("fan")} />
+        )}
       </main>
 
       {/* Global footer */}
-      <footer className="py-4 border-t border-outline-variant/20 bg-surface-container-lowest text-center text-[10px] text-on-surface-variant font-mono uppercase tracking-widest mt-auto">
+      <footer className="py-4 border-t-2 border-outline-variant bg-surface-container-lowest text-center text-[10px] text-on-surface-variant font-mono uppercase tracking-widest mt-auto mb-[60px] md:mb-0">
         StadiumIQ Operational Platform • Hackathon Build 1.0
       </footer>
+
+      {/* Bottom Nav Bar (Mobile) */}
+      <nav className="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 glass-overlay border-t border-outline-variant md:hidden pb-[calc(12px+env(safe-area-inset-bottom))]">
+        <Button
+          onClick={() => setCurrentView("fan")}
+          className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "fan" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-primary"}`}
+        >
+          <span className="material-symbols-outlined">stadium</span>
+          <span className="text-label-caps font-label-caps">HUB</span>
+        </Button>
+        {["staff", "organizer", "admin"].includes(currentUser?.role) && (
+          <Button
+            onClick={() => setCurrentView("staff")}
+            className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "staff" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-primary"}`}
+          >
+            <span className="material-symbols-outlined">notifications_active</span>
+            <span className="text-label-caps font-label-caps">ALERTS</span>
+          </Button>
+        )}
+        <Button
+          onClick={() => setCurrentView("wayfinding")}
+          className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "wayfinding" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-primary"}`}
+        >
+          <span className="material-symbols-outlined">explore</span>
+          <span className="text-label-caps font-label-caps">MAP</span>
+        </Button>
+        {["organizer", "admin"].includes(currentUser?.role) && (
+          <Button
+            onClick={() => setCurrentView("organizer")}
+            className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "organizer" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-primary"}`}
+          >
+            <span className="material-symbols-outlined">dashboard</span>
+            <span className="text-label-caps font-label-caps">CROWD</span>
+          </Button>
+        )}
+      </nav>
+
+      {/* High-Tech System Toast Overlay */}
+      {systemToast && (
+        <div
+          className="fixed bottom-6 right-6 z-[9999] transition-all duration-300"
+          style={{ animation: 'slideInRight 0.3s ease-out forwards' }}
+        >
+          <div className="bg-surface-container-highest/95 backdrop-blur-md border-l-4 border-primary text-on-surface p-4 sm:pr-8 rounded shadow-2xl flex items-center gap-4">
+            <span className="material-symbols-outlined text-primary text-3xl animate-pulse">crisis_alert</span>
+            <div>
+              <p className="text-[10px] text-primary uppercase font-mono tracking-widest font-bold mb-0.5">SYSTEM DISPATCH</p>
+              <p className="text-sm font-medium leading-tight">{systemToast}</p>
+            </div>
+          </div>
+          <style>{`
+            @keyframes slideInRight {
+              0% { transform: translateX(100%); opacity: 0; }
+              100% { transform: translateX(0); opacity: 1; }
+            }
+          `}</style>
+        </div>
+      )}
+
+      {/* Global Unified Assistant */}
+      <GlobalChatBot />
     </div>
   );
 }
