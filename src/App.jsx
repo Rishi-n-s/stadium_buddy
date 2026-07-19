@@ -260,7 +260,16 @@ export default function App() {
 
 
   if (!currentUser) {
-    return <AuthPortal onLoginSuccess={(user) => setCurrentUser(user)} />;
+    return <AuthPortal onLoginSuccess={(user) => {
+      setCurrentUser(user);
+      if (user.role === 'admin' || user.role === 'organizer') {
+        setCurrentView('organizer');
+      } else if (user.role === 'staff') {
+        setCurrentView('staff');
+      } else {
+        setCurrentView('fan');
+      }
+    }} />;
   }
 
   if (!selectedStadium) {
