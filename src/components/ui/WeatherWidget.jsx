@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import { Droplets, Wind } from 'lucide-react';
 
-export default function WeatherWidget({ city = 'London' }) {
+const WeatherWidget = React.memo(function WeatherWidget({ city = 'London' }) {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -98,4 +98,6 @@ export default function WeatherWidget({ city = 'London' }) {
       </div>
     </Card>
   );
-}
+});
+
+export default WeatherWidget;

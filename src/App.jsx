@@ -96,10 +96,10 @@ export default function App() {
   const [congestedZones, setCongestedZones] = useState(["gate_4"]); // Start with gate_4 blocked due to the starting critical spill alert
   const [systemToast, setSystemToast] = useState(null);
 
-  const showToast = (msg) => {
+  const showToast = React.useCallback((msg) => {
     setSystemToast(msg);
     setTimeout(() => setSystemToast(null), 4500);
-  };
+  }, []);
 
   const handleDeployStadium = (stadium) => {
     setSelectedStadium(stadium);
