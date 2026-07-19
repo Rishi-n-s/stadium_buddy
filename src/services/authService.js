@@ -61,7 +61,28 @@ export const loginUser = async (email, password) => {
     return { success: false, message: "Please confirm your email address before logging in." };
   }
 
-  return { success: true, user: data.user };
+  // Fetch the role and username securely from the profiles table
+  const { data: profile, error: profileError } = await supabase
+    .from('profiles')
+    .select('role, username')
+    .eq('id', data.user.id)
+    .single();
+
+  if (profileError) {
+    console.error("Failed to fetch user profile during login", profileError);
+    await supabase.auth.signOut();
+    return { success: false, message: "Failed to load user profile." };
+  }
+
+  const formattedUser = {
+    id: data.user.id,
+    name: profile.username,
+    email: data.user.email,
+    role: profile.role,
+    avatar: "⚽"
+  };
+
+  return { success: true, user: formattedUser };
 };
 
 export const logoutUser = async () => {
