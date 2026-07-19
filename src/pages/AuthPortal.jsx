@@ -103,14 +103,10 @@ export default function AuthPortal({ onLoginSuccess }) {
 
     const res = await registerUser(username, email, password, role);
     if (res.success) {
-      setSuccess(res.message); // "Check your email to confirm your account!"
-      setIsAwaitingEmail(true);
-      // Automatically switch to login mode after a delay
+      setSuccess("Account created successfully! Logging you in...");
       setTimeout(() => {
-        setIsRegisterMode(false);
-        setPassword("");
-        setConfirmPassword("");
-      }, 3000);
+        onLoginSuccess(res.user);
+      }, 800);
     } else {
       setError(res.message);
     }
@@ -152,11 +148,7 @@ export default function AuthPortal({ onLoginSuccess }) {
           </div>
         )}
 
-        {isAwaitingEmail && (
-           <div className="bg-primary/20 border border-primary text-primary text-body-sm font-body-sm px-4 py-3 rounded-lg mb-6 text-center">
-             <span>Please check your inbox (and spam folder) for a confirmation link. You must click the link before you can log in.</span>
-           </div>
-        )}
+
 
         {/* Toggle Mode */}
         <div className="flex p-1 bg-surface-container-highest rounded-lg mb-8">
