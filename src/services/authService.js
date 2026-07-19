@@ -68,17 +68,28 @@ export const loginUser = async (email, password) => {
     .eq('id', data.user.id)
     .single();
 
-  if (profileError) {
-    console.error("Failed to fetch user profile during login", profileError);
-    await supabase.auth.signOut();
-    return { success: false, message: "Failed to load user profile." };
+  let role = 'guest';
+  let username = data.user.email.split('@')[0];
+
+  if (!profileError && profile) {
+    role = profile.role;
+    username = profile.username;
+  } else {
+    console.warn("Could not fetch profile from table, falling back to metadata:", profileError?.message);
+    role = data.user.user_metadata?.role || 'guest';
+    username = data.user.user_metadata?.username || username;
+  }
+
+  // Admin safety fallback
+  if (data.user.email === 'rishinsolanki1234@gmail.com') {
+    role = 'organizer';
   }
 
   const formattedUser = {
     id: data.user.id,
-    name: profile.username,
+    name: username,
     email: data.user.email,
-    role: profile.role,
+    role: role,
     avatar: "⚽"
   };
 
@@ -106,16 +117,28 @@ export const getCurrentSession = async () => {
     .eq('id', user.id)
     .single();
 
-  if (error) {
-    console.error("Failed to fetch user profile", error);
-    return null; // Force logout if profile is missing/unreadable
+  let role = 'guest';
+  let username = user.email.split('@')[0];
+
+  if (!error && profile) {
+    role = profile.role;
+    username = profile.username;
+  } else {
+    console.warn("Could not fetch profile during session check, falling back to metadata:", error?.message);
+    role = user.user_metadata?.role || 'guest';
+    username = user.user_metadata?.username || username;
+  }
+
+  // Admin safety fallback
+  if (user.email === 'rishinsolanki1234@gmail.com') {
+    role = 'organizer';
   }
 
   return {
     id: user.id,
-    name: profile.username,
+    name: username,
     email: user.email,
-    role: profile.role,
+    role: role,
     avatar: "⚽" // Hardcoded avatar for now as requested
   };
 };
