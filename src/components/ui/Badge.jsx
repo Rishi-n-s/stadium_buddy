@@ -23,4 +23,12 @@ const Badge = React.forwardRef(({ className = "", variant = "neutral", children,
 
 Badge.displayName = 'Badge';
 
+import PropTypes from 'prop-types';
+
+Badge.propTypes = {
+  className: PropTypes.string,
+  variant: PropTypes.oneOf(['success', 'warning', 'error', 'info', 'neutral']),
+  children: PropTypes.node,
+};
+
 export default Badge;

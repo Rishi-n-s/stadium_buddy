@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import FanHome from "./pages/FanHome";
-import ArenaHome from "./pages/ArenaHome";
-import Wayfinding from "./pages/Wayfinding";
-import OrganizerDashboard from "./pages/OrganizerDashboard";
-import StaffAlerts from "./pages/StaffAlerts";
-import LandingPage from "./pages/LandingPage";
-import AuthPortal from "./pages/AuthPortal";
-import MatchDayOffer from "./pages/MatchDayOffer";
+const FanHome = React.lazy(() => import("./pages/FanHome"));
+const ArenaHome = React.lazy(() => import("./pages/ArenaHome"));
+const Wayfinding = React.lazy(() => import("./pages/Wayfinding"));
+const OrganizerDashboard = React.lazy(() => import("./pages/OrganizerDashboard"));
+const StaffAlerts = React.lazy(() => import("./pages/StaffAlerts"));
+const LandingPage = React.lazy(() => import("./pages/LandingPage"));
+const AuthPortal = React.lazy(() => import("./pages/AuthPortal"));
+const MatchDayOffer = React.lazy(() => import("./pages/MatchDayOffer"));
 import { getCurrentSession, logoutUser } from "./services/authService";
 import { INITIAL_ZONES, updateOccupancy } from "./services/crowdEngine";
 import Button from './components/ui/Button';
 import GlobalChatBot from './components/ui/GlobalChatBot';
-import { Menu, LogOut, Home, Bell, Map as MapIcon, LayoutDashboard, AlertCircle, ArrowLeft } from 'lucide-react';
+import { Menu, LogOut, Bell, LayoutDashboard, AlertCircle, ArrowLeft } from 'lucide-react';
 
 const INITIAL_ALERTS = [
   {
@@ -397,6 +397,7 @@ export default function App() {
 
       {/* Main Canvas view renderer */}
       <main className="flex-grow flex flex-col">
+        <React.Suspense fallback={<div className="flex-grow flex items-center justify-center p-8"><span className="animate-pulse font-mono text-primary text-sm tracking-widest uppercase">Loading Module...</span></div>}>
         {currentView === "fan" && (
           <FanHome
             language={language}
@@ -470,6 +471,7 @@ export default function App() {
             <iframe src={stitchUrl} className="w-full flex-grow border-0" title="Stitch Interactive View" />
           </div>
         )}
+        </React.Suspense>
       </main>
 
       {/* Global footer */}

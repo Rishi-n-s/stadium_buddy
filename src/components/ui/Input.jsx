@@ -30,4 +30,13 @@ const Input = React.forwardRef(({ className = "", icon: Icon, error, ...props },
 
 Input.displayName = 'Input';
 
+import PropTypes from 'prop-types';
+
+Input.propTypes = {
+  className: PropTypes.string,
+  icon: PropTypes.elementType,
+  error: PropTypes.string,
+  id: PropTypes.string,
+};
+
 export default Input;

@@ -40,4 +40,15 @@ const Button = React.forwardRef(({ className = "", variant = "primary", size = "
 
 Button.displayName = 'Button';
 
+import PropTypes from 'prop-types';
+
+Button.propTypes = {
+  className: PropTypes.string,
+  variant: PropTypes.oneOf(['primary', 'secondary', 'outline', 'ghost', 'danger']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  isLoading: PropTypes.bool,
+  disabled: PropTypes.bool,
+  children: PropTypes.node,
+};
+
 export default Button;

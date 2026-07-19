@@ -100,4 +100,10 @@ const WeatherWidget = React.memo(function WeatherWidget({ city = 'London' }) {
   );
 });
 
+import PropTypes from 'prop-types';
+
+WeatherWidget.propTypes = {
+  className: PropTypes.string,
+};
+
 export default WeatherWidget;
