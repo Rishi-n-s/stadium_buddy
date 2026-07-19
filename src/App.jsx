@@ -11,6 +11,7 @@ import { getCurrentSession, logoutUser } from "./services/authService";
 import { INITIAL_ZONES, updateOccupancy } from "./services/crowdEngine";
 import Button from './components/ui/Button';
 import GlobalChatBot from './components/ui/GlobalChatBot';
+import { Menu, LogOut, Home, Bell, Map as MapIcon, LayoutDashboard, AlertCircle, ArrowLeft } from 'lucide-react';
 
 const INITIAL_ALERTS = [
   {
@@ -51,6 +52,7 @@ export default function App() {
   // Navigation flow state (Landing -> Dashboard)
   const [currentUser, setCurrentUser] = useState(null);
   const [selectedStadium, setSelectedStadium] = useState(null);
+  const [stitchUrl, setStitchUrl] = useState(null);
 
   useEffect(() => {
     const checkSession = async () => {
@@ -266,61 +268,59 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-on-background mesh-bg font-body-md selection:bg-primary selection:text-on-primary">
-      {/* UNIFIED PREMIUM TOP NAVIGATION HEADER (High-Tech Athletic) */}
-      <header className="bg-surface-variant flex flex-wrap justify-between items-center w-full px-4 md:px-margin-desktop py-4 max-w-full sticky z-[100] gap-y-2 border-b border-outline-variant bg-gradient-to-b from-white/10 to-transparent shadow-[0_1px_0_0_rgba(255,255,255,0.1)_inset]">
+    <div className="min-h-screen flex flex-col bg-surface text-on-surface font-body-md selection:bg-primary selection:text-on-primary">
+      {/* UNIFIED PREMIUM TOP NAVIGATION HEADER */}
+      <header className="bg-surface/80 backdrop-blur-md flex flex-wrap justify-between items-center w-full px-4 md:px-margin-desktop py-4 max-w-full sticky top-0 z-[100] gap-y-2 border-b border-outline-variant/30">
         <div className="flex items-center gap-4">
-          <Button
-            onClick={() => setSelectedStadium(null)}
-            className="material-symbols-outlined hover:bg-surface-bright transition-colors p-2"
-          >
-            menu
-          </Button>
-          <div className="flex flex-col">
-            <h1 className="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg italic tracking-tighter text-primary flex items-center gap-2 leading-none">
-              STADIUMIQ
+          <div className="flex flex-col cursor-pointer" onClick={() => setCurrentView(currentUser?.role === 'staff' ? 'staff' : (currentUser?.role === 'organizer' || currentUser?.role === 'admin' ? 'organizer' : 'fan'))}>
+            <h1 className="text-display-sm md:text-headline-md font-display-sm md:font-headline-md uppercase tracking-widest text-primary flex items-center gap-2 leading-none">
+              STADIUM<span className="text-on-surface">IQ</span>
             </h1>
             {selectedStadium && (
-              <span className="text-[10px] font-mono text-outline-variant uppercase">
+              <span className="text-[10px] font-mono text-on-surface-variant uppercase mt-1 tracking-widest">
                 {selectedStadium.stadium}
               </span>
             )}
           </div>
         </div>
 
-        <nav className="hidden md:flex gap-8 items-center">
+        <nav className="hidden md:flex gap-4 items-center">
           <Button
             onClick={() => setCurrentView("fan")}
-            className={`text-label-caps font-label-caps px-4 py-2 transition-all rounded-lg ${currentView === "fan" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-white"}`}
+            variant={currentView === "fan" ? "primary" : "ghost"}
           >
+            <Home className="h-4 w-4 mr-2" />
             HUB
           </Button>
           {["staff", "organizer", "admin"].includes(currentUser?.role) && (
             <Button
               onClick={() => setCurrentView("staff")}
-              className={`text-label-caps font-label-caps px-4 py-2 transition-all rounded-lg ${currentView === "staff" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-white"}`}
+              variant={currentView === "staff" ? "primary" : "ghost"}
             >
+              <Bell className="h-4 w-4 mr-2" />
               ALERTS
             </Button>
           )}
           <Button
             onClick={() => setCurrentView("wayfinding")}
-            className={`text-label-caps font-label-caps px-4 py-2 transition-all rounded-lg ${currentView === "wayfinding" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-white"}`}
+            variant={currentView === "wayfinding" ? "primary" : "ghost"}
           >
+            <MapIcon className="h-4 w-4 mr-2" />
             MAP
           </Button>
           {["organizer", "admin"].includes(currentUser?.role) && (
             <Button
               onClick={() => setCurrentView("organizer")}
-              className={`text-label-caps font-label-caps px-4 py-2 transition-all rounded-lg ${currentView === "organizer" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-white"}`}
+              variant={currentView === "organizer" ? "primary" : "ghost"}
             >
+              <LayoutDashboard className="h-4 w-4 mr-2" />
               DASHBOARD
             </Button>
           )}
           {currentUser?.role === "admin" && (
             <Button
               onClick={() => setShowSimulator(!showSimulator)}
-              className={`text-label-caps font-label-caps px-4 py-2 transition-all rounded-lg ${showSimulator ? "bg-error text-on-error tactile-button" : "text-on-surface-variant hover:text-white"}`}
+              variant={showSimulator ? "danger" : "ghost"}
             >
               SIMULATOR
             </Button>
@@ -332,15 +332,17 @@ export default function App() {
             <>
               <div className="w-10 h-10 rounded-full border-2 border-primary overflow-hidden hidden sm:block">
                 <div className="w-full h-full bg-surface-container flex items-center justify-center text-sm font-bold text-on-surface">
-                  {currentUser.avatar}
+                  {currentUser.avatar || currentUser.name.charAt(0).toUpperCase()}
                 </div>
               </div>
               <Button
                 onClick={handleLogout}
-                className="material-symbols-outlined hover:bg-surface-bright transition-colors p-2 text-outline"
+                variant="ghost"
+                size="sm"
+                className="p-2 text-on-surface-variant hover:text-error transition-colors"
                 title="Log Out"
               >
-                logout
+                <LogOut className="h-5 w-5" />
               </Button>
             </>
           )}
@@ -396,6 +398,7 @@ export default function App() {
             onNavigateToWayfinding={() => setCurrentView("wayfinding")}
             onNavigateToOffer={() => setCurrentView("offer")}
             onNavigateToArena={() => setCurrentView("arena")}
+            onNavigateToStitch={(url) => { setStitchUrl(url); setCurrentView("stitch"); }}
             selectedStadium={selectedStadium}
           />
         )}
@@ -429,6 +432,35 @@ export default function App() {
         {currentView === "offer" && (
           <MatchDayOffer onBack={() => setCurrentView("fan")} />
         )}
+        {currentView === "arena" && (
+          <ArenaHome
+            currentUser={currentUser}
+            language={language}
+            setLanguage={setLanguage}
+            selectedStadium={selectedStadium}
+            onNavigateHome={() => setCurrentView("fan")}
+          />
+        )}
+        {currentView === "stitch" && (
+          <div className="w-full flex-grow flex flex-col relative bg-surface">
+            <div className="w-full bg-surface/80 backdrop-blur-sm border-b border-outline-variant/30 p-4 flex items-center justify-between sticky top-0 z-50">
+              <Button 
+                onClick={() => setCurrentView("fan")} 
+                variant="ghost"
+                size="sm"
+                className="text-on-surface hover:text-primary transition-colors p-2"
+              >
+                <ArrowLeft className="h-6 w-6" />
+              </Button>
+              <span className="text-label-caps font-label-caps uppercase text-primary tracking-widest flex items-center gap-2">
+                <span className="w-1.5 h-6 bg-primary rounded-full"></span>
+                PARTNER EXPERIENCE
+              </span>
+              <div className="w-8"></div>
+            </div>
+            <iframe src={stitchUrl} className="w-full flex-grow border-0" title="Stitch Interactive View" />
+          </div>
+        )}
       </main>
 
       {/* Global footer */}
@@ -437,52 +469,52 @@ export default function App() {
       </footer>
 
       {/* Bottom Nav Bar (Mobile) */}
-      <nav className="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 glass-overlay border-t border-outline-variant md:hidden pb-[calc(12px+env(safe-area-inset-bottom))]">
-        <Button
+      <nav className="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-surface/90 backdrop-blur-md border-t border-outline-variant/30 md:hidden pb-[calc(12px+env(safe-area-inset-bottom))]">
+        <button
           onClick={() => setCurrentView("fan")}
-          className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "fan" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-primary"}`}
+          className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "fan" ? "text-primary" : "text-on-surface-variant hover:text-primary"}`}
         >
-          <span className="material-symbols-outlined">stadium</span>
-          <span className="text-label-caps font-label-caps">HUB</span>
-        </Button>
+          <Home className="h-6 w-6 mb-1" />
+          <span className="text-[10px] font-mono tracking-widest uppercase">HUB</span>
+        </button>
         {["staff", "organizer", "admin"].includes(currentUser?.role) && (
-          <Button
+          <button
             onClick={() => setCurrentView("staff")}
-            className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "staff" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-primary"}`}
+            className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "staff" ? "text-primary" : "text-on-surface-variant hover:text-primary"}`}
           >
-            <span className="material-symbols-outlined">notifications_active</span>
-            <span className="text-label-caps font-label-caps">ALERTS</span>
-          </Button>
+            <Bell className="h-6 w-6 mb-1" />
+            <span className="text-[10px] font-mono tracking-widest uppercase">ALERTS</span>
+          </button>
         )}
-        <Button
+        <button
           onClick={() => setCurrentView("wayfinding")}
-          className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "wayfinding" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-primary"}`}
+          className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "wayfinding" ? "text-primary" : "text-on-surface-variant hover:text-primary"}`}
         >
-          <span className="material-symbols-outlined">explore</span>
-          <span className="text-label-caps font-label-caps">MAP</span>
-        </Button>
+          <MapIcon className="h-6 w-6 mb-1" />
+          <span className="text-[10px] font-mono tracking-widest uppercase">MAP</span>
+        </button>
         {["organizer", "admin"].includes(currentUser?.role) && (
-          <Button
+          <button
             onClick={() => setCurrentView("organizer")}
-            className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "organizer" ? "bg-primary-container text-white tactile-button" : "text-on-surface-variant hover:text-primary"}`}
+            className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] transition-all rounded-lg p-2 ${currentView === "organizer" ? "text-primary" : "text-on-surface-variant hover:text-primary"}`}
           >
-            <span className="material-symbols-outlined">dashboard</span>
-            <span className="text-label-caps font-label-caps">CROWD</span>
-          </Button>
+            <LayoutDashboard className="h-6 w-6 mb-1" />
+            <span className="text-[10px] font-mono tracking-widest uppercase">CROWD</span>
+          </button>
         )}
       </nav>
 
       {/* High-Tech System Toast Overlay */}
       {systemToast && (
         <div
-          className="fixed bottom-6 right-6 z-[9999] transition-all duration-300"
+          className="fixed bottom-24 right-6 z-[9999] transition-all duration-300"
           style={{ animation: 'slideInRight 0.3s ease-out forwards' }}
         >
           <div className="bg-surface-container-highest/95 backdrop-blur-md border-l-4 border-primary text-on-surface p-4 sm:pr-8 rounded shadow-2xl flex items-center gap-4">
-            <span className="material-symbols-outlined text-primary text-3xl animate-pulse">crisis_alert</span>
+            <AlertCircle className="text-primary h-8 w-8 animate-pulse" />
             <div>
               <p className="text-[10px] text-primary uppercase font-mono tracking-widest font-bold mb-0.5">SYSTEM DISPATCH</p>
-              <p className="text-sm font-medium leading-tight">{systemToast}</p>
+              <p className="text-body-sm font-body-sm font-medium leading-tight">{systemToast}</p>
             </div>
           </div>
           <style>{`

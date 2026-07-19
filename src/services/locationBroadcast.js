@@ -33,6 +33,8 @@ function haversine(lon1, lat1, lon2, lat2) {
 let ws = null;
 let reconnectTimer = null;
 let reconnectDelay = 1000;
+let retryCount = 0;
+const MAX_RETRIES = 3;
 let userId = null;
 let userRole = null;
 let userName = null;
@@ -99,6 +101,7 @@ export function connect({ userId: uid, role, name, stadiumId: sid, onUsers, onSt
   if (onUsers) userSubscribers.add(onUsers);
   if (onStatus) statusSubscribers.add(onStatus);
   isManuallyDisconnected = false;
+  retryCount = 0;
 
   openSocket();
 }
@@ -111,13 +114,14 @@ function openSocket() {
   try {
     ws = new WebSocket(WS_URL);
   } catch (err) {
-    console.error("[LocationBroadcast] WebSocket creation failed:", err);
+    console.warn("[LocationBroadcast] WebSocket creation failed:", err);
     scheduleReconnect();
     return;
   }
 
   ws.onopen = () => {
     reconnectDelay = 1000; // reset backoff on success
+    retryCount = 0;
     statusSubscribers.forEach(cb => cb(BROADCAST_STATUS.CONNECTED));
 
     // Register with server
@@ -138,7 +142,8 @@ function openSocket() {
   };
 
   ws.onerror = (err) => {
-    console.warn("[LocationBroadcast] WebSocket error:", err);
+    // We suppress the console.warn here because the browser natively logs net::ERR_CONNECTION_REFUSED
+    // which is noisy enough. 
   };
 
   ws.onclose = () => {
@@ -150,6 +155,12 @@ function openSocket() {
 }
 
 function scheduleReconnect() {
+  if (retryCount >= MAX_RETRIES) {
+    console.warn(`[LocationBroadcast] Max retries (${MAX_RETRIES}) reached. Disabling live location broadcast to prevent spam.`);
+    return;
+  }
+  
+  retryCount++;
   clearTimeout(reconnectTimer);
   reconnectTimer = setTimeout(() => {
     reconnectDelay = Math.min(reconnectDelay * 2, MAX_RECONNECT_DELAY_MS);

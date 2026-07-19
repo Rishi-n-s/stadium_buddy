@@ -2,6 +2,10 @@ import React, { useState, useEffect, useMemo } from "react";
 import { STADIUMS } from "../data/stadiums";
 
 import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
+import Input from '../components/ui/Input';
+import Badge from '../components/ui/Badge';
+import { Search, X, ArrowRight, Loader2, Zap } from 'lucide-react';
 
 // List of popular stadiums for quick-select chips
 const FEATURED_STADIUMS = [
@@ -148,29 +152,32 @@ export default function LandingPage({ onDeploy }) {
           <span className="text-secondary font-mono text-xs font-bold tracking-widest uppercase mb-3">
             GenAI Smart Stadium Hackathon Release
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-6">
+          <h2 className="text-display-lg text-on-surface mb-6 font-display-lg">
             Instantly Orchestrate <br />
             Any Stadium on Earth.
           </h2>
-          <p className="text-on-surface-variant text-base leading-relaxed max-w-xl mb-10">
+          <p className="text-body-lg text-on-surface-variant max-w-xl mb-10 font-body-lg">
             Select any venue from our catalog of 1,820 global stadiums. StadiumIQ leverages Generative AI to map wayfinding paths, draft live crowd advisories, deploy security personnel, and handle fans in 5+ languages.
           </p>
 
           {/* SEARCH COMPONENT */}
           <div className="relative w-full max-w-xl mb-6">
-            <div className="flex items-center bg-surface-container border border-outline-variant/60 focus-within:border-primary/60 rounded-xl px-4 py-3 shadow-xl transition-all">
-              <span className="material-symbols-outlined text-outline mr-3">search</span>
-              <input
+            <div className="relative flex items-center">
+              <Input
                 type="text"
                 placeholder="Search 1,820+ catalog stadiums or any sports arena in the world..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent border-none text-on-surface text-sm w-full outline-none focus:ring-0 placeholder-on-surface-variant/50"
+                icon={Search}
+                className="py-3 shadow-xl"
               />
               {searchQuery && (
-                <Button onClick={() => setSearchQuery("")} className="material-symbols-outlined text-outline-variant hover:text-white text-lg">
-                  close
-                </Button>
+                <button 
+                  onClick={() => setSearchQuery("")} 
+                  className="absolute right-3 text-outline-variant hover:text-on-surface"
+                >
+                  <X className="h-5 w-5" />
+                </button>
               )}
             </div>
 
@@ -264,17 +271,14 @@ export default function LandingPage({ onDeploy }) {
 
           {/* Quick select chips */}
           <div className="flex flex-wrap items-center gap-2 max-w-xl">
-            <span className="text-[10px] text-outline font-mono uppercase mr-1">Popular:</span>
+            <span className="text-label-caps text-outline font-label-caps uppercase mr-1">Popular:</span>
             {FEATURED_STADIUMS.map((item, idx) => {
               return (
                 <Button
                   key={idx}
+                  size="sm"
+                  variant={selectedStadium.stadium === item.stadium ? "secondary" : "outline"}
                   onClick={() => handleSelectStadium(item)}
-                  className={`px-3 py-1 rounded-full text-xs font-semibold border transition-all ${
-                    selectedStadium.stadium === item.stadium
-                      ? "bg-secondary/15 border-secondary text-secondary"
-                      : "bg-surface-container/50 border-outline-variant/30 hover:border-outline text-on-surface-variant hover:text-white"
-                  }`}
                 >
                   {item.stadium}
                 </Button>
@@ -287,15 +291,15 @@ export default function LandingPage({ onDeploy }) {
         <div className="lg:col-span-5 relative w-full max-w-md mx-auto">
           {isDeploying ? (
             /* DEPLOYMENT PROCESS STATUS CARD */
-            <div className="bg-surface-container border border-primary/20 rounded-2xl p-8 shadow-2xl relative overflow-hidden backdrop-blur-md min-h-[380px] flex flex-col justify-between">
+            <Card className="relative overflow-hidden backdrop-blur-md min-h-[380px] flex flex-col justify-between border-primary/30">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent pointer-events-none" />
               
               <div>
                 <div className="flex items-center justify-between border-b border-outline-variant/30 pb-4 mb-6">
-                  <h3 className="font-mono text-xs font-bold text-primary-light uppercase tracking-widest">
+                  <h3 className="text-label-caps font-label-caps text-primary uppercase">
                     INITIALIZING DEPLOYMENT
                   </h3>
-                  <span className="material-symbols-outlined text-secondary animate-spin">sync</span>
+                  <Loader2 className="h-5 w-5 text-secondary animate-spin" />
                 </div>
 
                 <div className="space-y-4">
@@ -322,23 +326,23 @@ export default function LandingPage({ onDeploy }) {
                   />
                 </div>
               </div>
-            </div>
+            </Card>
           ) : (
             /* SELECTED STADIUM PROFILE CARD */
-            <div className="bg-surface-container border border-outline-variant/40 rounded-2xl p-6 shadow-2xl relative overflow-hidden backdrop-blur-md transition-all duration-300 hover:border-primary/30 flex flex-col min-h-[380px] justify-between">
+            <Card hoverable className="relative overflow-hidden backdrop-blur-md flex flex-col min-h-[380px] justify-between">
               {/* Profile Card Header overlay */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-primary/10 to-transparent pointer-events-none" />
               
               <div>
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <span className="text-[10px] font-mono bg-primary/10 border border-primary/20 text-primary-light px-2.5 py-0.5 rounded-full font-bold uppercase">
+                    <Badge variant="info">
                       {selectedStadium.confederation}
-                    </span>
-                    <h3 className="text-2xl font-black text-white mt-2 leading-tight">
+                    </Badge>
+                    <h3 className="text-headline-sm font-headline-sm text-on-surface mt-3">
                       {selectedStadium.stadium}
                     </h3>
-                    <p className="text-sm text-on-surface-variant mt-1">
+                    <p className="text-body-md text-on-surface-variant mt-1 font-body-md">
                       {selectedStadium.city}, {selectedStadium.country}
                     </p>
                   </div>
@@ -348,7 +352,7 @@ export default function LandingPage({ onDeploy }) {
                 <div className="space-y-3.5 border-t border-b border-outline-variant/30 py-5 my-5 text-sm">
                   <div className="flex justify-between items-center">
                     <span className="text-on-surface-variant">Home Team(s)</span>
-                    <span className="font-semibold text-right max-w-[200px] truncate text-white">
+                    <span className="font-semibold text-right max-w-[200px] truncate text-on-surface">
                       {selectedStadium.hometeams || "Various clubs / National team"}
                     </span>
                   </div>
@@ -360,7 +364,7 @@ export default function LandingPage({ onDeploy }) {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-on-surface-variant">IOC Code</span>
-                    <span className="font-mono text-white text-right">
+                    <span className="font-mono text-on-surface text-right">
                       {selectedStadium.ioc}
                     </span>
                   </div>
@@ -370,12 +374,14 @@ export default function LandingPage({ onDeploy }) {
               {/* Action Button */}
               <Button
                 onClick={handleDeployClick}
-                className="w-full py-4 bg-primary-container hover:brightness-110 active:scale-95 text-white rounded-xl font-mono text-sm font-bold tracking-wider transition-all duration-200 flex justify-center items-center gap-2 shadow-lg shadow-primary-container/25"
+                variant="primary"
+                className="w-full flex justify-center items-center gap-2"
+                size="lg"
               >
-                <span className="material-symbols-outlined text-sm">bolt</span>
+                <Zap className="h-5 w-5" />
                 DEPLOY STADIUMIQ LAYER
               </Button>
-            </div>
+            </Card>
           )}
         </div>
       </main>

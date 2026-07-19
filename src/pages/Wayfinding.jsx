@@ -5,6 +5,9 @@ import Map from "../components/ui/Map";
 import LocationConsentModal from "../components/ui/LocationConsentModal";
 import { hasLocationConsent } from "../services/locationBroadcast";
 import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
+import Badge from '../components/ui/Badge';
+import { Compass, ArrowLeft, Navigation2, Building2, Map as MapIcon, Minimize2, Maximize2 } from 'lucide-react';
 
 // Map relative coordinates to percentage values for SVG overlay
 const MAP_COORDS = {
@@ -51,11 +54,12 @@ export default function Wayfinding(props) {
     }
   ]);
   const [zoom, setZoom] = useState(100);
+  const [isMapMinimized, setIsMapMinimized] = useState(false);
 
   // Calculate current path
-  const routingResult = findShortestPath(startNode, endNode, congestedZones);
-  const path = routingResult ? routingResult.path : [];
-  const directions = routingResult ? generateDirections(path, congestedZones) : [];
+  const routingResult = React.useMemo(() => findShortestPath(startNode, endNode, congestedZones), [startNode, endNode, congestedZones]);
+  const path = React.useMemo(() => routingResult ? routingResult.path : [], [routingResult]);
+  const directions = React.useMemo(() => routingResult ? generateDirections(routingResult.path, congestedZones) : [], [routingResult, congestedZones]);
 
   // Update AI Chat when endNode changes
   useEffect(() => {
@@ -138,18 +142,18 @@ export default function Wayfinding(props) {
   };
 
   return (
-    <div dir={dir} className="w-full max-w-[1440px] mx-auto p-4 md:p-8">
+    <div dir={dir} className="w-full max-w-[1200px] mx-auto p-4 md:p-8 bg-surface min-h-screen text-on-surface">
       {/* Top Header */}
         <header className="flex justify-between items-center pb-6 border-b border-outline-variant/30 mb-6">
           <div className="flex items-center gap-3">
-            <Button onClick={onNavigateHome} className="material-symbols-outlined hover:bg-surface-bright transition-colors p-2" title="Back to Hub">
-              arrow_back
+            <Button onClick={onNavigateHome} variant="ghost" size="sm" className="p-2" title="Back to Hub">
+              <ArrowLeft className="h-6 w-6 text-on-surface" />
             </Button>
-            <div className="w-8 h-8 rounded-full overflow-hidden border border-primary/20 bg-surface-container-high">
-              <span className="material-symbols-outlined text-primary text-xl flex items-center justify-center h-full">explore</span>
+            <div className="w-8 h-8 rounded-full overflow-hidden border border-primary/20 bg-surface-container flex items-center justify-center">
+              <Compass className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h1 className="text-xl font-extrabold text-primary">StadiumIQ</h1>
+              <h1 className="text-headline-sm font-headline-sm text-primary uppercase">StadiumIQ</h1>
               <p className="text-[10px] text-on-surface-variant font-mono uppercase tracking-widest">
                 {selectedStadium ? selectedStadium.stadium : "AI Wayfinding"}
               </p>
@@ -173,45 +177,43 @@ export default function Wayfinding(props) {
       </header>
 
       {/* Real-time Advisory Banner */}
-      <div className="relative mb-6 overflow-hidden rounded-xl border border-primary/20 bg-surface-container-low shadow-lg glass-overlay mechanical-border">
+      <Card className="relative mb-6 overflow-hidden p-0">
         {routingResult?.isRerouted && (
           <div className="absolute inset-0 opacity-10 bg-gradient-to-r from-transparent via-secondary/20 to-transparent animate-[pulse_3s_infinite]" />
         )}
         <div className="relative z-10 px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className={`w-2.5 h-2.5 rounded-full ${routingResult?.isRerouted ? 'bg-secondary animate-pulse shadow-[0_0_8px_#4ae176]' : 'bg-primary'}`} />
-            <span className="text-sm font-medium">
+            <span className="text-body-sm font-body-sm text-on-surface">
               {routingResult?.isRerouted 
                 ? translate("Venue B is congested, rerouting via North Concourse.", language)
                 : translate("Route search active. Adjust destination to bypass obstacles.", language)}
             </span>
           </div>
         </div>
-      </div>
+      </Card>
 
       {/* === MOBILE: Controls stacked above/below map === */}
       {/* Indoor/Outdoor Mode Switcher — always above map */}
-      <div className="flex gap-1.5 bg-surface-container/95 border border-outline-variant/60 p-1.5 rounded-lg backdrop-blur-md shadow-md mb-2 lg:hidden mechanical-border">
+      <div className="flex gap-1.5 bg-surface-container border border-outline-variant/60 p-1.5 rounded-lg mb-2 lg:hidden">
           <Button
             onClick={() => setMapMode("indoor")}
-            className={`flex-1 px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all ${
-              mapMode === "indoor"
-                ? "bg-primary-container text-white shadow-sm tactile-button"
-                : "text-on-surface-variant hover:text-white"
-            }`}
+            variant={mapMode === "indoor" ? "primary" : "ghost"}
+            size="sm"
+            className="flex-1 text-[10px] font-mono font-bold uppercase transition-all flex items-center justify-center gap-1"
           >
-            🏢 Indoor Map
+            <Building2 className="h-3 w-3" />
+            Indoor Map
           </Button>
           <Button
             onClick={() => setMapMode("outdoor")}
-            className={`flex-1 px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all flex items-center justify-center gap-1 ${
-              mapMode === "outdoor"
-                ? "bg-secondary-container text-white shadow-sm tactile-button"
-                : "text-on-surface-variant hover:text-white"
-            }`}
+            variant={mapMode === "outdoor" ? "secondary" : "ghost"}
+            size="sm"
+            className="flex-1 text-[10px] font-mono font-bold uppercase transition-all flex items-center justify-center gap-1"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
-            🌐 Outdoor GPS
+            <MapIcon className="h-3 w-3" />
+            Outdoor GPS
           </Button>
         </div>
 
@@ -248,31 +250,27 @@ export default function Wayfinding(props) {
         )}
 
         {/* Map container — clean, no internal overlays on mobile */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div className="lg:col-span-8 rounded-xl overflow-hidden glass-overlay mechanical-border h-[50vh] md:h-[60vh] min-h-[400px] relative group bg-surface-container-low">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 relative">
+        <Card className="lg:col-span-8 p-0 overflow-hidden h-[50vh] md:h-[60vh] min-h-[400px] relative group transition-all duration-500">
           
           {/* Indoor/Outdoor switcher — desktop only, inside map */}
-          <div className="hidden lg:flex absolute top-4 left-4 z-30 gap-1.5 bg-surface-container/95 border border-outline-variant/60 p-1.5 rounded-lg backdrop-blur-md shadow-lg pointer-events-auto mechanical-border">
+          <div className="hidden lg:flex absolute top-4 left-4 z-30 gap-1.5 bg-surface border border-outline-variant/60 p-1.5 rounded-lg shadow-lg pointer-events-auto">
             <Button
               onClick={() => setMapMode("indoor")}
-              className={`px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all ${
-                mapMode === "indoor"
-                  ? "bg-primary-container text-white shadow-sm tactile-button"
-                  : "text-on-surface-variant hover:text-white"
-              }`}
+              variant={mapMode === "indoor" ? "primary" : "ghost"}
+              size="sm"
+              className="text-[10px] font-mono font-bold uppercase flex items-center gap-1"
             >
-              🏢 Indoor Map
+              <Building2 className="h-3 w-3" /> Indoor Map
             </Button>
             <Button
               onClick={() => setMapMode("outdoor")}
-              className={`px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase transition-all flex items-center gap-1 ${
-                mapMode === "outdoor"
-                  ? "bg-secondary-container text-white shadow-sm tactile-button"
-                  : "text-on-surface-variant hover:text-white"
-              }`}
+              variant={mapMode === "outdoor" ? "secondary" : "ghost"}
+              size="sm"
+              className="text-[10px] font-mono font-bold uppercase flex items-center gap-1"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
-              🌐 Outdoor GPS Tracker
+              <MapIcon className="h-3 w-3" /> Outdoor GPS Tracker
             </Button>
           </div>
 
@@ -336,39 +334,39 @@ export default function Wayfinding(props) {
               />
             </div>
           )}
-        </div>
+        </Card>
         {/* Chat & Directions (Bento Side) */}
-        <div className="lg:col-span-4 flex flex-col gap-4">
+        <div className="lg:col-span-4 flex flex-col gap-4 transition-all duration-500">
           
 
           {/* Quick Metrics Widget */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="glass-overlay mechanical-border p-4 rounded-xl">
+            <Card className="p-4">
               <span className="font-mono text-[10px] text-on-surface-variant block mb-1 uppercase tracking-wider">
                 {translate("CONGESTION", language)}
               </span>
               <div className="flex items-end gap-1.5">
-                <span className={`text-lg font-bold ${congestedZones.length > 0 ? "text-error" : "text-secondary"}`}>
+                <span className={`text-headline-md font-headline-md ${congestedZones.length > 0 ? "text-error" : "text-secondary-fixed"}`}>
                   {congestedZones.length > 0 ? translate("HIGH", language) : "LOW"}
                 </span>
-                <span className="text-[10px] font-mono text-outline mb-0.5">
+                <span className="text-[10px] font-mono text-on-surface-variant mb-0.5">
                   {congestedZones.length > 0 ? VENUE_NODES[congestedZones[0]]?.name || "Zone B" : "Clear"}
                 </span>
               </div>
-            </div>
-            <div className="glass-overlay mechanical-border p-4 rounded-xl">
+            </Card>
+            <Card className="p-4">
               <span className="font-mono text-[10px] text-on-surface-variant block mb-1 uppercase tracking-wider">
                 {translate("ETA TO EXIT", language)}
               </span>
               <div className="flex items-end gap-1.5">
-                <span className="text-lg font-bold text-secondary">
+                <span className="text-headline-md font-headline-md text-secondary-fixed">
                   {routingResult ? `${Math.round(routingResult.totalDistance / 20)} MIN` : "0 MIN"}
                 </span>
-                <span className="text-[10px] font-mono text-secondary/60 mb-0.5">
+                <span className="text-[10px] font-mono text-secondary-fixed/60 mb-0.5">
                   {translate("Active", language)}
                 </span>
               </div>
-            </div>
+            </Card>
           </div>
 
         </div>

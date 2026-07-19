@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import Card from './Card';
+import { Droplets, Wind } from 'lucide-react';
 
 export default function WeatherWidget({ city = 'London' }) {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchWeather = async () => {
       const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
       if (!apiKey) {
-        setError(true);
+        // Fallback to mock data if no API key
+        setWeather({
+          temp: 22,
+          condition: 'Clear',
+          icon: '01d',
+          humidity: 45,
+          windSpeed: 12,
+        });
         setLoading(false);
         return;
       }
@@ -25,10 +33,15 @@ export default function WeatherWidget({ city = 'London' }) {
           humidity: data.main.humidity,
           windSpeed: Math.round(data.wind.speed * 3.6), // Convert m/s to km/h
         });
-        setError(false);
       } catch (err) {
-        console.error('Weather fetch error:', err);
-        setError(true);
+        console.error('Weather fetch error, using mock fallback:', err);
+        setWeather({
+          temp: 22,
+          condition: 'Clear',
+          icon: '01d',
+          humidity: 45,
+          windSpeed: 12,
+        });
       } finally {
         setLoading(false);
       }
@@ -42,22 +55,22 @@ export default function WeatherWidget({ city = 'London' }) {
 
   if (loading) {
     return (
-      <div className="glass-overlay rounded-xl mechanical-border p-4 flex items-center justify-center h-24 animate-pulse">
+      <Card className="p-4 flex items-center justify-center h-24 animate-pulse">
         <span className="text-on-surface-variant font-mono text-xs">LOADING METRICS...</span>
-      </div>
+      </Card>
     );
   }
 
-  if (error || !weather) {
+  if (!weather) {
     return (
-      <div className="glass-overlay rounded-xl mechanical-border p-4 flex items-center justify-center h-24">
+      <Card className="p-4 flex items-center justify-center h-24">
         <span className="text-error font-mono text-xs">WEATHER UNAVAILABLE</span>
-      </div>
+      </Card>
     );
   }
 
   return (
-    <div className="glass-overlay rounded-xl mechanical-border p-4 flex items-center justify-between group overflow-hidden relative">
+    <Card className="p-4 flex items-center justify-between group overflow-hidden relative border-none">
       <div className="absolute inset-0 opacity-10 bg-gradient-to-r from-transparent via-primary/20 to-transparent pointer-events-none" />
       <div className="flex items-center gap-4 relative z-10">
         <img 
@@ -67,22 +80,22 @@ export default function WeatherWidget({ city = 'London' }) {
         />
         <div>
           <div className="flex items-end gap-1">
-            <span className="text-headline-md font-bold text-on-surface leading-none">{weather.temp}°</span>
-            <span className="text-label-caps text-on-surface-variant mb-1">C</span>
+            <span className="text-display-sm font-display-sm font-bold text-on-surface leading-none">{weather.temp}°</span>
+            <span className="text-label-caps font-label-caps text-on-surface-variant mb-1">C</span>
           </div>
           <span className="text-[10px] uppercase font-mono tracking-widest text-primary font-bold">{weather.condition}</span>
         </div>
       </div>
       <div className="flex flex-col gap-2 relative z-10 text-right border-l border-outline-variant/30 pl-4">
         <div className="flex items-center justify-end gap-2 text-[10px] font-mono text-on-surface-variant">
-          <span className="material-symbols-outlined text-[14px]">water_drop</span>
+          <Droplets className="h-3.5 w-3.5" />
           {weather.humidity}%
         </div>
         <div className="flex items-center justify-end gap-2 text-[10px] font-mono text-on-surface-variant">
-          <span className="material-symbols-outlined text-[14px]">air</span>
+          <Wind className="h-3.5 w-3.5" />
           {weather.windSpeed} KM/H
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

@@ -72,6 +72,7 @@ async function fetchMapboxRoute(fromLng, fromLat, toLng, toLat) {
   try {
     const url = `https://api.mapbox.com/directions/v5/mapbox/walking/${fromLng},${fromLat};${toLng},${toLat}?geometries=geojson&steps=true&overview=full&access_token=${token}`;
     const res = await fetch(url);
+    if (!res.ok) throw new Error(`Mapbox fetch failed with status: ${res.status}`);
     const data = await res.json();
     if (data.routes && data.routes[0]) {
       const route = data.routes[0];
@@ -139,6 +140,7 @@ export default function StadiumMap({
   const [mapLoaded, setMapLoaded] = useState(false);
   const [mapType, setMapType] = useState(isIndoor ? "satellite" : "roadmap");
   const [is3D, setIs3D] = useState(false);
+  const [isHudMinimized, setIsHudMinimized] = useState(false);
 
   // GPS navigation state
   const [gpsMode, setGpsMode] = useState("real"); // "simulated" or "real"
@@ -534,6 +536,10 @@ export default function StadiumMap({
     </div>`;
   }
 
+  const pathStr = JSON.stringify(path || []);
+  const directionsStr = JSON.stringify(directions || []);
+  const coordsStr = coords ? `${coords[0]},${coords[1]}` : "";
+
   // ─── 3. Navigation loop (Real GPS via locationService / Simulated) ────────
   useEffect(() => {
     if (!mapRef.current || !mapLoaded || !coords) return;
@@ -691,7 +697,8 @@ export default function StadiumMap({
       cancelAnimationFrame(animFrameRef.current);
       clearTimeout(rerouteTimerRef.current);
     };
-  }, [mapLoaded, gpsMode, coords, isIndoor, path, directions]);
+  }, [mapLoaded, gpsMode, coordsStr, isIndoor, pathStr, directionsStr]);
+
 
   // ─── 4. Distance & ETA (Mapbox real duration takes priority) ─────────────
   useEffect(() => {
@@ -897,82 +904,113 @@ export default function StadiumMap({
 
       {/* Floating Navigation HUD Card - desktop/tablet only */}
       {mapLoaded && (
-        <div className="hidden md:flex absolute bottom-4 right-4 z-20 bg-surface-container-high/95 backdrop-blur-md border border-outline-variant/60 p-4 rounded-xl shadow-2xl w-[290px] text-on-surface flex-col gap-2.5">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              <span className={`w-2 h-2 rounded-full ${
-                gpsMode === "real" && gpsStatus === GPS_STATUS.ACTIVE
-                  ? "bg-secondary shadow-[0_0_8px_#4ae176]"
-                  : gpsMode === "real" && gpsStatus === GPS_STATUS.PERMISSION_DENIED
-                  ? "bg-error animate-pulse"
-                  : "bg-primary shadow-[0_0_8px_#b7c4ff] animate-pulse"
-              }`} />
-              <span className="text-[9px] font-mono font-extrabold uppercase tracking-wider text-on-surface-variant">
-                {gpsMode === "real" && gpsStatus === GPS_STATUS.PERMISSION_DENIED
-                  ? "GPS DENIED"
-                  : gpsMode === "real"
-                  ? "REAL-TIME GPS"
-                  : "SIMULATED NAVIGATION"}
-              </span>
-            </div>
-            </div>
+        <div 
+          className={`hidden md:flex absolute bottom-4 right-4 z-20 bg-surface-container-high/95 backdrop-blur-md border border-outline-variant/60 rounded-xl shadow-2xl text-on-surface flex-col transition-all duration-300 ${isHudMinimized ? 'p-3 cursor-pointer hover:bg-surface-container-highest w-auto items-center gap-1 group/hud' : 'p-4 w-[290px] gap-2.5'}`}
+          onClick={isHudMinimized ? () => setIsHudMinimized(false) : undefined}
+          title={isHudMinimized ? "Expand Navigation HUD" : undefined}
+        >
+          {isHudMinimized ? (
+            <>
+              <div className="flex items-center gap-2">
+                <span className={`w-2 h-2 rounded-full ${
+                  gpsMode === "real" && gpsStatus === GPS_STATUS.ACTIVE
+                    ? "bg-secondary shadow-[0_0_8px_#4ae176]"
+                    : gpsMode === "real" && gpsStatus === GPS_STATUS.PERMISSION_DENIED
+                    ? "bg-error animate-pulse"
+                    : "bg-primary shadow-[0_0_8px_#b7c4ff] animate-pulse"
+                }`} />
+                <span className="material-symbols-outlined text-primary text-xl">
+                  {isIndoor ? "directions_walk" : "directions_car"}
+                </span>
+              </div>
+              <span className="text-[8px] font-mono font-bold uppercase tracking-widest text-on-surface-variant group-hover/hud:text-primary transition-colors">ETA: {mapboxDuration ? `${Math.round(mapboxDuration / 60)}m` : "..."}</span>
+            </>
+          ) : (
+            <>
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                  <span className={`w-2 h-2 rounded-full ${
+                    gpsMode === "real" && gpsStatus === GPS_STATUS.ACTIVE
+                      ? "bg-secondary shadow-[0_0_8px_#4ae176]"
+                      : gpsMode === "real" && gpsStatus === GPS_STATUS.PERMISSION_DENIED
+                      ? "bg-error animate-pulse"
+                      : "bg-primary shadow-[0_0_8px_#b7c4ff] animate-pulse"
+                  }`} />
+                  <span className="text-[9px] font-mono font-extrabold uppercase tracking-wider text-on-surface-variant">
+                    {gpsMode === "real" && gpsStatus === GPS_STATUS.PERMISSION_DENIED
+                      ? "GPS DENIED"
+                      : gpsMode === "real"
+                      ? "REAL-TIME GPS"
+                      : "SIMULATED NAVIGATION"}
+                  </span>
+                </div>
+                <button
+                  onClick={(e) => { e.stopPropagation(); setIsHudMinimized(true); }}
+                  className="text-on-surface-variant hover:text-on-surface transition-colors p-1 rounded hover:bg-surface-variant flex items-center justify-center"
+                  title="Minimize Panel"
+                >
+                  <span className="material-symbols-outlined text-[16px]">close_fullscreen</span>
+                </button>
+              </div>
 
-          {/* Broadcast status */}
-          {broadcastStatus !== BROADCAST_STATUS.DISCONNECTED && (
-            <div className={`flex items-center gap-1.5 text-[8px] font-mono uppercase ${
-              broadcastStatus === BROADCAST_STATUS.CONNECTED ? "text-secondary" : "text-outline"
-            }`}>
-              <span className={`w-1.5 h-1.5 rounded-full ${
-                broadcastStatus === BROADCAST_STATUS.CONNECTED ? "bg-secondary" : "bg-outline animate-pulse"
-              }`} />
-              {broadcastStatus === BROADCAST_STATUS.CONNECTED
-                ? `Live • ${liveUsers.size} user${liveUsers.size !== 1 ? "s" : ""} in venue`
-                : "Reconnecting..."}
-            </div>
+              {/* Broadcast status */}
+              {broadcastStatus !== BROADCAST_STATUS.DISCONNECTED && (
+                <div className={`flex items-center gap-1.5 text-[8px] font-mono uppercase ${
+                  broadcastStatus === BROADCAST_STATUS.CONNECTED ? "text-secondary" : "text-outline"
+                }`}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${
+                    broadcastStatus === BROADCAST_STATUS.CONNECTED ? "bg-secondary" : "bg-outline animate-pulse"
+                  }`} />
+                  {broadcastStatus === BROADCAST_STATUS.CONNECTED
+                    ? `Live • ${liveUsers.size} user${liveUsers.size !== 1 ? "s" : ""} in venue`
+                    : "Reconnecting..."}
+                </div>
+              )}
+
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/35 flex items-center justify-center flex-shrink-0">
+                  <span className="material-symbols-outlined text-primary text-lg">
+                    {isIndoor ? "directions_walk" : "directions_car"}
+                  </span>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <span className="text-[8px] text-on-surface-variant font-mono uppercase block leading-none mb-1">Destination</span>
+                  <span className="text-xs font-bold truncate block">
+                    {isIndoor ? (INDOOR_NODE_OFFSETS[endNode]?.name || "Select Destination") : stadiumName}
+                  </span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 border-t border-b border-outline-variant/20 py-2">
+                <div>
+                  <span className="text-[8px] text-on-surface-variant font-mono uppercase block leading-none mb-1">Distance</span>
+                  <span className="text-sm font-bold font-mono text-white">
+                    {realTimeDistance !== null ? formatDistance(realTimeDistance) : "..."}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-[8px] text-on-surface-variant font-mono uppercase block leading-none mb-1">ETA</span>
+                  <span className="text-sm font-bold font-mono text-secondary">
+                    {mapboxDuration
+                      ? `${Math.round(mapboxDuration / 60)} min`
+                      : realTimeDistance !== null
+                      ? formatETA(realTimeDistance, isIndoor ? 1.4 : 13.8)
+                      : "..."}
+                  </span>
+                </div>
+              </div>
+
+              {/* Active Navigation Step */}
+              <div className="flex gap-2 items-start bg-surface-container/60 p-2 rounded-lg border border-outline-variant/25">
+                <span className="material-symbols-outlined text-outline text-sm mt-0.5">navigation</span>
+                <p className="text-[10px] text-on-surface/90 leading-normal font-sans font-medium">
+                  {isIndoor 
+                    ? (directions[activeStepIndex] || "Route active. Walk towards destination.")
+                    : (directionsList[activeStepIndex] || "Route active. Drive towards destination.")}
+                </p>
+              </div>
+            </>
           )}
-
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/35 flex items-center justify-center flex-shrink-0">
-              <span className="material-symbols-outlined text-primary text-lg">
-                {isIndoor ? "directions_walk" : "directions_car"}
-              </span>
-            </div>
-            <div className="min-w-0 flex-1">
-              <span className="text-[8px] text-on-surface-variant font-mono uppercase block leading-none mb-1">Destination</span>
-              <span className="text-xs font-bold truncate block">
-                {isIndoor ? (INDOOR_NODE_OFFSETS[endNode]?.name || "Select Destination") : stadiumName}
-              </span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 border-t border-b border-outline-variant/20 py-2">
-            <div>
-              <span className="text-[8px] text-on-surface-variant font-mono uppercase block leading-none mb-1">Distance</span>
-              <span className="text-sm font-bold font-mono text-white">
-                {realTimeDistance !== null ? formatDistance(realTimeDistance) : "..."}
-              </span>
-            </div>
-            <div>
-              <span className="text-[8px] text-on-surface-variant font-mono uppercase block leading-none mb-1">ETA</span>
-              <span className="text-sm font-bold font-mono text-secondary">
-                {mapboxDuration
-                  ? `${Math.round(mapboxDuration / 60)} min`
-                  : realTimeDistance !== null
-                  ? formatETA(realTimeDistance, isIndoor ? 1.4 : 13.8)
-                  : "..."}
-              </span>
-            </div>
-          </div>
-
-          {/* Active Navigation Step */}
-          <div className="flex gap-2 items-start bg-surface-container/60 p-2 rounded-lg border border-outline-variant/25">
-            <span className="material-symbols-outlined text-outline text-sm mt-0.5">navigation</span>
-            <p className="text-[10px] text-on-surface/90 leading-normal font-sans font-medium">
-              {isIndoor 
-                ? (directions[activeStepIndex] || "Route active. Walk towards destination.")
-                : (directionsList[activeStepIndex] || "Route active. Drive towards destination.")}
-            </p>
-          </div>
         </div>
       )}
 
